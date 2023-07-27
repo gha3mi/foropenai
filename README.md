@@ -13,6 +13,12 @@ On Ubuntu, you need to install the curl development headers. Use the following c
 sudo apt install -y libcurl4-openssl-dev
 ```
 
+**OpenAI API key:**
+
+Create a file named `.foropenai` and insert your OpenAI API key. You can find your Secret API key in your OpenAI [User settings](https://platform.openai.com/account/api-keys). 
+
+Make sure to keep the file name exactly as mentioned, starting with a dot (.).
+
 ### fpm dependency
 
 If you want to use ForOpenAI as a dependency in your own fpm project,
