@@ -3,7 +3,7 @@
 
 **ForOpenAI**: A Fortran library for OpenAI API. (Under Development!)
 
-## How to use ChatGPT
+## How to use
 
 **Prerequisites:**
 
@@ -19,13 +19,25 @@ Create a file named `.foropenai` and insert your OpenAI API key. You can find yo
 
 Make sure to keep the file name exactly as mentioned, starting with a dot (.).
 
+**Clone the repository:**
+
+You can clone the ForOpenAI repository from GitHub using the following command:
+
+```shell
+git clone https://github.com/gha3mi/foropenai.git
+```
+
+```shell
+cd foropenai
+```
+
 **Use ChatGPT from the terminal:**
 
 ```shell
 fpm run
 ```
 
-### fpm dependency
+## fpm dependency
 
 If you want to use ForOpenAI as a dependency in your own fpm project,
 you can easily include it by adding the following line to your `fpm.toml` file:
