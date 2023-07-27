@@ -1,0 +1,8 @@
+/build
+/bin
+/doc
+/.vscode
+/mod
+/include
+/lib
+.forgpt
