@@ -7,9 +7,14 @@ program prg_forgpt
    type(openai)        :: gpt
    character(len=1000) :: user_input
 
+   print*,"Create a file called '.forgpt' and place your API key on the first line, and your organization key on the second line."
+   print*,"Press Enter to continue..."
+   read(*,*)
    call gpt%set_file_name_settings('.forgpt')
+
    call gpt%set_api_key()
    call gpt%set_org_key()
+   
    call gpt%list_models()
 
    print *, "Hello! I am ChatGPT. type 'exit' to end the conversation."
