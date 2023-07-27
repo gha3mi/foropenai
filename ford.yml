@@ -1,11 +1,12 @@
-project:             forgpt
+project:             foropenai
 version:             {!VERSION!}
 year:                2023
-project_github:      https://github.com/gha3mi/forgpt
+project_github:      https://github.com/gha3mi/foropenai
 author:              Seyed Ali Ghasemi
 email:               info@gha3mi.com
 github:              https://github.com/gha3mi
 src_dir:             ./src
+                     ./test
 output_dir:          ./doc
 source:              true
 graph:               true

@@ -1,4 +1,4 @@
-name       = "forgpt"
+name       = "foropenai"
 version    = "VERSION"
 author     = "Seyed Ali Ghasemi"
 maintainer = "info@gha3mi.com"
@@ -22,3 +22,18 @@ source-form       = "free"
 [dependencies]
 http   = { git = "https://github.com/fortran-lang/http-client.git" }
 stdlib = "*"
+
+[[test]]
+name       = "test1"
+source-dir = "test"
+main       = "test1.f90"
+
+[[test]]
+name       = "test2"
+source-dir = "test"
+main       = "test2.f90"
+
+[[test]]
+name       = "test3"
+source-dir = "test"
+main       = "test3.f90"

@@ -1,1 +1,1 @@
-# ForGPT
+# ForOpenAI
