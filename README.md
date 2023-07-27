@@ -3,7 +3,7 @@
 
 **ForOpenAI**: A Fortran library for OpenAI API. (Under Development!)
 
-## How to use
+## How to use ChatGPT
 
 **Prerequisites:**
 
@@ -18,6 +18,12 @@ sudo apt install -y libcurl4-openssl-dev
 Create a file named `.foropenai` and insert your OpenAI API key. You can find your Secret API key in your OpenAI [User settings](https://platform.openai.com/account/api-keys). 
 
 Make sure to keep the file name exactly as mentioned, starting with a dot (.).
+
+**Use ChatGPT from the terminal:**
+
+```shell
+fpm run
+```
 
 ### fpm dependency
 
