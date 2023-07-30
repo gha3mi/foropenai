@@ -1,4 +1,4 @@
-project:             foropenai
+project:             ForOpenAI
 version:             {!VERSION!}
 year:                2023
 project_github:      https://github.com/gha3mi/foropenai
@@ -16,6 +16,7 @@ display:             public
                      private
                      protected
 print_creation_date: true
+favicon:             ./media/logo.png
 media_dir:           ./media
 
 {!README.md!}
