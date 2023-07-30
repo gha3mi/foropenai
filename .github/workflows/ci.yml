@@ -63,3 +63,9 @@ jobs:
 
     - name: Build documentation
       run: ford ./ford.yml
+
+    - name: Deploy Documentation
+      uses: JamesIves/github-pages-deploy-action@v4.4.3
+      with:
+        branch: gh-pages
+        folder: doc
