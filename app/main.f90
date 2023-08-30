@@ -1,13 +1,17 @@
-program forgpt
-
-   use foropenai, only: openai, api_key, set_api_key
-
+program main
+   
+   use foropenai, only: ChatCompletion
    implicit none
 
-   type(openai) :: oai
+   type(ChatCompletion) :: chat
 
-   api_key = set_api_key('.foropenai')
-   oai%model%id = 'gpt-3.5-turbo'
-   call oai%chat_gpt()
+   call chat%conversation(&
+      config_file       = 'foropenai.json',&
+      input_file        = 'chat_input',&
+      output_file       = 'chat_history',&
+      inputfile_command = ':ifile',&
+      exit_command      = ':q')
 
-end program forgpt
+   call chat%finalize()
+
+end program main

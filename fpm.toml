@@ -20,20 +20,13 @@ implicit-external = false
 source-form       = "free"
 
 [dependencies]
-http   = { git = "https://github.com/fortran-lang/http-client.git" }
+http = { git = "https://github.com/fortran-lang/http-client.git" }
 stdlib = "*"
+json-fortran = { git = "https://github.com/jacobwilliams/json-fortran" }
+FACE = { git = "https://github.com/szaghi/FACE" }
+
 
 [[test]]
 name       = "test1"
 source-dir = "test"
 main       = "test1.f90"
-
-[[test]]
-name       = "test2"
-source-dir = "test"
-main       = "test2.f90"
-
-[[test]]
-name       = "test3"
-source-dir = "test"
-main       = "test3.f90"
