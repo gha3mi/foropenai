@@ -40,7 +40,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.0.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -56,7 +56,7 @@
                   <li><a href="../lists/modules.html">Modules</a></li>
                   <li><a href="../lists/procedures.html">Procedures</a></li>
                   <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
+                  <li><a href="../program/test_chatcompletion.html">Program</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -72,7 +72,7 @@
                 <a href="../lists/types.html">Derived Types</a>
               </li>
               <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
+                <a href="../program/test_chatcompletion.html">Program</a>
               </li>
           </ul>
             <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -94,11 +94,60 @@
 			 <table class="table table-striped">
 			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
 			 <tbody>
-			   <tr><td><a href='../proc/chat_gpt.html'>chat_gpt</a></td><td><a href='../module/foropenai.html'>foropenai</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/create.html'>create</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/list.html'>list</a></td><td><a href='../module/foropenai_model.html'>foropenai_model</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/retrieve.html'>retrieve</a></td><td><a href='../module/foropenai_model.html'>foropenai_model</a></td><td>Subroutine</td><td></td></tr>
-			   <tr><td><a href='../proc/set_api_key.html'>set_api_key</a></td><td><a href='../module/foropenai_api_key.html'>foropenai_api_key</a></td><td>Function</td><td></td></tr>
+			   <tr><td><a href='../proc/check_chat_completion.html'>check_chat_completion</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/conversation.html'>conversation</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/create_chat_completion.html'>create_chat_completion</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_api_key.html'>deallocate_api_key</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_chatcompletion_messages.html'>deallocate_ChatCompletion_messages</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_content.html'>deallocate_content</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_file_name.html'>deallocate_file_name</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_messages.html'>deallocate_messages</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_model.html'>deallocate_model</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_model_list.html'>deallocate_model_list</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_name.html'>deallocate_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_openai.html'>deallocate_openai</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_organization.html'>deallocate_organization</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_role.html'>deallocate_role</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_url.html'>deallocate_url</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/deallocate_user_name.html'>deallocate_user_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/init_messages.html'>init_messages</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_api_key.html'>load_api_key</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_base_data.html'>load_base_data</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_max_tokens.html'>load_max_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_model.html'>load_model</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_organization.html'>load_organization</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_temperature.html'>load_temperature</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_url.html'>load_url</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/load_user_name.html'>load_user_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_api_key.html'>print_api_key</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_completion_tokens.html'>print_completion_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_file_name.html'>print_file_name</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_max_tokens.html'>print_max_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_model.html'>print_model</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_model_list.html'>print_model_list</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_organization.html'>print_organization</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_prompt_tokens.html'>print_prompt_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_temperature.html'>print_temperature</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_total_tokens.html'>print_total_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/print_user_name.html'>print_user_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/read_msg.html'>read_msg</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/select_model.html'>select_model</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_api_key.html'>set_api_key</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_content.html'>set_content</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_file_name.html'>set_file_name</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_max_tokens.html'>set_max_tokens</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_message.html'>set_message</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_model.html'>set_model</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_model_list.html'>set_model_list</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_name.html'>set_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_organization.html'>set_organization</a></td><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_role.html'>set_role</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_temperature.html'>set_temperature</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_url.html'>set_url</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/set_user_name.html'>set_user_name</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
+			   <tr><td><a href='../proc/write_history.html'>write_history</a></td><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td>Subroutine</td><td></td></tr>
 			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -106,152 +155,924 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: call~~graph~~CallGraph Pages: 1 -->
-<svg id="callgraphCallGraph" width="514pt" height="284pt"
- viewBox="0.00 0.00 514.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
+<svg id="callgraphCallGraph" width="855pt" height="1170pt"
+ viewBox="0.00 0.00 855.00 1169.66" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="call~~graph~~CallGraph" class="graph" transform="scale(1.72 1.72) rotate(0) translate(4 2007)">
 <title>call~~graph~~CallGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-280 510,-280 510,4 -4,4"/>
-<!-- proc~chat_gpt -->
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-2007 1466,-2007 1466,4 -4,4"/>
+<!-- proc~check_chat_completion -->
 <g id="call~~graph~~CallGraph_node1" class="node">
-<title>proc~chat_gpt</title>
-<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/chat_gpt.html" xlink:title="foropenai::openai%chat_gpt">
-<polygon fill="#d9534f" stroke="#d9534f" points="227.5,-24 64.5,-24 64.5,0 227.5,0 227.5,-24"/>
-<text text-anchor="middle" x="146" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai::openai%chat_gpt</text>
+<title>proc~check_chat_completion</title>
+<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/check_chat_completion.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%check_chat_completion">
+<polygon fill="#d9534f" stroke="#d9534f" points="960.5,-440 576.5,-440 576.5,-416 960.5,-416 960.5,-440"/>
+<text text-anchor="middle" x="768.5" y="-425.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%check_chat_completion</text>
 </a>
 </g>
 </g>
-<!-- proc~create -->
+<!-- messages -->
+<g id="call~~graph~~CallGraph_node62" class="node">
+<title>messages</title>
+<polygon fill="#777777" stroke="#777777" points="1224,-421 1158,-421 1158,-397 1224,-397 1224,-421"/>
+<text text-anchor="middle" x="1191" y="-406.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">messages</text>
+</g>
+<!-- proc~check_chat_completion&#45;&gt;messages -->
+<g id="call~~graph~~CallGraph_edge1" class="edge">
+<title>proc~check_chat_completion&#45;&gt;messages</title>
+<path fill="none" stroke="#255000" d="M960.68,-419.36C1030.58,-416.2 1103.31,-412.92 1147.63,-410.91"/>
+<polygon fill="#255000" stroke="#255000" points="1147.89,-414.41 1157.73,-410.46 1147.58,-407.41 1147.89,-414.41"/>
+</g>
+<!-- proc~conversation -->
 <g id="call~~graph~~CallGraph_node2" class="node">
-<title>proc~create</title>
-<g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././proc/create.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%create">
-<polygon fill="#d9534f" stroke="#d9534f" points="292,-150 0,-150 0,-126 292,-126 292,-150"/>
-<text text-anchor="middle" x="146" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%create</text>
+<title>proc~conversation</title>
+<g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././proc/conversation.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%conversation">
+<polygon fill="#d9534f" stroke="#d9534f" points="425.5,-398 97.5,-398 97.5,-374 425.5,-374 425.5,-398"/>
+<text text-anchor="middle" x="261.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%conversation</text>
 </a>
 </g>
+</g>
+<!-- proc~init_messages -->
+<g id="call~~graph~~CallGraph_node18" class="node">
+<title>proc~init_messages</title>
+<g id="a_call~~graph~~CallGraph_node18"><a xlink:href=".././proc/init_messages.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%init_messages">
+<polygon fill="#d9534f" stroke="#d9534f" points="935.5,-356 601.5,-356 601.5,-332 935.5,-332 935.5,-356"/>
+<text text-anchor="middle" x="768.5" y="-341.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%init_messages</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~init_messages -->
+<g id="call~~graph~~CallGraph_edge5" class="edge">
+<title>proc~conversation&#45;&gt;proc~init_messages</title>
+<path fill="none" stroke="#255280" d="M406.87,-373.99C471.34,-368.63 547.39,-362.31 613,-356.85"/>
+<polygon fill="#255280" stroke="#255280" points="613.34,-360.33 623.02,-356.02 612.76,-353.36 613.34,-360.33"/>
+</g>
+<!-- proc~load_chatcompletion_data -->
+<g id="call~~graph~~CallGraph_node21" class="node">
+<title>proc~load_chatcompletion_data</title>
+<g id="a_call~~graph~~CallGraph_node21"><a xlink:href=".././proc/load_chatcompletion_data.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_ChatCompletion_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="970,-150 567,-150 567,-126 970,-126 970,-150"/>
+<text text-anchor="middle" x="768.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_ChatCompletion_data</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~load_chatcompletion_data -->
+<g id="call~~graph~~CallGraph_edge6" class="edge">
+<title>proc~conversation&#45;&gt;proc~load_chatcompletion_data</title>
+<path fill="none" stroke="#255280" d="M287.2,-373.87C370.1,-333.16 638.52,-201.34 733.67,-154.61"/>
+<polygon fill="#255280" stroke="#255280" points="735.42,-157.66 742.85,-150.11 732.33,-151.37 735.42,-157.66"/>
+</g>
+<!-- proc~read_msg -->
+<g id="call~~graph~~CallGraph_node39" class="node">
+<title>proc~read_msg</title>
+<g id="a_call~~graph~~CallGraph_node39"><a xlink:href=".././proc/read_msg.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%read_msg">
+<polygon fill="#d9534f" stroke="#d9534f" points="923.5,-482 613.5,-482 613.5,-458 923.5,-458 923.5,-482"/>
+<text text-anchor="middle" x="768.5" y="-467.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%read_msg</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~read_msg -->
+<g id="call~~graph~~CallGraph_edge7" class="edge">
+<title>proc~conversation&#45;&gt;proc~read_msg</title>
+<path fill="none" stroke="#255280" d="M310.99,-398C369.46,-412.08 470.87,-435.24 559,-449 577.83,-451.94 597.69,-454.56 617.37,-456.86"/>
+<polygon fill="#255280" stroke="#255280" points="616.99,-460.34 627.32,-458 617.78,-453.38 616.99,-460.34"/>
+</g>
+<!-- proc~write_history -->
+<g id="call~~graph~~CallGraph_node54" class="node">
+<title>proc~write_history</title>
+<g id="a_call~~graph~~CallGraph_node54"><a xlink:href=".././proc/write_history.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%write_history">
+<polygon fill="#d9534f" stroke="#d9534f" points="931.5,-566 605.5,-566 605.5,-542 931.5,-542 931.5,-566"/>
+<text text-anchor="middle" x="768.5" y="-551.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%write_history</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~write_history -->
+<g id="call~~graph~~CallGraph_edge8" class="edge">
+<title>proc~conversation&#45;&gt;proc~write_history</title>
+<path fill="none" stroke="#255280" d="M280.95,-398.14C326.15,-427.21 446.92,-500.73 559,-533 570.72,-536.38 582.95,-539.23 595.36,-541.63"/>
+<polygon fill="#255280" stroke="#255280" points="594.87,-545.1 605.33,-543.47 596.13,-538.22 594.87,-545.1"/>
+</g>
+<!-- create -->
+<g id="call~~graph~~CallGraph_node58" class="node">
+<title>create</title>
+<polygon fill="#777777" stroke="#777777" points="795.5,-524 741.5,-524 741.5,-500 795.5,-500 795.5,-524"/>
+<text text-anchor="middle" x="768.5" y="-509.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">create</text>
+</g>
+<!-- proc~conversation&#45;&gt;create -->
+<g id="call~~graph~~CallGraph_edge2" class="edge">
+<title>proc~conversation&#45;&gt;create</title>
+<path fill="none" stroke="#255280" d="M289.64,-398.11C341.06,-420.48 456.69,-468.08 559,-491 618.4,-504.31 689.22,-509.19 731.16,-510.98"/>
+<polygon fill="#255280" stroke="#255280" points="731.05,-514.47 741.17,-511.37 731.32,-507.48 731.05,-514.47"/>
+</g>
+<!-- load_base_data -->
+<g id="call~~graph~~CallGraph_node60" class="node">
+<title>load_base_data</title>
+<polygon fill="#777777" stroke="#777777" points="816.5,-398 720.5,-398 720.5,-374 816.5,-374 816.5,-398"/>
+<text text-anchor="middle" x="768.5" y="-383.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">load_base_data</text>
+</g>
+<!-- proc~conversation&#45;&gt;load_base_data -->
+<g id="call~~graph~~CallGraph_edge3" class="edge">
+<title>proc~conversation&#45;&gt;load_base_data</title>
+<path fill="none" stroke="#255280" d="M425.76,-386C523.34,-386 641.33,-386 710.04,-386"/>
+<polygon fill="#255280" stroke="#255280" points="710.23,-389.5 720.23,-386 710.23,-382.5 710.23,-389.5"/>
+</g>
+<!-- proc~conversation&#45;&gt;messages -->
+<g id="call~~graph~~CallGraph_edge4" class="edge">
+<title>proc~conversation&#45;&gt;messages</title>
+<path fill="none" stroke="#255280" d="M305.26,-373.96C362.49,-358.53 467.41,-332.62 559,-323 651.6,-313.27 894.3,-282.22 978,-323 1001.34,-334.37 992.08,-355.1 1014,-369 1054.76,-394.84 1110.18,-404.07 1147.87,-407.32"/>
+<polygon fill="#255280" stroke="#255280" points="1147.76,-410.82 1158,-408.08 1148.29,-403.84 1147.76,-410.82"/>
+</g>
+<!-- proc~create_chat_completion -->
+<g id="call~~graph~~CallGraph_node3" class="node">
+<title>proc~create_chat_completion</title>
+<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/create_chat_completion.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%create_chat_completion">
+<polygon fill="#d9534f" stroke="#d9534f" points="961.5,-608 575.5,-608 575.5,-584 961.5,-584 961.5,-608"/>
+<text text-anchor="middle" x="768.5" y="-593.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%create_chat_completion</text>
+</a>
+</g>
+</g>
+<!-- add -->
+<g id="call~~graph~~CallGraph_node55" class="node">
+<title>add</title>
+<polygon fill="#777777" stroke="#777777" points="1218,-730 1164,-730 1164,-706 1218,-706 1218,-730"/>
+<text text-anchor="middle" x="1191" y="-715.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">add</text>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;add -->
+<g id="call~~graph~~CallGraph_edge9" class="edge">
+<title>proc~create_chat_completion&#45;&gt;add</title>
+<path fill="none" stroke="#255560" d="M961.76,-607.03C967.4,-609.97 972.83,-613.28 978,-617 1009.64,-639.79 982.57,-673.92 1014,-697 1054.58,-726.8 1115.18,-727.09 1153.64,-723.41"/>
+<polygon fill="#255560" stroke="#255560" points="1154.3,-726.86 1163.86,-722.29 1153.54,-719.9 1154.3,-726.86"/>
+</g>
+<!-- check -->
+<g id="call~~graph~~CallGraph_node56" class="node">
+<title>check</title>
+<polygon fill="#777777" stroke="#777777" points="1218,-688 1164,-688 1164,-664 1218,-664 1218,-688"/>
+<text text-anchor="middle" x="1191" y="-673.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check</text>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;check -->
+<g id="call~~graph~~CallGraph_edge10" class="edge">
+<title>proc~create_chat_completion&#45;&gt;check</title>
+<path fill="none" stroke="#255560" d="M956.68,-608.09C964.01,-610.68 971.14,-613.63 978,-617 998.88,-627.25 993.21,-644.56 1014,-655 1058.3,-677.26 1116.54,-679.82 1153.63,-678.66"/>
+<polygon fill="#255560" stroke="#255560" points="1154.12,-682.14 1163.97,-678.22 1153.83,-675.15 1154.12,-682.14"/>
+</g>
+<!-- colorize -->
+<g id="call~~graph~~CallGraph_node57" class="node">
+<title>colorize</title>
+<polygon fill="#777777" stroke="#777777" points="1218.5,-482 1163.5,-482 1163.5,-458 1218.5,-458 1218.5,-482"/>
+<text text-anchor="middle" x="1191" y="-467.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">colorize</text>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;colorize -->
+<g id="call~~graph~~CallGraph_edge11" class="edge">
+<title>proc~create_chat_completion&#45;&gt;colorize</title>
+<path fill="none" stroke="#255560" d="M961.74,-584.94C967.38,-582.01 972.82,-578.71 978,-575 1009.36,-552.52 983.17,-519.2 1014,-496 1054.27,-465.7 1114.7,-463.47 1153.24,-465.83"/>
+<polygon fill="#255560" stroke="#255560" points="1153.26,-469.34 1163.49,-466.59 1153.78,-462.36 1153.26,-469.34"/>
+</g>
+<!-- get -->
+<g id="call~~graph~~CallGraph_node59" class="node">
+<title>get</title>
+<polygon fill="#777777" stroke="#777777" points="1460,-234 1406,-234 1406,-210 1460,-210 1460,-234"/>
+<text text-anchor="middle" x="1433" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get</text>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge12" class="edge">
+<title>proc~create_chat_completion&#45;&gt;get</title>
+<path fill="none" stroke="#255560" d="M959.16,-583.91C965.64,-581.29 971.95,-578.34 978,-575 1000.74,-562.47 991.3,-541.6 1014,-529 1083.17,-490.59 1308.63,-543.29 1368,-491 1405.31,-458.14 1424.15,-302.33 1429.97,-244.06"/>
+<polygon fill="#255560" stroke="#255560" points="1433.46,-244.36 1430.94,-234.07 1426.49,-243.68 1433.46,-244.36"/>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;messages -->
+<g id="call~~graph~~CallGraph_edge13" class="edge">
+<title>proc~create_chat_completion&#45;&gt;messages</title>
+<path fill="none" stroke="#255560" d="M961.56,-586.46C967.33,-583.12 972.84,-579.32 978,-575 1022.68,-537.64 971.7,-489.04 1014,-449 1049.83,-415.09 1108.15,-407.76 1147.75,-407.14"/>
+<polygon fill="#255560" stroke="#255560" points="1147.89,-410.64 1157.89,-407.12 1147.88,-403.64 1147.89,-410.64"/>
 </g>
 <!-- pair_type -->
-<g id="call~~graph~~CallGraph_node9" class="node">
+<g id="call~~graph~~CallGraph_node64" class="node">
 <title>pair_type</title>
-<polygon fill="#777777" stroke="#777777" points="448,-129 386,-129 386,-105 448,-105 448,-129"/>
-<text text-anchor="middle" x="417" y="-114.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pair_type</text>
+<polygon fill="#777777" stroke="#777777" points="1222,-646 1160,-646 1160,-622 1222,-622 1222,-646"/>
+<text text-anchor="middle" x="1191" y="-631.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">pair_type</text>
 </g>
-<!-- proc~create&#45;&gt;pair_type -->
-<g id="call~~graph~~CallGraph_edge1" class="edge">
-<title>proc~create&#45;&gt;pair_type</title>
-<path fill="none" stroke="transparent" d="M292.13,-126.67C322.76,-124.28 352.66,-121.94 375.4,-120.17"/>
-<polygon fill="transparent" stroke="transparent" points="375.95,-123.64 385.64,-119.37 375.4,-116.66 375.95,-123.64"/>
+<!-- proc~create_chat_completion&#45;&gt;pair_type -->
+<g id="call~~graph~~CallGraph_edge14" class="edge">
+<title>proc~create_chat_completion&#45;&gt;pair_type</title>
+<path fill="none" stroke="#255560" d="M902.55,-608.02C987.99,-615.74 1093.19,-625.25 1149.64,-630.35"/>
+<polygon fill="#255560" stroke="#255560" points="1149.65,-633.87 1159.93,-631.28 1150.28,-626.9 1149.65,-633.87"/>
+</g>
+<!-- print_to_string -->
+<g id="call~~graph~~CallGraph_node65" class="node">
+<title>print_to_string</title>
+<polygon fill="#777777" stroke="#777777" points="1235,-604 1147,-604 1147,-580 1235,-580 1235,-604"/>
+<text text-anchor="middle" x="1191" y="-589.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">print_to_string</text>
+</g>
+<!-- proc~create_chat_completion&#45;&gt;print_to_string -->
+<g id="call~~graph~~CallGraph_edge15" class="edge">
+<title>proc~create_chat_completion&#45;&gt;print_to_string</title>
+<path fill="none" stroke="#255560" d="M961.6,-594.17C1025.85,-593.56 1092.38,-592.93 1136.95,-592.5"/>
+<polygon fill="#255560" stroke="#255560" points="1136.98,-596 1146.95,-592.41 1136.92,-589 1136.98,-596"/>
 </g>
 <!-- request -->
-<g id="call~~graph~~CallGraph_node10" class="node">
+<g id="call~~graph~~CallGraph_node66" class="node">
 <title>request</title>
-<polygon fill="#777777" stroke="#777777" points="444,-87 390,-87 390,-63 444,-63 444,-87"/>
-<text text-anchor="middle" x="417" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">request</text>
+<polygon fill="#777777" stroke="#777777" points="1218,-562 1164,-562 1164,-538 1218,-538 1218,-562"/>
+<text text-anchor="middle" x="1191" y="-547.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">request</text>
 </g>
-<!-- proc~create&#45;&gt;request -->
-<g id="call~~graph~~CallGraph_edge2" class="edge">
-<title>proc~create&#45;&gt;request</title>
-<path fill="none" stroke="transparent" d="M260.04,-125.98C270.98,-123.52 281.79,-120.56 292,-117 309.49,-110.89 310.81,-102.89 328,-96 344.5,-89.39 363.62,-84.51 379.81,-81.14"/>
-<polygon fill="transparent" stroke="transparent" points="380.84,-84.5 389.97,-79.13 379.48,-77.64 380.84,-84.5"/>
+<!-- proc~create_chat_completion&#45;&gt;request -->
+<g id="call~~graph~~CallGraph_edge16" class="edge">
+<title>proc~create_chat_completion&#45;&gt;request</title>
+<path fill="none" stroke="#255560" d="M892.19,-583.99C920.39,-581.14 950.24,-578.03 978,-575 1039.81,-568.24 1111.66,-559.6 1153.85,-554.45"/>
+<polygon fill="#255560" stroke="#255560" points="1154.41,-557.91 1163.91,-553.22 1153.56,-550.96 1154.41,-557.91"/>
 </g>
-<!-- proc~list -->
-<g id="call~~graph~~CallGraph_node3" class="node">
-<title>proc~list</title>
-<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/list.html" xlink:title="foropenai_model::model%list">
-<polygon fill="#d9534f" stroke="#d9534f" points="230.5,-108 61.5,-108 61.5,-84 230.5,-84 230.5,-108"/>
-<text text-anchor="middle" x="146" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_model::model%list</text>
-</a>
-</g>
-</g>
-<!-- proc~list&#45;&gt;pair_type -->
-<g id="call~~graph~~CallGraph_edge3" class="edge">
-<title>proc~list&#45;&gt;pair_type</title>
-<path fill="none" stroke="transparent" d="M230.64,-102.53C278.85,-106.29 337.29,-110.86 375.5,-113.84"/>
-<polygon fill="transparent" stroke="transparent" points="375.47,-117.35 385.71,-114.64 376.01,-110.37 375.47,-117.35"/>
-</g>
-<!-- proc~list&#45;&gt;request -->
-<g id="call~~graph~~CallGraph_edge4" class="edge">
-<title>proc~list&#45;&gt;request</title>
-<path fill="none" stroke="transparent" d="M230.64,-89.47C280.69,-85.56 341.75,-80.8 379.76,-77.83"/>
-<polygon fill="transparent" stroke="transparent" points="380.15,-81.31 389.85,-77.04 379.6,-74.33 380.15,-81.31"/>
-</g>
-<!-- proc~retrieve -->
+<!-- proc~deallocate_api_key -->
 <g id="call~~graph~~CallGraph_node4" class="node">
-<title>proc~retrieve</title>
-<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/retrieve.html" xlink:title="foropenai_model::model%retrieve">
-<polygon fill="#d9534f" stroke="#d9534f" points="243.5,-66 48.5,-66 48.5,-42 243.5,-42 243.5,-66"/>
-<text text-anchor="middle" x="146" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_model::model%retrieve</text>
+<title>proc~deallocate_api_key</title>
+<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/deallocate_api_key.html" xlink:title="foropenai_base::openai%deallocate_api_key">
+<polygon fill="#d9534f" stroke="#d9534f" points="893.5,-734 643.5,-734 643.5,-710 893.5,-710 893.5,-734"/>
+<text text-anchor="middle" x="768.5" y="-719.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%deallocate_api_key</text>
 </a>
 </g>
 </g>
-<!-- proc~retrieve&#45;&gt;pair_type -->
-<g id="call~~graph~~CallGraph_edge5" class="edge">
-<title>proc~retrieve&#45;&gt;pair_type</title>
-<path fill="none" stroke="#025563" d="M243.79,-62.73C260.15,-65.7 276.75,-69.68 292,-75 309.49,-81.11 310.81,-89.11 328,-96 343.16,-102.08 360.53,-106.68 375.81,-110.01"/>
-<polygon fill="#025563" stroke="#025563" points="375.5,-113.52 386,-112.11 376.91,-106.66 375.5,-113.52"/>
+<!-- proc~deallocate_chatcompletion -->
+<g id="call~~graph~~CallGraph_node5" class="node">
+<title>proc~deallocate_chatcompletion</title>
+<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/deallocate_chatcompletion.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_ChatCompletion">
+<polygon fill="#d9534f" stroke="#d9534f" points="464.5,-860 58.5,-860 58.5,-836 464.5,-836 464.5,-860"/>
+<text text-anchor="middle" x="261.5" y="-845.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_ChatCompletion</text>
+</a>
 </g>
-<!-- proc~retrieve&#45;&gt;request -->
-<g id="call~~graph~~CallGraph_edge6" class="edge">
-<title>proc~retrieve&#45;&gt;request</title>
-<path fill="none" stroke="#025563" d="M243.74,-61.55C290.97,-65.24 344.96,-69.45 379.71,-72.17"/>
-<polygon fill="#025563" stroke="#025563" points="379.61,-75.67 389.85,-72.96 380.16,-68.69 379.61,-75.67"/>
+</g>
+<!-- proc~deallocate_messages -->
+<g id="call~~graph~~CallGraph_node9" class="node">
+<title>proc~deallocate_messages</title>
+<g id="a_call~~graph~~CallGraph_node9"><a xlink:href=".././proc/deallocate_messages.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_messages">
+<polygon fill="#d9534f" stroke="#d9534f" points="955,-944 582,-944 582,-920 955,-920 955,-944"/>
+<text text-anchor="middle" x="768.5" y="-929.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_messages</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_messages -->
+<g id="call~~graph~~CallGraph_edge17" class="edge">
+<title>proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_messages</title>
+<path fill="none" stroke="transparent" d="M310.99,-860C369.46,-874.08 470.87,-897.24 559,-911 577.83,-913.94 597.69,-916.56 617.37,-918.86"/>
+<polygon fill="transparent" stroke="transparent" points="616.99,-922.34 627.32,-920 617.78,-915.38 616.99,-922.34"/>
+</g>
+<!-- proc~deallocate_model -->
+<g id="call~~graph~~CallGraph_node10" class="node">
+<title>proc~deallocate_model</title>
+<g id="a_call~~graph~~CallGraph_node10"><a xlink:href=".././proc/deallocate_model.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="945.5,-902 591.5,-902 591.5,-878 945.5,-878 945.5,-902"/>
+<text text-anchor="middle" x="768.5" y="-887.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_model</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_model -->
+<g id="call~~graph~~CallGraph_edge18" class="edge">
+<title>proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_model</title>
+<path fill="none" stroke="transparent" d="M406.87,-860.01C471.34,-865.37 547.39,-871.69 613,-877.15"/>
+<polygon fill="transparent" stroke="transparent" points="612.76,-880.64 623.02,-877.98 613.34,-873.67 612.76,-880.64"/>
+</g>
+<!-- proc~deallocate_model_list -->
+<g id="call~~graph~~CallGraph_node11" class="node">
+<title>proc~deallocate_model_list</title>
+<g id="a_call~~graph~~CallGraph_node11"><a xlink:href=".././proc/deallocate_model_list.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_model_list">
+<polygon fill="#d9534f" stroke="#d9534f" points="955.5,-860 581.5,-860 581.5,-836 955.5,-836 955.5,-860"/>
+<text text-anchor="middle" x="768.5" y="-845.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_model_list</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_model_list -->
+<g id="call~~graph~~CallGraph_edge19" class="edge">
+<title>proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_model_list</title>
+<path fill="none" stroke="transparent" d="M464.63,-848C499.74,-848 536.21,-848 571.16,-848"/>
+<polygon fill="transparent" stroke="transparent" points="571.46,-851.5 581.46,-848 571.46,-844.5 571.46,-851.5"/>
+</g>
+<!-- proc~deallocate_url -->
+<g id="call~~graph~~CallGraph_node16" class="node">
+<title>proc~deallocate_url</title>
+<g id="a_call~~graph~~CallGraph_node16"><a xlink:href=".././proc/deallocate_url.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="935.5,-818 601.5,-818 601.5,-794 935.5,-794 935.5,-818"/>
+<text text-anchor="middle" x="768.5" y="-803.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_url</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_url -->
+<g id="call~~graph~~CallGraph_edge20" class="edge">
+<title>proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_url</title>
+<path fill="none" stroke="transparent" d="M406.87,-835.99C471.34,-830.63 547.39,-824.31 613,-818.85"/>
+<polygon fill="transparent" stroke="transparent" points="613.34,-822.33 623.02,-818.02 612.76,-815.36 613.34,-822.33"/>
+</g>
+<!-- proc~deallocate_user_name -->
+<g id="call~~graph~~CallGraph_node17" class="node">
+<title>proc~deallocate_user_name</title>
+<g id="a_call~~graph~~CallGraph_node17"><a xlink:href=".././proc/deallocate_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%deallocate_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="958,-776 579,-776 579,-752 958,-752 958,-776"/>
+<text text-anchor="middle" x="768.5" y="-761.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%deallocate_user_name</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_user_name -->
+<g id="call~~graph~~CallGraph_edge21" class="edge">
+<title>proc~deallocate_chatcompletion&#45;&gt;proc~deallocate_user_name</title>
+<path fill="none" stroke="transparent" d="M310.99,-836C369.46,-821.92 470.87,-798.76 559,-785 577.83,-782.06 597.69,-779.44 617.37,-777.14"/>
+<polygon fill="transparent" stroke="transparent" points="617.78,-780.62 627.32,-776 616.99,-773.66 617.78,-780.62"/>
+</g>
+<!-- proc~deallocate_chatcompletion_messages -->
+<g id="call~~graph~~CallGraph_node6" class="node">
+<title>proc~deallocate_chatcompletion_messages</title>
+<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././proc/deallocate_chatcompletion_messages.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%deallocate_ChatCompletion_messages">
+<polygon fill="#d9534f" stroke="#d9534f" points="523,-1028 0,-1028 0,-1004 523,-1004 523,-1028"/>
+<text text-anchor="middle" x="261.5" y="-1013.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%deallocate_ChatCompletion_messages</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_content -->
+<g id="call~~graph~~CallGraph_node7" class="node">
+<title>proc~deallocate_content</title>
+<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././proc/deallocate_content.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%deallocate_content">
+<polygon fill="#d9534f" stroke="#d9534f" points="978,-1070 559,-1070 559,-1046 978,-1046 978,-1070"/>
+<text text-anchor="middle" x="768.5" y="-1055.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%deallocate_content</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_content -->
+<g id="call~~graph~~CallGraph_edge22" class="edge">
+<title>proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_content</title>
+<path fill="none" stroke="transparent" d="M413.35,-1028.03C449.28,-1030.93 487.51,-1034.05 523,-1037 554.03,-1039.58 587.27,-1042.4 618.94,-1045.11"/>
+<polygon fill="transparent" stroke="transparent" points="618.89,-1048.62 629.16,-1045.99 619.49,-1041.65 618.89,-1048.62"/>
+</g>
+<!-- proc~deallocate_name -->
+<g id="call~~graph~~CallGraph_node12" class="node">
+<title>proc~deallocate_name</title>
+<g id="a_call~~graph~~CallGraph_node12"><a xlink:href=".././proc/deallocate_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%deallocate_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="973,-1028 564,-1028 564,-1004 973,-1004 973,-1028"/>
+<text text-anchor="middle" x="768.5" y="-1013.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%deallocate_name</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_name -->
+<g id="call~~graph~~CallGraph_edge23" class="edge">
+<title>proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_name</title>
+<path fill="none" stroke="transparent" d="M523.14,-1016C533.36,-1016 543.56,-1016 553.67,-1016"/>
+<polygon fill="transparent" stroke="transparent" points="553.76,-1019.5 563.76,-1016 553.76,-1012.5 553.76,-1019.5"/>
+</g>
+<!-- proc~deallocate_role -->
+<g id="call~~graph~~CallGraph_node15" class="node">
+<title>proc~deallocate_role</title>
+<g id="a_call~~graph~~CallGraph_node15"><a xlink:href=".././proc/deallocate_role.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%deallocate_role">
+<polygon fill="#d9534f" stroke="#d9534f" points="968,-986 569,-986 569,-962 968,-962 968,-986"/>
+<text text-anchor="middle" x="768.5" y="-971.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%deallocate_role</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_role -->
+<g id="call~~graph~~CallGraph_edge24" class="edge">
+<title>proc~deallocate_chatcompletion_messages&#45;&gt;proc~deallocate_role</title>
+<path fill="none" stroke="transparent" d="M406.87,-1003.99C471.34,-998.63 547.39,-992.31 613,-986.85"/>
+<polygon fill="transparent" stroke="transparent" points="613.34,-990.33 623.02,-986.02 612.76,-983.36 613.34,-990.33"/>
+</g>
+<!-- proc~deallocate_file_name -->
+<g id="call~~graph~~CallGraph_node8" class="node">
+<title>proc~deallocate_file_name</title>
+<g id="a_call~~graph~~CallGraph_node8"><a xlink:href=".././proc/deallocate_file_name.html" xlink:title="foropenai_base::openai%deallocate_file_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="899.5,-692 637.5,-692 637.5,-668 899.5,-668 899.5,-692"/>
+<text text-anchor="middle" x="768.5" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%deallocate_file_name</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_openai -->
+<g id="call~~graph~~CallGraph_node13" class="node">
+<title>proc~deallocate_openai</title>
+<g id="a_call~~graph~~CallGraph_node13"><a xlink:href=".././proc/deallocate_openai.html" xlink:title="foropenai_base::openai%deallocate_openai">
+<polygon fill="#d9534f" stroke="#d9534f" points="385,-692 138,-692 138,-668 385,-668 385,-692"/>
+<text text-anchor="middle" x="261.5" y="-677.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%deallocate_openai</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_openai&#45;&gt;proc~deallocate_api_key -->
+<g id="call~~graph~~CallGraph_edge25" class="edge">
+<title>proc~deallocate_openai&#45;&gt;proc~deallocate_api_key</title>
+<path fill="none" stroke="transparent" d="M385.07,-690.19C460.08,-696.43 556.13,-704.42 633.2,-710.83"/>
+<polygon fill="transparent" stroke="transparent" points="633.21,-714.34 643.47,-711.68 633.79,-707.37 633.21,-714.34"/>
+</g>
+<!-- proc~deallocate_openai&#45;&gt;proc~deallocate_file_name -->
+<g id="call~~graph~~CallGraph_edge26" class="edge">
+<title>proc~deallocate_openai&#45;&gt;proc~deallocate_file_name</title>
+<path fill="none" stroke="transparent" d="M385.07,-680C458.13,-680 551.14,-680 627.14,-680"/>
+<polygon fill="transparent" stroke="transparent" points="627.27,-683.5 637.27,-680 627.27,-676.5 627.27,-683.5"/>
+</g>
+<!-- proc~deallocate_organization -->
+<g id="call~~graph~~CallGraph_node14" class="node">
+<title>proc~deallocate_organization</title>
+<g id="a_call~~graph~~CallGraph_node14"><a xlink:href=".././proc/deallocate_organization.html" xlink:title="foropenai_base::openai%deallocate_organization">
+<polygon fill="#d9534f" stroke="#d9534f" points="907,-650 630,-650 630,-626 907,-626 907,-650"/>
+<text text-anchor="middle" x="768.5" y="-635.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%deallocate_organization</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_openai&#45;&gt;proc~deallocate_organization -->
+<g id="call~~graph~~CallGraph_edge27" class="edge">
+<title>proc~deallocate_openai&#45;&gt;proc~deallocate_organization</title>
+<path fill="none" stroke="transparent" d="M385.07,-669.81C455.61,-663.94 544.75,-656.53 619.22,-650.33"/>
+<polygon fill="transparent" stroke="transparent" points="619.95,-653.78 629.62,-649.47 619.37,-646.81 619.95,-653.78"/>
+</g>
+<!-- proc~init_messages&#45;&gt;messages -->
+<g id="call~~graph~~CallGraph_edge28" class="edge">
+<title>proc~init_messages&#45;&gt;messages</title>
+<path fill="none" stroke="#282550" d="M909.11,-356.03C932.17,-358.6 955.8,-361.59 978,-365 1037.38,-374.13 1105.25,-389.01 1147.86,-398.9"/>
+<polygon fill="#282550" stroke="#282550" points="1147.33,-402.37 1157.87,-401.24 1148.92,-395.55 1147.33,-402.37"/>
+</g>
+<!-- proc~load_api_key -->
+<g id="call~~graph~~CallGraph_node19" class="node">
+<title>proc~load_api_key</title>
+<g id="a_call~~graph~~CallGraph_node19"><a xlink:href=".././proc/load_api_key.html" xlink:title="foropenai_base::openai%load_api_key">
+<polygon fill="#d9534f" stroke="#d9534f" points="1299.5,-318 1082.5,-318 1082.5,-294 1299.5,-294 1299.5,-318"/>
+<text text-anchor="middle" x="1191" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%load_api_key</text>
+</a>
+</g>
+</g>
+<!-- proc~load_api_key&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge29" class="edge">
+<title>proc~load_api_key&#45;&gt;get</title>
+<path fill="none" stroke="#025500" d="M1299.88,-304.42C1323.16,-301.02 1347.06,-295.07 1368,-285 1388.2,-275.29 1405.9,-256.61 1417.53,-242.1"/>
+<polygon fill="#025500" stroke="#025500" points="1420.33,-244.21 1423.66,-234.14 1414.79,-239.94 1420.33,-244.21"/>
+</g>
+<!-- load_file -->
+<g id="call~~graph~~CallGraph_node61" class="node">
+<title>load_file</title>
+<polygon fill="#777777" stroke="#777777" points="1462,-192 1404,-192 1404,-168 1462,-168 1462,-192"/>
+<text text-anchor="middle" x="1433" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">load_file</text>
+</g>
+<!-- proc~load_api_key&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge30" class="edge">
+<title>proc~load_api_key&#45;&gt;load_file</title>
+<path fill="none" stroke="#025500" d="M1299.69,-310.72C1324.02,-307.23 1348.41,-299.66 1368,-285 1400.52,-260.67 1378.9,-232.94 1404,-201 1404.48,-200.39 1404.98,-199.79 1405.5,-199.2"/>
+<polygon fill="#025500" stroke="#025500" points="1408.15,-201.5 1413.01,-192.09 1403.34,-196.42 1408.15,-201.5"/>
+</g>
+<!-- proc~load_base_data -->
+<g id="call~~graph~~CallGraph_node20" class="node">
+<title>proc~load_base_data</title>
+<g id="a_call~~graph~~CallGraph_node20"><a xlink:href=".././proc/load_base_data.html" xlink:title="foropenai_base::openai%load_base_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="884.5,-276 652.5,-276 652.5,-252 884.5,-252 884.5,-276"/>
+<text text-anchor="middle" x="768.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%load_base_data</text>
+</a>
+</g>
+</g>
+<!-- proc~load_base_data&#45;&gt;proc~load_api_key -->
+<g id="call~~graph~~CallGraph_edge31" class="edge">
+<title>proc~load_base_data&#45;&gt;proc~load_api_key</title>
+<path fill="none" stroke="#025528" d="M884.68,-275.5C942.95,-281.32 1013.56,-288.38 1072.19,-294.23"/>
+<polygon fill="#025528" stroke="#025528" points="1071.94,-297.73 1082.24,-295.24 1072.64,-290.76 1071.94,-297.73"/>
+</g>
+<!-- proc~load_organization -->
+<g id="call~~graph~~CallGraph_node24" class="node">
+<title>proc~load_organization</title>
+<g id="a_call~~graph~~CallGraph_node24"><a xlink:href=".././proc/load_organization.html" xlink:title="foropenai_base::openai%load_organization">
+<polygon fill="#d9534f" stroke="#d9534f" points="1313,-276 1069,-276 1069,-252 1313,-252 1313,-276"/>
+<text text-anchor="middle" x="1191" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%load_organization</text>
+</a>
+</g>
+</g>
+<!-- proc~load_base_data&#45;&gt;proc~load_organization -->
+<g id="call~~graph~~CallGraph_edge32" class="edge">
+<title>proc~load_base_data&#45;&gt;proc~load_organization</title>
+<path fill="none" stroke="#025528" d="M884.68,-264C938.47,-264 1002.78,-264 1058.48,-264"/>
+<polygon fill="#025528" stroke="#025528" points="1058.77,-267.5 1068.77,-264 1058.77,-260.5 1058.77,-267.5"/>
+</g>
+<!-- proc~set_file_name -->
+<g id="call~~graph~~CallGraph_node43" class="node">
+<title>proc~set_file_name</title>
+<g id="a_call~~graph~~CallGraph_node43"><a xlink:href=".././proc/set_file_name.html" xlink:title="foropenai_base::openai%set_file_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="1302,-360 1080,-360 1080,-336 1302,-336 1302,-360"/>
+<text text-anchor="middle" x="1191" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%set_file_name</text>
+</a>
+</g>
+</g>
+<!-- proc~load_base_data&#45;&gt;proc~set_file_name -->
+<g id="call~~graph~~CallGraph_edge33" class="edge">
+<title>proc~load_base_data&#45;&gt;proc~set_file_name</title>
+<path fill="none" stroke="#025528" d="M884.7,-264.52C916.21,-268.29 949.5,-275.83 978,-290 998.54,-300.22 993.43,-316.84 1014,-327 1031.15,-335.47 1050.35,-341.07 1069.59,-344.69"/>
+<polygon fill="#025528" stroke="#025528" points="1069.2,-348.17 1079.65,-346.4 1070.38,-341.27 1069.2,-348.17"/>
+</g>
+<!-- proc~load_max_tokens -->
+<g id="call~~graph~~CallGraph_node22" class="node">
+<title>proc~load_max_tokens</title>
+<g id="a_call~~graph~~CallGraph_node22"><a xlink:href=".././proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="1366.5,-234 1015.5,-234 1015.5,-210 1366.5,-210 1366.5,-234"/>
+<text text-anchor="middle" x="1191" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_max_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_max_tokens -->
+<g id="call~~graph~~CallGraph_edge34" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_max_tokens</title>
+<path fill="none" stroke="#025556" d="M809.37,-150.02C857.46,-164.12 940.97,-187.3 1014,-201 1029.01,-203.82 1044.81,-206.33 1060.54,-208.55"/>
+<polygon fill="#025556" stroke="#025556" points="1060.47,-212.08 1070.86,-209.97 1061.43,-205.14 1060.47,-212.08"/>
+</g>
+<!-- proc~load_model -->
+<g id="call~~graph~~CallGraph_node23" class="node">
+<title>proc~load_model</title>
+<g id="a_call~~graph~~CallGraph_node23"><a xlink:href=".././proc/load_model.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="1351.5,-192 1030.5,-192 1030.5,-168 1351.5,-168 1351.5,-192"/>
+<text text-anchor="middle" x="1191" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_model</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_model -->
+<g id="call~~graph~~CallGraph_edge35" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_model</title>
+<path fill="none" stroke="#025556" d="M889.72,-150.01C942.84,-155.31 1005.42,-161.56 1059.67,-166.98"/>
+<polygon fill="#025556" stroke="#025556" points="1059.4,-170.47 1069.69,-167.98 1060.09,-163.51 1059.4,-170.47"/>
+</g>
+<!-- proc~load_temperature -->
+<g id="call~~graph~~CallGraph_node25" class="node">
+<title>proc~load_temperature</title>
+<g id="a_call~~graph~~CallGraph_node25"><a xlink:href=".././proc/load_temperature.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="1368,-150 1014,-150 1014,-126 1368,-126 1368,-150"/>
+<text text-anchor="middle" x="1191" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_temperature</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_temperature -->
+<g id="call~~graph~~CallGraph_edge36" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_temperature</title>
+<path fill="none" stroke="#025556" d="M970.21,-138C981.37,-138 992.57,-138 1003.68,-138"/>
+<polygon fill="#025556" stroke="#025556" points="1003.86,-141.5 1013.86,-138 1003.86,-134.5 1003.86,-141.5"/>
+</g>
+<!-- proc~load_url -->
+<g id="call~~graph~~CallGraph_node26" class="node">
+<title>proc~load_url</title>
+<g id="a_call~~graph~~CallGraph_node26"><a xlink:href=".././proc/load_url.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="1341.5,-24 1040.5,-24 1040.5,0 1341.5,0 1341.5,-24"/>
+<text text-anchor="middle" x="1191" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_url</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_url -->
+<g id="call~~graph~~CallGraph_edge37" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_url</title>
+<path fill="none" stroke="#025556" d="M791.64,-125.9C833.64,-103.56 928.33,-55.99 1014,-33 1024.02,-30.31 1034.46,-27.96 1045.03,-25.92"/>
+<polygon fill="#025556" stroke="#025556" points="1045.99,-29.3 1055.19,-24.05 1044.72,-22.42 1045.99,-29.3"/>
+</g>
+<!-- proc~load_user_name -->
+<g id="call~~graph~~CallGraph_node27" class="node">
+<title>proc~load_user_name</title>
+<g id="a_call~~graph~~CallGraph_node27"><a xlink:href=".././proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="1364,-66 1018,-66 1018,-42 1364,-42 1364,-66"/>
+<text text-anchor="middle" x="1191" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_user_name</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_user_name -->
+<g id="call~~graph~~CallGraph_edge38" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_user_name</title>
+<path fill="none" stroke="#025556" d="M809.37,-125.98C857.46,-111.88 940.97,-88.7 1014,-75 1029.01,-72.18 1044.81,-69.67 1060.54,-67.45"/>
+<polygon fill="#025556" stroke="#025556" points="1061.43,-70.86 1070.86,-66.03 1060.47,-63.92 1061.43,-70.86"/>
+</g>
+<!-- set_file_name -->
+<g id="call~~graph~~CallGraph_node67" class="node">
+<title>set_file_name</title>
+<polygon fill="#777777" stroke="#777777" points="1234,-108 1148,-108 1148,-84 1234,-84 1234,-108"/>
+<text text-anchor="middle" x="1191" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_file_name</text>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;set_file_name -->
+<g id="call~~graph~~CallGraph_edge39" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;set_file_name</title>
+<path fill="none" stroke="#025556" d="M889.72,-125.99C971.63,-117.81 1076.02,-107.38 1137.67,-101.23"/>
+<polygon fill="#025556" stroke="#025556" points="1138.32,-104.68 1147.93,-100.2 1137.63,-97.71 1138.32,-104.68"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge40" class="edge">
+<title>proc~load_max_tokens&#45;&gt;get</title>
+<path fill="none" stroke="#025585" d="M1366.74,-222C1377.22,-222 1387,-222 1395.63,-222"/>
+<polygon fill="#025585" stroke="#025585" points="1395.91,-225.5 1405.91,-222 1395.91,-218.5 1395.91,-225.5"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge41" class="edge">
+<title>proc~load_max_tokens&#45;&gt;load_file</title>
+<path fill="none" stroke="#025585" d="M1318.45,-209.98C1335.2,-207.49 1352.08,-204.53 1368,-201 1376.62,-199.09 1385.71,-196.48 1394.26,-193.75"/>
+<polygon fill="#025585" stroke="#025585" points="1395.59,-197 1403.98,-190.53 1393.39,-190.36 1395.59,-197"/>
+</g>
+<!-- proc~load_model&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge42" class="edge">
+<title>proc~load_model&#45;&gt;get</title>
+<path fill="none" stroke="#025511" stroke-opacity="0.011765" d="M1318.45,-192.02C1335.2,-194.51 1352.08,-197.47 1368,-201 1377.31,-203.06 1387.18,-205.94 1396.31,-208.9"/>
+<polygon fill="#025511" fill-opacity="0.011765" stroke="#025511" stroke-opacity="0.011765" points="1395.27,-212.25 1405.86,-212.12 1397.5,-205.61 1395.27,-212.25"/>
+</g>
+<!-- proc~load_model&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge43" class="edge">
+<title>proc~load_model&#45;&gt;load_file</title>
+<path fill="none" stroke="#025511" stroke-opacity="0.011765" d="M1351.75,-180C1367.1,-180 1381.47,-180 1393.69,-180"/>
+<polygon fill="#025511" fill-opacity="0.011765" stroke="#025511" stroke-opacity="0.011765" points="1393.84,-183.5 1403.84,-180 1393.84,-176.5 1393.84,-183.5"/>
+</g>
+<!-- proc~load_organization&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge44" class="edge">
+<title>proc~load_organization&#45;&gt;get</title>
+<path fill="none" stroke="#025514" stroke-opacity="0.003922" d="M1313.25,-252.74C1331.69,-250.1 1350.42,-246.89 1368,-243 1377.31,-240.94 1387.18,-238.06 1396.31,-235.1"/>
+<polygon fill="#025514" fill-opacity="0.003922" stroke="#025514" stroke-opacity="0.003922" points="1397.5,-238.39 1405.86,-231.88 1395.27,-231.75 1397.5,-238.39"/>
+</g>
+<!-- proc~load_organization&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge45" class="edge">
+<title>proc~load_organization&#45;&gt;load_file</title>
+<path fill="none" stroke="#025514" stroke-opacity="0.003922" d="M1313.04,-261.58C1332.17,-257.85 1351.17,-251.99 1368,-243 1389.69,-231.42 1386.06,-217.81 1404,-201 1404.92,-200.14 1405.88,-199.27 1406.86,-198.42"/>
+<polygon fill="#025514" fill-opacity="0.003922" stroke="#025514" stroke-opacity="0.003922" points="1409.09,-201.11 1414.64,-192.09 1404.68,-195.68 1409.09,-201.11"/>
+</g>
+<!-- proc~load_temperature&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge46" class="edge">
+<title>proc~load_temperature&#45;&gt;get</title>
+<path fill="none" stroke="#025516" stroke-opacity="0.035294" d="M1348.04,-150.07C1354.93,-152.64 1361.62,-155.59 1368,-159 1389.69,-170.58 1386.06,-184.19 1404,-201 1404.92,-201.86 1405.88,-202.73 1406.86,-203.58"/>
+<polygon fill="#025516" fill-opacity="0.035294" stroke="#025516" stroke-opacity="0.035294" points="1404.68,-206.32 1414.64,-209.91 1409.09,-200.89 1404.68,-206.32"/>
+</g>
+<!-- proc~load_temperature&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge47" class="edge">
+<title>proc~load_temperature&#45;&gt;load_file</title>
+<path fill="none" stroke="#025516" stroke-opacity="0.035294" d="M1318.45,-150.02C1335.2,-152.51 1352.08,-155.47 1368,-159 1376.62,-160.91 1385.71,-163.52 1394.26,-166.25"/>
+<polygon fill="#025516" fill-opacity="0.035294" stroke="#025516" stroke-opacity="0.035294" points="1393.39,-169.64 1403.98,-169.47 1395.59,-163 1393.39,-169.64"/>
+</g>
+<!-- proc~load_url&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge48" class="edge">
+<title>proc~load_url&#45;&gt;get</title>
+<path fill="none" stroke="#025519" stroke-opacity="0.031373" d="M1341.65,-15.89C1351.23,-20.24 1360.15,-25.85 1368,-33 1424.43,-84.45 1362.84,-136.68 1404,-201 1404.33,-201.51 1404.67,-202.02 1405.03,-202.51"/>
+<polygon fill="#025519" fill-opacity="0.031373" stroke="#025519" stroke-opacity="0.031373" points="1402.51,-204.93 1411.91,-209.81 1407.6,-200.13 1402.51,-204.93"/>
+</g>
+<!-- proc~load_url&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge49" class="edge">
+<title>proc~load_url&#45;&gt;load_file</title>
+<path fill="none" stroke="#025519" stroke-opacity="0.031373" d="M1341.86,-18.42C1351.15,-22.24 1359.98,-27.03 1368,-33 1408.53,-63.15 1423.76,-124.43 1429.19,-157.55"/>
+<polygon fill="#025519" fill-opacity="0.031373" stroke="#025519" stroke-opacity="0.031373" points="1425.76,-158.24 1430.68,-167.62 1432.68,-157.21 1425.76,-158.24"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;get -->
+<g id="call~~graph~~CallGraph_edge50" class="edge">
+<title>proc~load_user_name&#45;&gt;get</title>
+<path fill="none" stroke="#025522" stroke-opacity="0.023529" d="M1355.75,-66.1C1360.04,-68.75 1364.14,-71.71 1368,-75 1412.33,-112.77 1370.98,-153.02 1404,-201 1404.36,-201.52 1404.73,-202.02 1405.11,-202.53"/>
+<polygon fill="#025522" fill-opacity="0.023529" stroke="#025522" stroke-opacity="0.023529" points="1402.88,-205.24 1412.38,-209.93 1407.87,-200.34 1402.88,-205.24"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;load_file -->
+<g id="call~~graph~~CallGraph_edge51" class="edge">
+<title>proc~load_user_name&#45;&gt;load_file</title>
+<path fill="none" stroke="#025522" stroke-opacity="0.023529" d="M1351.74,-66.15C1357.38,-68.74 1362.82,-71.67 1368,-75 1398.17,-94.39 1416.31,-133.55 1425.21,-158.18"/>
+<polygon fill="#025522" fill-opacity="0.023529" stroke="#025522" stroke-opacity="0.023529" points="1421.93,-159.41 1428.47,-167.75 1428.56,-157.15 1421.93,-159.41"/>
+</g>
+<!-- proc~print_api_key -->
+<g id="call~~graph~~CallGraph_node28" class="node">
+<title>proc~print_api_key</title>
+<g id="a_call~~graph~~CallGraph_node28"><a xlink:href=".././proc/print_api_key.html" xlink:title="foropenai_base::openai%print_api_key">
+<polygon fill="#d9534f" stroke="#d9534f" points="371,-1070 152,-1070 152,-1046 371,-1046 371,-1070"/>
+<text text-anchor="middle" x="261.5" y="-1055.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%print_api_key</text>
+</a>
+</g>
+</g>
+<!-- proc~print_completion_tokens -->
+<g id="call~~graph~~CallGraph_node29" class="node">
+<title>proc~print_completion_tokens</title>
+<g id="a_call~~graph~~CallGraph_node29"><a xlink:href=".././proc/print_completion_tokens.html" xlink:title="foropenai_ChatCompletion::usage%print_completion_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="429,-1112 94,-1112 94,-1088 429,-1088 429,-1112"/>
+<text text-anchor="middle" x="261.5" y="-1097.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::usage%print_completion_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~print_file_name -->
+<g id="call~~graph~~CallGraph_node30" class="node">
+<title>proc~print_file_name</title>
+<g id="a_call~~graph~~CallGraph_node30"><a xlink:href=".././proc/print_file_name.html" xlink:title="foropenai_base::openai%print_file_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="377,-1154 146,-1154 146,-1130 377,-1130 377,-1154"/>
+<text text-anchor="middle" x="261.5" y="-1139.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%print_file_name</text>
+</a>
+</g>
+</g>
+<!-- proc~print_max_tokens -->
+<g id="call~~graph~~CallGraph_node31" class="node">
+<title>proc~print_max_tokens</title>
+<g id="a_call~~graph~~CallGraph_node31"><a xlink:href=".././proc/print_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_max_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="437.5,-1196 85.5,-1196 85.5,-1172 437.5,-1172 437.5,-1196"/>
+<text text-anchor="middle" x="261.5" y="-1181.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_max_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~print_model -->
+<g id="call~~graph~~CallGraph_node32" class="node">
+<title>proc~print_model</title>
+<g id="a_call~~graph~~CallGraph_node32"><a xlink:href=".././proc/print_model.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="422.5,-1238 100.5,-1238 100.5,-1214 422.5,-1214 422.5,-1238"/>
+<text text-anchor="middle" x="261.5" y="-1223.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_model</text>
+</a>
+</g>
+</g>
+<!-- proc~print_model_list -->
+<g id="call~~graph~~CallGraph_node33" class="node">
+<title>proc~print_model_list</title>
+<g id="a_call~~graph~~CallGraph_node33"><a xlink:href=".././proc/print_model_list.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_model_list">
+<polygon fill="#d9534f" stroke="#d9534f" points="433,-1331 90,-1331 90,-1307 433,-1307 433,-1331"/>
+<text text-anchor="middle" x="261.5" y="-1316.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_model_list</text>
+</a>
+</g>
+</g>
+<!-- proc~set_model_list -->
+<g id="call~~graph~~CallGraph_node47" class="node">
+<title>proc~set_model_list</title>
+<g id="a_call~~graph~~CallGraph_node47"><a xlink:href=".././proc/set_model_list.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_model_list">
+<polygon fill="#d9534f" stroke="#d9534f" points="935.5,-1310 601.5,-1310 601.5,-1286 935.5,-1286 935.5,-1310"/>
+<text text-anchor="middle" x="768.5" y="-1295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_model_list</text>
+</a>
+</g>
+</g>
+<!-- proc~print_model_list&#45;&gt;proc~set_model_list -->
+<g id="call~~graph~~CallGraph_edge53" class="edge">
+<title>proc~print_model_list&#45;&gt;proc~set_model_list</title>
+<path fill="none" stroke="#011325" stroke-opacity="0.019608" d="M433.12,-1311.9C483.97,-1309.79 539.79,-1307.47 591.01,-1305.34"/>
+<polygon fill="#011325" fill-opacity="0.019608" stroke="#011325" stroke-opacity="0.019608" points="591.35,-1308.83 601.19,-1304.92 591.05,-1301.83 591.35,-1308.83"/>
+</g>
+<!-- model_list -->
+<g id="call~~graph~~CallGraph_node63" class="node">
+<title>model_list</title>
+<polygon fill="#777777" stroke="#777777" points="1224.5,-1310 1157.5,-1310 1157.5,-1286 1224.5,-1286 1224.5,-1310"/>
+<text text-anchor="middle" x="1191" y="-1295.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">model_list</text>
+</g>
+<!-- proc~print_model_list&#45;&gt;model_list -->
+<g id="call~~graph~~CallGraph_edge52" class="edge">
+<title>proc~print_model_list&#45;&gt;model_list</title>
+<path fill="none" stroke="#011325" stroke-opacity="0.019608" d="M433.21,-1323.73C578.24,-1326.61 791.9,-1328.19 978,-1319 1036.87,-1316.09 1104.6,-1308.67 1147.34,-1303.47"/>
+<polygon fill="#011325" fill-opacity="0.019608" stroke="#011325" stroke-opacity="0.019608" points="1147.89,-1306.93 1157.39,-1302.24 1147.04,-1299.99 1147.89,-1306.93"/>
+</g>
+<!-- proc~print_organization -->
+<g id="call~~graph~~CallGraph_node34" class="node">
+<title>proc~print_organization</title>
+<g id="a_call~~graph~~CallGraph_node34"><a xlink:href=".././proc/print_organization.html" xlink:title="foropenai_base::openai%print_organization">
+<polygon fill="#d9534f" stroke="#d9534f" points="384,-1373 139,-1373 139,-1349 384,-1349 384,-1373"/>
+<text text-anchor="middle" x="261.5" y="-1358.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%print_organization</text>
+</a>
+</g>
+</g>
+<!-- proc~print_prompt_tokens -->
+<g id="call~~graph~~CallGraph_node35" class="node">
+<title>proc~print_prompt_tokens</title>
+<g id="a_call~~graph~~CallGraph_node35"><a xlink:href=".././proc/print_prompt_tokens.html" xlink:title="foropenai_ChatCompletion::usage%print_prompt_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="418,-1415 105,-1415 105,-1391 418,-1391 418,-1415"/>
+<text text-anchor="middle" x="261.5" y="-1400.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::usage%print_prompt_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~print_temperature -->
+<g id="call~~graph~~CallGraph_node36" class="node">
+<title>proc~print_temperature</title>
+<g id="a_call~~graph~~CallGraph_node36"><a xlink:href=".././proc/print_temperature.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="439,-1457 84,-1457 84,-1433 439,-1433 439,-1457"/>
+<text text-anchor="middle" x="261.5" y="-1442.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_temperature</text>
+</a>
+</g>
+</g>
+<!-- proc~print_total_tokens -->
+<g id="call~~graph~~CallGraph_node37" class="node">
+<title>proc~print_total_tokens</title>
+<g id="a_call~~graph~~CallGraph_node37"><a xlink:href=".././proc/print_total_tokens.html" xlink:title="foropenai_ChatCompletion::usage%print_total_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="411,-1499 112,-1499 112,-1475 411,-1475 411,-1499"/>
+<text text-anchor="middle" x="261.5" y="-1484.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::usage%print_total_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~print_user_name -->
+<g id="call~~graph~~CallGraph_node38" class="node">
+<title>proc~print_user_name</title>
+<g id="a_call~~graph~~CallGraph_node38"><a xlink:href=".././proc/print_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="435.5,-1541 87.5,-1541 87.5,-1517 435.5,-1517 435.5,-1541"/>
+<text text-anchor="middle" x="261.5" y="-1526.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_user_name</text>
+</a>
+</g>
+</g>
+<!-- proc~read_msg&#45;&gt;colorize -->
+<g id="call~~graph~~CallGraph_edge54" class="edge">
+<title>proc~read_msg&#45;&gt;colorize</title>
+<path fill="none" stroke="#560255" d="M923.69,-470C1006.63,-470 1102.12,-470 1153.2,-470"/>
+<polygon fill="#560255" stroke="#560255" points="1153.41,-473.5 1163.41,-470 1153.41,-466.5 1153.41,-473.5"/>
+</g>
+<!-- proc~select_model -->
+<g id="call~~graph~~CallGraph_node40" class="node">
+<title>proc~select_model</title>
+<g id="a_call~~graph~~CallGraph_node40"><a xlink:href=".././proc/select_model.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%select_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="426,-1280 97,-1280 97,-1256 426,-1256 426,-1280"/>
+<text text-anchor="middle" x="261.5" y="-1265.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%select_model</text>
+</a>
+</g>
+</g>
+<!-- proc~select_model&#45;&gt;proc~set_model_list -->
+<g id="call~~graph~~CallGraph_edge56" class="edge">
+<title>proc~select_model&#45;&gt;proc~set_model_list</title>
+<path fill="none" stroke="#840255" d="M426.11,-1277.72C478.75,-1280.85 537.3,-1284.32 590.83,-1287.5"/>
+<polygon fill="#840255" stroke="#840255" points="590.93,-1291.02 601.12,-1288.12 591.34,-1284.03 590.93,-1291.02"/>
+</g>
+<!-- proc~select_model&#45;&gt;model_list -->
+<g id="call~~graph~~CallGraph_edge55" class="edge">
+<title>proc~select_model&#45;&gt;model_list</title>
+<path fill="none" stroke="#840255" d="M426.04,-1266.06C571.15,-1265.28 788.84,-1266.46 978,-1277 1036.85,-1280.28 1104.58,-1287.61 1147.33,-1292.68"/>
+<polygon fill="#840255" stroke="#840255" points="1147.04,-1296.17 1157.38,-1293.89 1147.87,-1289.22 1147.04,-1296.17"/>
 </g>
 <!-- proc~set_api_key -->
-<g id="call~~graph~~CallGraph_node5" class="node">
+<g id="call~~graph~~CallGraph_node41" class="node">
 <title>proc~set_api_key</title>
-<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/set_api_key.html" xlink:title="foropenai_api_key::set_api_key">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="506,-234 328,-234 328,-210 506,-210 506,-234"/>
-<text text-anchor="middle" x="417" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_api_key::set_api_key</text>
+<g id="a_call~~graph~~CallGraph_node41"><a xlink:href=".././proc/set_api_key.html" xlink:title="foropenai_base::openai%set_api_key">
+<polygon fill="#d9534f" stroke="#d9534f" points="366.5,-1583 156.5,-1583 156.5,-1559 366.5,-1559 366.5,-1583"/>
+<text text-anchor="middle" x="261.5" y="-1568.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%set_api_key</text>
 </a>
 </g>
 </g>
-<!-- program~test1 -->
-<g id="call~~graph~~CallGraph_node6" class="node">
-<title>program~test1</title>
-<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././program/test1.html" xlink:title="test1">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="173,-276 119,-276 119,-252 173,-252 173,-276"/>
-<text text-anchor="middle" x="146" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test1</text>
+<!-- proc~set_content -->
+<g id="call~~graph~~CallGraph_node42" class="node">
+<title>proc~set_content</title>
+<g id="a_call~~graph~~CallGraph_node42"><a xlink:href=".././proc/set_content.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%set_content">
+<polygon fill="#d9534f" stroke="#d9534f" points="451,-1625 72,-1625 72,-1601 451,-1601 451,-1625"/>
+<text text-anchor="middle" x="261.5" y="-1610.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%set_content</text>
 </a>
 </g>
 </g>
-<!-- program~test1&#45;&gt;proc~set_api_key -->
-<g id="call~~graph~~CallGraph_edge7" class="edge">
-<title>program~test1&#45;&gt;proc~set_api_key</title>
-<path fill="none" stroke="#063255" d="M173.22,-260.39C202.29,-256.35 250.54,-249.51 292,-243 306.46,-240.73 321.85,-238.21 336.69,-235.72"/>
-<polygon fill="#063255" stroke="#063255" points="337.57,-239.12 346.86,-234.01 336.41,-232.22 337.57,-239.12"/>
-</g>
-<!-- program~test2 -->
-<g id="call~~graph~~CallGraph_node7" class="node">
-<title>program~test2</title>
-<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././program/test2.html" xlink:title="test2">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="173,-234 119,-234 119,-210 173,-210 173,-234"/>
-<text text-anchor="middle" x="146" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test2</text>
+<!-- proc~set_max_tokens -->
+<g id="call~~graph~~CallGraph_node44" class="node">
+<title>proc~set_max_tokens</title>
+<g id="a_call~~graph~~CallGraph_node44"><a xlink:href=".././proc/set_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_max_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="433,-1667 90,-1667 90,-1643 433,-1643 433,-1667"/>
+<text text-anchor="middle" x="261.5" y="-1652.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_max_tokens</text>
 </a>
 </g>
 </g>
-<!-- program~test2&#45;&gt;proc~set_api_key -->
-<g id="call~~graph~~CallGraph_edge8" class="edge">
-<title>program~test2&#45;&gt;proc~set_api_key</title>
-<path fill="none" stroke="#127025" stroke-opacity="0.019608" d="M173.28,-222C206.62,-222 266,-222 317.69,-222"/>
-<polygon fill="#127025" fill-opacity="0.019608" stroke="#127025" stroke-opacity="0.019608" points="317.91,-225.5 327.91,-222 317.91,-218.5 317.91,-225.5"/>
-</g>
-<!-- program~test3 -->
-<g id="call~~graph~~CallGraph_node8" class="node">
-<title>program~test3</title>
-<g id="a_call~~graph~~CallGraph_node8"><a xlink:href=".././program/test3.html" xlink:title="test3">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="173,-192 119,-192 119,-168 173,-168 173,-192"/>
-<text text-anchor="middle" x="146" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test3</text>
+<!-- proc~set_message -->
+<g id="call~~graph~~CallGraph_node45" class="node">
+<title>proc~set_message</title>
+<g id="a_call~~graph~~CallGraph_node45"><a xlink:href=".././proc/set_message.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%set_message">
+<polygon fill="#d9534f" stroke="#d9534f" points="454.5,-1709 68.5,-1709 68.5,-1685 454.5,-1685 454.5,-1709"/>
+<text text-anchor="middle" x="261.5" y="-1694.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%set_message</text>
 </a>
 </g>
 </g>
-<!-- program~test3&#45;&gt;proc~set_api_key -->
-<g id="call~~graph~~CallGraph_edge9" class="edge">
-<title>program~test3&#45;&gt;proc~set_api_key</title>
-<path fill="none" stroke="#255019" stroke-opacity="0.003922" d="M173.22,-183.61C202.29,-187.65 250.54,-194.49 292,-201 306.46,-203.27 321.85,-205.79 336.69,-208.28"/>
-<polygon fill="#255019" fill-opacity="0.003922" stroke="#255019" stroke-opacity="0.003922" points="336.41,-211.78 346.86,-209.99 337.57,-204.88 336.41,-211.78"/>
+<!-- proc~set_model -->
+<g id="call~~graph~~CallGraph_node46" class="node">
+<title>proc~set_model</title>
+<g id="a_call~~graph~~CallGraph_node46"><a xlink:href=".././proc/set_model.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="418,-1751 105,-1751 105,-1727 418,-1727 418,-1751"/>
+<text text-anchor="middle" x="261.5" y="-1736.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_model</text>
+</a>
+</g>
+</g>
+<!-- proc~set_model_list&#45;&gt;model_list -->
+<g id="call~~graph~~CallGraph_edge57" class="edge">
+<title>proc~set_model_list&#45;&gt;model_list</title>
+<path fill="none" stroke="#255022" stroke-opacity="0.023529" d="M935.69,-1298C1012.42,-1298 1097.34,-1298 1147.06,-1298"/>
+<polygon fill="#255022" fill-opacity="0.023529" stroke="#255022" stroke-opacity="0.023529" points="1147.12,-1301.5 1157.12,-1298 1147.12,-1294.5 1147.12,-1301.5"/>
+</g>
+<!-- proc~set_name -->
+<g id="call~~graph~~CallGraph_node48" class="node">
+<title>proc~set_name</title>
+<g id="a_call~~graph~~CallGraph_node48"><a xlink:href=".././proc/set_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%set_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="446,-1793 77,-1793 77,-1769 446,-1769 446,-1793"/>
+<text text-anchor="middle" x="261.5" y="-1778.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%set_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set_organization -->
+<g id="call~~graph~~CallGraph_node49" class="node">
+<title>proc~set_organization</title>
+<g id="a_call~~graph~~CallGraph_node49"><a xlink:href=".././proc/set_organization.html" xlink:title="foropenai_base::openai%set_organization">
+<polygon fill="#d9534f" stroke="#d9534f" points="379.5,-1835 143.5,-1835 143.5,-1811 379.5,-1811 379.5,-1835"/>
+<text text-anchor="middle" x="261.5" y="-1820.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%set_organization</text>
+</a>
+</g>
+</g>
+<!-- proc~set_role -->
+<g id="call~~graph~~CallGraph_node50" class="node">
+<title>proc~set_role</title>
+<g id="a_call~~graph~~CallGraph_node50"><a xlink:href=".././proc/set_role.html" xlink:title="foropenai_ChatCompletion::ChatCompletion_messages%set_role">
+<polygon fill="#d9534f" stroke="#d9534f" points="440.5,-1877 82.5,-1877 82.5,-1853 440.5,-1853 440.5,-1877"/>
+<text text-anchor="middle" x="261.5" y="-1862.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion_messages%set_role</text>
+</a>
+</g>
+</g>
+<!-- proc~set_temperature -->
+<g id="call~~graph~~CallGraph_node51" class="node">
+<title>proc~set_temperature</title>
+<g id="a_call~~graph~~CallGraph_node51"><a xlink:href=".././proc/set_temperature.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="434.5,-1919 88.5,-1919 88.5,-1895 434.5,-1895 434.5,-1919"/>
+<text text-anchor="middle" x="261.5" y="-1904.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_temperature</text>
+</a>
+</g>
+</g>
+<!-- proc~set_url -->
+<g id="call~~graph~~CallGraph_node52" class="node">
+<title>proc~set_url</title>
+<g id="a_call~~graph~~CallGraph_node52"><a xlink:href=".././proc/set_url.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="408.5,-1961 114.5,-1961 114.5,-1937 408.5,-1937 408.5,-1961"/>
+<text text-anchor="middle" x="261.5" y="-1946.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_url</text>
+</a>
+</g>
+</g>
+<!-- proc~set_user_name -->
+<g id="call~~graph~~CallGraph_node53" class="node">
+<title>proc~set_user_name</title>
+<g id="a_call~~graph~~CallGraph_node53"><a xlink:href=".././proc/set_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="431,-2003 92,-2003 92,-1979 431,-1979 431,-2003"/>
+<text text-anchor="middle" x="261.5" y="-1988.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_user_name</text>
+</a>
+</g>
 </g>
 </g>
 </svg>
-</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+</div>                <script>
+                  var pancallgraphCallGraph = svgPanZoom('#callgraphCallGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
           <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
@@ -338,7 +1159,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-07-30T07:19:58.257384             </p>
+ on 2023-08-30T18:27:26.566848             </p>
           </div>
         </div>
         <br>

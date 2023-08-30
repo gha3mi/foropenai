@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.0.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -55,7 +55,7 @@
                   <li><a href="../lists/modules.html">Modules</a></li>
                   <li><a href="../lists/procedures.html">Procedures</a></li>
                   <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
+                  <li><a href="../program/test_chatcompletion.html">Program</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -71,7 +71,7 @@
                 <a href="../lists/types.html">Derived Types</a>
               </li>
               <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
+                <a href="../program/test_chatcompletion.html">Program</a>
               </li>
           </ul>
             <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="21.7% of total for modules and submodules.">28 statements</a>
+               title="83.0% of total for modules and submodules.">464 statements</a>
           </li>
 
             <li id="source-file">
@@ -145,6 +145,8 @@
       </div>
       <div id="types-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-usage">usage</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-chatcompletion_messages">ChatCompletion_messages</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-chatcompletion">ChatCompletion</a>
         </div>
       </div>
@@ -159,7 +161,47 @@
       </div>
       <div id="subs-0" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-create">create</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-conversation">conversation</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-write_history">write_history</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-read_msg">read_msg</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_chatcompletion_messages">deallocate_ChatCompletion_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_chatcompletion">deallocate_ChatCompletion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_url">deallocate_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_model">deallocate_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_user_name">deallocate_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_chatcompletion_data">load_ChatCompletion_data</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_message">set_message</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_max_tokens">load_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_temperature">load_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_url">load_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_model">load_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_user_name">load_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_model_list">deallocate_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_model_list">set_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_model_list">print_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_temperature">set_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_url">set_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_model">set_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-init_messages">init_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_role">set_role</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_content">set_content</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_name">set_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-check_chat_completion">check_chat_completion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-create_chat_completion">create_chat_completion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_role">deallocate_role</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_content">deallocate_content</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_name">deallocate_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_messages">deallocate_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-select_model">select_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_model">print_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_temperature">print_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_max_tokens">set_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_max_tokens">print_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_user_name">set_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_user_name">print_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_prompt_tokens">print_prompt_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_completion_tokens">print_completion_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_total_tokens">print_total_tokens</a>
         </div>
       </div>
     </div>
@@ -185,8 +227,7 @@
       <ul class="list-group">
           <li class="list-group-item">
             <ul class="list-inline">
-                <li>http</li>
-                <li><a href='../module/foropenai_api_key.html'>foropenai_api_key</a></li>
+                <li><a href='../module/foropenai_base.html'>foropenai_base</a></li>
             </ul>
           </li>
           <li class="list-group-item">
@@ -196,43 +237,31 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~foropenai_chatcompletion~~UsesGraph Pages: 1 -->
-<svg id="moduleforopenai_chatcompletionUsesGraph" width="308pt" height="74pt"
- viewBox="0.00 0.00 308.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~foropenai_chatcompletion~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
+<svg id="moduleforopenai_chatcompletionUsesGraph" width="293pt" height="32pt"
+ viewBox="0.00 0.00 293.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~foropenai_chatcompletion~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>module~~foropenai_chatcompletion~~UsesGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 304,-70 304,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 289,-28 289,4 -4,4"/>
 <!-- module~foropenai_chatcompletion -->
 <g id="module~~foropenai_chatcompletion~~UsesGraph_node1" class="node">
 <title>module~foropenai_chatcompletion</title>
-<polygon fill="none" stroke="black" points="300,-45 145,-45 145,-21 300,-21 300,-45"/>
-<text text-anchor="middle" x="222.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion</text>
+<polygon fill="none" stroke="black" points="285,-24 130,-24 130,0 285,0 285,-24"/>
+<text text-anchor="middle" x="207.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion</text>
 </g>
-<!-- http -->
+<!-- module~foropenai_base -->
 <g id="module~~foropenai_chatcompletion~~UsesGraph_node2" class="node">
-<title>http</title>
-<polygon fill="#337ab7" stroke="#337ab7" points="81.5,-66 27.5,-66 27.5,-42 81.5,-42 81.5,-66"/>
-<text text-anchor="middle" x="54.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">http</text>
-</g>
-<!-- module~foropenai_chatcompletion&#45;&gt;http -->
-<g id="module~~foropenai_chatcompletion~~UsesGraph_edge1" class="edge">
-<title>module~foropenai_chatcompletion&#45;&gt;http</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M144.82,-42.7C126.32,-45.04 107.4,-47.43 91.76,-49.41"/>
-<polygon fill="#255000" stroke="#255000" points="90.99,-45.98 81.51,-50.71 91.87,-52.93 90.99,-45.98"/>
-</g>
-<!-- module~foropenai_api_key -->
-<g id="module~~foropenai_chatcompletion~~UsesGraph_node3" class="node">
-<title>module~foropenai_api_key</title>
-<g id="a_module~~foropenai_chatcompletion~~UsesGraph_node3"><a xlink:href=".././module/foropenai_api_key.html" xlink:title="foropenai_api_key">
-<polygon fill="#337ab7" stroke="#337ab7" points="109,-24 0,-24 0,0 109,0 109,-24"/>
-<text text-anchor="middle" x="54.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_api_key</text>
+<title>module~foropenai_base</title>
+<g id="a_module~~foropenai_chatcompletion~~UsesGraph_node2"><a xlink:href=".././module/foropenai_base.html" xlink:title="foropenai_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-24 0,-24 0,0 94,0 94,-24"/>
+<text text-anchor="middle" x="47" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base</text>
 </a>
 </g>
 </g>
-<!-- module~foropenai_chatcompletion&#45;&gt;module~foropenai_api_key -->
-<g id="module~~foropenai_chatcompletion~~UsesGraph_edge2" class="edge">
-<title>module~foropenai_chatcompletion&#45;&gt;module~foropenai_api_key</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M144.82,-23.3C136.24,-22.21 127.57,-21.12 119.19,-20.06"/>
-<polygon fill="#255000" stroke="#255000" points="119.48,-16.57 109.12,-18.78 118.6,-23.51 119.48,-16.57"/>
+<!-- module~foropenai_chatcompletion&#45;&gt;module~foropenai_base -->
+<g id="module~~foropenai_chatcompletion~~UsesGraph_edge1" class="edge">
+<title>module~foropenai_chatcompletion&#45;&gt;module~foropenai_base</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M129.57,-12C121.03,-12 112.45,-12 104.24,-12"/>
+<polygon fill="#255000" stroke="#255000" points="104.06,-8.5 94.06,-12 104.06,-15.5 104.06,-8.5"/>
 </g>
 </g>
 </svg>
@@ -324,76 +353,46 @@ large graphs.</div>
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: module~~foropenai_chatcompletion~~UsedByGraph Pages: 1 -->
-<svg id="moduleforopenai_chatcompletionUsedByGraph" width="353pt" height="116pt"
- viewBox="0.00 0.00 353.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="module~~foropenai_chatcompletion~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<svg id="moduleforopenai_chatcompletionUsedByGraph" width="323pt" height="74pt"
+ viewBox="0.00 0.00 323.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~foropenai_chatcompletion~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
 <title>module~~foropenai_chatcompletion~~UsedByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 349,-112 349,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 319,-70 319,4 -4,4"/>
 <!-- module~foropenai_chatcompletion -->
 <g id="module~~foropenai_chatcompletion~~UsedByGraph_node1" class="node">
 <title>module~foropenai_chatcompletion</title>
-<polygon fill="none" stroke="black" points="155,-66 0,-66 0,-42 155,-42 155,-66"/>
-<text text-anchor="middle" x="77.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion</text>
+<polygon fill="none" stroke="black" points="155,-45 0,-45 0,-21 155,-21 155,-45"/>
+<text text-anchor="middle" x="77.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion</text>
 </g>
 <!-- module~foropenai -->
 <g id="module~~foropenai_chatcompletion~~UsedByGraph_node2" class="node">
 <title>module~foropenai</title>
 <g id="a_module~~foropenai_chatcompletion~~UsedByGraph_node2"><a xlink:href=".././module/foropenai.html" xlink:title="foropenai">
-<polygon fill="#337ab7" stroke="#337ab7" points="255,-66 191,-66 191,-42 255,-42 255,-66"/>
-<text text-anchor="middle" x="223" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai</text>
+<polygon fill="#337ab7" stroke="#337ab7" points="285,-66 221,-66 221,-42 285,-42 285,-66"/>
+<text text-anchor="middle" x="253" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai</text>
 </a>
 </g>
 </g>
 <!-- module~foropenai&#45;&gt;module~foropenai_chatcompletion -->
 <g id="module~~foropenai_chatcompletion~~UsedByGraph_edge1" class="edge">
 <title>module~foropenai&#45;&gt;module~foropenai_chatcompletion</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M190.86,-54C183.14,-54 174.47,-54 165.48,-54"/>
-<polygon fill="#255000" stroke="#255000" points="165.21,-50.5 155.21,-54 165.21,-57.5 165.21,-50.5"/>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M220.98,-50.25C205.22,-48.34 185.21,-45.92 165.2,-43.49"/>
+<polygon fill="#255000" stroke="#255000" points="165.42,-40 155.08,-42.27 164.58,-46.94 165.42,-40"/>
 </g>
-<!-- program~test1 -->
+<!-- program~test_chatcompletion -->
 <g id="module~~foropenai_chatcompletion~~UsedByGraph_node3" class="node">
-<title>program~test1</title>
-<g id="a_module~~foropenai_chatcompletion~~UsedByGraph_node3"><a xlink:href=".././program/test1.html" xlink:title="test1">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="345,-108 291,-108 291,-84 345,-84 345,-108"/>
-<text text-anchor="middle" x="318" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test1</text>
+<title>program~test_chatcompletion</title>
+<g id="a_module~~foropenai_chatcompletion~~UsedByGraph_node3"><a xlink:href=".././program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="315,-24 191,-24 191,0 315,0 315,-24"/>
+<text text-anchor="middle" x="253" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ChatCompletion</text>
 </a>
 </g>
 </g>
-<!-- program~test1&#45;&gt;module~foropenai -->
+<!-- program~test_chatcompletion&#45;&gt;module~foropenai_chatcompletion -->
 <g id="module~~foropenai_chatcompletion~~UsedByGraph_edge2" class="edge">
-<title>program~test1&#45;&gt;module~foropenai</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M290.6,-84.08C281.06,-79.77 270.12,-74.83 259.91,-70.22"/>
-<polygon fill="#255000" stroke="#255000" points="261.34,-67.02 250.79,-66.1 258.46,-73.4 261.34,-67.02"/>
-</g>
-<!-- program~test2 -->
-<g id="module~~foropenai_chatcompletion~~UsedByGraph_node4" class="node">
-<title>program~test2</title>
-<g id="a_module~~foropenai_chatcompletion~~UsedByGraph_node4"><a xlink:href=".././program/test2.html" xlink:title="test2">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="345,-66 291,-66 291,-42 345,-42 345,-66"/>
-<text text-anchor="middle" x="318" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test2</text>
-</a>
-</g>
-</g>
-<!-- program~test2&#45;&gt;module~foropenai -->
-<g id="module~~foropenai_chatcompletion~~UsedByGraph_edge3" class="edge">
-<title>program~test2&#45;&gt;module~foropenai</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M290.6,-54C282.73,-54 273.92,-54 265.34,-54"/>
-<polygon fill="#255000" stroke="#255000" points="265.08,-50.5 255.08,-54 265.08,-57.5 265.08,-50.5"/>
-</g>
-<!-- program~test3 -->
-<g id="module~~foropenai_chatcompletion~~UsedByGraph_node5" class="node">
-<title>program~test3</title>
-<g id="a_module~~foropenai_chatcompletion~~UsedByGraph_node5"><a xlink:href=".././program/test3.html" xlink:title="test3">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="345,-24 291,-24 291,0 345,0 345,-24"/>
-<text text-anchor="middle" x="318" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test3</text>
-</a>
-</g>
-</g>
-<!-- program~test3&#45;&gt;module~foropenai -->
-<g id="module~~foropenai_chatcompletion~~UsedByGraph_edge4" class="edge">
-<title>program~test3&#45;&gt;module~foropenai</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M290.6,-23.92C281.06,-28.23 270.12,-33.17 259.91,-37.78"/>
-<polygon fill="#255000" stroke="#255000" points="258.46,-34.6 250.79,-41.9 261.34,-40.98 258.46,-34.6"/>
+<title>program~test_chatcompletion&#45;&gt;module~foropenai_chatcompletion</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M190.83,-19.4C182.56,-20.41 173.94,-21.45 165.32,-22.49"/>
+<polygon fill="#255000" stroke="#255000" points="164.74,-19.04 155.23,-23.71 165.58,-25.99 164.74,-19.04"/>
 </g>
 </g>
 </svg>
@@ -495,6 +494,8 @@ large graphs.</div>
       </div>
       <div id="types-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-usage">usage</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-chatcompletion_messages">ChatCompletion_messages</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#type-chatcompletion">ChatCompletion</a>
         </div>
       </div>
@@ -509,7 +510,47 @@ large graphs.</div>
       </div>
       <div id="subs-1" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-create">create</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-conversation">conversation</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-write_history">write_history</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-read_msg">read_msg</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_chatcompletion_messages">deallocate_ChatCompletion_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_chatcompletion">deallocate_ChatCompletion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_url">deallocate_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_model">deallocate_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_user_name">deallocate_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_chatcompletion_data">load_ChatCompletion_data</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_message">set_message</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_max_tokens">load_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_temperature">load_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_url">load_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_model">load_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-load_user_name">load_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_model_list">deallocate_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_model_list">set_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_model_list">print_model_list</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_temperature">set_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_url">set_url</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_model">set_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-init_messages">init_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_role">set_role</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_content">set_content</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_name">set_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-check_chat_completion">check_chat_completion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-create_chat_completion">create_chat_completion</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_role">deallocate_role</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_content">deallocate_content</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_name">deallocate_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_messages">deallocate_messages</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-select_model">select_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_model">print_model</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_temperature">print_temperature</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_max_tokens">set_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_max_tokens">print_max_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-set_user_name">set_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_user_name">print_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_prompt_tokens">print_prompt_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_completion_tokens">print_completion_tokens</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_total_tokens">print_total_tokens</a>
         </div>
       </div>
     </div>
@@ -534,9 +575,277 @@ large graphs.</div>
           <h2>Derived Types</h2>
               <div class="panel panel-default">
     <div class="panel-heading codesum">
+      <span class="anchor" id="type-usage"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/usage.html'>usage</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prompt_tokens"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prompt_tokens</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-completion_tokens"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>completion_tokens</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-total_tokens"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>total_tokens</strong></td>
+<td> =</td>
+                <td>0</td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/usage.html#boundprocedure-print_prompt_tokens'>print_prompt_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/usage.html#boundprocedure-print_completion_tokens'>print_completion_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/usage.html#boundprocedure-print_total_tokens'>print_total_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-chatcompletion_messages"></span>
+      <h3>
+        type, private&nbsp;::&nbsp;
+        <a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-role"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>role</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-content"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>content</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-name"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-deallocate_role'>deallocate_role</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-deallocate_content'>deallocate_content</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-deallocate_name'>deallocate_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-finalize'>finalize</a></strong>
+ =>
+                    <a href='../proc/deallocate_chatcompletion_messages.html'>deallocate_ChatCompletion_messages</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-set'>set</a></strong>
+ =>
+                    <a href='../proc/set_message.html'>set_message</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-set_role'>set_role</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-set_content'>set_content</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion_messages.html#boundprocedure-set_name'>set_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
       <span class="anchor" id="type-chatcompletion"></span>
       <h3>
-        type, public&nbsp;::&nbsp;
+        type, public, extends(<a href='../type/openai.html'>openai</a>)&nbsp;::&nbsp;
         <a href='../type/chatcompletion.html'>ChatCompletion</a>
         
       </h3>
@@ -557,15 +866,185 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-response"></span>
-              type(response_type),
+              <span class="anchor" id="variable-organization"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>organization</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>api_key</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-url"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-model"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>model</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-user_name"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-model_list"></span>
+              character(len=256),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>model_list</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-messages"></span>
+              type(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>messages</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-max_tokens"></span>
+              integer,
             </td>
               <td>public</td>
             <td>
               
             </td>
             <td>::</td>
-            <td><strong>response</strong></td>
+            <td><strong>max_tokens</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-usage"></span>
+              type(<a href='../type/usage.html'>usage</a>),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>usage</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-temperature"></span>
+              real,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>temperature</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -585,7 +1064,341 @@ large graphs.</div>
                 <td>
                     procedure
                     ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-deallocate_api_key'>deallocate_api_key</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-deallocate_organization'>deallocate_organization</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-deallocate_file_name'>deallocate_file_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-load_api_key'>load_api_key</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-load_organization'>load_organization</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-load_base_data'>load_base_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_api_key'>print_api_key</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_organization'>print_organization</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_file_name'>print_file_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_organization'>set_organization</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_api_key'>set_api_key</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_file_name'>set_file_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-check'>check</a></strong>
+ =>
+                    <a href='../proc/check_chat_completion.html'>check_chat_completion</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
 ,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-create'>create</a></strong>
+ =>
+                    <a href='../proc/create_chat_completion.html'>create_chat_completion</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-conversation'>conversation</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_messages'>deallocate_messages</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_model_list'>deallocate_model_list</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_url'>deallocate_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_model'>deallocate_model</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_user_name'>deallocate_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-finalize~2'>finalize</a></strong>
+ =>
+                    <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-init_messages'>init_messages</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_chatcompletion_data'>load_ChatCompletion_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_user_name'>load_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_url'>load_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_model'>load_model</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_temperature'>load_temperature</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-load_max_tokens'>load_max_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-read_msg'>read_msg</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_user_name'>print_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_model_list'>print_model_list</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_model'>print_model</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_temperature'>print_temperature</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_max_tokens'>print_max_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_user_name'>set_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_url'>set_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_model'>set_model</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_model_list'>set_model_list</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-select_model'>select_model</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_temperature'>set_temperature</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-set_max_tokens'>set_max_tokens</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-write_history'>write_history</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -601,7 +1414,1122 @@ large graphs.</div>
         <section>
           <h2>Subroutines</h2>
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-create"></span><h3>private  subroutine <a href='../proc/create.html'>create</a>(this, model, messages)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-conversation"></span><h3>private  subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>config_file</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>input_file</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>output_file</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>inputfile_command</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>exit_command</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-write_history"></span><h3>private  subroutine <a href='../proc/write_history.html'>write_history</a>(this, message, response, file_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>message</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>response</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-read_msg"></span><h3>private  subroutine <a href='../proc/read_msg.html'>read_msg</a>(this, message, file_name, command)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=:),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>message</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>command</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion_messages"></span><h3>private  subroutine <a href='../proc/deallocate_chatcompletion_messages.html'>deallocate_ChatCompletion_messages</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion"></span><h3>private  subroutine <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_url"></span><h3>private elemental subroutine <a href='../proc/deallocate_url.html'>deallocate_url</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model"></span><h3>private elemental subroutine <a href='../proc/deallocate_model.html'>deallocate_model</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_user_name"></span><h3>private elemental subroutine <a href='../proc/deallocate_user_name.html'>deallocate_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_chatcompletion_data"></span><h3>private  subroutine <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>(this, file_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_message"></span><h3>private  subroutine <a href='../proc/set_message.html'>set_message</a>(this, role, content, name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>role</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>content</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_max_tokens"></span><h3>private  subroutine <a href='../proc/load_max_tokens.html'>load_max_tokens</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_temperature"></span><h3>private  subroutine <a href='../proc/load_temperature.html'>load_temperature</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_url"></span><h3>private  subroutine <a href='../proc/load_url.html'>load_url</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_model"></span><h3>private  subroutine <a href='../proc/load_model.html'>load_model</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_user_name"></span><h3>private  subroutine <a href='../proc/load_user_name.html'>load_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model_list"></span><h3>private elemental subroutine <a href='../proc/deallocate_model_list.html'>deallocate_model_list</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model_list"></span><h3>private  subroutine <a href='../proc/set_model_list.html'>set_model_list</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model_list"></span><h3>private  subroutine <a href='../proc/print_model_list.html'>print_model_list</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_temperature"></span><h3>private elemental subroutine <a href='../proc/set_temperature.html'>set_temperature</a>(this, temperature)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>temperature</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_url"></span><h3>private elemental subroutine <a href='../proc/set_url.html'>set_url</a>(this, url)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model"></span><h3>private elemental subroutine <a href='../proc/set_model.html'>set_model</a>(this, model)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -651,6 +2579,107 @@ large graphs.</div>
 
             </td>
         </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-init_messages"></span><h3>private elemental subroutine <a href='../proc/init_messages.html'>init_messages</a>(this, n)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_role"></span><h3>private elemental subroutine <a href='../proc/set_role.html'>set_role</a>(this, role)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
         <tr>
             <td>
               <span class="anchor" ></span>
@@ -661,7 +2690,916 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>messages</strong></td>
+            <td><strong>role</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_content"></span><h3>private elemental subroutine <a href='../proc/set_content.html'>set_content</a>(this, content)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>content</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_name"></span><h3>private elemental subroutine <a href='../proc/set_name.html'>set_name</a>(this, name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-check_chat_completion"></span><h3>private  subroutine <a href='../proc/check_chat_completion.html'>check_chat_completion</a>(this, error)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>error</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-create_chat_completion"></span><h3>private  subroutine <a href='../proc/create_chat_completion.html'>create_chat_completion</a>(this, msg, rsp, conversiation)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>msg</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=:),
+            </td>
+<td>intent(out),</td>
+              <td></td>            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>rsp</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>conversiation</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_role"></span><h3>private elemental subroutine <a href='../proc/deallocate_role.html'>deallocate_role</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_content"></span><h3>private elemental subroutine <a href='../proc/deallocate_content.html'>deallocate_content</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_name"></span><h3>private elemental subroutine <a href='../proc/deallocate_name.html'>deallocate_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion_messages.html'>ChatCompletion_messages</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_messages"></span><h3>private elemental subroutine <a href='../proc/deallocate_messages.html'>deallocate_messages</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-select_model"></span><h3>private  subroutine <a href='../proc/select_model.html'>select_model</a>(this, n)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model"></span><h3>private  subroutine <a href='../proc/print_model.html'>print_model</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_temperature"></span><h3>private  subroutine <a href='../proc/print_temperature.html'>print_temperature</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_max_tokens"></span><h3>private elemental subroutine <a href='../proc/set_max_tokens.html'>set_max_tokens</a>(this, max_tokens)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_tokens</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_max_tokens"></span><h3>private  subroutine <a href='../proc/print_max_tokens.html'>print_max_tokens</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_name"></span><h3>private elemental subroutine <a href='../proc/set_user_name.html'>set_user_name</a>(this, user_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_name"></span><h3>private  subroutine <a href='../proc/print_user_name.html'>print_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_prompt_tokens"></span><h3>private  subroutine <a href='../proc/print_prompt_tokens.html'>print_prompt_tokens</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/usage.html'>usage</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_completion_tokens"></span><h3>private  subroutine <a href='../proc/print_completion_tokens.html'>print_completion_tokens</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/usage.html'>usage</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_total_tokens"></span><h3>private  subroutine <a href='../proc/print_total_tokens.html'>print_total_tokens</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/usage.html'>usage</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
             <td>
 
             </td>
@@ -693,7 +3631,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-07-30T07:19:58.257384             </p>
+ on 2023-08-30T18:27:26.566848             </p>
           </div>
         </div>
         <br>

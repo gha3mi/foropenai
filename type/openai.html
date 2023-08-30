@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.0.0</small></a>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.1.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -55,7 +55,7 @@
                   <li><a href="../lists/modules.html">Modules</a></li>
                   <li><a href="../lists/procedures.html">Procedures</a></li>
                   <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
+                  <li><a href="../program/test_chatcompletion.html">Program</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -71,7 +71,7 @@
                 <a href="../lists/types.html">Derived Types</a>
               </li>
               <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
+                <a href="../program/test_chatcompletion.html">Program</a>
               </li>
           </ul>
             <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -96,21 +96,22 @@
     <div class="col-lg-12">
       <div class="well well-sm">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
 
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p>36.8% of total for derived types.</p>Including implementation: 28 statements, 33.3% of total for derived types.">7 statements</a>
+               title="<p>22.9% of total for derived types.</p>Including implementation: 85 statements, 14.1% of total for derived types.">19 statements</a>
           </li>
 
             <li id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/foropenai.f90"> Source File</a>
+              <a href="../src/foropenai_base.f90"> Source File</a>
             </li>
         </ul>
         <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/foropenai.f90.html'>foropenai.f90</a></li>
-              <li><a href='../module/foropenai.html'>foropenai</a></li>
+              <li><a href='../sourcefile/foropenai_base.f90.html'>foropenai_base.f90</a></li>
+              <li><a href='../module/foropenai_base.html'>foropenai_base</a></li>
           <li class="active">openai</li>
         </ol>
       </div>
@@ -137,9 +138,9 @@
       </div>
       <div id="vars-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../type/openai.html#variable-organization">organization</a>
             <a class="list-group-item" href="../type/openai.html#variable-api_key">api_key</a>
-            <a class="list-group-item" href="../type/openai.html#variable-model~2">model</a>
-            <a class="list-group-item" href="../type/openai.html#variable-chatcompletion">ChatCompletion</a>
+            <a class="list-group-item" href="../type/openai.html#variable-file_name">file_name</a>
         </div>
       </div>
     </div>
@@ -167,7 +168,19 @@
       </div>
       <div id="boundprocs-0" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../type/openai.html#boundprocedure-chat_gpt">chat_gpt</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_api_key">deallocate_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_organization">deallocate_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_file_name">deallocate_file_name</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-finalize~3">finalize</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_api_key">load_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_organization">load_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_base_data">load_base_data</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_api_key">print_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_organization">print_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_file_name">print_file_name</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_organization">set_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_api_key">set_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_file_name">set_file_name</a>
         </div>
       </div>
     </div>
@@ -190,77 +203,40 @@
     
 <br>    <div class="panel panel-default">
       <div class="panel-heading">
-  <h3 class="panel-title">Inherits</h3>
+  <h3 class="panel-title">Inherited by</h3>
       </div>
       <div class="panel-body">
-    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+     <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: type~~openai~~InheritsGraph Pages: 1 -->
-<svg id="typeopenaiInheritsGraph" width="446pt" height="74pt"
- viewBox="0.00 0.00 446.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="type~~openai~~InheritsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
-<title>type~~openai~~InheritsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 442,-70 442,4 -4,4"/>
+<!-- Title: type~~openai~~InheritedByGraph Pages: 1 -->
+<svg id="typeopenaiInheritedByGraph" width="197pt" height="32pt"
+ viewBox="0.00 0.00 197.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="type~~openai~~InheritedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>type~~openai~~InheritedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 193,-28 193,4 -4,4"/>
 <!-- type~openai -->
-<g id="type~~openai~~InheritsGraph_node1" class="node">
+<g id="type~~openai~~InheritedByGraph_node1" class="node">
 <title>type~openai</title>
-<polygon fill="none" stroke="black" points="438,-44 384,-44 384,-20 438,-20 438,-44"/>
-<text text-anchor="middle" x="411" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50">openai</text>
+<polygon fill="none" stroke="black" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">openai</text>
 </g>
 <!-- type~chatcompletion -->
-<g id="type~~openai~~InheritsGraph_node2" class="node">
+<g id="type~~openai~~InheritedByGraph_node2" class="node">
 <title>type~chatcompletion</title>
-<g id="a_type~~openai~~InheritsGraph_node2"><a xlink:href=".././type/chatcompletion.html" xlink:title="ChatCompletion">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="269,-66 170,-66 170,-42 269,-42 269,-66"/>
-<text text-anchor="middle" x="219.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ChatCompletion</text>
+<g id="a_type~~openai~~InheritedByGraph_node2"><a xlink:href=".././type/chatcompletion.html" xlink:title="ChatCompletion">
+<polygon fill="#5cb85c" stroke="#5cb85c" points="189,-24 90,-24 90,0 189,0 189,-24"/>
+<text text-anchor="middle" x="139.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">ChatCompletion</text>
 </a>
 </g>
 </g>
-<!-- type~openai&#45;&gt;type~chatcompletion -->
-<g id="type~~openai~~InheritsGraph_edge2" class="edge">
-<title>type~openai&#45;&gt;type~chatcompletion</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M383.65,-35.06C356.81,-38.18 314.28,-43.11 279.38,-47.16"/>
-<polygon fill="#255000" stroke="#255000" points="278.82,-43.71 269.29,-48.34 279.62,-50.66 278.82,-43.71"/>
-<text text-anchor="middle" x="326.5" y="-48.4" font-family="Helvetica,sans-Serif" font-size="9.50">ChatCompletion</text>
-</g>
-<!-- type~model -->
-<g id="type~~openai~~InheritsGraph_node3" class="node">
-<title>type~model</title>
-<g id="a_type~~openai~~InheritsGraph_node3"><a xlink:href=".././type/model.html" xlink:title="model">
-<polygon fill="#5cb85c" stroke="#5cb85c" points="246.5,-24 192.5,-24 192.5,0 246.5,0 246.5,-24"/>
-<text text-anchor="middle" x="219.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">model</text>
-</a>
-</g>
-</g>
-<!-- type~openai&#45;&gt;type~model -->
-<g id="type~~openai~~InheritsGraph_edge1" class="edge">
-<title>type~openai&#45;&gt;type~model</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M383.72,-23.12C377.94,-21.48 371.81,-19.98 366,-19 329.25,-12.78 286.58,-11.4 257,-11.35"/>
-<polygon fill="#255000" stroke="#255000" points="256.71,-7.85 246.72,-11.39 256.73,-14.85 256.71,-7.85"/>
-<text text-anchor="middle" x="326.5" y="-21.4" font-family="Helvetica,sans-Serif" font-size="9.50">model</text>
-</g>
-<!-- response_type -->
-<g id="type~~openai~~InheritsGraph_node4" class="node">
-<title>response_type</title>
-<polygon fill="#5cb85c" stroke="#5cb85c" points="89,-44 0,-44 0,-20 89,-20 89,-44"/>
-<text text-anchor="middle" x="44.5" y="-29.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">response_type</text>
-</g>
-<!-- type~chatcompletion&#45;&gt;response_type -->
-<g id="type~~openai~~InheritsGraph_edge3" class="edge">
-<title>type~chatcompletion&#45;&gt;response_type</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M169.85,-47.81C147.84,-45.01 121.75,-41.7 99.17,-38.82"/>
-<polygon fill="#255000" stroke="#255000" points="99.43,-35.33 89.07,-37.54 98.54,-42.27 99.43,-35.33"/>
-<text text-anchor="middle" x="129.5" y="-46.4" font-family="Helvetica,sans-Serif" font-size="9.50">response</text>
-</g>
-<!-- type~model&#45;&gt;response_type -->
-<g id="type~~openai~~InheritsGraph_edge4" class="edge">
-<title>type~model&#45;&gt;response_type</title>
-<path fill="none" stroke="#025525" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M192.26,-12.57C169.6,-13.32 136.02,-15.04 107,-19 104.35,-19.36 101.65,-19.77 98.93,-20.22"/>
-<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="98.27,-16.78 89.04,-21.98 99.5,-23.67 98.27,-16.78"/>
-<text text-anchor="middle" x="129.5" y="-21.4" font-family="Helvetica,sans-Serif" font-size="9.50">response</text>
+<!-- type~chatcompletion&#45;&gt;type~openai -->
+<g id="type~~openai~~InheritedByGraph_edge1" class="edge">
+<title>type~chatcompletion&#45;&gt;type~openai</title>
+<path fill="none" stroke="#255000" d="M89.71,-12C81.19,-12 72.46,-12 64.35,-12"/>
+<polygon fill="#255000" stroke="#255000" points="64.11,-8.5 54.11,-12 64.11,-15.5 64.11,-8.5"/>
 </g>
 </g>
 </svg>
@@ -328,9 +304,9 @@ large graphs.</div>
       </div>
       <div id="vars-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../type/openai.html#variable-organization">organization</a>
             <a class="list-group-item" href="../type/openai.html#variable-api_key">api_key</a>
-            <a class="list-group-item" href="../type/openai.html#variable-model~2">model</a>
-            <a class="list-group-item" href="../type/openai.html#variable-chatcompletion">ChatCompletion</a>
+            <a class="list-group-item" href="../type/openai.html#variable-file_name">file_name</a>
         </div>
       </div>
     </div>
@@ -358,7 +334,19 @@ large graphs.</div>
       </div>
       <div id="boundprocs-1" class="panel-collapse collapse">
         <div class="list-group">
-            <a class="list-group-item" href="../type/openai.html#boundprocedure-chat_gpt">chat_gpt</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_api_key">deallocate_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_organization">deallocate_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-deallocate_file_name">deallocate_file_name</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-finalize~3">finalize</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_api_key">load_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_organization">load_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-load_base_data">load_base_data</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_api_key">print_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_organization">print_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-print_file_name">print_file_name</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_organization">set_organization</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_api_key">set_api_key</a>
+            <a class="list-group-item" href="../type/openai.html#boundprocedure-set_file_name">set_file_name</a>
         </div>
       </div>
     </div>
@@ -389,12 +377,29 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-api_key"></span>
-              character(len=256),
+              <span class="anchor" id="variable-organization"></span>
+              character(len=:),
             </td>
-              <td>public</td>
+              <td>public,</td>
             <td>
-              
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>organization</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
             </td>
             <td>::</td>
             <td><strong>api_key</strong></td>
@@ -406,32 +411,15 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-model~2"></span>
-              type(<a href='../type/model.html'>model</a>),
+              <span class="anchor" id="variable-file_name"></span>
+              character(len=:),
             </td>
-              <td>public</td>
+              <td>public,</td>
             <td>
-              
+              allocatable
             </td>
             <td>::</td>
-            <td><strong>model</strong></td>
-                <td></td>
-                <td></td>
-            <td>
-                
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-chatcompletion"></span>
-              type(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
-            </td>
-              <td>public</td>
-            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>ChatCompletion</strong></td>
+            <td><strong>file_name</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -449,12 +437,300 @@ large graphs.</div>
       <section>
         <h2>Type-Bound Procedures</h2>
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-chat_gpt"></span><h3>procedure, public,  :: <strong>chat_gpt</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_api_key"></span><h3>procedure, public,  :: <strong>deallocate_api_key</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/chat_gpt.html'>chat_gpt</a>(this, user_input)  
+    private elemental subroutine <a href='../proc/deallocate_api_key.html'>deallocate_api_key</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_organization"></span><h3>procedure, public,  :: <strong>deallocate_organization</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private elemental subroutine <a href='../proc/deallocate_organization.html'>deallocate_organization</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_file_name"></span><h3>procedure, public,  :: <strong>deallocate_file_name</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private elemental subroutine <a href='../proc/deallocate_file_name.html'>deallocate_file_name</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-finalize~3"></span><h3>procedure, public,  :: <strong>finalize</strong>  => <a href='../proc/deallocate_openai.html'>deallocate_openai</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/deallocate_openai.html'>deallocate_openai</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-load_api_key"></span><h3>procedure, public,  :: <strong>load_api_key</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-load_organization"></span><h3>procedure, public,  :: <strong>load_organization</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/load_organization.html'>load_organization</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-load_base_data"></span><h3>procedure, public,  :: <strong>load_base_data</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/load_base_data.html'>load_base_data</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -491,14 +767,347 @@ large graphs.</div>
         <tr>
             <td>
               <span class="anchor" ></span>
-              character(len=1000),
+              character(len=*),
             </td>
-<td>intent(in),</td>
-              <td>optional</td>            <td>
+<td>intent(in)</td>
+              <td></td>            <td>
               
             </td>
             <td>::</td>
-            <td><strong>user_input</strong></td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_api_key"></span><h3>procedure, public,  :: <strong>print_api_key</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/print_api_key.html'>print_api_key</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_organization"></span><h3>procedure, public,  :: <strong>print_organization</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/print_organization.html'>print_organization</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_file_name"></span><h3>procedure, public,  :: <strong>print_file_name</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/print_file_name.html'>print_file_name</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_organization"></span><h3>procedure, public,  :: <strong>set_organization</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/set_organization.html'>set_organization</a>(this, organization)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>organization</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_api_key"></span><h3>procedure, public,  :: <strong>set_api_key</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/set_api_key.html'>set_api_key</a>(this, api_key)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>api_key</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_file_name"></span><h3>procedure, public,  :: <strong>set_file_name</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private  subroutine <a href='../proc/set_file_name.html'>set_file_name</a>(this, file_name)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
             <td>
 
             </td>
@@ -516,11 +1125,23 @@ large graphs.</div>
     <section>
     <h3><span class="anchor" id="src"></span>Source Code</h3>
     <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">type </span><span class="n">openai</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="mi">256</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">api_key</span><span class="w"></span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="w">          </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span><span class="w"></span>
-<span class="w">      </span><span class="k">type</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ChatCompletion</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">organization</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">api_key</span><span class="w"></span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">file_name</span><span class="w"></span>
 <span class="w">   </span><span class="k">contains</span>
-<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">chat_gpt</span><span class="w"></span>
+<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_api_key</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_organization</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_file_name</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_openai</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_api_key</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_organization</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_base_data</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_api_key</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_organization</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_file_name</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_organization</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_api_key</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_file_name</span><span class="w"></span>
 <span class="w">   </span><span class="k">end type </span><span class="n">openai</span><span class="w"></span>
 </pre></div>
 
@@ -541,7 +1162,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-07-30T07:19:58.257384             </p>
+ on 2023-08-30T18:27:26.566848             </p>
           </div>
         </div>
         <br>
