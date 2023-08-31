@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="83.0% of total for modules and submodules.">464 statements</a>
+               title="83.4% of total for modules and submodules.">477 statements</a>
           </li>
 
             <li id="source-file">
@@ -161,6 +161,8 @@
       </div>
       <div id="subs-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_finish_reason">deallocate_finish_reason</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_finish_reason">print_finish_reason</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-conversation">conversation</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-write_history">write_history</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-read_msg">read_msg</a>
@@ -510,6 +512,8 @@ large graphs.</div>
       </div>
       <div id="subs-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-deallocate_finish_reason">deallocate_finish_reason</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-print_finish_reason">print_finish_reason</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-conversation">conversation</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-write_history">write_history</a>
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-read_msg">read_msg</a>
@@ -1051,6 +1055,23 @@ large graphs.</div>
 
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-finish_reason"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>finish_reason</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -1221,6 +1242,14 @@ large graphs.</div>
                     procedure
                     ,                  public
 ,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_user_name'>deallocate_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-deallocate_finish_reason'>deallocate_finish_reason</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -1402,6 +1431,14 @@ large graphs.</div>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-print_finish_reason'>print_finish_reason</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
           </tbody>
         </table>
     </div>
@@ -1413,6 +1450,92 @@ large graphs.</div>
 
         <section>
           <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_finish_reason"></span><h3>private elemental subroutine <a href='../proc/deallocate_finish_reason.html'>deallocate_finish_reason</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_finish_reason"></span><h3>private  subroutine <a href='../proc/print_finish_reason.html'>print_finish_reason</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
               <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-conversation"></span><h3>private  subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
 </h3></div>
@@ -3631,7 +3754,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T01:20:23.021274             </p>
+ on 2023-08-31T01:50:10.715829             </p>
           </div>
         </div>
         <br>
