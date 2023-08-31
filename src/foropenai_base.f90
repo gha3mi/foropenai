@@ -32,7 +32,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine deallocate_openai(this)
+   pure subroutine deallocate_openai(this)
       class(openai), intent(inout) :: this
       call this%deallocate_api_key()
       call this%deallocate_organization()
@@ -43,7 +43,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_api_key(this)
+   elemental pure subroutine deallocate_api_key(this)
       class(openai), intent(inout) :: this
       if (allocated(this%api_key)) deallocate(this%api_key)
    end subroutine deallocate_api_key
@@ -52,7 +52,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_organization(this)
+   elemental pure subroutine deallocate_organization(this)
       class(openai), intent(inout) :: this
       if (allocated(this%organization)) deallocate(this%organization)
    end subroutine deallocate_organization
@@ -61,7 +61,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_file_name(this)
+   elemental pure subroutine deallocate_file_name(this)
       class(openai), intent(inout) :: this
       if (allocated(this%file_name)) deallocate(this%file_name)
    end subroutine deallocate_file_name
@@ -70,7 +70,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_base_data(this, file_name)
+   elemental impure subroutine load_base_data(this, file_name)
       class(openai),    intent(inout) :: this
       character(len=*), intent(in)    :: file_name
       call this%set_file_name(trim(file_name))
@@ -82,7 +82,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_organization(this, organization)
+   elemental pure subroutine set_organization(this, organization)
       class(openai),    intent(inout) :: this
       character(len=*), intent(in)    :: organization
       this%organization = trim(organization)
@@ -92,7 +92,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_api_key(this, api_key)
+   elemental pure subroutine set_api_key(this, api_key)
       class(openai),    intent(inout) :: this
       character(len=*), intent(in)    :: api_key
       this%api_key = trim(api_key)
@@ -102,7 +102,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_api_key(this)
+   elemental impure subroutine load_api_key(this)
       use json_module, only: json_file
       class(openai), intent(inout) :: this
       type(json_file)              :: json
@@ -114,7 +114,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_file_name(this, file_name)
+   elemental pure subroutine set_file_name(this, file_name)
       class(openai),    intent(inout) :: this
       character(len=*), intent(in)    :: file_name
       this%file_name = trim(file_name)
@@ -124,7 +124,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_organization(this)
+   elemental impure subroutine load_organization(this)
       use json_module, only: json_file
       class(openai), intent(inout) :: this
       type(json_file)              :: json
@@ -136,7 +136,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_api_key(this)
+   elemental impure subroutine print_api_key(this)
       class(openai), intent(inout) :: this
       print "('api key: ',A)", trim(this%api_key)
    end subroutine print_api_key
@@ -145,7 +145,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_organization(this)
+   elemental impure subroutine print_organization(this)
       class(openai), intent(inout) :: this
       print "('organization: ',A)", trim(this%organization)
    end subroutine print_organization
@@ -154,7 +154,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_file_name(this)
+   elemental impure subroutine print_file_name(this)
       class(openai), intent(inout) :: this
       print "('file name: ',A)", trim(this%file_name)
    end subroutine print_file_name
