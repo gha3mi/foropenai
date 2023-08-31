@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="84.0% of total for modules and submodules.">498 statements</a>
+               title="84.2% of total for modules and submodules.">506 statements</a>
           </li>
 
             <li id="source-file">
@@ -161,6 +161,7 @@
       <div id="funcs-0" class="panel-collapse collapse">
         <div class="list-group">
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-get_assistant_response">get_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-get_user_message">get_user_message</a>
         </div>
       </div>
     </div>
@@ -528,6 +529,7 @@ large graphs.</div>
       <div id="funcs-1" class="panel-collapse collapse">
         <div class="list-group">
             <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-get_assistant_response">get_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_chatcompletion.html#proc-get_user_message">get_user_message</a>
         </div>
       </div>
     </div>
@@ -1307,6 +1309,14 @@ large graphs.</div>
                 <td>
                     procedure
                     ,                  public
+,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-get_user_message'>get_user_message</a></strong>
+<small>Function</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
 ,                   :: <strong><a href='../type/chatcompletion.html#boundprocedure-init_messages'>init_messages</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
@@ -1522,7 +1532,7 @@ large graphs.</div>
         <section>
           <h2>Functions</h2>
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-get_assistant_response"></span><h3>private  function <a href='../proc/get_assistant_response.html'>get_assistant_response</a>(this) result(response)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_assistant_response"></span><h3>private pure function <a href='../proc/get_assistant_response.html'>get_assistant_response</a>(this) result(response)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1547,7 +1557,55 @@ large graphs.</div>
               <span class="anchor" ></span>
               class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
             </td>
-<td>intent(inout)</td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>character(len=:), allocatable</small>
+    </h4>
+    
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-get_user_message"></span><h3>private pure function <a href='../proc/get_user_message.html'>get_user_message</a>(this) result(message)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(in)</td>
               <td></td>            <td>
               
             </td>
@@ -1575,7 +1633,7 @@ large graphs.</div>
         <section>
           <h2>Subroutines</h2>
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_message"></span><h3>private  subroutine <a href='../proc/set_user_message.html'>set_user_message</a>(this, message)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_message"></span><h3>private pure elemental subroutine <a href='../proc/set_user_message.html'>set_user_message</a>(this, message)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1633,7 +1691,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_asisstant_response"></span><h3>private  subroutine <a href='../proc/set_asisstant_response.html'>set_asisstant_response</a>(this, response)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_asisstant_response"></span><h3>private pure elemental subroutine <a href='../proc/set_asisstant_response.html'>set_asisstant_response</a>(this, response)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1691,7 +1749,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_assistant_response"></span><h3>private  subroutine <a href='../proc/print_assistant_response.html'>print_assistant_response</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_assistant_response"></span><h3>private impure elemental subroutine <a href='../proc/print_assistant_response.html'>print_assistant_response</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1734,7 +1792,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_message"></span><h3>private  subroutine <a href='../proc/print_user_message.html'>print_user_message</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_message"></span><h3>private impure elemental subroutine <a href='../proc/print_user_message.html'>print_user_message</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1777,7 +1835,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_finish_reason"></span><h3>private elemental subroutine <a href='../proc/deallocate_finish_reason.html'>deallocate_finish_reason</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_finish_reason"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_finish_reason.html'>deallocate_finish_reason</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1820,7 +1878,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_finish_reason"></span><h3>private  subroutine <a href='../proc/print_finish_reason.html'>print_finish_reason</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_finish_reason"></span><h3>private impure elemental subroutine <a href='../proc/print_finish_reason.html'>print_finish_reason</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1863,7 +1921,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-conversation"></span><h3>private  subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-conversation"></span><h3>private impure elemental subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1981,7 +2039,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-write_history"></span><h3>private  subroutine <a href='../proc/write_history.html'>write_history</a>(this, message, response, file_name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-write_history"></span><h3>private impure elemental subroutine <a href='../proc/write_history.html'>write_history</a>(this, file_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2012,36 +2070,6 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>message</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>response</strong></td>
             <td>
 
             </td>
@@ -2069,7 +2097,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-read_user_message"></span><h3>private  subroutine <a href='../proc/read_user_message.html'>read_user_message</a>(this, message, file_name, command)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-read_user_message"></span><h3>private impure elemental subroutine <a href='../proc/read_user_message.html'>read_user_message</a>(this, file_name, command)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2100,21 +2128,6 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=:),
-            </td>
-<td>intent(out),</td>
-              <td></td>            <td>
-              allocatable
-            </td>
-            <td>::</td>
-            <td><strong>message</strong></td>
             <td>
 
             </td>
@@ -2157,7 +2170,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion_messages"></span><h3>private  subroutine <a href='../proc/deallocate_chatcompletion_messages.html'>deallocate_ChatCompletion_messages</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion_messages"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_chatcompletion_messages.html'>deallocate_ChatCompletion_messages</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2200,7 +2213,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion"></span><h3>private  subroutine <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_chatcompletion"></span><h3>private pure subroutine <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2243,7 +2256,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_url"></span><h3>private elemental subroutine <a href='../proc/deallocate_url.html'>deallocate_url</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_url"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_url.html'>deallocate_url</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2286,7 +2299,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model"></span><h3>private elemental subroutine <a href='../proc/deallocate_model.html'>deallocate_model</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_model.html'>deallocate_model</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2329,7 +2342,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_user_name"></span><h3>private elemental subroutine <a href='../proc/deallocate_user_name.html'>deallocate_user_name</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_user_name"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_user_name.html'>deallocate_user_name</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2372,7 +2385,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_chatcompletion_data"></span><h3>private  subroutine <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>(this, file_name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_chatcompletion_data"></span><h3>private impure elemental subroutine <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>(this, file_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2430,7 +2443,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_message"></span><h3>private  subroutine <a href='../proc/set_message.html'>set_message</a>(this, role, content, name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_message"></span><h3>private pure elemental subroutine <a href='../proc/set_message.html'>set_message</a>(this, role, content, name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2518,7 +2531,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_max_tokens"></span><h3>private  subroutine <a href='../proc/load_max_tokens.html'>load_max_tokens</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_max_tokens"></span><h3>private impure elemental subroutine <a href='../proc/load_max_tokens.html'>load_max_tokens</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2561,7 +2574,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_temperature"></span><h3>private  subroutine <a href='../proc/load_temperature.html'>load_temperature</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_temperature"></span><h3>private impure elemental subroutine <a href='../proc/load_temperature.html'>load_temperature</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2604,7 +2617,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_url"></span><h3>private  subroutine <a href='../proc/load_url.html'>load_url</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_url"></span><h3>private impure elemental subroutine <a href='../proc/load_url.html'>load_url</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2647,7 +2660,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_model"></span><h3>private  subroutine <a href='../proc/load_model.html'>load_model</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_model"></span><h3>private impure elemental subroutine <a href='../proc/load_model.html'>load_model</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2690,7 +2703,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_user_name"></span><h3>private  subroutine <a href='../proc/load_user_name.html'>load_user_name</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_user_name"></span><h3>private impure elemental subroutine <a href='../proc/load_user_name.html'>load_user_name</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2733,7 +2746,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model_list"></span><h3>private elemental subroutine <a href='../proc/deallocate_model_list.html'>deallocate_model_list</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_model_list"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_model_list.html'>deallocate_model_list</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2776,7 +2789,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model_list"></span><h3>private  subroutine <a href='../proc/set_model_list.html'>set_model_list</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model_list"></span><h3>private pure elemental subroutine <a href='../proc/set_model_list.html'>set_model_list</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2819,7 +2832,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model_list"></span><h3>private  subroutine <a href='../proc/print_model_list.html'>print_model_list</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model_list"></span><h3>private impure elemental subroutine <a href='../proc/print_model_list.html'>print_model_list</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2862,7 +2875,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_temperature"></span><h3>private elemental subroutine <a href='../proc/set_temperature.html'>set_temperature</a>(this, temperature)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_temperature"></span><h3>private pure elemental subroutine <a href='../proc/set_temperature.html'>set_temperature</a>(this, temperature)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2920,7 +2933,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_url"></span><h3>private elemental subroutine <a href='../proc/set_url.html'>set_url</a>(this, url)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_url"></span><h3>private pure elemental subroutine <a href='../proc/set_url.html'>set_url</a>(this, url)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2978,7 +2991,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model"></span><h3>private elemental subroutine <a href='../proc/set_model.html'>set_model</a>(this, model)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_model"></span><h3>private pure elemental subroutine <a href='../proc/set_model.html'>set_model</a>(this, model)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3036,7 +3049,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-init_messages"></span><h3>private elemental subroutine <a href='../proc/init_messages.html'>init_messages</a>(this, n)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-init_messages"></span><h3>private pure elemental subroutine <a href='../proc/init_messages.html'>init_messages</a>(this, n)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3094,7 +3107,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_role"></span><h3>private elemental subroutine <a href='../proc/set_role.html'>set_role</a>(this, role)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_role"></span><h3>private pure elemental subroutine <a href='../proc/set_role.html'>set_role</a>(this, role)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3152,7 +3165,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_content"></span><h3>private elemental subroutine <a href='../proc/set_content.html'>set_content</a>(this, content)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_content"></span><h3>private pure elemental subroutine <a href='../proc/set_content.html'>set_content</a>(this, content)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3210,7 +3223,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_name"></span><h3>private elemental subroutine <a href='../proc/set_name.html'>set_name</a>(this, name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_name"></span><h3>private pure elemental subroutine <a href='../proc/set_name.html'>set_name</a>(this, name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3268,7 +3281,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-check_chat_completion"></span><h3>private  subroutine <a href='../proc/check_chat_completion.html'>check_chat_completion</a>(this, error)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-check_chat_completion"></span><h3>private impure elemental subroutine <a href='../proc/check_chat_completion.html'>check_chat_completion</a>(this, error)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3326,7 +3339,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-create_chat_completion"></span><h3>private  subroutine <a href='../proc/create_chat_completion.html'>create_chat_completion</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-create_chat_completion"></span><h3>private impure elemental subroutine <a href='../proc/create_chat_completion.html'>create_chat_completion</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3369,7 +3382,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_role"></span><h3>private elemental subroutine <a href='../proc/deallocate_role.html'>deallocate_role</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_role"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_role.html'>deallocate_role</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3412,7 +3425,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_content"></span><h3>private elemental subroutine <a href='../proc/deallocate_content.html'>deallocate_content</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_content"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_content.html'>deallocate_content</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3455,7 +3468,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_name"></span><h3>private elemental subroutine <a href='../proc/deallocate_name.html'>deallocate_name</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_name"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_name.html'>deallocate_name</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3498,7 +3511,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_messages"></span><h3>private elemental subroutine <a href='../proc/deallocate_messages.html'>deallocate_messages</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_messages"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_messages.html'>deallocate_messages</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3541,7 +3554,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-select_model"></span><h3>private  subroutine <a href='../proc/select_model.html'>select_model</a>(this, n)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-select_model"></span><h3>private pure elemental subroutine <a href='../proc/select_model.html'>select_model</a>(this, n)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3599,7 +3612,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model"></span><h3>private  subroutine <a href='../proc/print_model.html'>print_model</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_model"></span><h3>private impure elemental subroutine <a href='../proc/print_model.html'>print_model</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3642,7 +3655,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_temperature"></span><h3>private  subroutine <a href='../proc/print_temperature.html'>print_temperature</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_temperature"></span><h3>private impure elemental subroutine <a href='../proc/print_temperature.html'>print_temperature</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3685,7 +3698,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_max_tokens"></span><h3>private elemental subroutine <a href='../proc/set_max_tokens.html'>set_max_tokens</a>(this, max_tokens)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_max_tokens"></span><h3>private pure elemental subroutine <a href='../proc/set_max_tokens.html'>set_max_tokens</a>(this, max_tokens)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3743,7 +3756,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_max_tokens"></span><h3>private  subroutine <a href='../proc/print_max_tokens.html'>print_max_tokens</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_max_tokens"></span><h3>private impure elemental subroutine <a href='../proc/print_max_tokens.html'>print_max_tokens</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3786,7 +3799,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_name"></span><h3>private elemental subroutine <a href='../proc/set_user_name.html'>set_user_name</a>(this, user_name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_name"></span><h3>private pure elemental subroutine <a href='../proc/set_user_name.html'>set_user_name</a>(this, user_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3844,7 +3857,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_name"></span><h3>private  subroutine <a href='../proc/print_user_name.html'>print_user_name</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_name"></span><h3>private impure elemental subroutine <a href='../proc/print_user_name.html'>print_user_name</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3887,7 +3900,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_prompt_tokens"></span><h3>private  subroutine <a href='../proc/print_prompt_tokens.html'>print_prompt_tokens</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_prompt_tokens"></span><h3>private impure elemental subroutine <a href='../proc/print_prompt_tokens.html'>print_prompt_tokens</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3930,7 +3943,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_completion_tokens"></span><h3>private  subroutine <a href='../proc/print_completion_tokens.html'>print_completion_tokens</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_completion_tokens"></span><h3>private impure elemental subroutine <a href='../proc/print_completion_tokens.html'>print_completion_tokens</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -3973,7 +3986,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-print_total_tokens"></span><h3>private  subroutine <a href='../proc/print_total_tokens.html'>print_total_tokens</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_total_tokens"></span><h3>private impure elemental subroutine <a href='../proc/print_total_tokens.html'>print_total_tokens</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -4035,7 +4048,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T18:55:35.023803             </p>
+ on 2023-08-31T23:52:11.554675             </p>
           </div>
         </div>
         <br>

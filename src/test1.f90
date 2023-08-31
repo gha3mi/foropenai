@@ -34,6 +34,7 @@ program test_ChatCompletion
    call chat%messages(2)%set_role(role='user')
    call chat%messages(2)%set_content(content='Hello?')
    call chat%messages(3)%set_role(role='assistant')
+   call chat%messages(3)%set_content(content='')
    call chat%print_user_message()
    call chat%create()
    call chat%print_assistant_response()

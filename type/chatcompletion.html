@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p>53.8% of total for derived types.</p>Including implementation: 474 statements, 74.5% of total for derived types.">49 statements</a>
+               title="<p>54.3% of total for derived types.</p>Including implementation: 482 statements, 74.8% of total for derived types.">50 statements</a>
           </li>
 
             <li id="source-file">
@@ -200,6 +200,7 @@
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-deallocate_finish_reason">deallocate_finish_reason</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_assistant_response">get_assistant_response</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_user_message">get_user_message</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-init_messages">init_messages</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_chatcompletion_data">load_ChatCompletion_data</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_user_name">load_user_name</a>
@@ -443,6 +444,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-deallocate_finish_reason">deallocate_finish_reason</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_assistant_response">get_assistant_response</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_user_message">get_user_message</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-init_messages">init_messages</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_chatcompletion_data">load_ChatCompletion_data</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_user_name">load_user_name</a>
@@ -717,7 +719,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_api_key.html'>deallocate_api_key</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_api_key.html'>deallocate_api_key</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -765,7 +767,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_organization.html'>deallocate_organization</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_organization.html'>deallocate_organization</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -813,7 +815,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_file_name.html'>deallocate_file_name</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_file_name.html'>deallocate_file_name</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -861,7 +863,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -909,7 +911,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_organization.html'>load_organization</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_organization.html'>load_organization</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -957,7 +959,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_base_data.html'>load_base_data</a>(this, file_name)  
+    private impure elemental subroutine <a href='../proc/load_base_data.html'>load_base_data</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1020,7 +1022,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_api_key.html'>print_api_key</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_api_key.html'>print_api_key</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1068,7 +1070,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_organization.html'>print_organization</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_organization.html'>print_organization</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1116,7 +1118,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_file_name.html'>print_file_name</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_file_name.html'>print_file_name</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1164,7 +1166,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_organization.html'>set_organization</a>(this, organization)  
+    private pure elemental subroutine <a href='../proc/set_organization.html'>set_organization</a>(this, organization)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1227,7 +1229,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_api_key.html'>set_api_key</a>(this, api_key)  
+    private pure elemental subroutine <a href='../proc/set_api_key.html'>set_api_key</a>(this, api_key)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1290,7 +1292,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_file_name.html'>set_file_name</a>(this, file_name)  
+    private pure elemental subroutine <a href='../proc/set_file_name.html'>set_file_name</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1353,7 +1355,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/check_chat_completion.html'>check_chat_completion</a>(this, error)  
+    private impure elemental subroutine <a href='../proc/check_chat_completion.html'>check_chat_completion</a>(this, error)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1416,7 +1418,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/create_chat_completion.html'>create_chat_completion</a>(this)  
+    private impure elemental subroutine <a href='../proc/create_chat_completion.html'>create_chat_completion</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1464,7 +1466,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
+    private impure elemental subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1587,7 +1589,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_messages.html'>deallocate_messages</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_messages.html'>deallocate_messages</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1635,7 +1637,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_model_list.html'>deallocate_model_list</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_model_list.html'>deallocate_model_list</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1683,7 +1685,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_url.html'>deallocate_url</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_url.html'>deallocate_url</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1731,7 +1733,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_model.html'>deallocate_model</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_model.html'>deallocate_model</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1779,7 +1781,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_user_name.html'>deallocate_user_name</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_user_name.html'>deallocate_user_name</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1827,7 +1829,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/deallocate_finish_reason.html'>deallocate_finish_reason</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_finish_reason.html'>deallocate_finish_reason</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1875,7 +1877,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>(this)  
+    private pure subroutine <a href='../proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1923,7 +1925,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  function <a href='../proc/get_assistant_response.html'>get_assistant_response</a>(this) result(response)  
+    private pure function <a href='../proc/get_assistant_response.html'>get_assistant_response</a>(this) result(response)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1947,7 +1949,60 @@ large graphs.</div>
               <span class="anchor" ></span>
               class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
             </td>
-<td>intent(inout)</td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <h4>
+    Return Value
+    <small>character(len=:), allocatable</small>
+    </h4>
+    
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-get_user_message"></span><h3>procedure, public,  :: <strong>get_user_message</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure function <a href='../proc/get_user_message.html'>get_user_message</a>(this) result(message)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(in)</td>
               <td></td>            <td>
               
             </td>
@@ -1976,7 +2031,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/init_messages.html'>init_messages</a>(this, n)  
+    private pure elemental subroutine <a href='../proc/init_messages.html'>init_messages</a>(this, n)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2039,7 +2094,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>(this, file_name)  
+    private impure elemental subroutine <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2102,7 +2157,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_user_name.html'>load_user_name</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_user_name.html'>load_user_name</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2150,7 +2205,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_url.html'>load_url</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_url.html'>load_url</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2198,7 +2253,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_model.html'>load_model</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_model.html'>load_model</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2246,7 +2301,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_temperature.html'>load_temperature</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_temperature.html'>load_temperature</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2294,7 +2349,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/load_max_tokens.html'>load_max_tokens</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_max_tokens.html'>load_max_tokens</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2342,7 +2397,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/read_user_message.html'>read_user_message</a>(this, message, file_name, command)  
+    private impure elemental subroutine <a href='../proc/read_user_message.html'>read_user_message</a>(this, file_name, command)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2372,21 +2427,6 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=:),
-            </td>
-<td>intent(out),</td>
-              <td></td>            <td>
-              allocatable
-            </td>
-            <td>::</td>
-            <td><strong>message</strong></td>
             <td>
 
             </td>
@@ -2435,7 +2475,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_user_name.html'>print_user_name</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_user_name.html'>print_user_name</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2483,7 +2523,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_model_list.html'>print_model_list</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_model_list.html'>print_model_list</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2531,7 +2571,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_model.html'>print_model</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_model.html'>print_model</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2579,7 +2619,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_temperature.html'>print_temperature</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_temperature.html'>print_temperature</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2627,7 +2667,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_max_tokens.html'>print_max_tokens</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_max_tokens.html'>print_max_tokens</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2675,7 +2715,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_user_message.html'>print_user_message</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_user_message.html'>print_user_message</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2723,7 +2763,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_assistant_response.html'>print_assistant_response</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_assistant_response.html'>print_assistant_response</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2771,7 +2811,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/set_user_name.html'>set_user_name</a>(this, user_name)  
+    private pure elemental subroutine <a href='../proc/set_user_name.html'>set_user_name</a>(this, user_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2834,7 +2874,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/set_url.html'>set_url</a>(this, url)  
+    private pure elemental subroutine <a href='../proc/set_url.html'>set_url</a>(this, url)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2897,7 +2937,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/set_model.html'>set_model</a>(this, model)  
+    private pure elemental subroutine <a href='../proc/set_model.html'>set_model</a>(this, model)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2960,7 +3000,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_model_list.html'>set_model_list</a>(this)  
+    private pure elemental subroutine <a href='../proc/set_model_list.html'>set_model_list</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3008,7 +3048,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/select_model.html'>select_model</a>(this, n)  
+    private pure elemental subroutine <a href='../proc/select_model.html'>select_model</a>(this, n)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3071,7 +3111,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/set_temperature.html'>set_temperature</a>(this, temperature)  
+    private pure elemental subroutine <a href='../proc/set_temperature.html'>set_temperature</a>(this, temperature)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3134,7 +3174,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private elemental subroutine <a href='../proc/set_max_tokens.html'>set_max_tokens</a>(this, max_tokens)  
+    private pure elemental subroutine <a href='../proc/set_max_tokens.html'>set_max_tokens</a>(this, max_tokens)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3197,7 +3237,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_asisstant_response.html'>set_asisstant_response</a>(this, response)  
+    private pure elemental subroutine <a href='../proc/set_asisstant_response.html'>set_asisstant_response</a>(this, response)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3260,7 +3300,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/set_user_message.html'>set_user_message</a>(this, message)  
+    private pure elemental subroutine <a href='../proc/set_user_message.html'>set_user_message</a>(this, message)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3323,7 +3363,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/write_history.html'>write_history</a>(this, message, response, file_name)  
+    private impure elemental subroutine <a href='../proc/write_history.html'>write_history</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3367,36 +3407,6 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>message</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>response</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" ></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
             <td><strong>file_name</strong></td>
             <td>
 
@@ -3416,7 +3426,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private  subroutine <a href='../proc/print_finish_reason.html'>print_finish_reason</a>(this)  
+    private impure elemental subroutine <a href='../proc/print_finish_reason.html'>print_finish_reason</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3484,6 +3494,7 @@ large graphs.</div>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_finish_reason</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_ChatCompletion</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_assistant_response</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_user_message</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">init_messages</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_ChatCompletion_data</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_user_name</span><span class="w"></span>
@@ -3530,7 +3541,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T18:55:35.023803             </p>
+ on 2023-08-31T23:52:11.554675             </p>
           </div>
         </div>
         <br>
