@@ -64,6 +64,7 @@ module foropenai_ChatCompletion
       procedure :: deallocate_finish_reason
       procedure :: finalize => deallocate_ChatCompletion
       procedure :: get_assistant_response
+      procedure :: get_user_message
       procedure :: init_messages
       procedure :: load_ChatCompletion_data
       procedure :: load_user_name
@@ -97,7 +98,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_user_message(this, message)
+   elemental pure subroutine set_user_message(this, message)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: message
       integer                              :: i
@@ -112,7 +113,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_asisstant_response(this, response)
+   elemental pure subroutine set_asisstant_response(this, response)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: response
       integer                              :: i
@@ -127,10 +128,10 @@ contains
    
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   function get_assistant_response(this) result(response)
-      class(ChatCompletion), intent(inout) :: this
-      character(len=:), allocatable        :: response
-      integer                              :: i
+   pure function get_assistant_response(this) result(response)
+      class(ChatCompletion), intent(in) :: this
+      character(len=:), allocatable     :: response
+      integer                           :: i
       do i = 1, size(this%messages)
          if (this%messages(i)%role == 'assistant') then
             response = this%messages(i)%content
@@ -139,10 +140,25 @@ contains
    end function
    !===============================================================================
 
+   
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   pure function get_user_message(this) result(message)
+      class(ChatCompletion), intent(in) :: this
+      character(len=:), allocatable     :: message
+      integer                           :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'user') then
+            message = this%messages(i)%content
+         end if
+      end do
+   end function
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_assistant_response(this)
+   elemental impure subroutine print_assistant_response(this)
       use face, only: colorize
       class(ChatCompletion), intent(inout) :: this
       integer                              :: i
@@ -157,7 +173,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_user_message(this)
+   elemental impure subroutine print_user_message(this)
       use face, only: colorize
       class(ChatCompletion), intent(inout) :: this
       integer                              :: i
@@ -172,7 +188,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_finish_reason(this)
+   elemental pure subroutine deallocate_finish_reason(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%finish_reason)) deallocate(this%finish_reason)
    end subroutine deallocate_finish_reason
@@ -181,7 +197,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_finish_reason(this)
+   elemental impure subroutine print_finish_reason(this)
       class(ChatCompletion), intent(inout) :: this
       print "('finish reason: ',A)", trim(this%finish_reason)
    end subroutine print_finish_reason
@@ -190,11 +206,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine conversation(this,config_file, input_file, output_file, inputfile_command, exit_command)
+   elemental impure subroutine conversation(this,config_file, input_file, output_file, inputfile_command, exit_command)
       use face, only: colorize
 
       class(ChatCompletion), intent(inout) :: this
-      character(len=:), allocatable        :: user_message
       character(len=*), intent(in)         :: config_file
       character(len=*), intent(in)         :: input_file
       character(len=*), intent(in)         :: output_file
@@ -210,13 +225,12 @@ contains
       call this%messages(3)%set_role(role='user')
 
       do
-         call this%read_user_message(message=user_message, file_name=trim(input_file), command=trim(inputfile_command))
-         call this%set_user_message(message=user_message)
-         if (trim(user_message) == trim(exit_command)) exit
+         call this%read_user_message(file_name=trim(input_file), command=trim(inputfile_command))
+         if (trim(this%get_user_message()) == trim(exit_command)) exit
          call this%create()
          call this%set_asisstant_response(response=this%get_assistant_response())
          call this%print_assistant_response()
-         call this%write_history(file_name=trim(output_file), message=trim(user_message), response=this%get_assistant_response())
+         call this%write_history(file_name=trim(output_file))
       end do
 
       call this%usage%print_prompt_tokens()
@@ -228,16 +242,14 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine write_history(this, message, response, file_name)
+   elemental impure subroutine write_history(this, file_name)
       class(ChatCompletion), intent(inout) :: this
-      character(len=*),      intent(in)    :: response
-      character(len=*),      intent(in)    :: message
       character(len=*),      intent(in)    :: file_name
       integer                              :: iounit
 
       open(unit=iounit, file=trim(file_name), status='unknown', access='append', action='write')
-      write(iounit,"(A,': ',A)") this%user_name, message
-      write(iounit,"('ChatGPT: ',A)") response
+      write(iounit,"(A,': ',A)") this%user_name, this%get_user_message()
+      write(iounit,"('ChatGPT: ',A)") this%get_assistant_response()
       close(iounit)
    end subroutine write_history
    !===============================================================================
@@ -245,10 +257,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine read_user_message(this, message, file_name, command)
+   elemental impure subroutine read_user_message(this, file_name, command)
       use face, only: colorize
       class(ChatCompletion),         intent(inout) :: this
-      character(len=:), allocatable, intent(out)   :: message
+      character(len=:), allocatable                :: message
       character(len=*),              intent(in)    :: file_name
       character(len=*),              intent(in)    :: command
       character(len=1000000)                       :: tmp
@@ -266,13 +278,14 @@ contains
          end do
          close(iounit)
       end if
+      call this%set_user_message(message=message)
    end subroutine read_user_message
    !===============================================================================
 
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine deallocate_ChatCompletion_messages(this)
+   elemental pure subroutine deallocate_ChatCompletion_messages(this)
       class(ChatCompletion_messages), intent(inout) :: this
       call this%deallocate_role()
       call this%deallocate_content()
@@ -283,7 +296,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine deallocate_ChatCompletion(this)
+   pure subroutine deallocate_ChatCompletion(this)
       class(ChatCompletion), intent(inout) :: this
       call this%deallocate_messages()
       call this%deallocate_model_list()
@@ -297,7 +310,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_url(this)
+   elemental pure subroutine deallocate_url(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%url)) deallocate(this%url)
    end subroutine deallocate_url
@@ -306,7 +319,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_model(this)
+   elemental pure subroutine deallocate_model(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%model)) deallocate(this%model)
    end subroutine deallocate_model
@@ -315,7 +328,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_user_name(this)
+   elemental pure subroutine deallocate_user_name(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%user_name)) deallocate(this%user_name)
    end subroutine deallocate_user_name
@@ -324,7 +337,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_ChatCompletion_data(this, file_name)
+   elemental impure subroutine load_ChatCompletion_data(this, file_name)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: file_name
       call this%set_file_name(trim(file_name))
@@ -339,7 +352,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_message(this, role, content, name)
+   elemental pure subroutine set_message(this, role, content, name)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: role
       character(len=*),               intent(in)    :: content
@@ -353,7 +366,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_max_tokens(this)
+   elemental impure subroutine load_max_tokens(this)
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
@@ -365,7 +378,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_temperature(this)
+   elemental impure subroutine load_temperature(this)
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
@@ -377,7 +390,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_url(this)
+   elemental impure subroutine load_url(this)
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
@@ -389,7 +402,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_model(this)
+   elemental impure subroutine load_model(this)
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
@@ -401,7 +414,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine load_user_name(this)
+   elemental impure subroutine load_user_name(this)
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
@@ -413,7 +426,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_model_list(this)
+   elemental pure subroutine deallocate_model_list(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%model_list)) deallocate(this%model_list)
    end subroutine deallocate_model_list
@@ -422,7 +435,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine set_model_list(this)
+   elemental pure subroutine set_model_list(this)
       class(ChatCompletion), intent(inout) :: this
       if (.not. allocated(this%model_list)) allocate(this%model_list(8))
       this%model_list(1) = trim('gpt-4')
@@ -439,7 +452,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_model_list(this)
+   elemental impure subroutine print_model_list(this)
       class(ChatCompletion), intent(inout) :: this
       integer                              :: i
       call this%set_model_list()
@@ -452,7 +465,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_temperature(this, temperature)
+   elemental pure subroutine set_temperature(this, temperature)
       class(ChatCompletion), intent(inout) :: this
       real,                  intent(in)    :: temperature
       this%temperature = temperature
@@ -462,7 +475,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_url(this, url)
+   elemental pure subroutine set_url(this, url)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: url
       this%url = trim(url)
@@ -472,7 +485,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_model(this, model)
+   elemental pure subroutine set_model(this, model)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: model
       this%model = trim(model)
@@ -482,7 +495,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine init_messages(this, n)
+   elemental pure subroutine init_messages(this, n)
       class(ChatCompletion), intent(inout) :: this
       integer,               intent(in)    :: n
       if (.not. allocated(this%messages)) allocate(this%messages(n))
@@ -492,7 +505,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_role(this, role)
+   elemental pure subroutine set_role(this, role)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: role
       this%role = role
@@ -502,7 +515,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_content(this, content)
+   elemental pure subroutine set_content(this, content)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: content
       this%content = content
@@ -512,7 +525,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_name(this, name)
+   elemental pure subroutine set_name(this, name)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: name
       this%name = name
@@ -522,7 +535,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine check_chat_completion(this, error)
+   elemental impure subroutine check_chat_completion(this, error)
       class(ChatCompletion), intent(inout) :: this
       integer,               intent(out)   :: error
       integer                              :: i
@@ -593,7 +606,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine create_chat_completion(this)
+   elemental impure subroutine create_chat_completion(this)
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
       use face,        only: colorize
@@ -659,7 +672,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_role(this)
+   elemental pure subroutine deallocate_role(this)
       class(ChatCompletion_messages), intent(inout) :: this
       if (allocated(this%role)) deallocate(this%role)
    end subroutine deallocate_role
@@ -668,7 +681,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_content(this)
+   elemental pure subroutine deallocate_content(this)
       class(ChatCompletion_messages), intent(inout) :: this
       if (allocated(this%content)) deallocate(this%content)
    end subroutine deallocate_content
@@ -677,7 +690,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_name(this)
+   elemental pure subroutine deallocate_name(this)
       class(ChatCompletion_messages), intent(inout) :: this
       if (allocated(this%name)) deallocate(this%name)
    end subroutine deallocate_name
@@ -686,7 +699,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine deallocate_messages(this)
+   elemental pure subroutine deallocate_messages(this)
       class(ChatCompletion), intent(inout) :: this
       if (allocated(this%messages)) deallocate(this%messages)
    end subroutine deallocate_messages
@@ -695,7 +708,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine select_model(this,n)
+   elemental pure subroutine select_model(this,n)
       class(ChatCompletion), intent(inout) :: this
       integer,               intent(in)    :: n
       call this%set_model_list()
@@ -706,7 +719,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_model(this)
+   elemental impure subroutine print_model(this)
       class(ChatCompletion), intent(inout) :: this
       print "('model: ',A)", trim(this%model)
    end subroutine print_model
@@ -715,7 +728,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_temperature(this)
+   elemental impure subroutine print_temperature(this)
       class(ChatCompletion), intent(inout) :: this
       print "('temperature: ',F3.1)", this%temperature
    end subroutine print_temperature
@@ -724,7 +737,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_max_tokens(this, max_tokens)
+   elemental pure subroutine set_max_tokens(this, max_tokens)
       class(ChatCompletion), intent(inout) :: this
       integer,               intent(in)    :: max_tokens
       this%max_tokens = max_tokens
@@ -734,7 +747,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_max_tokens(this)
+   elemental impure subroutine print_max_tokens(this)
       class(ChatCompletion), intent(inout) :: this
       print "('max tokens: ',I4)", this%max_tokens
    end subroutine print_max_tokens
@@ -743,7 +756,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental subroutine set_user_name(this, user_name)
+   elemental pure subroutine set_user_name(this, user_name)
       class(ChatCompletion), intent(inout) :: this
       character(len=*),      intent(in)    :: user_name
       this%user_name = trim(user_name)
@@ -753,7 +766,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_user_name(this)
+   elemental impure subroutine print_user_name(this)
       class(ChatCompletion), intent(inout) :: this
       print "('user name: ',A)", trim(this%user_name)
    end subroutine print_user_name
@@ -762,7 +775,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_prompt_tokens(this)
+   elemental impure subroutine print_prompt_tokens(this)
       class(usage), intent(inout) :: this
       print "('prompt tokens: ',g0)", this%prompt_tokens
    end subroutine print_prompt_tokens
@@ -771,7 +784,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_completion_tokens(this)
+   elemental impure subroutine print_completion_tokens(this)
       class(usage), intent(inout) :: this
       print "('completion tokens: ',g0)", this%completion_tokens
    end subroutine print_completion_tokens
@@ -780,7 +793,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine print_total_tokens(this)
+   elemental impure subroutine print_total_tokens(this)
       class(usage), intent(inout) :: this
       print "('total tokens: ',g0)", this%total_tokens
    end subroutine print_total_tokens
