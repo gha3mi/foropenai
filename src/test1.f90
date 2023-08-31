@@ -1,12 +1,10 @@
 program test_ChatCompletion
 
-   use foropenai_ChatCompletion, only: ChatCompletion
+   use foropenai, only: ChatCompletion
 
    implicit none
 
-   type(ChatCompletion)           :: chat
-   character(len=1024)            :: msg
-   character(len=:), allocatable  :: rsp
+   type(ChatCompletion) :: chat
 
    call chat%set_file_name('foropenai.json')
    call chat%print_file_name()
@@ -30,15 +28,20 @@ program test_ChatCompletion
    call chat%set_user_name(user_name='Ali')
    call chat%print_user_name()
 
-   call chat%init_messages(n=2)
+   call chat%init_messages(n=3)
    call chat%messages(1)%set_role(role='system')
    call chat%messages(1)%set_content(content='You are a helpful assistant.')
    call chat%messages(2)%set_role(role='user')
    call chat%messages(2)%set_content(content='Hello?')
-   call chat%create(msg,rsp,conversiation=.false.)
+   call chat%messages(3)%set_role(role='assistant')
+   call chat%print_user_message()
+   call chat%create()
+   call chat%print_assistant_response()
 
    call chat%usage%print_prompt_tokens()
    call chat%usage%print_completion_tokens()
    call chat%usage%print_total_tokens()
+
+   call chat%finalize()
 
 end program test_ChatCompletion
