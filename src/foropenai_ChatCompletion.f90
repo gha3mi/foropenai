@@ -63,6 +63,7 @@ module foropenai_ChatCompletion
       procedure :: deallocate_user_name
       procedure :: deallocate_finish_reason
       procedure :: finalize => deallocate_ChatCompletion
+      procedure :: get_assistant_response
       procedure :: init_messages
       procedure :: load_ChatCompletion_data
       procedure :: load_user_name
@@ -76,6 +77,8 @@ module foropenai_ChatCompletion
       procedure :: print_model
       procedure :: print_temperature
       procedure :: print_max_tokens
+      procedure :: print_user_message
+      procedure :: print_assistant_response
       procedure :: set_user_name
       procedure :: set_url
       procedure :: set_model
@@ -83,12 +86,73 @@ module foropenai_ChatCompletion
       procedure :: select_model
       procedure :: set_temperature
       procedure :: set_max_tokens
+      procedure :: set_asisstant_response
       procedure :: write_history
       procedure :: print_finish_reason
    end type ChatCompletion
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine set_asisstant_response(this, response)
+      class(ChatCompletion), intent(inout) :: this
+      character(len=*),      intent(in)    :: response
+      integer                              :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'assistant') then
+            call this%messages(i)%set_content(content=response)
+         end if
+      end do
+   end subroutine set_asisstant_response
+   !===============================================================================
+
+   
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   function get_assistant_response(this) result(response)
+      class(ChatCompletion), intent(inout) :: this
+      character(len=:), allocatable        :: response
+      integer                              :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'assistant') then
+            response = this%messages(i)%content
+         end if
+      end do
+   end function
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine print_assistant_response(this)
+      use face, only: colorize
+      class(ChatCompletion), intent(inout) :: this
+      integer                              :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'assistant') then
+            print "(A,': ',A)", colorize("ChatGPT", color_bg='blue'), this%messages(i)%content
+         end if
+      end do
+   end subroutine print_assistant_response
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine print_user_message(this)
+      use face, only: colorize
+      class(ChatCompletion), intent(inout) :: this
+      integer                              :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'user') then
+            print "(A,': ',A)", colorize(trim(this%user_name), color_bg='green'), this%messages(i)%content
+         end if
+      end do
+   end subroutine print_user_message
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -115,9 +179,6 @@ contains
 
       class(ChatCompletion), intent(inout) :: this
       character(len=:), allocatable        :: msg
-      character(len=:), allocatable        :: rsp
-      character(len=:), allocatable        :: whole_msg
-      integer                              :: iounit
       character(len=*), intent(in)         :: config_file
       character(len=*), intent(in)         :: input_file
       character(len=*), intent(in)         :: output_file
@@ -135,8 +196,9 @@ contains
       do
          call this%read_msg(message=msg, file_name=trim(input_file), command=trim(inputfile_command))
          if (trim(msg) == trim(exit_command)) exit
-         call this%create(msg=trim(msg), rsp=rsp, conversiation=.true.)
-         call this%write_history(file_name=trim(output_file), message=trim(msg), response=rsp)
+         call this%create()
+         call this%print_assistant_response()
+         call this%write_history(file_name=trim(output_file), message=trim(msg), response=this%get_assistant_response())
       end do
 
       call this%usage%print_prompt_tokens()
@@ -156,7 +218,7 @@ contains
       integer                              :: iounit
 
       open(unit=iounit, file=trim(file_name), status='unknown', access='append', action='write')
-      write(iounit,"('User: ',A)") message
+      write(iounit,"(A,': ',A)") this%user_name, message
       write(iounit,"('ChatGPT: ',A)") response
       close(iounit)
    end subroutine write_history
@@ -526,42 +588,24 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine create_chat_completion(this,msg,rsp,conversiation)
+   subroutine create_chat_completion(this)
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
       use face,        only: colorize
 
-      class(ChatCompletion),         intent(inout) :: this
-      character(len=*),              intent(in)    :: msg
-      logical,                       intent(in)    :: conversiation
-      character(len=:), allocatable, intent(out)   :: rsp
-      character(len=:), allocatable                :: jsonstr
-      type(pair_type),  allocatable                :: req_header(:)
-      type(response_type)                          :: response
-      type(json_file)                              :: json
-      logical                                      :: found
-      integer                                      :: i
-      character(len=10)                            :: i_str
-      integer                                      :: error
+      class(ChatCompletion), intent(inout) :: this
+      character(len=:),      allocatable   :: assistant_response
+      character(len=:),      allocatable   :: jsonstr
+      type(pair_type),       allocatable   :: req_header(:)
+      type(response_type)                  :: response
+      type(json_file)                      :: json
+      logical                              :: found
+      integer                              :: i
+      character(len=10)                    :: i_str
+      integer                              :: error
 
       call this%check(error)
       if (error == 0) then
-
-         if (conversiation) then
-            do i = 1, size(this%messages)
-               if (this%messages(i)%role == 'user') then
-                  call this%messages(i)%set_content(trim(msg))
-               end if
-            end do
-            call this%messages(3)%set(role='user', content=trim(msg))
-
-         else
-            do i = 1, size(this%messages)
-               if (this%messages(i)%role == 'user') then
-                  print "(A,': ',A)", colorize(trim(this%user_name), color_bg='green'), this%messages(2)%content
-               end if
-            end do
-         end if
 
          req_header = [&
             pair_type('Content-Type', 'application/json'),&
@@ -581,11 +625,7 @@ contains
          call json%add('max_tokens', this%max_tokens)
          call json%print_to_string(jsonstr)
 
-         response = request(&
-            url = trim(this%url),&
-            method = HTTP_POST,&
-            data = jsonstr,&
-            header = req_header)
+         response = request(url = trim(this%url), method = HTTP_POST, data = jsonstr, header = req_header)
 
          if (response%ok) then
             json = response%content
@@ -596,27 +636,18 @@ contains
             call json%get("usage.completion_tokens", this%usage%completion_tokens)
             call json%get("usage.total_tokens", this%usage%total_tokens)
 
-            call json%get("choices(1).message.content", rsp, found=found)
-            if (found) then
-               print "(A,': ',A)", colorize("ChatGPT", color_bg='blue'), rsp
-            else
+            call json%get("choices(1).message.content", assistant_response, found=found)
+            if (.not. found) then
                call json%get("error.message", jsonstr)
-               print "(A,': ',A)", colorize("ChatGPT", color_bg='red'), jsonstr
+               assistant_response = jsonstr
             end if
+            call this%set_asisstant_response(response=assistant_response)
          else
             print '(A)', 'Sorry, an error occurred while processing your request.'
             print '(A)', 'Error message:', response%err_msg
          end if
-      end if
 
-      if (conversiation) then
-         do i = 1, size(this%messages)
-            if (this%messages(i)%role == 'assistant') then
-               call this%messages(i)%set_content(content=rsp)
-            end if
-         end do
       end if
-
    end subroutine create_chat_completion
    !===============================================================================
 
