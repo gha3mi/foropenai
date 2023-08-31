@@ -51,6 +51,7 @@ module foropenai_ChatCompletion
       integer                                    :: max_tokens
       type(usage)                                :: usage
       real                                       :: temperature
+      character(len=:),              allocatable :: finish_reason
    contains
       procedure :: check => check_chat_completion
       procedure :: create => create_chat_completion
@@ -60,6 +61,7 @@ module foropenai_ChatCompletion
       procedure :: deallocate_url
       procedure :: deallocate_model
       procedure :: deallocate_user_name
+      procedure :: deallocate_finish_reason
       procedure :: finalize => deallocate_ChatCompletion
       procedure :: init_messages
       procedure :: load_ChatCompletion_data
@@ -82,10 +84,29 @@ module foropenai_ChatCompletion
       procedure :: set_temperature
       procedure :: set_max_tokens
       procedure :: write_history
+      procedure :: print_finish_reason
    end type ChatCompletion
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental subroutine deallocate_finish_reason(this)
+      class(ChatCompletion), intent(inout) :: this
+      if (allocated(this%finish_reason)) deallocate(this%finish_reason)
+   end subroutine deallocate_finish_reason
+   !===============================================================================
+   
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine print_finish_reason(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('finish reason: ',A)", trim(this%finish_reason)
+   end subroutine print_finish_reason
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -189,6 +210,7 @@ contains
       call this%deallocate_url()
       call this%deallocate_model()
       call this%deallocate_user_name()
+      call this%deallocate_finish_reason()
    end subroutine deallocate_ChatCompletion
    !===============================================================================
 
@@ -568,6 +590,8 @@ contains
          if (response%ok) then
             json = response%content
 
+            call json%get("choices(1).finish_reason", this%finish_reason)
+            
             call json%get("usage.prompt_tokens", this%usage%prompt_tokens)
             call json%get("usage.completion_tokens", this%usage%completion_tokens)
             call json%get("usage.total_tokens", this%usage%total_tokens)
