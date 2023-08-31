@@ -71,7 +71,7 @@ module foropenai_ChatCompletion
       procedure :: load_model
       procedure :: load_temperature
       procedure :: load_max_tokens
-      procedure :: read_msg
+      procedure :: read_user_message
       procedure :: print_user_name
       procedure :: print_model_list
       procedure :: print_model
@@ -87,12 +87,28 @@ module foropenai_ChatCompletion
       procedure :: set_temperature
       procedure :: set_max_tokens
       procedure :: set_asisstant_response
+      procedure :: set_user_message
       procedure :: write_history
       procedure :: print_finish_reason
    end type ChatCompletion
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   subroutine set_user_message(this, message)
+      class(ChatCompletion), intent(inout) :: this
+      character(len=*),      intent(in)    :: message
+      integer                              :: i
+      do i = 1, size(this%messages)
+         if (this%messages(i)%role == 'user') then
+            call this%messages(i)%set_content(content=message)
+         end if
+      end do
+   end subroutine set_user_message
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -178,7 +194,7 @@ contains
       use face, only: colorize
 
       class(ChatCompletion), intent(inout) :: this
-      character(len=:), allocatable        :: msg
+      character(len=:), allocatable        :: user_message
       character(len=*), intent(in)         :: config_file
       character(len=*), intent(in)         :: input_file
       character(len=*), intent(in)         :: output_file
@@ -190,15 +206,17 @@ contains
 
       call this%init_messages(n=3)
       call this%messages(1)%set(role='system', content='You are a helpful assistant.')
-      call this%messages(2)%set(role='assistant', content='Hello!')
+      call this%messages(2)%set(role='assistant', content='')
       call this%messages(3)%set_role(role='user')
 
       do
-         call this%read_msg(message=msg, file_name=trim(input_file), command=trim(inputfile_command))
-         if (trim(msg) == trim(exit_command)) exit
+         call this%read_user_message(message=user_message, file_name=trim(input_file), command=trim(inputfile_command))
+         call this%set_user_message(message=user_message)
+         if (trim(user_message) == trim(exit_command)) exit
          call this%create()
+         call this%set_asisstant_response(response=this%get_assistant_response())
          call this%print_assistant_response()
-         call this%write_history(file_name=trim(output_file), message=trim(msg), response=this%get_assistant_response())
+         call this%write_history(file_name=trim(output_file), message=trim(user_message), response=this%get_assistant_response())
       end do
 
       call this%usage%print_prompt_tokens()
@@ -227,7 +245,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine read_msg(this, message, file_name, command)
+   subroutine read_user_message(this, message, file_name, command)
       use face, only: colorize
       class(ChatCompletion),         intent(inout) :: this
       character(len=:), allocatable, intent(out)   :: message
@@ -248,7 +266,7 @@ contains
          end do
          close(iounit)
       end if
-   end subroutine read_msg
+   end subroutine read_user_message
    !===============================================================================
 
 
@@ -507,6 +525,7 @@ contains
    subroutine check_chat_completion(this, error)
       class(ChatCompletion), intent(inout) :: this
       integer,               intent(out)   :: error
+      integer                              :: i
 
       if (len_trim(this%api_key) == 0) then
          print '(A)', 'Error: api_key is not set.'
@@ -532,51 +551,37 @@ contains
          stop
       end if
 
-      if (size(this%messages) < 2) then
-         print '(A)', 'Error: messages must have at least 2 elements.'
-         error = 5
-         stop
-      end if
+      do i = 1, size(this%messages)
+         if (len_trim(this%messages(i)%role) == 0) then
+            print '(A,I1,A)', 'Error: messages(',i,')%role is not set.'
+            error = 5
+            stop
+         end if
+      end do
 
-      if (.not. allocated(this%messages(1)%role)) then
-         print '(A)', 'Error: messages(1)%role is not set.'
-         error = 6
-         stop
-      end if
-
-      if (.not. allocated(this%messages(1)%content)) then
-         print '(A)', 'Error: messages(1)%content is not set.'
-         error = 7
-         stop
-      end if
-
-      if (.not. allocated(this%messages(2)%role)) then
-         print '(A)', 'Error: messages(2)%role is not set.'
-         error = 8
-         stop
-      end if
-
-      if (.not. allocated(this%messages(2)%content)) then
-         print '(A)', 'Error: messages(2)%content is not set.'
-         error = 9
-         stop
-      end if
+      do i = 1, size(this%messages)
+         if (.not. allocated(this%messages(i)%content)) then
+            print '(A,I1,A)', 'Error: messages(',i,')%content is not set.'
+            error = 6
+            stop
+         end if
+      end do
 
       if (this%temperature < 0.0 .or. this%temperature > 2.0) then
          print '(A)', 'Error: temperature must be between 0.0 and 2.0.'
-         error = 10
+         error = 7
          stop
       end if
 
       if (this%max_tokens < 1) then
          print '(A)', 'Error: max_tokens must be greater than 1'
-         error = 11
+         error = 8
          stop
       end if
 
       if (len_trim(this%user_name) == 0) then
          print '(A)', 'Error: user_name is not set.'
-         error = 12
+         error = 9
          stop
       end if
 
@@ -641,7 +646,7 @@ contains
                call json%get("error.message", jsonstr)
                assistant_response = jsonstr
             end if
-            call this%set_asisstant_response(response=assistant_response)
+            call this%set_asisstant_response(response=trim(assistant_response))
          else
             print '(A)', 'Sorry, an error occurred while processing your request.'
             print '(A)', 'Error message:', response%err_msg
