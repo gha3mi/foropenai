@@ -6,7 +6,7 @@
 
 <img alt="ForOpenAI" src="https://github.com/gha3mi/foropenai/raw/main/media/logo.png" width="750">
 
-**ForOpenAI**: A Fortran library for OpenAI API. (Under Development!)
+**ForOpenAI**: A Fortran library for OpenAI API.
 
 ## How to use
 
@@ -47,7 +47,7 @@ fpm run
 
 ## fpm dependency
 
-If you want to use ForOpenAI as a dependency in your own fpm project,
+If you want to use `ForOpenAI` as a dependency in your own fpm project,
 you can easily include it by adding the following line to your `fpm.toml` file:
 
 ```toml
@@ -57,7 +57,9 @@ foropenai = {git="https://github.com/gha3mi/foropenai.git"}
 
 ## API documentation
 
-To generate the API documentation for the `ForOpenAI` module using
+The most up-to-date API documentation for the master branch is available
+[here](https://gha3mi.github.io/foropenai/).
+To generate the API documentation for `ForOpenAI` using
 [ford](https://github.com/Fortran-FOSS-Programmers/ford) run the following
 command:
 
@@ -66,4 +68,6 @@ ford ford.yml
 ```
 
 ## Contributing
-Contributions to `ForOpenAI` are welcome! If you find any issues or would like to suggest improvements, please open an issue.
+
+Contributions to `ForOpenAI` are welcome!
+If you find any issues or would like to suggest improvements, please open an issue.

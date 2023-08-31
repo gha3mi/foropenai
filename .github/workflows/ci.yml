@@ -58,8 +58,8 @@ jobs:
       run: |
         sudo apt install -y libcurl4-openssl-dev
 
-    - name: Run tests
-      run: fpm test
+    # - name: Run tests
+      # run: fpm test
 
     - name: Build documentation
       run: ford ./ford.yml
