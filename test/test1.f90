@@ -6,11 +6,9 @@ program test_ChatCompletion
 
    type(ChatCompletion) :: chat
 
-   call chat%set_file_name('foropenai.json')
+   call chat%set_base_data('foropenai.json')
    call chat%print_file_name()
-   call chat%load_api_key()
    call chat%print_api_key()
-   call chat%load_organization()
    call chat%print_organization()
 
    call chat%set_url(url='https://api.openai.com/v1/chat/completions')
