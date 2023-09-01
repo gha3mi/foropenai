@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="15.1% of total for modules and submodules.">91 statements</a>
+               title="19.6% of total for modules and submodules.">124 statements</a>
           </li>
 
             <li id="source-file">
@@ -159,6 +159,9 @@
       </div>
       <div id="subs-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_base_data">set_base_data</a>
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_api_key_env">set_api_key_env</a>
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_organization_env">set_organization_env</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_openai">deallocate_openai</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_api_key">deallocate_api_key</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_organization">deallocate_organization</a>
@@ -379,6 +382,9 @@ large graphs.</div>
       </div>
       <div id="subs-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_base_data">set_base_data</a>
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_api_key_env">set_api_key_env</a>
+            <a class="list-group-item" href="../module/foropenai_base.html#proc-set_organization_env">set_organization_env</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_openai">deallocate_openai</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_api_key">deallocate_api_key</a>
             <a class="list-group-item" href="../module/foropenai_base.html#proc-deallocate_organization">deallocate_organization</a>
@@ -484,6 +490,40 @@ large graphs.</div>
             <td><strong>file_name</strong></td>
                 <td></td>
                 <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key_env"></span>
+              character(len=14),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>api_key_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_API_KEY'</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-organization_env"></span>
+              character(len=10),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>organization_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_ORG'</td>
             <td>
 
             </td>
@@ -603,6 +643,30 @@ large graphs.</div>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_api_key_env'>set_api_key_env</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_organization_env'>set_organization_env</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_base_data'>set_base_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
           </tbody>
         </table>
     </div>
@@ -614,6 +678,180 @@ large graphs.</div>
 
         <section>
           <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_base_data"></span><h3>private impure elemental subroutine <a href='../proc/set_base_data.html'>set_base_data</a>(this, file_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_api_key_env"></span><h3>private impure elemental subroutine <a href='../proc/set_api_key_env.html'>set_api_key_env</a>(this, status)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_organization_env"></span><h3>private impure elemental subroutine <a href='../proc/set_organization_env.html'>set_organization_env</a>(this, status)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
               <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_openai"></span><h3>private pure subroutine <a href='../proc/deallocate_openai.html'>deallocate_openai</a>(this)  
 </h3></div>
@@ -961,7 +1199,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_api_key"></span><h3>private impure elemental subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_api_key"></span><h3>private impure elemental subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this, file_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -992,6 +1230,21 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
             <td>
 
             </td>
@@ -1062,7 +1315,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-load_organization"></span><h3>private impure elemental subroutine <a href='../proc/load_organization.html'>load_organization</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_organization"></span><h3>private impure elemental subroutine <a href='../proc/load_organization.html'>load_organization</a>(this, file_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1093,6 +1346,21 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
             <td>
 
             </td>
@@ -1253,7 +1521,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T23:52:11.554675             </p>
+ on 2023-09-01T00:58:12.005800             </p>
           </div>
         </div>
         <br>

@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p>54.3% of total for derived types.</p>Including implementation: 482 statements, 74.8% of total for derived types.">50 statements</a>
+               title="<p>51.5% of total for derived types.</p>Including implementation: 510 statements, 72.3% of total for derived types.">50 statements</a>
           </li>
 
             <li id="source-file">
@@ -141,6 +141,8 @@
             <a class="list-group-item" href="../type/chatcompletion.html#variable-organization">organization</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-api_key">api_key</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-file_name">file_name</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#variable-api_key_env">api_key_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#variable-organization_env">organization_env</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-url">url</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-model">model</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-user_name">user_name</a>
@@ -189,6 +191,9 @@
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_organization">set_organization</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_api_key">set_api_key</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_file_name">set_file_name</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_api_key_env">set_api_key_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_organization_env">set_organization_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_base_data">set_base_data</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-check">check</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-create">create</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-conversation">conversation</a>
@@ -385,6 +390,8 @@ large graphs.</div>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-organization">organization</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-api_key">api_key</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-file_name">file_name</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#variable-api_key_env">api_key_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#variable-organization_env">organization_env</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-url">url</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-model">model</a>
             <a class="list-group-item" href="../type/chatcompletion.html#variable-user_name">user_name</a>
@@ -433,6 +440,9 @@ large graphs.</div>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_organization">set_organization</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_api_key">set_api_key</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_file_name">set_file_name</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_api_key_env">set_api_key_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_organization_env">set_organization_env</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_base_data">set_base_data</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-check">check</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-create">create</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-conversation">conversation</a>
@@ -546,6 +556,40 @@ large graphs.</div>
             <td><strong>file_name</strong></td>
                 <td></td>
                 <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key_env"></span>
+              character(len=14),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>api_key_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_API_KEY'</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-organization_env"></span>
+              character(len=10),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>organization_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_ORG'</td>
             <td>
                 
             </td>
@@ -863,7 +907,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private impure elemental subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_api_key.html'>load_api_key</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -897,6 +941,21 @@ large graphs.</div>
 
             </td>
         </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
     </tbody>
   </table>
 
@@ -911,7 +970,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private impure elemental subroutine <a href='../proc/load_organization.html'>load_organization</a>(this)  
+    private impure elemental subroutine <a href='../proc/load_organization.html'>load_organization</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -941,6 +1000,21 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
             <td>
 
             </td>
@@ -1293,6 +1367,195 @@ large graphs.</div>
         <li class="list-group-item">
                   <h3>
     private pure elemental subroutine <a href='../proc/set_file_name.html'>set_file_name</a>(this, file_name)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_api_key_env"></span><h3>procedure, public,  :: <strong>set_api_key_env</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/set_api_key_env.html'>set_api_key_env</a>(this, status)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_organization_env"></span><h3>procedure, public,  :: <strong>set_organization_env</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/set_organization_env.html'>set_organization_env</a>(this, status)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/openai.html'>openai</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>status</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_base_data"></span><h3>procedure, public,  :: <strong>set_base_data</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/set_base_data.html'>set_base_data</a>(this, file_name)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -3541,7 +3804,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T23:52:11.554675             </p>
+ on 2023-09-01T00:58:12.005800             </p>
           </div>
         </div>
         <br>

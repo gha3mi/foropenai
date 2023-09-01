@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="79.6% of total for source files.">506 statements</a>
+               title="75.9% of total for source files.">506 statements</a>
           </li>
 
             <li id="source-file">
@@ -618,7 +618,7 @@ large graphs.</div>
 <a id="ln-206" name="ln-206" href="#ln-206"></a>
 <a id="ln-207" name="ln-207" href="#ln-207"></a><span class="w">   </span><span class="c">!===============================================================================</span>
 <a id="ln-208" name="ln-208" href="#ln-208"></a><span class="w">   </span><span class="c">!&gt; author: Seyed Ali Ghasemi</span>
-<a id="ln-209" name="ln-209" href="#ln-209"></a><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">conversation</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="n">config_file</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="n">output_file</span><span class="p">,</span><span class="w"> </span><span class="n">inputfile_command</span><span class="p">,</span><span class="w"> </span><span class="n">exit_command</span><span class="p">)</span><span class="w"></span>
+<a id="ln-209" name="ln-209" href="#ln-209"></a><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">conversation</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">config_file</span><span class="p">,</span><span class="w"> </span><span class="n">input_file</span><span class="p">,</span><span class="w"> </span><span class="n">output_file</span><span class="p">,</span><span class="w"> </span><span class="n">inputfile_command</span><span class="p">,</span><span class="w"> </span><span class="n">exit_command</span><span class="p">)</span><span class="w"></span>
 <a id="ln-210" name="ln-210" href="#ln-210"></a><span class="w">      </span><span class="k">use </span><span class="n">face</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">colorize</span><span class="w"></span>
 <a id="ln-211" name="ln-211" href="#ln-211"></a>
 <a id="ln-212" name="ln-212" href="#ln-212"></a><span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
@@ -628,7 +628,7 @@ large graphs.</div>
 <a id="ln-216" name="ln-216" href="#ln-216"></a><span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">inputfile_command</span><span class="w"></span>
 <a id="ln-217" name="ln-217" href="#ln-217"></a><span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">         </span><span class="kd">::</span><span class="w"> </span><span class="n">exit_command</span><span class="w"></span>
 <a id="ln-218" name="ln-218" href="#ln-218"></a>
-<a id="ln-219" name="ln-219" href="#ln-219"></a><span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_base_data</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span><span class="w"></span>
+<a id="ln-219" name="ln-219" href="#ln-219"></a><span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_base_data</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span><span class="w"></span>
 <a id="ln-220" name="ln-220" href="#ln-220"></a><span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_ChatCompletion_data</span><span class="p">(</span><span class="n">config_file</span><span class="p">)</span><span class="w"></span>
 <a id="ln-221" name="ln-221" href="#ln-221"></a>
 <a id="ln-222" name="ln-222" href="#ln-222"></a><span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">init_messages</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
@@ -1230,7 +1230,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-08-31T23:52:11.554675             </p>
+ on 2023-09-01T00:58:12.005800             </p>
           </div>
         </div>
         <br>
