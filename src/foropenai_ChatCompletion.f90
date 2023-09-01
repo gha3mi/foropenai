@@ -206,7 +206,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine conversation(this,config_file, input_file, output_file, inputfile_command, exit_command)
+   elemental impure subroutine conversation(this, config_file, input_file, output_file, inputfile_command, exit_command)
       use face, only: colorize
 
       class(ChatCompletion), intent(inout) :: this
@@ -216,7 +216,7 @@ contains
       character(len=*), intent(in)         :: inputfile_command
       character(len=*), intent(in)         :: exit_command
 
-      call this%load_base_data(config_file)
+      call this%set_base_data(config_file)
       call this%load_ChatCompletion_data(config_file)
 
       call this%init_messages(n=3)

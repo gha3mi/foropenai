@@ -6,7 +6,7 @@
 
 <img alt="ForOpenAI" src="https://github.com/gha3mi/foropenai/raw/main/media/logo.png" width="750">
 
-**ForOpenAI**: A Fortran library for OpenAI API.
+**ForOpenAI**: A community-maintained Fortran wrapper for the OpenAI API.
 
 ## How to use
 
@@ -30,10 +30,34 @@ git clone https://github.com/gha3mi/foropenai.git
 cd foropenai
 ```
 
-**OpenAI API key:**
+**OpenAI API Key Configuration:**
 
-Add your OpenAI API key to `foropenai.json` config file. You can find your Secret API key in your OpenAI [User settings](https://platform.openai.com/account/api-keys). 
+Your Secret API key can be located by accessing the OpenAI [User settings](https://platform.openai.com/account/api-keys).
 
+For enhanced security and convenience, it is strongly recommended to configure the API key as an environment variable. 
+
+- On Ubuntu, use the following command, replacing `"your_api_key"` with your actual API key:
+
+    ```shell
+    export OPENAI_API_KEY="your_api_key"
+    ```
+
+- (Optional) If desired for organizational purposes, you can also establish an optional environment variable on Ubuntu:
+
+    ```shell
+    export OPENAI_ORG="your_organization"
+    ```
+
+- Alternatively, the OpenAI API key can be included in the `foropenai.json` configuration file.
+
+    ```json
+    {
+        "base": {
+            "api_key": "OPENAI_API_KEY",
+            "organization": ""
+        }
+    }
+    ```
 
 **Use ChatGPT from the terminal:**
 

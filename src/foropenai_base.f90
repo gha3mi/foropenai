@@ -11,6 +11,8 @@ module foropenai_base
       character(len=:), allocatable :: organization
       character(len=:), allocatable :: api_key
       character(len=:), allocatable :: file_name
+      character(len=14)             :: api_key_env      = 'OPENAI_API_KEY'
+      character(len=10)             :: organization_env = 'OPENAI_ORG'
    contains
       procedure :: deallocate_api_key
       procedure :: deallocate_organization
@@ -25,10 +27,55 @@ module foropenai_base
       procedure :: set_organization
       procedure :: set_api_key
       procedure :: set_file_name
+      procedure :: set_api_key_env
+      procedure :: set_organization_env
+      procedure :: set_base_data
    end type openai
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine set_base_data(this, file_name)
+      class(openai),    intent(inout) :: this
+      character(len=*), intent(in)    :: file_name
+      integer                         :: stat_api_key, stat_organization
+
+      call this%set_file_name(file_name)
+
+      call this%set_api_key_env(status=stat_api_key)
+      if (stat_api_key == 1) call this%load_api_key(file_name)
+      
+      call this%set_organization_env(status=stat_organization)
+      if (stat_organization == 1) call this%load_organization(file_name)
+   end subroutine set_base_data
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine set_api_key_env(this, status)
+      class(openai), intent(inout)         :: this
+      integer,       intent(out), optional :: status
+      character(len=1024)                  :: tmp
+      call get_environment_variable(this%api_key_env, tmp, status = status)
+      if (status==0) call this%set_api_key(trim(tmp))
+   end subroutine set_api_key_env
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine set_organization_env(this, status)
+      class(openai), intent(inout)         :: this
+      integer,       intent(out), optional :: status
+      character(len=1024)                  :: tmp
+      call get_environment_variable(this%organization_env, tmp, status = status)
+      if (status==0) call this%set_organization(trim(tmp))
+   end subroutine set_organization_env
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -102,10 +149,12 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine load_api_key(this)
+   elemental impure subroutine load_api_key(this, file_name)
       use json_module, only: json_file
-      class(openai), intent(inout) :: this
-      type(json_file)              :: json
+      class(openai),    intent(inout)        :: this
+      character(len=*), intent(in), optional :: file_name
+      type(json_file)                        :: json
+      if (present(file_name)) call this%set_file_name(file_name)
       call json%load_file(trim(this%file_name))
       call json%get("base.api_key", this%api_key)
    end subroutine load_api_key
@@ -124,10 +173,12 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine load_organization(this)
+   elemental impure subroutine load_organization(this, file_name)
       use json_module, only: json_file
-      class(openai), intent(inout) :: this
-      type(json_file)              :: json
+      class(openai),    intent(inout)        :: this
+      character(len=*), intent(in), optional :: file_name
+      type(json_file)                        :: json
+      if (present(file_name)) call this%set_file_name(file_name)
       call json%load_file(trim(this%file_name))
       call json%get("base.organization", this%organization)
    end subroutine load_organization
