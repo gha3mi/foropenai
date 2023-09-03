@@ -260,9 +260,10 @@ contains
    elemental impure subroutine read_user_message(this, file_name, command)
       use face, only: colorize
       class(ChatCompletion),         intent(inout) :: this
-      character(len=:), allocatable                :: message
       character(len=*),              intent(in)    :: file_name
       character(len=*),              intent(in)    :: command
+      character(len=:), allocatable                :: message
+      character(len=:), allocatable                :: whole_message
       character(len=1000000)                       :: tmp
       integer                                      :: iounit, iostat
 
@@ -270,15 +271,18 @@ contains
       read*, tmp
       message = trim(tmp)
       if (trim(message) == trim(command)) then
-         open(unit=iounit, file=trim(file_name), status='old', action='read')
+         open(newunit=iounit, file=trim(file_name), status='old', action='read')
+         whole_message = ''
          do
             read(iounit,'(A)',iostat=iostat) tmp
             if (iostat /= 0) exit
-            message = trim(message) // trim(tmp)  // new_line(' ')
+            whole_message = trim(whole_message) // trim(tmp)  // new_line(' ')
          end do
          close(iounit)
+         call this%set_user_message(message=whole_message)
+      else
+         call this%set_user_message(message=message)
       end if
-      call this%set_user_message(message=message)
    end subroutine read_user_message
    !===============================================================================
 
