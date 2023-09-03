@@ -79,7 +79,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine deallocate_openai(this)
+   elemental pure subroutine deallocate_openai(this)
       class(openai), intent(inout) :: this
       call this%deallocate_api_key()
       call this%deallocate_organization()

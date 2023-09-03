@@ -296,7 +296,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   pure subroutine deallocate_ChatCompletion(this)
+   elemental pure subroutine deallocate_ChatCompletion(this)
       class(ChatCompletion), intent(inout) :: this
       call this%deallocate_messages()
       call this%deallocate_model_list()
