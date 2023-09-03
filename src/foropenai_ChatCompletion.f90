@@ -50,7 +50,12 @@ module foropenai_ChatCompletion
       type(ChatCompletion_messages), allocatable :: messages(:)
       integer                                    :: max_tokens
       type(usage)                                :: usage
-      real                                       :: temperature
+      real                                       :: temperature=1.0  
+      real                                       :: presence_penalty=0.0
+      real                                       :: frequency_penalty=0.0
+      real                                       :: top_p=1.0
+      logical                                    :: stream=.false.
+      integer                                    :: n=1
       character(len=:),              allocatable :: finish_reason
    contains
       procedure :: check => check_chat_completion
@@ -71,12 +76,22 @@ module foropenai_ChatCompletion
       procedure :: load_url
       procedure :: load_model
       procedure :: load_temperature
+      procedure :: load_presence_penalty
+      procedure :: load_frequency_penalty
+      procedure :: load_top_p
+      procedure :: load_n
+      procedure :: load_stream
       procedure :: load_max_tokens
       procedure :: read_user_message
       procedure :: print_user_name
       procedure :: print_model_list
       procedure :: print_model
       procedure :: print_temperature
+      procedure :: print_presence_penalty
+      procedure :: print_frequency_penalty
+      procedure :: print_top_p
+      procedure :: print_n
+      procedure :: print_stream
       procedure :: print_max_tokens
       procedure :: print_user_message
       procedure :: print_assistant_response
@@ -86,6 +101,11 @@ module foropenai_ChatCompletion
       procedure :: set_model_list
       procedure :: select_model
       procedure :: set_temperature
+      procedure :: set_presence_penalty
+      procedure :: set_frequency_penalty
+      procedure :: set_top_p
+      procedure :: set_n
+      procedure :: set_stream
       procedure :: set_max_tokens
       procedure :: set_asisstant_response
       procedure :: set_user_message
@@ -347,6 +367,11 @@ contains
       call this%load_model()
       call this%load_user_name()
       call this%load_temperature()
+      call this%load_presence_penalty()
+      call this%load_frequency_penalty()
+      call this%load_top_p()
+      call this%load_n()
+      call this%load_stream()
       call this%load_max_tokens()
    end subroutine load_ChatCompletion_data
    !===============================================================================
@@ -386,10 +411,99 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      real                                 :: tmp
+      logical                              :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.temperature", tmp, found=found)
+      if (found) this%temperature = tmp
       call json%destroy()
    end subroutine load_temperature
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine load_presence_penalty(this)
+      use json_module, only: json_file
+      class(ChatCompletion), intent(inout) :: this
+      type(json_file)                      :: json
+      real                                 :: tmp
+      logical                              :: found
+      call json%initialize()
+      call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.presence_penalty", tmp, found=found)
+      if (found) this%presence_penalty = tmp
+      call json%destroy()
+   end subroutine load_presence_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine load_frequency_penalty(this)
+      use json_module, only: json_file
+      class(ChatCompletion), intent(inout) :: this
+      type(json_file)                      :: json
+      real                                 :: tmp
+      logical                              :: found
+      call json%initialize()
+      call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.frequency_penalty", tmp, found=found)
+      if (found) this%frequency_penalty = tmp
+      call json%destroy()
+   end subroutine load_frequency_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine load_top_p(this)
+      use json_module, only: json_file
+      class(ChatCompletion), intent(inout) :: this
+      type(json_file)                      :: json
+      real                                 :: tmp
+      logical                              :: found
+      call json%initialize()
+      call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.top_p", tmp, found=found)
+      if (found) this%top_p = tmp
+      call json%destroy()
+   end subroutine load_top_p
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine load_n(this)
+      use json_module, only: json_file
+      class(ChatCompletion), intent(inout) :: this
+      type(json_file)                      :: json
+      integer                              :: tmp
+      logical                              :: found
+      call json%initialize()
+      call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.n", tmp, found=found)
+      if (found) this%n=tmp
+      call json%destroy()
+   end subroutine load_n
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine load_stream(this)
+      use json_module, only: json_file
+      class(ChatCompletion), intent(inout) :: this
+      type(json_file)                      :: json
+      logical                              :: tmp
+      logical                              :: found
+      call json%initialize()
+      call json%load_file(trim(this%file_name))
+      call json%get("ChatCompletion.stream", tmp, found=found)
+      if (found) this%stream = tmp
+      call json%destroy()
+   end subroutine load_stream
    !===============================================================================
 
 
@@ -481,6 +595,56 @@ contains
       real,                  intent(in)    :: temperature
       this%temperature = temperature
    end subroutine set_temperature
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_presence_penalty(this, presence_penalty)
+      class(ChatCompletion), intent(inout) :: this
+      real,                  intent(in)    :: presence_penalty
+      this%presence_penalty = presence_penalty
+   end subroutine set_presence_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_frequency_penalty(this, frequency_penalty)
+      class(ChatCompletion), intent(inout) :: this
+      real,                  intent(in)    :: frequency_penalty
+      this%frequency_penalty = frequency_penalty
+   end subroutine set_frequency_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_top_p(this, top_p)
+      class(ChatCompletion), intent(inout) :: this
+      real,                  intent(in)    :: top_p
+      this%top_p = top_p
+   end subroutine set_top_p
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_n(this, n)
+      class(ChatCompletion), intent(inout) :: this
+      integer,               intent(in)    :: n
+      this%n = n
+   end subroutine set_n
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental pure subroutine set_stream(this, stream)
+      class(ChatCompletion), intent(inout) :: this
+      logical,               intent(in)    :: stream
+      this%stream = stream
+   end subroutine set_stream
    !===============================================================================
 
 
@@ -652,6 +816,11 @@ contains
          call json%add('user', trim(this%user_name))
          call json%add('temperature', this%temperature)
          call json%add('max_tokens', this%max_tokens)
+         call json%add('stream', this%stream)
+         call json%add('n', this%n)
+         call json%add('presence_penalty', this%presence_penalty)
+         call json%add('frequency_penalty', this%frequency_penalty)
+         call json%add('top_p', this%top_p)
          call json%print_to_string(jsonstr)
          call json%destroy()
 
@@ -746,6 +915,51 @@ contains
       class(ChatCompletion), intent(inout) :: this
       print "('temperature: ',F3.1)", this%temperature
    end subroutine print_temperature
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_presence_penalty(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('presence_penalty: ',F3.1)", this%presence_penalty
+   end subroutine print_presence_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_frequency_penalty(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('frequency_penalty: ',F3.1)", this%frequency_penalty
+   end subroutine print_frequency_penalty
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_top_p(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('top_p: ',F3.1)", this%top_p
+   end subroutine print_top_p
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_n(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('n: ',I10)", this%n
+   end subroutine print_n
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_stream(this)
+      class(ChatCompletion), intent(inout) :: this
+      print "('stream: ',L1)", this%stream
+   end subroutine print_stream
    !===============================================================================
 
 
