@@ -372,8 +372,10 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("ChatCompletion.max_tokens", this%max_tokens)
+      call json%destroy()
    end subroutine load_max_tokens
    !===============================================================================
 
@@ -384,8 +386,9 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      call json%initialize()
       call json%load_file(trim(this%file_name))
-      call json%get("ChatCompletion.temperature", this%temperature)
+      call json%destroy()
    end subroutine load_temperature
    !===============================================================================
 
@@ -396,8 +399,10 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("ChatCompletion.url", this%url)
+      call json%destroy()
    end subroutine load_url
    !===============================================================================
 
@@ -408,8 +413,10 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("ChatCompletion.model", this%model)
+      call json%destroy()
    end subroutine load_model
    !===============================================================================
 
@@ -420,8 +427,10 @@ contains
       use json_module, only: json_file
       class(ChatCompletion), intent(inout) :: this
       type(json_file)                      :: json
+      call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("ChatCompletion.user_name", this%user_name)
+      call json%destroy()
    end subroutine load_user_name
    !===============================================================================
 
@@ -632,6 +641,7 @@ contains
             pair_type('OpenAI-Organization', ' '//trim(this%organization)//'')&
             ]
 
+         call json%initialize()
          call json%add('model', trim(this%model))
          do i = 1, size(this%messages)
             write (i_str, "(I10)") i
@@ -643,11 +653,13 @@ contains
          call json%add('temperature', this%temperature)
          call json%add('max_tokens', this%max_tokens)
          call json%print_to_string(jsonstr)
+         call json%destroy()
 
          response = request(url = trim(this%url), method = HTTP_POST, data = jsonstr, header = req_header)
 
          if (response%ok) then
-            json = response%content
+            call json%initialize()
+            call json%deserialize(response%content)
 
             call json%get("choices(1).finish_reason", this%finish_reason)
             
@@ -661,6 +673,7 @@ contains
                assistant_response = jsonstr
             end if
             call this%set_asisstant_response(response=trim(assistant_response))
+            call json%destroy()
          else
             print '(A)', 'Sorry, an error occurred while processing your request.'
             print '(A)', 'Error message:', response%err_msg
