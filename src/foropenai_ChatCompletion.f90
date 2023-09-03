@@ -245,7 +245,7 @@ contains
       character(len=*),      intent(in)    :: file_name
       integer                              :: iounit
 
-      open(unit=iounit, file=trim(file_name), status='unknown', access='append', action='write')
+      open(newunit=iounit, file=trim(file_name), status='unknown', access='append', action='write')
       write(iounit,"(A,': ',A)") this%user_name, this%get_user_message()
       write(iounit,"('ChatGPT: ',A)") this%get_assistant_response()
       close(iounit)
