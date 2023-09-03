@@ -155,10 +155,13 @@ contains
       character(len=*), intent(in), optional :: file_name
       type(json_file)                        :: json
       if (present(file_name)) call this%set_file_name(file_name)
+      call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("base.api_key", this%api_key)
+      call json%destroy()
    end subroutine load_api_key
    !===============================================================================
+
 
 
    !===============================================================================
