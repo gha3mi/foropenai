@@ -207,8 +207,6 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine conversation(this, config_file, input_file, output_file, inputfile_command, exit_command)
-      use face, only: colorize
-
       class(ChatCompletion), intent(inout) :: this
       character(len=*), intent(in)         :: config_file
       character(len=*), intent(in)         :: input_file
@@ -613,7 +611,6 @@ contains
    elemental impure subroutine create_chat_completion(this)
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
-      use face,        only: colorize
 
       class(ChatCompletion), intent(inout) :: this
       character(len=:),      allocatable   :: assistant_response
