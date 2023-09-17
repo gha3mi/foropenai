@@ -55,7 +55,7 @@
                   <li><a href="../lists/modules.html">Modules</a></li>
                   <li><a href="../lists/procedures.html">Procedures</a></li>
                   <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../program/test_base.html">Program</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -71,7 +71,7 @@
                 <a href="../lists/types.html">Derived Types</a>
               </li>
               <li class="visible-xs hidden-sm visible-lg">
-                <a href="../program/test_base.html">Program</a>
+                <a href="../lists/programs.html">Programs</a>
               </li>
           </ul>
             <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p>59.8% of total for derived types.</p>Including implementation: 614 statements, 75.2% of total for derived types.">70 statements</a>
+               title="<p>59.7% of total for derived types.</p>Including implementation: 644 statements, 75.4% of total for derived types.">71 statements</a>
           </li>
 
             <li id="source-file">
@@ -203,7 +203,7 @@
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_assistant_response">get_assistant_response</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_user_message">get_user_message</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-init_messages">init_messages</a>
-            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_chatcompletion_data">load_ChatCompletion_data</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load">load</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_user_name">load_user_name</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_url">load_url</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_model">load_model</a>
@@ -241,6 +241,7 @@
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_max_tokens">set_max_tokens</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_asisstant_response">set_asisstant_response</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_user_message">set_user_message</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set~2">set</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-write_history">write_history</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-print_finish_reason">print_finish_reason</a>
         </div>
@@ -463,7 +464,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_assistant_response">get_assistant_response</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-get_user_message">get_user_message</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-init_messages">init_messages</a>
-            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_chatcompletion_data">load_ChatCompletion_data</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load">load</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_user_name">load_user_name</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_url">load_url</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-load_model">load_model</a>
@@ -501,6 +502,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_max_tokens">set_max_tokens</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_asisstant_response">set_asisstant_response</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set_user_message">set_user_message</a>
+            <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-set~2">set</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-write_history">write_history</a>
             <a class="list-group-item" href="../type/chatcompletion.html#boundprocedure-print_finish_reason">print_finish_reason</a>
         </div>
@@ -1344,7 +1346,7 @@ large graphs.</div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private impure elemental subroutine <a href='../proc/conversation.html'>conversation</a>(this, config_file, input_file, output_file, inputfile_command, exit_command)  
+    private impure elemental subroutine <a href='../proc/conversation.html'>conversation</a>(this, file_name_base, file_name_ChatCompletion, input_file, output_file, inputfile_command, exit_command)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1388,7 +1390,22 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>config_file</strong></td>
+            <td><strong>file_name_base</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name_ChatCompletion</strong></td>
             <td>
 
             </td>
@@ -1967,7 +1984,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-load_chatcompletion_data"></span><h3>procedure, public,  :: <strong>load_ChatCompletion_data</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-load"></span><h3>procedure, public,  :: <strong>load</strong>  => <a href='../proc/load_chatcompletion_data.html'>load_ChatCompletion_data</a>         
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -4031,6 +4048,219 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set~2"></span><h3>procedure, public,  :: <strong>set</strong>  => <a href='../proc/set_chatcompletion_data.html'>set_ChatCompletion_data</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/set_chatcompletion_data.html'>set_ChatCompletion_data</a>(this, file_name, url, model, user_name, temperature, presence_penalty, frequency_penalty, top_p, n, stream, max_tokens)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>model</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>temperature</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>presence_penalty</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>frequency_penalty</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              real,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>top_p</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              logical,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>stream</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>max_tokens</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-write_history"></span><h3>procedure, public,  :: <strong>write_history</strong>          
     </h3></div>
     <ul class="list-group">
@@ -4174,7 +4404,7 @@ large graphs.</div>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_assistant_response</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">get_user_message</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">init_messages</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_ChatCompletion_data</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">load_ChatCompletion_data</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_user_name</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_url</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_model</span><span class="w"></span>
@@ -4212,6 +4442,7 @@ large graphs.</div>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_max_tokens</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_asisstant_response</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_user_message</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">set_ChatCompletion_data</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">write_history</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_finish_reason</span><span class="w"></span>
 <span class="w">   </span><span class="k">end type </span><span class="n">ChatCompletion</span><span class="w"></span>
@@ -4234,7 +4465,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-17T11:40:56.241725             </p>
+ on 2023-09-17T11:46:36.739434             </p>
           </div>
         </div>
         <br>

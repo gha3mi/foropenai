@@ -55,7 +55,7 @@
                   <li><a href="../lists/modules.html">Modules</a></li>
                   <li><a href="../lists/procedures.html">Procedures</a></li>
                   <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../program/test_base.html">Program</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
               </ul>
             </li>
                 <li class="visible-xs hidden-sm visible-lg">
@@ -71,7 +71,7 @@
                 <a href="../lists/types.html">Derived Types</a>
               </li>
               <li class="visible-xs hidden-sm visible-lg">
-                <a href="../program/test_base.html">Program</a>
+                <a href="../lists/programs.html">Programs</a>
               </li>
           </ul>
             <form action="../search.html" class="navbar-form navbar-right" role="search">
@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p> 7.7% of total for derived types.</p>Including implementation: 21 statements,  2.6% of total for derived types.">9 statements</a>
+               title="<p> 8.4% of total for derived types.</p>Including implementation: 28 statements,  3.3% of total for derived types.">10 statements</a>
           </li>
 
             <li id="source-file">
@@ -171,6 +171,7 @@
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_prompt_tokens">print_prompt_tokens</a>
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_completion_tokens">print_completion_tokens</a>
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_total_tokens">print_total_tokens</a>
+            <a class="list-group-item" href="../type/usage.html#boundprocedure-print">print</a>
         </div>
       </div>
     </div>
@@ -328,6 +329,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_prompt_tokens">print_prompt_tokens</a>
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_completion_tokens">print_completion_tokens</a>
             <a class="list-group-item" href="../type/usage.html#boundprocedure-print_total_tokens">print_total_tokens</a>
+            <a class="list-group-item" href="../type/usage.html#boundprocedure-print">print</a>
         </div>
       </div>
     </div>
@@ -561,6 +563,54 @@ large graphs.</div>
     </ul>
   </div>
 
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print"></span><h3>procedure, public,  :: <strong>print</strong>  => <a href='../proc/print_usage.html'>print_usage</a>         
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private impure elemental subroutine <a href='../proc/print_usage.html'>print_usage</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/usage.html'>usage</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
       </section>
 
     <section>
@@ -573,6 +623,7 @@ large graphs.</div>
 <span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_prompt_tokens</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_completion_tokens</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_total_tokens</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">print</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">print_usage</span><span class="w"></span>
 <span class="w">   </span><span class="k">end type </span><span class="n">usage</span><span class="w"></span>
 </pre></div>
 
@@ -593,7 +644,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-17T11:40:56.241725             </p>
+ on 2023-09-17T11:46:36.739434             </p>
           </div>
         </div>
         <br>
