@@ -14,21 +14,21 @@ module foropenai_base
       character(len=14)             :: api_key_env      = 'OPENAI_API_KEY'
       character(len=10)             :: organization_env = 'OPENAI_ORG'
    contains
-      procedure :: deallocate_api_key
-      procedure :: deallocate_organization
-      procedure :: deallocate_file_name
+      procedure, private :: deallocate_api_key
+      procedure, private :: deallocate_organization
+      procedure, private :: deallocate_file_name
       procedure :: finalize => deallocate_openai
-      procedure :: load_api_key
-      procedure :: load_organization
+      procedure, private :: load_api_key
+      procedure, private :: load_organization
       procedure :: load_base_data
       procedure :: print_api_key
       procedure :: print_organization
       procedure :: print_file_name
-      procedure :: set_organization
-      procedure :: set_api_key
       procedure :: set_file_name
-      procedure :: set_api_key_env
-      procedure :: set_organization_env
+      procedure, private :: set_api_key
+      procedure, private :: set_organization
+      procedure, private :: set_api_key_env
+      procedure, private :: set_organization_env
       procedure :: set_base_data
    end type openai
    !===============================================================================
@@ -37,12 +37,17 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine set_base_data(this, file_name)
-      class(openai),    intent(inout) :: this
-      character(len=*), intent(in)    :: file_name
-      integer                         :: stat_api_key, stat_organization
+   elemental impure subroutine set_base_data(this, file_name, api_key, organization)
+      class(openai),              intent(inout) :: this
+      character(len=*), optional, intent(in)    :: file_name
+      character(len=*), optional, intent(in)    :: api_key
+      character(len=*), optional, intent(in)    :: organization
+      integer                                   :: stat_api_key, stat_organization
 
-      call this%set_file_name(file_name)
+      if (present(api_key)) call this%set_api_key(api_key)
+      if (present(organization)) call this%set_organization(organization)
+
+      if (present(file_name)) call this%set_file_name(file_name)
 
       call this%set_api_key_env(status=stat_api_key)
       if (stat_api_key == 1) call this%load_api_key(file_name)
