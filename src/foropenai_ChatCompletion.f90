@@ -17,6 +17,7 @@ module foropenai_ChatCompletion
       procedure :: print_prompt_tokens
       procedure :: print_completion_tokens
       procedure :: print_total_tokens
+      procedure :: print => print_usage
    end type usage
    !===============================================================================
 
@@ -71,7 +72,7 @@ module foropenai_ChatCompletion
       procedure :: get_assistant_response
       procedure :: get_user_message
       procedure :: init_messages
-      procedure :: load_ChatCompletion_data
+      procedure :: load => load_ChatCompletion_data
       procedure :: load_user_name
       procedure :: load_url
       procedure :: load_model
@@ -109,12 +110,59 @@ module foropenai_ChatCompletion
       procedure :: set_max_tokens
       procedure :: set_asisstant_response
       procedure :: set_user_message
+      procedure :: set => set_ChatCompletion_data
       procedure :: write_history
       procedure :: print_finish_reason
    end type ChatCompletion
    !===============================================================================
 
 contains
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_usage(this)
+      class(usage), intent(inout) :: this
+      call this%print_prompt_tokens()
+      call this%print_completion_tokens()
+      call this%print_total_tokens()
+   end subroutine print_usage
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine set_ChatCompletion_data(this, file_name, &
+      url, model, user_name, temperature, presence_penalty, frequency_penalty, top_p, n, stream, max_tokens)
+      class(ChatCompletion),      intent(inout) :: this
+      character(len=*), optional, intent(in)    :: file_name
+      character(len=*), optional, intent(in)    :: url
+      character(len=*), optional, intent(in)    :: model
+      character(len=*), optional, intent(in)    :: user_name
+      real,             optional, intent(in)    :: temperature
+      real,             optional, intent(in)    :: presence_penalty
+      real,             optional, intent(in)    :: frequency_penalty
+      real,             optional, intent(in)    :: top_p
+      integer,          optional, intent(in)    :: n
+      logical,          optional, intent(in)    :: stream
+      integer,          optional, intent(in)    :: max_tokens
+      if (present(url)) call this%set_url(url=url)
+      if (present(model)) call this%set_model(model=model)
+      if (present(user_name)) call this%set_user_name(user_name=user_name)
+      if (present(temperature)) call this%set_temperature(temperature=temperature)
+      if (present(presence_penalty)) call this%set_presence_penalty(presence_penalty=presence_penalty)
+      if (present(frequency_penalty)) call this%set_frequency_penalty(frequency_penalty=frequency_penalty)
+      if (present(top_p)) call this%set_top_p(top_p=top_p)
+      if (present(n)) call this%set_n(n=n)
+      if (present(stream)) call this%set_stream(stream=stream)
+      if (present(max_tokens)) call this%set_max_tokens(max_tokens=max_tokens)
+
+      if (present(file_name)) then
+         call this%set_file_name(file_name)
+         call this%load(file_name)
+      end if
+   end subroutine set_ChatCompletion_data
+   !===============================================================================
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -226,16 +274,18 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine conversation(this, config_file, input_file, output_file, inputfile_command, exit_command)
+   elemental impure subroutine conversation(this, file_name_base, file_name_ChatCompletion, &
+   input_file, output_file, inputfile_command, exit_command)
       class(ChatCompletion), intent(inout) :: this
-      character(len=*), intent(in)         :: config_file
+      character(len=*), intent(in)         :: file_name_base
+      character(len=*), intent(in)         :: file_name_ChatCompletion
       character(len=*), intent(in)         :: input_file
       character(len=*), intent(in)         :: output_file
       character(len=*), intent(in)         :: inputfile_command
       character(len=*), intent(in)         :: exit_command
 
-      call this%set_base_data(config_file)
-      call this%load_ChatCompletion_data(config_file)
+      call this%set_base_data(file_name_base)
+      call this%set(file_name_ChatCompletion)
 
       call this%init_messages(n=3)
       call this%messages(1)%set(role='system', content='You are a helpful assistant.')

@@ -30,3 +30,9 @@ FACE = { git = "https://github.com/szaghi/FACE" }
 name       = "test1"
 source-dir = "test"
 main       = "test1.f90"
+
+[[test]]
+name       = "test2"
+source-dir = "test"
+main       = "test2.f90"
+
