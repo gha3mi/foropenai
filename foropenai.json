@@ -15,5 +15,13 @@
         "presence_penalty": 0.0,
         "n": 1,
         "stream": false
+    },
+    
+    "Transcription": {
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "model": "whisper-1",
+        "temperature": 1.0,
+        "language": "en",
+        "response_format": "json"
     }
 }
