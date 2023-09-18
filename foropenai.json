@@ -23,5 +23,13 @@
         "temperature": 1.0,
         "language": "en",
         "response_format": "json"
+    },
+    
+    "ImageGeneration": {
+        "user_name": "Ali",
+        "url": "https://api.openai.com/v1/images/generations",
+        "size": "1024x1024",
+        "n": 1,
+        "response_format": "url"
     }
 }
