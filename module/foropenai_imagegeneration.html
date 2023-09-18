@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForOpenAI">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>foropenai_ImageGeneration &ndash; ForOpenAI</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.4.0</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
+              </ul>
+            </li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/programs.html">Programs</a>
+              </li>
+          </ul>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>foropenai_ImageGeneration
+      <small>Module</small>
+      
+    </h1>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title="19.4% of total for modules and submodules.">265 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/foropenai_Image.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/foropenai_image.f90.html'>foropenai_Image.f90</a></li>
+          <li class="active">foropenai_ImageGeneration</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+        <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-0">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#type-imagegeneration">ImageGeneration</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-0">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-0" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-create_image">create_image</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_url~3">load_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_size">load_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_response_format~2">load_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_n~2">load_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_user_name~2">load_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_url">print_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_size">print_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_prompt~2">print_prompt</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_response_format~2">print_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_n~2">print_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_user_name~2">print_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_assistant_response~2">print_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_url~3">set_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_size">set_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_prompt~2">set_prompt</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_response_format~2">set_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_n~2">set_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_user_name~2">set_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response">set_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_imagegeneration_data">set_ImageGeneration_data</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_imagegeneration_data">load_ImageGeneration_data</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_url~3">deallocate_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_user_name~2">deallocate_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response">deallocate_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_imagegeneration">deallocate_ImageGeneration</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+
+    </div>
+
+    <div class="col-md-9" id='text'>
+      
+<br>          <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+            <ul class="list-inline">
+                <li><a href='../module/foropenai_base.html'>foropenai_base</a></li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~foropenai_imagegeneration~~UsesGraph Pages: 1 -->
+<svg id="moduleforopenai_imagegenerationUsesGraph" width="301pt" height="32pt"
+ viewBox="0.00 0.00 301.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~foropenai_imagegeneration~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~foropenai_imagegeneration~~UsesGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 297,-28 297,4 -4,4"/>
+<!-- module~foropenai_imagegeneration -->
+<g id="module~~foropenai_imagegeneration~~UsesGraph_node1" class="node">
+<title>module~foropenai_imagegeneration</title>
+<polygon fill="none" stroke="black" points="293,-24 130,-24 130,0 293,0 293,-24"/>
+<text text-anchor="middle" x="211.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ImageGeneration</text>
+</g>
+<!-- module~foropenai_base -->
+<g id="module~~foropenai_imagegeneration~~UsesGraph_node2" class="node">
+<title>module~foropenai_base</title>
+<g id="a_module~~foropenai_imagegeneration~~UsesGraph_node2"><a xlink:href=".././module/foropenai_base.html" xlink:title="foropenai_base">
+<polygon fill="#337ab7" stroke="#337ab7" points="94,-24 0,-24 0,0 94,0 94,-24"/>
+<text text-anchor="middle" x="47" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base</text>
+</a>
+</g>
+</g>
+<!-- module~foropenai_imagegeneration&#45;&gt;module~foropenai_base -->
+<g id="module~~foropenai_imagegeneration~~UsesGraph_edge1" class="edge">
+<title>module~foropenai_imagegeneration&#45;&gt;module~foropenai_base</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M129.73,-12C121.1,-12 112.47,-12 104.22,-12"/>
+<polygon fill="#255000" stroke="#255000" points="104,-8.5 94,-12 104,-15.5 104,-8.5"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </li>
+      </ul>
+    </div>
+
+          <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+          <li class="list-group-item">
+            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: module~~foropenai_imagegeneration~~UsedByGraph Pages: 1 -->
+<svg id="moduleforopenai_imagegenerationUsedByGraph" width="438pt" height="158pt"
+ viewBox="0.00 0.00 438.00 158.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~foropenai_imagegeneration~~UsedByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 154)">
+<title>module~~foropenai_imagegeneration~~UsedByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-154 434,-154 434,4 -4,4"/>
+<!-- module~foropenai_imagegeneration -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node1" class="node">
+<title>module~foropenai_imagegeneration</title>
+<polygon fill="none" stroke="black" points="163,-87 0,-87 0,-63 163,-63 163,-87"/>
+<text text-anchor="middle" x="81.5" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ImageGeneration</text>
+</g>
+<!-- module~foropenai -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node2" class="node">
+<title>module~foropenai</title>
+<g id="a_module~~foropenai_imagegeneration~~UsedByGraph_node2"><a xlink:href=".././module/foropenai.html" xlink:title="foropenai">
+<polygon fill="#337ab7" stroke="#337ab7" points="263,-87 199,-87 199,-63 263,-63 263,-87"/>
+<text text-anchor="middle" x="231" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai</text>
+</a>
+</g>
+</g>
+<!-- module~foropenai&#45;&gt;module~foropenai_imagegeneration -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_edge1" class="edge">
+<title>module~foropenai&#45;&gt;module~foropenai_imagegeneration</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M198.72,-75C191.04,-75 182.43,-75 173.45,-75"/>
+<polygon fill="#255000" stroke="#255000" points="173.2,-71.5 163.2,-75 173.2,-78.5 173.2,-71.5"/>
+</g>
+<!-- program~test_base -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node3" class="node">
+<title>program~test_base</title>
+<g id="a_module~~foropenai_imagegeneration~~UsedByGraph_node3"><a xlink:href=".././program/test_base.html" xlink:title="test_base">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="396,-150 333,-150 333,-126 396,-126 396,-150"/>
+<text text-anchor="middle" x="364.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_base</text>
+</a>
+</g>
+</g>
+<!-- program~test_base&#45;&gt;module~foropenai -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_edge2" class="edge">
+<title>program~test_base&#45;&gt;module~foropenai</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M332.72,-129.67C321.84,-126.28 309.67,-121.99 299,-117 284.49,-110.22 269.29,-100.89 257.04,-92.75"/>
+<polygon fill="#255000" stroke="#255000" points="258.93,-89.81 248.69,-87.09 255,-95.6 258.93,-89.81"/>
+</g>
+<!-- program~test_chatcompletion -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node4" class="node">
+<title>program~test_chatcompletion</title>
+<g id="a_module~~foropenai_imagegeneration~~UsedByGraph_node4"><a xlink:href=".././program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="426.5,-108 302.5,-108 302.5,-84 426.5,-84 426.5,-108"/>
+<text text-anchor="middle" x="364.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ChatCompletion</text>
+</a>
+</g>
+</g>
+<!-- program~test_chatcompletion&#45;&gt;module~foropenai -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_edge3" class="edge">
+<title>program~test_chatcompletion&#45;&gt;module~foropenai</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M302.37,-86.24C292.53,-84.67 282.54,-83.07 273.31,-81.6"/>
+<polygon fill="#255000" stroke="#255000" points="273.68,-78.11 263.25,-79.99 272.58,-85.02 273.68,-78.11"/>
+</g>
+<!-- program~test_imagegeneration -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node5" class="node">
+<title>program~test_imagegeneration</title>
+<g id="a_module~~foropenai_imagegeneration~~UsedByGraph_node5"><a xlink:href=".././program/test_imagegeneration.html" xlink:title="test_ImageGeneration">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="430,-66 299,-66 299,-42 430,-42 430,-66"/>
+<text text-anchor="middle" x="364.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ImageGeneration</text>
+</a>
+</g>
+</g>
+<!-- program~test_imagegeneration&#45;&gt;module~foropenai -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_edge4" class="edge">
+<title>program~test_imagegeneration&#45;&gt;module~foropenai</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M298.91,-64.32C290.14,-65.72 281.34,-67.12 273.14,-68.43"/>
+<polygon fill="#255000" stroke="#255000" points="272.44,-65 263.12,-70.03 273.55,-71.91 272.44,-65"/>
+</g>
+<!-- program~test_transcription -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_node6" class="node">
+<title>program~test_transcription</title>
+<g id="a_module~~foropenai_imagegeneration~~UsedByGraph_node6"><a xlink:href=".././program/test_transcription.html" xlink:title="test_Transcription">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="417.5,-24 311.5,-24 311.5,0 417.5,0 417.5,-24"/>
+<text text-anchor="middle" x="364.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_Transcription</text>
+</a>
+</g>
+</g>
+<!-- program~test_transcription&#45;&gt;module~foropenai -->
+<g id="module~~foropenai_imagegeneration~~UsedByGraph_edge5" class="edge">
+<title>program~test_transcription&#45;&gt;module~foropenai</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M321.29,-24.09C313.74,-26.72 306.04,-29.71 299,-33 284.49,-39.78 269.29,-49.11 257.04,-57.25"/>
+<polygon fill="#255000" stroke="#255000" points="255,-54.4 248.69,-62.91 258.93,-60.19 255,-54.4"/>
+</g>
+</g>
+</svg>
+</div>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="518pt" height="32pt"
+ viewBox="0.00 0.00 517.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 513.5,-28 513.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="145.5,-24 72.5,-24 72.5,0 145.5,0 145.5,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="234,-24 164,-24 164,0 234,0 234,-24"/>
+<text text-anchor="middle" x="199" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="310,-24 252,-24 252,0 310,0 310,-24"/>
+<text text-anchor="middle" x="281" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="386,-24 328,-24 328,0 386,0 386,-24"/>
+<text text-anchor="middle" x="357" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="509.5,-24 404.5,-24 404.5,0 509.5,0 509.5,-24"/>
+<text text-anchor="middle" x="457" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+          </li>
+      </ul>
+    </div>
+
+      <br>
+
+      <section class="visible-xs visible-sm hidden-md">
+          <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#types-1">Derived Types</a>
+        </h3>
+      </div>
+      <div id="types-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#type-imagegeneration">ImageGeneration</a>
+        </div>
+      </div>
+    </div>
+
+  
+      <div class="panel panel-primary">
+      <div class="panel-heading text-left">
+        <h3 class="panel-title">
+          <a data-toggle="collapse" href="#subs-1">Subroutines</a>
+        </h3>
+      </div>
+      <div id="subs-1" class="panel-collapse collapse">
+        <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-create_image">create_image</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_url~3">load_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_size">load_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_response_format~2">load_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_n~2">load_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_user_name~2">load_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_url">print_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_size">print_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_prompt~2">print_prompt</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_response_format~2">print_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_n~2">print_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_user_name~2">print_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-print_assistant_response~2">print_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_url~3">set_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_size">set_size</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_prompt~2">set_prompt</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_response_format~2">set_response_format</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_n~2">set_n</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_user_name~2">set_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response">set_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_imagegeneration_data">set_ImageGeneration_data</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_imagegeneration_data">load_ImageGeneration_data</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_url~3">deallocate_url</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_user_name~2">deallocate_user_name</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response">deallocate_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_imagegeneration">deallocate_ImageGeneration</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+
+
+      </section>
+      <br class="visible-xs visible-sm hidden-md">
+
+
+
+
+
+
+        <section>
+          <h2>Derived Types</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum">
+      <span class="anchor" id="type-imagegeneration"></span>
+      <h3>
+        type, public, extends(<a href='../type/openai.html'>openai</a>)&nbsp;::&nbsp;
+        <a href='../type/imagegeneration.html'>ImageGeneration</a>
+        
+      </h3>
+    </div>
+    <div class="panel-body">
+      
+
+        <h4>Components</h4>
+          <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Visibility</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+<th></th><th>Initial</th>        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-organization"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>organization</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>api_key</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-file_name"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-api_key_env"></span>
+              character(len=14),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>api_key_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_API_KEY'</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-organization_env"></span>
+              character(len=10),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>organization_env</strong></td>
+<td> =</td>
+                <td>'OPENAI_ORG'</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-url~7"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-size"></span>
+              character(len=9),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+<td> =</td>
+                <td>'1024x1024'</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-prompt~4"></span>
+              character(len=1000),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prompt</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-response_format~4"></span>
+              character(len=4),
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>response_format</strong></td>
+<td> =</td>
+                <td>'url'</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-n~6"></span>
+              integer,
+            </td>
+              <td>public</td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+<td> =</td>
+                <td>1</td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-user_name~4"></span>
+              character(len=:),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-assistant_response"></span>
+              character(len=1024),
+            </td>
+              <td>public,</td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>assistant_response</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+        <h4>Type-Bound Procedures</h4>
+        <table class="table table-striped varlist">
+          <tbody>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-load_base_data'>load_base_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_api_key'>print_api_key</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_organization'>print_organization</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-print_file_name'>print_file_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_file_name'>set_file_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/openai.html#boundprocedure-set_base_data'>set_base_data</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-create~3'>create</a></strong>
+ =>
+                    <a href='../proc/create_image.html'>create_image</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-deallocate_url~3'>deallocate_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-deallocate_user_name~2'>deallocate_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-deallocate_assistant_response'>deallocate_assistant_response</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-finalize~5'>finalize</a></strong>
+ =>
+                    <a href='../proc/deallocate_imagegeneration.html'>deallocate_ImageGeneration</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load_url~3'>load_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load_size'>load_size</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load_response_format~2'>load_response_format</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load_n~2'>load_n</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load_user_name~2'>load_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-load~3'>load</a></strong>
+ =>
+                    <a href='../proc/load_imagegeneration_data.html'>load_ImageGeneration_data</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_url'>print_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_size'>print_size</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_prompt~2'>print_prompt</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_response_format~2'>print_response_format</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_n~2'>print_n</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_user_name~2'>print_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_assistant_response~2'>print_assistant_response</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_url~3'>set_url</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_size'>set_size</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_prompt~2'>set_prompt</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_response_format~2'>set_response_format</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_n~2'>set_n</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_user_name~2'>set_user_name</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_assistant_response'>set_assistant_response</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-set~4'>set</a></strong>
+ =>
+                    <a href='../proc/set_imagegeneration_data.html'>set_ImageGeneration_data</a>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+        <section>
+          <h2>Subroutines</h2>
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-create_image"></span><h3>private  subroutine <a href='../proc/create_image.html'>create_image</a>(this, prompt, n, size, response_format, user_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prompt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>response_format</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_url~3"></span><h3>private impure elemental subroutine <a href='../proc/load_url~3.html'>load_url</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_size"></span><h3>private impure elemental subroutine <a href='../proc/load_size.html'>load_size</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_response_format~2"></span><h3>private impure elemental subroutine <a href='../proc/load_response_format~2.html'>load_response_format</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_n~2"></span><h3>private impure elemental subroutine <a href='../proc/load_n~2.html'>load_n</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_user_name~2"></span><h3>private impure elemental subroutine <a href='../proc/load_user_name~2.html'>load_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_url"></span><h3>private impure elemental subroutine <a href='../proc/print_url.html'>print_url</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_size"></span><h3>private impure elemental subroutine <a href='../proc/print_size.html'>print_size</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_prompt~2"></span><h3>private impure elemental subroutine <a href='../proc/print_prompt~2.html'>print_prompt</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_response_format~2"></span><h3>private impure elemental subroutine <a href='../proc/print_response_format~2.html'>print_response_format</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_n~2"></span><h3>private impure elemental subroutine <a href='../proc/print_n~2.html'>print_n</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_user_name~2"></span><h3>private impure elemental subroutine <a href='../proc/print_user_name~2.html'>print_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_assistant_response~2"></span><h3>private impure elemental subroutine <a href='../proc/print_assistant_response~2.html'>print_assistant_response</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_url~3"></span><h3>private pure elemental subroutine <a href='../proc/set_url~3.html'>set_url</a>(this, url)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_size"></span><h3>private pure elemental subroutine <a href='../proc/set_size.html'>set_size</a>(this, size)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_prompt~2"></span><h3>private pure elemental subroutine <a href='../proc/set_prompt~2.html'>set_prompt</a>(this, prompt)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prompt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_response_format~2"></span><h3>private pure elemental subroutine <a href='../proc/set_response_format~2.html'>set_response_format</a>(this, response_format)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>response_format</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_n~2"></span><h3>private pure elemental subroutine <a href='../proc/set_n~2.html'>set_n</a>(this, n)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_user_name~2"></span><h3>private pure elemental subroutine <a href='../proc/set_user_name~2.html'>set_user_name</a>(this, user_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_assistant_response"></span><h3>private pure elemental subroutine <a href='../proc/set_assistant_response.html'>set_assistant_response</a>(this, assistant_response, i)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>assistant_response</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>i</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_imagegeneration_data"></span><h3>private impure elemental subroutine <a href='../proc/set_imagegeneration_data.html'>set_ImageGeneration_data</a>(this, file_name, url, size, prompt, response_format, n, user_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>url</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>size</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>prompt</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>response_format</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              integer,
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>n</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>user_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-load_imagegeneration_data"></span><h3>private impure elemental subroutine <a href='../proc/load_imagegeneration_data.html'>load_ImageGeneration_data</a>(this, file_name)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>file_name</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_url~3"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_url~3.html'>deallocate_url</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_user_name~2"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_user_name~2.html'>deallocate_user_name</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_assistant_response"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_assistant_response.html'>deallocate_assistant_response</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_imagegeneration"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_imagegeneration.html'>deallocate_ImageGeneration</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+        </section>
+        <br>
+
+
+
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-09-18T18:09:25.778565             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>
