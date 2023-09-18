@@ -107,7 +107,9 @@ ChatGPT: Hello! How can I assist you today?
 ```
 
 ## Transcription
-<audio src="test/audio.mp3" controls title="Title"></audio>
+
+<audio src="test/audio.mp3" controls title="Transcription"></audio>
+
 ```fortran
 program test_Transcription
 
@@ -157,7 +159,7 @@ end program test_ImageGeneration
 
 ### Result:
 
-<img src="image.png" alt="Alt text" width="200" height="" />
+<img src="test/image.png" alt="image" width="200" height="" />
 
 ## fpm dependency
 
