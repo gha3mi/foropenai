@@ -69,6 +69,96 @@ fpm run
 
 ![Alt text](media/example.png)
 
+## Create Chat Completion
+
+```fortran
+program test_ChatCompletion
+
+   use foropenai, only: ChatCompletion
+
+   implicit none
+
+   type(ChatCompletion) :: chat
+
+   call chat%set_base_data(file_name='foropenai.json')
+   call chat%set(file_name='foropenai.json')
+
+   call chat%init_messages(n=3)
+   call chat%messages(1)%set(role='system', content='You are a helpful assistant.')
+   call chat%messages(2)%set(role='user', content='Hello?')
+   call chat%messages(3)%set(role='assistant', content='')
+
+   call chat%print_user_message()
+   call chat%create()
+   call chat%print_assistant_response()
+
+   call chat%usage%print()
+
+   call chat%finalize()
+
+end program test_ChatCompletion
+```
+
+### Result:
+
+```shell
+Ali: Hello?
+ChatGPT: Hello! How can I assist you today?
+```
+
+## Transcription
+<audio src="test/audio.mp3" controls title="Title"></audio>
+```fortran
+program test_Transcription
+
+   use foropenai, only: Transcription
+
+   implicit none
+
+   type(Transcription) :: trs
+
+   call trs%set_base_data(file_name='foropenai.json')
+   call trs%set(file_name='foropenai.json')
+
+   call trs%create(file='test/audio.mp3')
+   call trs%print_text()
+
+   call trs%finalize()
+
+end program test_Transcription
+```
+### Result:
+
+```shell
+text: FORTRAN stands for Formula Translation.
+```
+
+## Image Generation
+
+```fortran
+program test_ImageGeneration
+
+   use foropenai, only: ImageGeneration
+
+   implicit none
+
+   type(ImageGeneration) :: image
+
+   call image%set_base_data(file_name='foropenai.json')
+   call image%set(file_name='foropenai.json')
+
+   call image%create(prompt='a cat with a computer')
+   call image%print_assistant_response()
+
+   call image%finalize()
+
+end program test_ImageGeneration
+```
+
+### Result:
+
+<img src="image.png" alt="Alt text" width="200" height="" />
+
 ## fpm dependency
 
 If you want to use `ForOpenAI` as a dependency in your own fpm project,
