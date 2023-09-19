@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForOpenAI">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>deallocate_ImageEdit &ndash; ForOpenAI</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+      <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+         <script src="../js/jquery-2.1.3.min.js"></script>
+         <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.4.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+                 data-toggle="dropdown" role="button"
+                 aria-haspopup="true"
+                 aria-expanded="false">
+                 Contents <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                    <li><a href="../lists/files.html">Source Files</a></li>
+                  <li><a href="../lists/modules.html">Modules</a></li>
+                  <li><a href="../lists/procedures.html">Procedures</a></li>
+                  <li><a href="../lists/types.html">Derived Types</a></li>
+                  <li><a href="../lists/programs.html">Programs</a></li>
+              </ul>
+            </li>
+                <li class="visible-xs hidden-sm visible-lg">
+                  <a href="../lists/files.html">Source Files</a>
+                </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/modules.html">Modules</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/procedures.html">Procedures</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/types.html">Derived Types</a>
+              </li>
+              <li class="visible-xs hidden-sm visible-lg">
+                <a href="../lists/programs.html">Programs</a>
+              </li>
+          </ul>
+            <form action="../search.html" class="navbar-form navbar-right" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+              </div>
+              <!--
+                  <button type="submit" class="btn btn-default">Submit</button>
+                  -->
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+  <div class="row">
+    <h1>deallocate_ImageEdit
+      <small>Subroutine</small>
+      
+    </h1>
+      <div class="row" id="info-bar">
+    <div class="col-lg-12">
+      <div class="well well-sm">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+
+          <li id="statements"><i class="fa fa-list-ol"></i>
+            <a data-toggle="tooltip"
+               data-placement="bottom" data-html="true"
+               title=" 0.5% of total for procedures.">8 statements</a>
+          </li>
+
+            <li id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/foropenai_ImageEdit.f90"> Source File</a>
+            </li>
+        </ul>
+        <ol class="breadcrumb in-well text-right">
+              <li><a href='../sourcefile/foropenai_imageedit.f90.html'>foropenai_ImageEdit.f90</a></li>
+              <li><a href='../module/foropenai_imageedit.html'>foropenai_ImageEdit</a></li>
+          <li class="active">deallocate_ImageEdit</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/deallocate_imageedit.html#src">deallocate_ImageEdit</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>private pure elemental subroutine deallocate_ImageEdit(this)  
+</h2>
+    
+
+
+    <h3>Type Bound</h3>
+    <p><a href='../type/imageedit.html'>ImageEdit</a></p>
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-this~118"></span>
+              class(<a href='../type/imageedit.html'>ImageEdit</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~deallocate_imageedit~~CallsGraph Pages: 1 -->
+<svg id="procdeallocate_imageeditCallsGraph" width="641pt" height="181pt"
+ viewBox="0.00 0.00 641.00 180.82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~deallocate_imageedit~~CallsGraph" class="graph" transform="scale(1.11 1.11) rotate(0) translate(4 196)">
+<title>proc~~deallocate_imageedit~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-196 705,-196 705,4 -4,4"/>
+<!-- proc~deallocate_imageedit -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node1" class="node">
+<title>proc~deallocate_imageedit</title>
+<polygon fill="none" stroke="black" points="310,-108 0,-108 0,-84 310,-84 310,-108"/>
+<text text-anchor="middle" x="155" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ImageEdit::ImageEdit%deallocate_ImageEdit</text>
+</g>
+<!-- proc~deallocate_assistant_response -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node2" class="node">
+<title>proc~deallocate_assistant_response</title>
+<g id="a_proc~~deallocate_imageedit~~CallsGraph_node2"><a xlink:href=".././proc/deallocate_assistant_response.html" xlink:title="foropenai_ImageEdit::ImageEdit%deallocate_assistant_response">
+<polygon fill="#d9534f" stroke="#d9534f" points="701,-192 346,-192 346,-168 701,-168 701,-192"/>
+<text text-anchor="middle" x="523.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageEdit::ImageEdit%deallocate_assistant_response</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_imageedit&#45;&gt;proc~deallocate_assistant_response -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_edge1" class="edge">
+<title>proc~deallocate_imageedit&#45;&gt;proc~deallocate_assistant_response</title>
+<path fill="none" stroke="#255000" d="M186.07,-108.07C223.09,-122.44 288.17,-146.11 346,-159 358.6,-161.81 371.8,-164.26 385.06,-166.4"/>
+<polygon fill="#255000" stroke="#255000" points="384.78,-169.9 395.2,-167.97 385.86,-162.98 384.78,-169.9"/>
+</g>
+<!-- proc~deallocate_image -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node3" class="node">
+<title>proc~deallocate_image</title>
+<g id="a_proc~~deallocate_imageedit~~CallsGraph_node3"><a xlink:href=".././proc/deallocate_image.html" xlink:title="foropenai_ImageEdit::ImageEdit%deallocate_image">
+<polygon fill="#d9534f" stroke="#d9534f" points="668,-150 379,-150 379,-126 668,-126 668,-150"/>
+<text text-anchor="middle" x="523.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageEdit::ImageEdit%deallocate_image</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_imageedit&#45;&gt;proc~deallocate_image -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_edge2" class="edge">
+<title>proc~deallocate_imageedit&#45;&gt;proc~deallocate_image</title>
+<path fill="none" stroke="#255000" d="M261.02,-108.04C306.84,-113.29 360.69,-119.46 407.58,-124.83"/>
+<polygon fill="#255000" stroke="#255000" points="407.44,-128.34 417.78,-126 408.24,-121.38 407.44,-128.34"/>
+</g>
+<!-- proc~deallocate_mask -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node4" class="node">
+<title>proc~deallocate_mask</title>
+<g id="a_proc~~deallocate_imageedit~~CallsGraph_node4"><a xlink:href=".././proc/deallocate_mask.html" xlink:title="foropenai_ImageEdit::ImageEdit%deallocate_mask">
+<polygon fill="#d9534f" stroke="#d9534f" points="665.5,-108 381.5,-108 381.5,-84 665.5,-84 665.5,-108"/>
+<text text-anchor="middle" x="523.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageEdit::ImageEdit%deallocate_mask</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_imageedit&#45;&gt;proc~deallocate_mask -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_edge3" class="edge">
+<title>proc~deallocate_imageedit&#45;&gt;proc~deallocate_mask</title>
+<path fill="none" stroke="#255000" d="M310.1,-96C330.28,-96 350.94,-96 371.08,-96"/>
+<polygon fill="#255000" stroke="#255000" points="371.23,-99.5 381.23,-96 371.23,-92.5 371.23,-99.5"/>
+</g>
+<!-- proc~deallocate_url~3 -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node5" class="node">
+<title>proc~deallocate_url~3</title>
+<g id="a_proc~~deallocate_imageedit~~CallsGraph_node5"><a xlink:href=".././proc/deallocate_url~3.html" xlink:title="foropenai_ImageEdit::ImageEdit%deallocate_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="658.5,-66 388.5,-66 388.5,-42 658.5,-42 658.5,-66"/>
+<text text-anchor="middle" x="523.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageEdit::ImageEdit%deallocate_url</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_imageedit&#45;&gt;proc~deallocate_url~3 -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_edge4" class="edge">
+<title>proc~deallocate_imageedit&#45;&gt;proc~deallocate_url~3</title>
+<path fill="none" stroke="#255000" d="M261.02,-83.96C306.84,-78.71 360.69,-72.54 407.58,-67.17"/>
+<polygon fill="#255000" stroke="#255000" points="408.24,-70.62 417.78,-66 407.44,-63.66 408.24,-70.62"/>
+</g>
+<!-- proc~deallocate_user_name~2 -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_node6" class="node">
+<title>proc~deallocate_user_name~2</title>
+<g id="a_proc~~deallocate_imageedit~~CallsGraph_node6"><a xlink:href=".././proc/deallocate_user_name~2.html" xlink:title="foropenai_ImageEdit::ImageEdit%deallocate_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="681,-24 366,-24 366,0 681,0 681,-24"/>
+<text text-anchor="middle" x="523.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageEdit::ImageEdit%deallocate_user_name</text>
+</a>
+</g>
+</g>
+<!-- proc~deallocate_imageedit&#45;&gt;proc~deallocate_user_name~2 -->
+<g id="proc~~deallocate_imageedit~~CallsGraph_edge5" class="edge">
+<title>proc~deallocate_imageedit&#45;&gt;proc~deallocate_user_name~2</title>
+<path fill="none" stroke="#255000" d="M186.07,-83.93C223.09,-69.56 288.17,-45.89 346,-33 358.6,-30.19 371.8,-27.74 385.06,-25.6"/>
+<polygon fill="#255000" stroke="#255000" points="385.86,-29.02 395.2,-24.03 384.78,-22.1 385.86,-29.02"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocdeallocate_imageeditCallsGraph = svgPanZoom('#procdeallocate_imageeditCallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
+          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                </div>
+              <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="597pt" height="32pt"
+ viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
+<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+        <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="panel panel-primary">
+      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/deallocate_imageedit.html#src">deallocate_ImageEdit</a>
+      </div>
+    </div>
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+
+    
+    
+
+    
+    
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental pure subroutine </span><span class="n">deallocate_ImageEdit</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ImageEdit</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">deallocate_url</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">deallocate_user_name</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">deallocate_assistant_response</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">deallocate_image</span><span class="p">()</span><span class="w"></span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">deallocate_mask</span><span class="p">()</span><span class="w"></span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">deallocate_ImageEdit</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-6"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+</p>
+          </div>
+          <div class="col-xs-6 col-md-6">
+            <p class="text-right">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2023-09-19T15:08:46.630607             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+         <!-- Placed at the end of the document so the pages load faster -->
+    <!--
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        -->
+        <script src="../js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+        <!-- MathJax JavaScript
+             ================================================== -->
+             <!-- Placed at the end of the document so the pages load faster -->
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+          });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+          <script src="../tipuesearch/tipuesearch_content.js"></script>
+          <script src="../tipuesearch/tipuesearch_set.js"></script>
+          <script src="../tipuesearch/tipuesearch.js"></script>
+
+  </body>
+</html>

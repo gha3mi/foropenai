@@ -4,4 +4,5 @@ module foropenai
     use foropenai_Transcription
     use foropenai_Translation
     use foropenai_ImageGeneration
+    use foropenai_ImageEdit
 end module foropenai
