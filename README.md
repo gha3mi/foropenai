@@ -108,7 +108,7 @@ ChatGPT: Hello! How can I assist you today?
 
 ## Transcription
 
-<audio src="test/audio.mp3" controls title="Transcription"></audio>
+<audio src="https://github.com/gha3mi/foropenai/blob/main/test/audio.mp3" controls title="Transcription"></audio>
 
 ```fortran
 program test_Transcription
@@ -128,6 +128,35 @@ program test_Transcription
    call trs%finalize()
 
 end program test_Transcription
+```
+### Result:
+
+```shell
+text: FORTRAN stands for Formula Translation.
+```
+
+## Translation
+
+<audio src="https://github.com/gha3mi/foropenai/blob/main/test/audio_de.mp3" controls title="Translation"></audio>
+
+```fortran
+program test_Translation
+
+   use foropenai, only: Translation
+
+   implicit none
+
+   type(Translation) :: trs
+
+   call trs%set_base_data(file_name='foropenai.json')
+   call trs%set(file_name='foropenai.json')
+
+   call trs%create(file='test/audio_de.mp3')
+   call trs%print_assisstant_response()
+
+   call trs%finalize()
+
+end program test_Translation
 ```
 ### Result:
 
@@ -159,7 +188,7 @@ end program test_ImageGeneration
 
 ### Result:
 
-<img src="test/image.png" alt="image" width="200" height="" />
+<img src="https://github.com/gha3mi/foropenai/blob/main/test/image.png" alt="image" width="200" height="" />
 
 ## fpm dependency
 
