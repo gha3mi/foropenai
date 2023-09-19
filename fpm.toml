@@ -50,3 +50,8 @@ main       = "test4.f90"
 name       = "test5"
 source-dir = "test"
 main       = "test5.f90"
+
+[[test]]
+name       = "test6"
+source-dir = "test"
+main       = "test6.f90"

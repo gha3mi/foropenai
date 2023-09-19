@@ -38,5 +38,13 @@
         "size": "1024x1024",
         "n": 1,
         "response_format": "url"
+    },
+    
+    "ImageEdit": {
+        "user_name": "Ali",
+        "url": "https://api.openai.com/v1/images/edits",
+        "size": "1024x1024",
+        "n": 1,
+        "response_format": "url"
     }
 }
