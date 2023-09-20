@@ -10,6 +10,7 @@ program test_Translation
    call trs%set(file_name='foropenai.json')
 
    call trs%create(file='test/audio_de.mp3')
+   call trs%print_file()
    call trs%print_assistant_response()
 
    call trs%finalize()

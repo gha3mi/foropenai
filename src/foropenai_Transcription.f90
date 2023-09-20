@@ -15,7 +15,7 @@ module foropenai_Transcription
       character(len=:), allocatable :: language
       character(len=:), allocatable :: prompt
       character(len=:), allocatable :: file
-      character(len=:), allocatable :: text
+      character(len=:), allocatable :: assistant_response
       character(len=4)              :: response_format='json'
       real                          :: temperature=0.0
    contains
@@ -25,7 +25,7 @@ module foropenai_Transcription
       procedure, private :: deallocate_language
       procedure, private :: deallocate_prompt
       procedure, private :: deallocate_file
-      procedure, private :: deallocate_text
+      procedure, private :: deallocate_assistant_response
       procedure :: finalize => deallocate_Transcription
       procedure, private :: load => load_Transcription_data
       procedure, private :: load_url
@@ -36,10 +36,11 @@ module foropenai_Transcription
       procedure, private :: print_model
       procedure, private :: print_temperature
       procedure, private :: print_language
-      procedure :: print_response_format
+      procedure, private :: print_response_format
       procedure, private :: print_prompt
       procedure :: print_assistant_response
-      procedure, private :: set_text
+      procedure :: print_file
+      procedure, private :: set_assistant_response
       procedure, private :: set_prompt
       procedure, private :: set_url
       procedure, private :: set_model
@@ -55,20 +56,31 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine print_assistant_response(this)
+   elemental impure subroutine print_file(this)
+      use face, only: colorize
       class(Transcription), intent(inout) :: this
-      print "('text: ',A)", trim(this%text)
+      print "(A,': ',A)", colorize('file', color_bg='green'), this%file
+   end subroutine print_file
+   !===============================================================================
+
+
+   !===============================================================================
+   !> author: Seyed Ali Ghasemi
+   elemental impure subroutine print_assistant_response(this)
+      use face, only: colorize
+      class(Transcription), intent(inout) :: this
+      print "(A,': ',A)", colorize("Whisper", color_bg='blue'), this%assistant_response
    end subroutine print_assistant_response
    !===============================================================================
 
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine set_text(this, text)
+   elemental pure subroutine set_assistant_response(this, assistant_response)
       class(Transcription), intent(inout) :: this
-      character(len=*),     intent(in)    :: text
-      this%text = trim(text)
-   end subroutine set_text
+      character(len=*),     intent(in)    :: assistant_response
+      this%assistant_response = trim(assistant_response)
+   end subroutine set_assistant_response
    !===============================================================================
 
 
@@ -100,7 +112,7 @@ contains
       call this%deallocate_language()
       call this%deallocate_prompt()
       call this%deallocate_file()
-      call this%deallocate_text()
+      call this%deallocate_assistant_response()
    end subroutine deallocate_Transcription
    !===============================================================================
 
@@ -152,10 +164,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental pure subroutine deallocate_text(this)
+   elemental pure subroutine deallocate_assistant_response(this)
       class(Transcription), intent(inout) :: this
-      if (allocated(this%text)) deallocate(this%text)
-   end subroutine deallocate_text
+      if (allocated(this%assistant_response)) deallocate(this%assistant_response)
+   end subroutine deallocate_assistant_response
    !===============================================================================
 
 
@@ -376,6 +388,8 @@ contains
       type(response_type)                        :: response
       type(json_file)                            :: json
       character(len=1024)                        :: temperature_str
+      character(len=:), allocatable              :: assistant_response
+      logical                                    :: found
 
       call this%set_file(file=file)
 
@@ -407,7 +421,11 @@ contains
       if (response%ok) then
          call json%initialize()
          call json%deserialize(response%content)
-         call json%get("text", this%text)
+         call json%get("text", assistant_response, found=found)
+         if (.not. found) then
+            call json%get("error.message", assistant_response)
+         end if
+         this%assistant_response = trim(assistant_response)
          call json%destroy()
       else
          print '(A)', 'Sorry, an error occurred while processing your request.'

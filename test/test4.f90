@@ -10,6 +10,7 @@ program test_ImageGeneration
    call image%set(file_name='foropenai.json')
 
    call image%create(prompt='a cat with a computer')
+   call image%print_prompt()
    call image%print_assistant_response()
 
    call image%finalize()

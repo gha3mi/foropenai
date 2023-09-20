@@ -86,6 +86,7 @@ program test_Transcription
    call trs%set(file_name='foropenai.json')
 
    call trs%create(file='test/audio.mp3')
+   call trs%print_file()
    call trs%print_assistant_response()
 
    call trs%finalize()
@@ -119,7 +120,8 @@ end program test_Transcription
 #### Result
 
 ```shell
-text: FORTRAN stands for Formula Translation.
+file: test/audio.mp3
+Whisper: FORTRAN stands for Formula Translation.
 ```
 
 ### Create translation
@@ -137,6 +139,7 @@ program test_Translation
    call trs%set(file_name='foropenai.json')
 
    call trs%create(file='test/audio_de.mp3')
+   call trs%print_file()
    call trs%print_assistant_response()
 
    call trs%finalize()
@@ -169,7 +172,8 @@ end program test_Translation
 #### Result
 
 ```shell
-text: FORTRAN stands for Formula Translation.
+file: test/audio_de.mp3
+Whisper: FORTRAN stands for Formula Translation and is a programming language.
 ```
 
 ## Chat
@@ -254,6 +258,7 @@ program test_ImageGeneration
    call image%set(file_name='foropenai.json')
 
    call image%create(prompt='a cat with a computer')
+   call image%print_prompt()
    call image%print_assistant_response()
 
    call image%finalize()
