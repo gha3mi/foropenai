@@ -69,7 +69,112 @@ fpm run
 
 ![Alt text](media/example.png)
 
-## Create Chat Completion
+## Audio
+
+### Create transcription
+
+```fortran
+program test_Transcription
+
+   use foropenai, only: Transcription
+
+   implicit none
+
+   type(Transcription) :: trs
+
+   call trs%set_base_data(file_name='foropenai.json')
+   call trs%set(file_name='foropenai.json')
+
+   call trs%create(file='test/audio.mp3')
+   call trs%print_assistant_response()
+
+   call trs%finalize()
+
+end program test_Transcription
+```
+
+#### Settings
+
+`foropenai.json`
+
+```json
+{
+    "base": {
+        "api_key": "OPENAI_API_KEY",
+        "organization": ""
+    },
+
+    "Transcription": {
+        "url": "https://api.openai.com/v1/audio/transcriptions",
+        "model": "whisper-1",
+        "temperature": 0.0,
+        "language": "en",
+        "response_format": "json"
+    }
+}
+```
+
+<audio src="test/audio.mp3" controls title="Transcription"></audio>
+
+#### Result
+
+```shell
+text: FORTRAN stands for Formula Translation.
+```
+
+### Create translation
+
+```fortran
+program test_Translation
+
+   use foropenai, only: Translation
+
+   implicit none
+
+   type(Translation) :: trs
+
+   call trs%set_base_data(file_name='foropenai.json')
+   call trs%set(file_name='foropenai.json')
+
+   call trs%create(file='test/audio_de.mp3')
+   call trs%print_assistant_response()
+
+   call trs%finalize()
+
+end program test_Translation
+```
+
+#### Settings
+
+`foropenai.json`
+
+```json
+{
+    "base": {
+        "api_key": "OPENAI_API_KEY",
+        "organization": ""
+    },
+
+    "Translation": {
+        "url": "https://api.openai.com/v1/audio/translations",
+        "model": "whisper-1",
+        "temperature": 0.0,
+        "response_format": "json"
+    }
+}
+```
+
+<audio src="test/audio_de.mp3" controls title="Translation"></audio>
+
+#### Result
+
+```shell
+text: FORTRAN stands for Formula Translation.
+```
+
+## Chat
+
+### Create chat completion
 
 ```fortran
 program test_ChatCompletion
@@ -99,72 +204,42 @@ program test_ChatCompletion
 end program test_ChatCompletion
 ```
 
-### Result:
+#### Settings
+
+`foropenai.json`
+
+```json
+{
+    "base": {
+        "api_key": "OPENAI_API_KEY",
+        "organization": ""
+    },
+
+    "ChatCompletion": {
+        "user_name": "Ali",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "model": "gpt-3.5-turbo",
+        "temperature": 1.0,
+        "max_tokens": 200,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "n": 1,
+        "stream": false
+    }
+}
+```
+
+#### Result
 
 ```shell
 Ali: Hello?
 ChatGPT: Hello! How can I assist you today?
 ```
 
-## Transcription
+## Image
 
-<audio src="https://github.com/gha3mi/foropenai/blob/main/test/audio.mp3" controls title="Transcription"></audio>
-
-```fortran
-program test_Transcription
-
-   use foropenai, only: Transcription
-
-   implicit none
-
-   type(Transcription) :: trs
-
-   call trs%set_base_data(file_name='foropenai.json')
-   call trs%set(file_name='foropenai.json')
-
-   call trs%create(file='test/audio.mp3')
-   call trs%print_text()
-
-   call trs%finalize()
-
-end program test_Transcription
-```
-### Result:
-
-```shell
-text: FORTRAN stands for Formula Translation.
-```
-
-## Translation
-
-<audio src="https://github.com/gha3mi/foropenai/blob/main/test/audio_de.mp3" controls title="Translation"></audio>
-
-```fortran
-program test_Translation
-
-   use foropenai, only: Translation
-
-   implicit none
-
-   type(Translation) :: trs
-
-   call trs%set_base_data(file_name='foropenai.json')
-   call trs%set(file_name='foropenai.json')
-
-   call trs%create(file='test/audio_de.mp3')
-   call trs%print_assisstant_response()
-
-   call trs%finalize()
-
-end program test_Translation
-```
-### Result:
-
-```shell
-text: FORTRAN stands for Formula Translation.
-```
-
-## Image Generation
+### Image Generation
 
 ```fortran
 program test_ImageGeneration
@@ -186,9 +261,30 @@ program test_ImageGeneration
 end program test_ImageGeneration
 ```
 
-### Result:
+#### Settings
 
-<img src="https://github.com/gha3mi/foropenai/blob/main/test/image.png" alt="image" width="200" height="" />
+`foropenai.json`
+
+```json
+{
+    "base": {
+        "api_key": "OPENAI_API_KEY",
+        "organization": ""
+    },
+
+    "ImageGeneration": {
+        "user_name": "Ali",
+        "url": "https://api.openai.com/v1/images/generations",
+        "size": "1024x1024",
+        "n": 1,
+        "response_format": "url"
+    }
+}
+```
+
+#### Result
+
+<img src="test/image.png" alt="image" width="200" height="" />
 
 ## fpm dependency
 
