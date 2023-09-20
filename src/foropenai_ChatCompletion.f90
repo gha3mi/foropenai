@@ -14,9 +14,9 @@ module foropenai_ChatCompletion
       integer :: completion_tokens=0
       integer :: total_tokens=0
    contains
-      procedure :: print_prompt_tokens
-      procedure :: print_completion_tokens
-      procedure :: print_total_tokens
+      procedure, private :: print_prompt_tokens
+      procedure, private :: print_completion_tokens
+      procedure, private :: print_total_tokens
       procedure :: print => print_usage
    end type usage
    !===============================================================================
@@ -29,14 +29,14 @@ module foropenai_ChatCompletion
       character(len=:), allocatable :: content
       character(len=:), allocatable :: name
    contains
-      procedure :: deallocate_role
-      procedure :: deallocate_content
-      procedure :: deallocate_name
+      procedure, private :: deallocate_role
+      procedure, private :: deallocate_content
+      procedure, private :: deallocate_name
       procedure :: finalize => deallocate_ChatCompletion_messages
       procedure :: set => set_message
-      procedure :: set_role
-      procedure :: set_content
-      procedure :: set_name
+      procedure, private :: set_role
+      procedure, private :: set_content
+      procedure, private :: set_name
    end type ChatCompletion_messages
    !===============================================================================
 
@@ -51,7 +51,7 @@ module foropenai_ChatCompletion
       type(ChatCompletion_messages), allocatable :: messages(:)
       integer                                    :: max_tokens
       type(usage)                                :: usage
-      real                                       :: temperature=1.0  
+      real                                       :: temperature=1.0
       real                                       :: presence_penalty=0.0
       real                                       :: frequency_penalty=0.0
       real                                       :: top_p=1.0
@@ -62,57 +62,57 @@ module foropenai_ChatCompletion
       procedure :: check => check_chat_completion
       procedure :: create => create_chat_completion
       procedure :: conversation
-      procedure :: deallocate_messages
-      procedure :: deallocate_model_list
-      procedure :: deallocate_url
-      procedure :: deallocate_model
-      procedure :: deallocate_user_name
-      procedure :: deallocate_finish_reason
+      procedure, private :: deallocate_messages
+      procedure, private :: deallocate_model_list
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_model
+      procedure, private :: deallocate_user_name
+      procedure, private :: deallocate_finish_reason
       procedure :: finalize => deallocate_ChatCompletion
-      procedure :: get_assistant_response
-      procedure :: get_user_message
+      procedure, private :: get_assistant_response
+      procedure, private :: get_user_message
       procedure :: init_messages
-      procedure :: load => load_ChatCompletion_data
-      procedure :: load_user_name
-      procedure :: load_url
-      procedure :: load_model
-      procedure :: load_temperature
-      procedure :: load_presence_penalty
-      procedure :: load_frequency_penalty
-      procedure :: load_top_p
-      procedure :: load_n
-      procedure :: load_stream
-      procedure :: load_max_tokens
-      procedure :: read_user_message
-      procedure :: print_user_name
-      procedure :: print_model_list
-      procedure :: print_model
-      procedure :: print_temperature
-      procedure :: print_presence_penalty
-      procedure :: print_frequency_penalty
-      procedure :: print_top_p
-      procedure :: print_n
-      procedure :: print_stream
-      procedure :: print_max_tokens
+      procedure, private :: load => load_ChatCompletion_data
+      procedure, private :: load_user_name
+      procedure, private :: load_url
+      procedure, private :: load_model
+      procedure, private :: load_temperature
+      procedure, private :: load_presence_penalty
+      procedure, private :: load_frequency_penalty
+      procedure, private :: load_top_p
+      procedure, private :: load_n
+      procedure, private :: load_stream
+      procedure, private :: load_max_tokens
+      procedure, private :: read_user_message
+      procedure, private :: print_user_name
+      procedure, private :: print_model_list
+      procedure, private :: print_model
+      procedure, private :: print_temperature
+      procedure, private :: print_presence_penalty
+      procedure, private :: print_frequency_penalty
+      procedure, private :: print_top_p
+      procedure, private :: print_n
+      procedure, private :: print_stream
+      procedure, private :: print_max_tokens
       procedure :: print_user_message
       procedure :: print_assistant_response
-      procedure :: set_user_name
-      procedure :: set_url
-      procedure :: set_model
-      procedure :: set_model_list
-      procedure :: select_model
-      procedure :: set_temperature
-      procedure :: set_presence_penalty
-      procedure :: set_frequency_penalty
-      procedure :: set_top_p
-      procedure :: set_n
-      procedure :: set_stream
-      procedure :: set_max_tokens
-      procedure :: set_asisstant_response
-      procedure :: set_user_message
+      procedure, private :: set_user_name
+      procedure, private :: set_url
+      procedure, private :: set_model
+      procedure, private :: set_model_list
+      procedure, private :: select_model
+      procedure, private :: set_temperature
+      procedure, private :: set_presence_penalty
+      procedure, private :: set_frequency_penalty
+      procedure, private :: set_top_p
+      procedure, private :: set_n
+      procedure, private :: set_stream
+      procedure, private :: set_max_tokens
+      procedure, private :: set_asisstant_response
+      procedure, private :: set_user_message
       procedure :: set => set_ChatCompletion_data
-      procedure :: write_history
-      procedure :: print_finish_reason
+      procedure, private :: write_history
+      procedure, private :: print_finish_reason
    end type ChatCompletion
    !===============================================================================
 
@@ -193,7 +193,7 @@ contains
    end subroutine set_asisstant_response
    !===============================================================================
 
-   
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure function get_assistant_response(this) result(response)
@@ -208,7 +208,7 @@ contains
    end function
    !===============================================================================
 
-   
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure function get_user_message(this) result(message)
@@ -261,7 +261,7 @@ contains
       if (allocated(this%finish_reason)) deallocate(this%finish_reason)
    end subroutine deallocate_finish_reason
    !===============================================================================
-   
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -275,7 +275,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine conversation(this, file_name_base, file_name_ChatCompletion, &
-   input_file, output_file, inputfile_command, exit_command)
+      input_file, output_file, inputfile_command, exit_command)
       class(ChatCompletion), intent(inout) :: this
       character(len=*), intent(in)         :: file_name_base
       character(len=*), intent(in)         :: file_name_ChatCompletion
@@ -881,7 +881,7 @@ contains
             call json%deserialize(response%content)
 
             call json%get("choices(1).finish_reason", this%finish_reason)
-            
+
             call json%get("usage.prompt_tokens", this%usage%prompt_tokens)
             call json%get("usage.completion_tokens", this%usage%completion_tokens)
             call json%get("usage.total_tokens", this%usage%total_tokens)

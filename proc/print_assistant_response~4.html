@@ -8,7 +8,7 @@
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>print_mask &ndash; ForOpenAI</title>
+    <title>print_assistant_response &ndash; ForOpenAI</title>
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/pygments.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.4.1</small></a>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.5.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -88,7 +88,7 @@
 
     <div class="container">
   <div class="row">
-    <h1>print_mask
+    <h1>print_assistant_response
       <small>Subroutine</small>
       
     </h1>
@@ -101,18 +101,18 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title=" 0.3% of total for procedures.">4 statements</a>
+               title=" 0.5% of total for procedures.">7 statements</a>
           </li>
 
             <li id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/foropenai_ImageEdit.f90"> Source File</a>
+              <a href="../src/foropenai_ImageGeneration.f90"> Source File</a>
             </li>
         </ul>
         <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/foropenai_imageedit.f90.html'>foropenai_ImageEdit.f90</a></li>
-              <li><a href='../module/foropenai_imageedit.html'>foropenai_ImageEdit</a></li>
-          <li class="active">print_mask</li>
+              <li><a href='../sourcefile/foropenai_imagegeneration.f90.html'>foropenai_ImageGeneration.f90</a></li>
+              <li><a href='../module/foropenai_imagegeneration.html'>foropenai_ImageGeneration</a></li>
+          <li class="active">print_assistant_response</li>
         </ol>
       </div>
     </div>
@@ -151,7 +151,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
       <div class="list-group">
-        <a class="list-group-item" href="../proc/print_mask.html#src">print_mask</a>
+        <a class="list-group-item" href="../proc/print_assistant_response~4.html#src">print_assistant_response</a>
       </div>
     </div>
 
@@ -161,13 +161,13 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private impure elemental subroutine print_mask(this)  
+    <h2>private impure elemental subroutine print_assistant_response(this)  
 </h2>
     
 
 
     <h3>Type Bound</h3>
-    <p><a href='../type/imageedit.html'>ImageEdit</a></p>
+    <p><a href='../type/imagegeneration.html'>ImageGeneration</a></p>
 
     <h3>Arguments</h3>
         <table class="table table-striped varlist">
@@ -182,8 +182,8 @@
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~133"></span>
-              class(<a href='../type/imageedit.html'>ImageEdit</a>),
+              <span class="anchor" id="variable-this~154"></span>
+              class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
             </td>
 <td>intent(in)</td>
               <td></td>            <td>
@@ -224,7 +224,7 @@
     <div class="panel panel-primary">
       <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
       <div class="list-group">
-        <a class="list-group-item" href="../proc/print_mask.html#src">print_mask</a>
+        <a class="list-group-item" href="../proc/print_assistant_response~4.html#src">print_assistant_response</a>
       </div>
     </div>
 
@@ -243,10 +243,13 @@
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">print_mask</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ImageEdit</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
-<span class="w">      </span><span class="k">print</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;mask: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">mask</span><span class="w"></span>
-<span class="w">   </span><span class="k">end subroutine </span><span class="n">print_mask</span><span class="w"></span>
+    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">print_assistant_response</span><span class="p">(</span><span class="n">this</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ImageGeneration</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                            </span><span class="kd">::</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
+<span class="w">      </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">n</span><span class="w"></span>
+<span class="w">         </span><span class="k">print</span><span class="w"> </span><span class="s1">&#39;(a,g0,a,a)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;assistant_response(&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;): &quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">trim</span><span class="p">(</span><span class="n">this</span><span class="p">%</span><span class="n">assistant_response</span><span class="p">(</span><span class="n">i</span><span class="p">))</span><span class="w"></span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">   end subroutine </span><span class="n">print_assistant_response</span><span class="w"></span>
 </pre></div>
 
     </section>
@@ -267,7 +270,7 @@
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-19T15:08:46.630607             </p>
+ on 2023-09-20T10:32:40.407437             </p>
           </div>
         </div>
         <br>

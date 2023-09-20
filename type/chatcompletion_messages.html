@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.4.1</small></a>
+          <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.5.0</small></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p> 5.1% of total for derived types.</p>Including implementation: 56 statements,  2.8% of total for derived types.">14 statements</a>
+               title="<p> 6.1% of total for derived types.</p>Including implementation: 56 statements,  3.3% of total for derived types.">14 statements</a>
           </li>
 
             <li id="source-file">
@@ -428,7 +428,7 @@ large graphs.</div>
       <section>
         <h2>Type-Bound Procedures</h2>
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_role"></span><h3>procedure, public,  :: <strong>deallocate_role</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_role"></span><h3>procedure, private :: <strong>deallocate_role</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -476,7 +476,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_content"></span><h3>procedure, public,  :: <strong>deallocate_content</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_content"></span><h3>procedure, private :: <strong>deallocate_content</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -524,7 +524,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_name"></span><h3>procedure, public,  :: <strong>deallocate_name</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_name"></span><h3>procedure, private :: <strong>deallocate_name</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -713,7 +713,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_role"></span><h3>procedure, public,  :: <strong>set_role</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_role"></span><h3>procedure, private :: <strong>set_role</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -776,7 +776,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_content"></span><h3>procedure, public,  :: <strong>set_content</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_content"></span><h3>procedure, private :: <strong>set_content</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -839,7 +839,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_name"></span><h3>procedure, public,  :: <strong>set_name</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_name"></span><h3>procedure, private :: <strong>set_name</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -910,14 +910,14 @@ large graphs.</div>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">content</span><span class="w"></span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">name</span><span class="w"></span>
 <span class="w">   </span><span class="k">contains</span>
-<span class="k">      procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_role</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_content</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_name</span><span class="w"></span>
+<span class="k">      procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_role</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_content</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_name</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_ChatCompletion_messages</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">set_message</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_role</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_content</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_name</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_role</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_content</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_name</span><span class="w"></span>
 <span class="w">   </span><span class="k">end type </span><span class="n">ChatCompletion_messages</span><span class="w"></span>
 </pre></div>
 
@@ -938,7 +938,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-19T15:08:46.630607             </p>
+ on 2023-09-20T10:32:40.407437             </p>
           </div>
         </div>
         <br>

@@ -19,30 +19,30 @@ module foropenai_ImageGeneration
       character(len=1024), allocatable :: assistant_response(:)
    contains
       procedure :: create => create_image
-      procedure :: deallocate_url
-      procedure :: deallocate_user_name
-      procedure :: deallocate_assistant_response
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_user_name
+      procedure, private :: deallocate_assistant_response
       procedure :: finalize => deallocate_ImageGeneration
-      procedure :: load_url
-      procedure :: load_size
-      procedure :: load_response_format
-      procedure :: load_n
-      procedure :: load_user_name
-      procedure :: load => load_ImageGeneration_data
-      procedure :: print_url
-      procedure :: print_size
-      procedure :: print_prompt
-      procedure :: print_response_format
-      procedure :: print_n
-      procedure :: print_user_name
+      procedure, private :: load_url
+      procedure, private :: load_size
+      procedure, private :: load_response_format
+      procedure, private :: load_n
+      procedure, private :: load_user_name
+      procedure, private :: load => load_ImageGeneration_data
+      procedure, private :: print_url
+      procedure, private :: print_size
+      procedure, private :: print_prompt
+      procedure, private :: print_response_format
+      procedure, private :: print_n
+      procedure, private :: print_user_name
       procedure :: print_assistant_response
-      procedure :: set_url
-      procedure :: set_size
-      procedure :: set_prompt
-      procedure :: set_response_format
-      procedure :: set_n
-      procedure :: set_user_name
-      procedure :: set_assistant_response
+      procedure, private :: set_url
+      procedure, private :: set_size
+      procedure, private :: set_prompt
+      procedure, private :: set_response_format
+      procedure, private :: set_n
+      procedure, private :: set_user_name
+      procedure, private :: set_assistant_response
       procedure :: set => set_ImageGeneration_data
    end type ImageGeneration
    !===============================================================================

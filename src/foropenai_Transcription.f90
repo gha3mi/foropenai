@@ -10,43 +10,43 @@ module foropenai_Transcription
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    type, extends(openai) :: Transcription
-      character(len=:),              allocatable :: url
-      character(len=:),              allocatable :: model
-      character(len=:),              allocatable :: language
-      character(len=:),              allocatable :: prompt
-      character(len=:),              allocatable :: file
-      character(len=:),              allocatable :: text
-      character(len=4)                           :: response_format='json'
-      real                                       :: temperature=1.0
+      character(len=:), allocatable :: url
+      character(len=:), allocatable :: model
+      character(len=:), allocatable :: language
+      character(len=:), allocatable :: prompt
+      character(len=:), allocatable :: file
+      character(len=:), allocatable :: text
+      character(len=4)              :: response_format='json'
+      real                          :: temperature=0.0
    contains
       procedure :: create => create_transcription
-      procedure :: deallocate_url
-      procedure :: deallocate_model
-      procedure :: deallocate_language
-      procedure :: deallocate_prompt
-      procedure :: deallocate_file
-      procedure :: deallocate_text
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_model
+      procedure, private :: deallocate_language
+      procedure, private :: deallocate_prompt
+      procedure, private :: deallocate_file
+      procedure, private :: deallocate_text
       procedure :: finalize => deallocate_Transcription
-      procedure :: load => load_Transcription_data
-      procedure :: load_url
-      procedure :: load_model
-      procedure :: load_temperature
-      procedure :: load_language
-      procedure :: load_response_format
-      procedure :: print_model
-      procedure :: print_temperature
-      procedure :: print_language
+      procedure, private :: load => load_Transcription_data
+      procedure, private :: load_url
+      procedure, private :: load_model
+      procedure, private :: load_temperature
+      procedure, private :: load_language
+      procedure, private :: load_response_format
+      procedure, private :: print_model
+      procedure, private :: print_temperature
+      procedure, private :: print_language
       procedure :: print_response_format
-      procedure :: print_prompt
-      procedure :: print_text
-      procedure :: set_text
-      procedure :: set_prompt
-      procedure :: set_url
-      procedure :: set_model
-      procedure :: set_temperature
-      procedure :: set_language
-      procedure :: set_response_format
-      procedure :: set_file
+      procedure, private :: print_prompt
+      procedure :: print_assistant_response
+      procedure, private :: set_text
+      procedure, private :: set_prompt
+      procedure, private :: set_url
+      procedure, private :: set_model
+      procedure, private :: set_temperature
+      procedure, private :: set_language
+      procedure, private :: set_response_format
+      procedure, private :: set_file
       procedure :: set => set_Transcription_data
    end type Transcription
    !===============================================================================
@@ -55,10 +55,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine print_text(this)
+   elemental impure subroutine print_assistant_response(this)
       class(Transcription), intent(inout) :: this
       print "('text: ',A)", trim(this%text)
-   end subroutine print_text
+   end subroutine print_assistant_response
    !===============================================================================
 
 
@@ -66,7 +66,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_text(this, text)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: text
+      character(len=*),     intent(in)    :: text
       this%text = trim(text)
    end subroutine set_text
    !===============================================================================
@@ -85,7 +85,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_prompt(this, prompt)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: prompt
+      character(len=*),     intent(in)    :: prompt
       this%prompt = trim(prompt)
    end subroutine set_prompt
    !===============================================================================
@@ -163,7 +163,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_response_format(this, response_format)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: response_format
+      character(len=*),     intent(in)    :: response_format
       this%response_format = trim(response_format)
    end subroutine set_response_format
    !===============================================================================
@@ -174,9 +174,9 @@ contains
    elemental impure subroutine load_response_format(this)
       use json_module, only: json_file
       class(Transcription), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                     :: json
+      character(len=:), allocatable       :: tmp
+      logical                             :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Transcription.response_format", tmp, found=found)
@@ -200,9 +200,9 @@ contains
    elemental impure subroutine load_language(this)
       use json_module, only: json_file
       class(Transcription), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                     :: json
+      character(len=:), allocatable       :: tmp
+      logical                             :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Transcription.language", tmp, found=found)
@@ -225,7 +225,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_language(this, language)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: language
+      character(len=*),     intent(in)    :: language
       this%language = trim(language)
    end subroutine set_language
    !===============================================================================
@@ -271,7 +271,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine load_Transcription_data(this, file_name)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: file_name
+      character(len=*),     intent(in)    :: file_name
       call this%set_file_name(trim(file_name))
       call this%load_url()
       call this%load_model()
@@ -287,9 +287,9 @@ contains
    elemental impure subroutine load_temperature(this)
       use json_module, only: json_file
       class(Transcription), intent(inout) :: this
-      type(json_file)                      :: json
-      real                                 :: tmp
-      logical                              :: found
+      type(json_file)                     :: json
+      real                                :: tmp
+      logical                             :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Transcription.temperature", tmp, found=found)
@@ -304,9 +304,9 @@ contains
    elemental impure subroutine load_url(this)
       use json_module, only: json_file
       class(Transcription), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                     :: json
+      character(len=:), allocatable       :: tmp
+      logical                             :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Transcription.url", tmp, found=found)
@@ -321,9 +321,9 @@ contains
    elemental impure subroutine load_model(this)
       use json_module, only: json_file
       class(Transcription), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                     :: json
+      character(len=:), allocatable       :: tmp
+      logical                             :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Transcription.model", tmp, found=found)
@@ -337,7 +337,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_temperature(this, temperature)
       class(Transcription), intent(inout) :: this
-      real,                  intent(in)    :: temperature
+      real,                 intent(in)    :: temperature
       this%temperature = temperature
    end subroutine set_temperature
    !===============================================================================
@@ -347,7 +347,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_url(this, url)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: url
+      character(len=*),     intent(in)    :: url
       this%url = trim(url)
    end subroutine set_url
    !===============================================================================
@@ -357,7 +357,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_model(this, model)
       class(Transcription), intent(inout) :: this
-      character(len=*),      intent(in)    :: model
+      character(len=*),     intent(in)    :: model
       this%model = trim(model)
    end subroutine set_model
    !===============================================================================
@@ -369,13 +369,13 @@ contains
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
 
-      class(Transcription),  intent(inout) :: this
-      character(len=*),      intent(in)    :: file
-      character(len=*),      intent(in), optional    :: prompt
-      type(pair_type),       allocatable   :: req_header(:), form_data(:), file_data
-      type(response_type)                  :: response
-      type(json_file)                      :: json
-      character(len=1024)                  :: tempereture_str
+      class(Transcription), intent(inout)        :: this
+      character(len=*),     intent(in)           :: file
+      character(len=*),     intent(in), optional :: prompt
+      type(pair_type),      allocatable          :: req_header(:), form_data(:), file_data
+      type(response_type)                        :: response
+      type(json_file)                            :: json
+      character(len=1024)                        :: temperature_str
 
       call this%set_file(file=file)
 
@@ -390,14 +390,14 @@ contains
          pair_type('Content-Type', 'multipart/form-data')&
          ]
 
-      write(tempereture_str,'(f3.1)') this%temperature
+      write(temperature_str,'(f3.1)') this%temperature
 
       form_data = [&
          pair_type('model', trim(this%model)),&
          pair_type(' language', trim(this%language)),&
          pair_type(' response_format', trim(this%response_format)),&
          pair_type(' prompt', trim(this%prompt)),&
-         pair_type(' temperature', trim(tempereture_str))&
+         pair_type(' temperature', trim(temperature_str))&
          ]
 
       file_data =  pair_type('file', trim(this%file))

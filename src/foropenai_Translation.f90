@@ -10,38 +10,38 @@ module foropenai_Translation
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    type, extends(openai) :: Translation
-      character(len=:),              allocatable :: url
-      character(len=:),              allocatable :: model
-      character(len=:),              allocatable :: prompt
-      character(len=:),              allocatable :: file
-      character(len=:),              allocatable :: assisstant_response
-      character(len=4)                           :: response_format='json'
-      real                                       :: temperature=1.0
+      character(len=:), allocatable :: url
+      character(len=:), allocatable :: model
+      character(len=:), allocatable :: prompt
+      character(len=:), allocatable :: file
+      character(len=:), allocatable :: assisstant_response
+      character(len=4)              :: response_format='json'
+      real                          :: temperature=0.0
    contains
       procedure :: create => create_translation
-      procedure :: deallocate_url
-      procedure :: deallocate_model
-      procedure :: deallocate_prompt
-      procedure :: deallocate_file
-      procedure :: deallocate_assisstant_response
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_model
+      procedure, private :: deallocate_prompt
+      procedure, private :: deallocate_file
+      procedure, private :: deallocate_assisstant_response
       procedure :: finalize => deallocate_Translation
-      procedure :: load => load_Translation_data
-      procedure :: load_url
-      procedure :: load_model
-      procedure :: load_temperature
-      procedure :: load_response_format
-      procedure :: print_model
-      procedure :: print_temperature
-      procedure :: print_response_format
-      procedure :: print_prompt
-      procedure :: print_assisstant_response
-      procedure :: set_assisstant_response
-      procedure :: set_prompt
-      procedure :: set_url
-      procedure :: set_model
-      procedure :: set_temperature
-      procedure :: set_response_format
-      procedure :: set_file
+      procedure, private :: load => load_Translation_data
+      procedure, private :: load_url
+      procedure, private :: load_model
+      procedure, private :: load_temperature
+      procedure, private :: load_response_format
+      procedure, private :: print_model
+      procedure, private :: print_temperature
+      procedure, private :: print_response_format
+      procedure, private :: print_prompt
+      procedure :: print_assistant_response
+      procedure, private :: set_assisstant_response
+      procedure, private :: set_prompt
+      procedure, private :: set_url
+      procedure, private :: set_model
+      procedure, private :: set_temperature
+      procedure, private :: set_response_format
+      procedure, private :: set_file
       procedure :: set => set_Translation_data
    end type Translation
    !===============================================================================
@@ -50,10 +50,10 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   elemental impure subroutine print_assisstant_response(this)
+   elemental impure subroutine print_assistant_response(this)
       class(Translation), intent(inout) :: this
       print "('assisstant_response: ',A)", trim(this%assisstant_response)
-   end subroutine print_assisstant_response
+   end subroutine print_assistant_response
    !===============================================================================
 
 
@@ -61,7 +61,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_assisstant_response(this, assisstant_response)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: assisstant_response
+      character(len=*),   intent(in)    :: assisstant_response
       this%assisstant_response = trim(assisstant_response)
    end subroutine set_assisstant_response
    !===============================================================================
@@ -80,7 +80,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_prompt(this, prompt)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: prompt
+      character(len=*),   intent(in)    :: prompt
       this%prompt = trim(prompt)
    end subroutine set_prompt
    !===============================================================================
@@ -148,7 +148,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_response_format(this, response_format)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: response_format
+      character(len=*),   intent(in)    :: response_format
       this%response_format = trim(response_format)
    end subroutine set_response_format
    !===============================================================================
@@ -159,9 +159,9 @@ contains
    elemental impure subroutine load_response_format(this)
       use json_module, only: json_file
       class(Translation), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                   :: json
+      character(len=:), allocatable     :: tmp
+      logical                           :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Translation.response_format", tmp, found=found)
@@ -184,7 +184,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_file(this, file)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: file
+      character(len=*),   intent(in)    :: file
       this%file = trim(file)
    end subroutine set_file
    !===============================================================================
@@ -194,7 +194,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine set_Translation_data(this, file_name, &
       url, model, temperature, response_format)
-      class(Translation),       intent(inout) :: this
+      class(Translation),         intent(inout) :: this
       character(len=*), optional, intent(in)    :: file_name
       character(len=*), optional, intent(in)    :: url
       character(len=*), optional, intent(in)    :: model
@@ -218,7 +218,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine load_Translation_data(this, file_name)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: file_name
+      character(len=*),   intent(in)    :: file_name
       call this%set_file_name(trim(file_name))
       call this%load_url()
       call this%load_model()
@@ -233,9 +233,9 @@ contains
    elemental impure subroutine load_temperature(this)
       use json_module, only: json_file
       class(Translation), intent(inout) :: this
-      type(json_file)                      :: json
-      real                                 :: tmp
-      logical                              :: found
+      type(json_file)                   :: json
+      real                              :: tmp
+      logical                           :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Translation.temperature", tmp, found=found)
@@ -250,9 +250,9 @@ contains
    elemental impure subroutine load_url(this)
       use json_module, only: json_file
       class(Translation), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                   :: json
+      character(len=:), allocatable     :: tmp
+      logical                           :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Translation.url", tmp, found=found)
@@ -267,9 +267,9 @@ contains
    elemental impure subroutine load_model(this)
       use json_module, only: json_file
       class(Translation), intent(inout) :: this
-      type(json_file)                      :: json
-      character(len=:), allocatable        :: tmp
-      logical                              :: found
+      type(json_file)                   :: json
+      character(len=:), allocatable     :: tmp
+      logical                           :: found
       call json%initialize()
       call json%load_file(trim(this%file_name))
       call json%get("Translation.model", tmp, found=found)
@@ -283,7 +283,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_temperature(this, temperature)
       class(Translation), intent(inout) :: this
-      real,                  intent(in)    :: temperature
+      real,               intent(in)    :: temperature
       this%temperature = temperature
    end subroutine set_temperature
    !===============================================================================
@@ -293,7 +293,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_url(this, url)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: url
+      character(len=*),   intent(in)    :: url
       this%url = trim(url)
    end subroutine set_url
    !===============================================================================
@@ -303,7 +303,7 @@ contains
    !> author: Seyed Ali Ghasemi
    elemental pure subroutine set_model(this, model)
       class(Translation), intent(inout) :: this
-      character(len=*),      intent(in)    :: model
+      character(len=*),   intent(in)    :: model
       this%model = trim(model)
    end subroutine set_model
    !===============================================================================
@@ -315,13 +315,13 @@ contains
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
 
-      class(Translation),  intent(inout) :: this
-      character(len=*),      intent(in)    :: file
-      character(len=*),      intent(in), optional    :: prompt
-      type(pair_type),       allocatable   :: req_header(:), form_data(:), file_data
-      type(response_type)                  :: response
-      type(json_file)                      :: json
-      character(len=1024)                  :: temperature_str
+      class(Translation), intent(inout)        :: this
+      character(len=*),   intent(in)           :: file
+      character(len=*),   intent(in), optional :: prompt
+      type(pair_type),    allocatable          :: req_header(:), form_data(:), file_data
+      type(response_type)                      :: response
+      type(json_file)                          :: json
+      character(len=1024)                      :: temperature_str
 
       call this%set_file(file=file)
 
