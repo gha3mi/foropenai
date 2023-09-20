@@ -31,7 +31,7 @@ module foropenai_ImageGeneration
       procedure, private :: load => load_ImageGeneration_data
       procedure, private :: print_url
       procedure, private :: print_size
-      procedure, private :: print_prompt
+      procedure :: print_prompt
       procedure, private :: print_response_format
       procedure, private :: print_n
       procedure, private :: print_user_name
@@ -51,7 +51,7 @@ contains
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
-   subroutine create_image(this, prompt, n, size, response_format, user_name)
+   elemental impure subroutine create_image(this, prompt, n, size, response_format, user_name)
       use http,        only: response_type, request, HTTP_POST, pair_type
       use json_module, only: json_file
 
@@ -100,6 +100,11 @@ contains
          do i = 1, this%n
             write (i_str, "(I10)") i
             call json%get("data("//trim(i_str)//").url", assistant_response, found=found)
+            if (.not. found) then
+               call json%get("error.message", assistant_response)
+               call this%set_assistant_response(assistant_response=assistant_response, i=i)
+               exit
+            end if
             call this%set_assistant_response(assistant_response=assistant_response, i=i)
          end do
          call json%destroy()
@@ -218,8 +223,9 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine print_prompt(this)
+      use face, only: colorize
       class(ImageGeneration), intent(in) :: this
-      print *, "prompt: ", this%prompt
+      print "(A,': ',A)", colorize(trim(this%user_name), color_bg='green'), trim(this%prompt)
    end subroutine print_prompt
    !===============================================================================
 
@@ -254,10 +260,11 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine print_assistant_response(this)
+      use face, only: colorize
       class(ImageGeneration), intent(in) :: this
       integer                            :: i
       do i = 1, this%n
-         print '(a,g0,a,a)', "assistant_response(", i, "): ", trim(this%assistant_response(i))
+         print "(a,': ',a)",colorize("DALL-E", color_bg='blue'), trim(this%assistant_response(i))
       end do
    end subroutine print_assistant_response
    !===============================================================================

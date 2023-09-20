@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title=" 3.6% of total for procedures.">47 statements</a>
+               title=" 3.8% of total for procedures.">52 statements</a>
           </li>
 
             <li id="source-file">
@@ -161,7 +161,7 @@
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>private  subroutine create_image(this, prompt, n, size, response_format, user_name)  
+    <h2>private impure elemental subroutine create_image(this, prompt, n, size, response_format, user_name)  
 </h2>
         <div class="panel panel-default">
       <div class="panel-heading">
@@ -312,7 +312,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~137"></span>
+              <span class="anchor" id="variable-this~139"></span>
               class(<a href='../type/imagegeneration.html'>ImageGeneration</a>),
             </td>
 <td>intent(inout)</td>
@@ -510,18 +510,18 @@ large graphs.</div>
 <path fill="none" stroke="#255000" d="M346.21,-293.95C410.52,-297.29 478.95,-300.85 524.65,-303.23"/>
 <polygon fill="#255000" stroke="#255000" points="524.73,-306.74 534.9,-303.76 525.1,-299.75 524.73,-306.74"/>
 </g>
-<!-- proc~set_assistant_response -->
+<!-- proc~set_assistant_response~3 -->
 <g id="proc~~create_image~~CallsGraph_node9" class="node">
-<title>proc~set_assistant_response</title>
-<g id="a_proc~~create_image~~CallsGraph_node9"><a xlink:href=".././proc/set_assistant_response.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%set_assistant_response">
+<title>proc~set_assistant_response~3</title>
+<g id="a_proc~~create_image~~CallsGraph_node9"><a xlink:href=".././proc/set_assistant_response~3.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%set_assistant_response">
 <polygon fill="#d9534f" stroke="#d9534f" points="776,-276 382,-276 382,-252 776,-252 776,-276"/>
 <text text-anchor="middle" x="579" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%set_assistant_response</text>
 </a>
 </g>
 </g>
-<!-- proc~create_image&#45;&gt;proc~set_assistant_response -->
+<!-- proc~create_image&#45;&gt;proc~set_assistant_response~3 -->
 <g id="proc~~create_image~~CallsGraph_edge8" class="edge">
-<title>proc~create_image&#45;&gt;proc~set_assistant_response</title>
+<title>proc~create_image&#45;&gt;proc~set_assistant_response~3</title>
 <path fill="none" stroke="#255000" d="M346.21,-276.05C354.7,-275.61 363.25,-275.16 371.82,-274.72"/>
 <polygon fill="#255000" stroke="#255000" points="372.07,-278.21 381.87,-274.19 371.7,-271.22 372.07,-278.21"/>
 </g>
@@ -738,7 +738,7 @@ large graphs.</div>
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">subroutine </span><span class="n">create_image</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">prompt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">response_format</span><span class="p">,</span><span class="w"> </span><span class="n">user_name</span><span class="p">)</span><span class="w"></span>
+    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">create_image</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">prompt</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">,</span><span class="w"> </span><span class="n">response_format</span><span class="p">,</span><span class="w"> </span><span class="n">user_name</span><span class="p">)</span><span class="w"></span>
 <span class="w">      </span><span class="k">use </span><span class="n">http</span><span class="p">,</span><span class="w">        </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">response_type</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HTTP_POST</span><span class="p">,</span><span class="w"> </span><span class="n">pair_type</span><span class="w"></span>
 <span class="w">      </span><span class="k">use </span><span class="n">json_module</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">json_file</span><span class="w"></span>
 
@@ -787,7 +787,12 @@ large graphs.</div>
 <span class="w">         </span><span class="k">do </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">this</span><span class="p">%</span><span class="n">n</span><span class="w"></span>
 <span class="w">            </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">i_str</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;(I10)&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">i</span><span class="w"></span>
 <span class="w">            </span><span class="k">call </span><span class="n">json</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;data(&quot;</span><span class="o">//</span><span class="nb">trim</span><span class="p">(</span><span class="n">i_str</span><span class="p">)</span><span class="o">//</span><span class="s2">&quot;).url&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">assistant_response</span><span class="p">,</span><span class="w"> </span><span class="n">found</span><span class="o">=</span><span class="n">found</span><span class="p">)</span><span class="w"></span>
-<span class="w">            </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_assistant_response</span><span class="p">(</span><span class="n">assistant_response</span><span class="o">=</span><span class="n">assistant_response</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="w"> </span><span class="n">found</span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">               call </span><span class="n">json</span><span class="p">%</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;error.message&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">assistant_response</span><span class="p">)</span><span class="w"></span>
+<span class="w">               </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_assistant_response</span><span class="p">(</span><span class="n">assistant_response</span><span class="o">=</span><span class="n">assistant_response</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
+<span class="w">               </span><span class="k">exit</span>
+<span class="k">            end if</span>
+<span class="k">            call </span><span class="n">this</span><span class="p">%</span><span class="n">set_assistant_response</span><span class="p">(</span><span class="n">assistant_response</span><span class="o">=</span><span class="n">assistant_response</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 <span class="w">         </span><span class="k">end do</span>
 <span class="k">         call </span><span class="n">json</span><span class="p">%</span><span class="n">destroy</span><span class="p">()</span><span class="w"></span>
 <span class="w">      </span><span class="k">else</span>
@@ -816,7 +821,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T19:22:03.190776             </p>
+ on 2023-09-20T20:22:27.787945             </p>
           </div>
         </div>
         <br>

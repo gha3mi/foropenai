@@ -165,6 +165,7 @@ export OPENAI_ORG="your_organization"</code></p>
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;foropenai.json&#39;</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="s1">&#39;test/audio.mp3&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">print_file</span><span class="p">()</span><span class="w"></span>
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">print_assistant_response</span><span class="p">()</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span><span class="w"></span>
@@ -192,7 +193,8 @@ export OPENAI_ORG="your_organization"</code></p>
 
 <p><audio src="test/audio.mp3" controls title="Transcription"></audio></p>
 <h4>Result</h4>
-<div class="codehilite"><pre><span></span><code>text: FORTRAN stands <span class="k">for</span> Formula Translation.
+<div class="codehilite"><pre><span></span><code>file: test/audio.mp3
+Whisper: FORTRAN stands <span class="k">for</span> Formula Translation.
 </code></pre></div>
 
 <h3>Create translation</h3>
@@ -208,6 +210,7 @@ export OPENAI_ORG="your_organization"</code></p>
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;foropenai.json&#39;</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="k">file</span><span class="o">=</span><span class="s1">&#39;test/audio_de.mp3&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">print_file</span><span class="p">()</span><span class="w"></span>
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">print_assistant_response</span><span class="p">()</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">trs</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span><span class="w"></span>
@@ -234,7 +237,8 @@ export OPENAI_ORG="your_organization"</code></p>
 
 <p><audio src="test/audio_de.mp3" controls title="Translation"></audio></p>
 <h4>Result</h4>
-<div class="codehilite"><pre><span></span><code>text: FORTRAN stands <span class="k">for</span> Formula Translation.
+<div class="codehilite"><pre><span></span><code>file: test/audio_de.mp3
+Whisper: FORTRAN stands <span class="k">for</span> Formula Translation and is a programming language.
 </code></pre></div>
 
 <h2>Chat</h2>
@@ -308,6 +312,7 @@ ChatGPT: Hello! How can I assist you today?
 <span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">set</span><span class="p">(</span><span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;foropenai.json&#39;</span><span class="p">)</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">create</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s1">&#39;a cat with a computer&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">print_prompt</span><span class="p">()</span><span class="w"></span>
 <span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">print_assistant_response</span><span class="p">()</span><span class="w"></span>
 
 <span class="w">   </span><span class="k">call </span><span class="n">image</span><span class="p">%</span><span class="n">finalize</span><span class="p">()</span><span class="w"></span>
@@ -394,7 +399,7 @@ If you find any issues or would like to suggest improvements, please open an iss
           <div class="col-xs-6 col-sm-3">
             <div>
               <h3>Procedures</h3>
-              <ul><li><a href='./proc/check_chat_completion.html'>check_chat_completion</a></li><li><a href='./proc/conversation.html'>conversation</a></li><li><a href='./proc/create_chat_completion.html'>create_chat_completion</a></li><li><a href='./proc/create_image.html'>create_image</a></li><li><a href='./proc/create_transcription.html'>create_transcription</a></li><li><a href='./proc/create_translation.html'>create_translation</a></li><li><a href='./proc/deallocate_api_key.html'>deallocate_api_key</a></li><li><a href='./proc/deallocate_assisstant_response.html'>deallocate_assisstant_response</a></li><li><a href='./proc/deallocate_assistant_response.html'>deallocate_assistant_response</a></li><li><a href='./proc/deallocate_chatcompletion.html'>deallocate_ChatCompletion</a></li></ul>
+              <ul><li><a href='./proc/check_chat_completion.html'>check_chat_completion</a></li><li><a href='./proc/conversation.html'>conversation</a></li><li><a href='./proc/create_chat_completion.html'>create_chat_completion</a></li><li><a href='./proc/create_image.html'>create_image</a></li><li><a href='./proc/create_transcription.html'>create_transcription</a></li><li><a href='./proc/create_translation.html'>create_translation</a></li><li><a href='./proc/deallocate_api_key.html'>deallocate_api_key</a></li><li><a href='./proc/deallocate_assistant_response.html'>deallocate_assistant_response</a></li><li><a href='./proc/deallocate_assistant_response~2.html'>deallocate_assistant_response</a></li><li><a href='./proc/deallocate_assistant_response~3.html'>deallocate_assistant_response</a></li></ul>
             </div>
             <div>
               <ul>
@@ -426,7 +431,7 @@ If you find any issues or would like to suggest improvements, please open an iss
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T19:22:03.190776             </p>
+ on 2023-09-20T20:22:27.787945             </p>
           </div>
         </div>
         <br>

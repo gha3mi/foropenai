@@ -101,7 +101,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="<p>17.4% of total for derived types.</p>Including implementation: 294 statements, 17.2% of total for derived types.">40 statements</a>
+               title="<p>17.7% of total for derived types.</p>Including implementation: 307 statements, 17.7% of total for derived types.">41 statements</a>
           </li>
 
             <li id="source-file">
@@ -148,7 +148,7 @@
             <a class="list-group-item" href="../type/transcription.html#variable-language">language</a>
             <a class="list-group-item" href="../type/transcription.html#variable-prompt">prompt</a>
             <a class="list-group-item" href="../type/transcription.html#variable-file">file</a>
-            <a class="list-group-item" href="../type/transcription.html#variable-text">text</a>
+            <a class="list-group-item" href="../type/transcription.html#variable-assistant_response">assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#variable-response_format">response_format</a>
             <a class="list-group-item" href="../type/transcription.html#variable-temperature">temperature</a>
         </div>
@@ -190,7 +190,7 @@
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_language">deallocate_language</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_prompt">deallocate_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_file">deallocate_file</a>
-            <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_text">deallocate_text</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_assistant_response">deallocate_assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-load">load</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-load_url">load_url</a>
@@ -204,7 +204,8 @@
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_response_format">print_response_format</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_prompt">print_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_assistant_response">print_assistant_response</a>
-            <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_text">set_text</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_file">print_file</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_assistant_response">set_assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_prompt">set_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_url">set_url</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_model">set_model</a>
@@ -346,7 +347,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/transcription.html#variable-language">language</a>
             <a class="list-group-item" href="../type/transcription.html#variable-prompt">prompt</a>
             <a class="list-group-item" href="../type/transcription.html#variable-file">file</a>
-            <a class="list-group-item" href="../type/transcription.html#variable-text">text</a>
+            <a class="list-group-item" href="../type/transcription.html#variable-assistant_response">assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#variable-response_format">response_format</a>
             <a class="list-group-item" href="../type/transcription.html#variable-temperature">temperature</a>
         </div>
@@ -388,7 +389,7 @@ large graphs.</div>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_language">deallocate_language</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_prompt">deallocate_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_file">deallocate_file</a>
-            <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_text">deallocate_text</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-deallocate_assistant_response">deallocate_assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-finalize~2">finalize</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-load">load</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-load_url">load_url</a>
@@ -402,7 +403,8 @@ large graphs.</div>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_response_format">print_response_format</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_prompt">print_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_assistant_response">print_assistant_response</a>
-            <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_text">set_text</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-print_file">print_file</a>
+            <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_assistant_response">set_assistant_response</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_prompt">set_prompt</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_url">set_url</a>
             <a class="list-group-item" href="../type/transcription.html#boundprocedure-set_model">set_model</a>
@@ -611,7 +613,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-text"></span>
+              <span class="anchor" id="variable-assistant_response"></span>
               character(len=:),
             </td>
               <td>public,</td>
@@ -619,7 +621,7 @@ large graphs.</div>
               allocatable
             </td>
             <td>::</td>
-            <td><strong>text</strong></td>
+            <td><strong>assistant_response</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -1352,12 +1354,12 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_text"></span><h3>procedure, private :: <strong>deallocate_text</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-deallocate_assistant_response"></span><h3>procedure, private :: <strong>deallocate_assistant_response</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/deallocate_text.html'>deallocate_text</a>(this)  
+    private pure elemental subroutine <a href='../proc/deallocate_assistant_response.html'>deallocate_assistant_response</a>(this)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -1895,7 +1897,7 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_response_format"></span><h3>procedure, public,  :: <strong>print_response_format</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_response_format"></span><h3>procedure, private :: <strong>print_response_format</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
@@ -2039,12 +2041,60 @@ large graphs.</div>
   </div>
 
             <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_text"></span><h3>procedure, private :: <strong>set_text</strong>          
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-print_file"></span><h3>procedure, public,  :: <strong>print_file</strong>          
     </h3></div>
     <ul class="list-group">
         <li class="list-group-item">
                   <h3>
-    private pure elemental subroutine <a href='../proc/set_text.html'>set_text</a>(this, text)  
+    private impure elemental subroutine <a href='../proc/print_file.html'>print_file</a>(this)  
+</h3>
+        <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/transcription.html'>Transcription</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        </li>
+    </ul>
+  </div>
+
+            <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set_assistant_response"></span><h3>procedure, private :: <strong>set_assistant_response</strong>          
+    </h3></div>
+    <ul class="list-group">
+        <li class="list-group-item">
+                  <h3>
+    private pure elemental subroutine <a href='../proc/set_assistant_response.html'>set_assistant_response</a>(this, assistant_response)  
 </h3>
         <dl class="dl-horizontal">
         <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
@@ -2088,7 +2138,7 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>text</strong></td>
+            <td><strong>assistant_response</strong></td>
             <td>
 
             </td>
@@ -2690,7 +2740,7 @@ large graphs.</div>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">language</span><span class="w"></span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">prompt</span><span class="w"></span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="k">file</span>
-<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">text</span><span class="w"></span>
+<span class="k">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="p">:),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">assistant_response</span><span class="w"></span>
 <span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">response_format</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="w"></span>
 <span class="w">      </span><span class="kt">real</span><span class="w">                          </span><span class="kd">::</span><span class="w"> </span><span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span><span class="w"></span>
 <span class="w">   </span><span class="k">contains</span>
@@ -2700,7 +2750,7 @@ large graphs.</div>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_language</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_prompt</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_file</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_text</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">deallocate_assistant_response</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">finalize</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">deallocate_Transcription</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">load_Transcription_data</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">load_url</span><span class="w"></span>
@@ -2711,10 +2761,11 @@ large graphs.</div>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_model</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_temperature</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_language</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_response_format</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_response_format</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_prompt</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_assistant_response</span><span class="w"></span>
-<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_text</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">print_file</span><span class="w"></span>
+<span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_assistant_response</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_prompt</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_url</span><span class="w"></span>
 <span class="w">      </span><span class="k">procedure</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">set_model</span><span class="w"></span>
@@ -2743,7 +2794,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T19:22:03.190776             </p>
+ on 2023-09-20T20:22:27.787945             </p>
           </div>
         </div>
         <br>

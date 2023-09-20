@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="14.4% of total for modules and submodules.">229 statements</a>
+               title="14.9% of total for modules and submodules.">242 statements</a>
           </li>
 
             <li id="source-file">
@@ -159,8 +159,9 @@
       </div>
       <div id="subs-0" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_file~2">print_file</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_assistant_response~3">print_assistant_response</a>
-            <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_assisstant_response">set_assisstant_response</a>
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_assistant_response~2">set_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_prompt~2">print_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_prompt~2">set_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_translation">deallocate_Translation</a>
@@ -168,7 +169,7 @@
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_model~3">deallocate_model</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_prompt~2">deallocate_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_file~2">deallocate_file</a>
-            <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_assisstant_response">deallocate_assisstant_response</a>
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_assistant_response~2">deallocate_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_response_format~2">set_response_format</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-load_response_format~2">load_response_format</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_response_format~2">print_response_format</a>
@@ -550,8 +551,9 @@ large graphs.</div>
       </div>
       <div id="subs-1" class="panel-collapse collapse">
         <div class="list-group">
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_file~2">print_file</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_assistant_response~3">print_assistant_response</a>
-            <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_assisstant_response">set_assisstant_response</a>
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_assistant_response~2">set_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_prompt~2">print_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_prompt~2">set_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_translation">deallocate_Translation</a>
@@ -559,7 +561,7 @@ large graphs.</div>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_model~3">deallocate_model</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_prompt~2">deallocate_prompt</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_file~2">deallocate_file</a>
-            <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_assisstant_response">deallocate_assisstant_response</a>
+            <a class="list-group-item" href="../module/foropenai_translation.html#proc-deallocate_assistant_response~2">deallocate_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-set_response_format~2">set_response_format</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-load_response_format~2">load_response_format</a>
             <a class="list-group-item" href="../module/foropenai_translation.html#proc-print_response_format~2">print_response_format</a>
@@ -775,7 +777,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-assisstant_response"></span>
+              <span class="anchor" id="variable-assistant_response~3"></span>
               character(len=:),
             </td>
               <td>public,</td>
@@ -783,7 +785,7 @@ large graphs.</div>
               allocatable
             </td>
             <td>::</td>
-            <td><strong>assisstant_response</strong></td>
+            <td><strong>assistant_response</strong></td>
                 <td></td>
                 <td></td>
             <td>
@@ -927,7 +929,7 @@ large graphs.</div>
                 <td>
                     procedure
                     ,                  private
-                  :: <strong><a href='../type/translation.html#boundprocedure-deallocate_assisstant_response'>deallocate_assisstant_response</a></strong>
+                  :: <strong><a href='../type/translation.html#boundprocedure-deallocate_assistant_response~2'>deallocate_assistant_response</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -1026,8 +1028,16 @@ large graphs.</div>
               <tr>
                 <td>
                     procedure
+                    ,                  public
+,                   :: <strong><a href='../type/translation.html#boundprocedure-print_file~2'>print_file</a></strong>
+<small>Subroutine</small>                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>
+                    procedure
                     ,                  private
-                  :: <strong><a href='../type/translation.html#boundprocedure-set_assisstant_response'>set_assisstant_response</a></strong>
+                  :: <strong><a href='../type/translation.html#boundprocedure-set_assistant_response~2'>set_assistant_response</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -1101,6 +1111,49 @@ large graphs.</div>
         <section>
           <h2>Subroutines</h2>
               <div class="panel panel-default">
+    <div class="panel-heading codesum"><span class="anchor" id="proc-print_file~2"></span><h3>private impure elemental subroutine <a href='../proc/print_file~2.html'>print_file</a>(this)  
+</h3></div>
+    <div class="panel-body">
+              <dl class="dl-horizontal">
+        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
+    </dl>
+
+  
+
+  <h4>Arguments</h4>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th>Type</th>
+<th>Intent</th><th>Optional</th>        <th>Attributes</th>
+        <th></th>
+        <th>Name</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" ></span>
+              class(<a href='../type/translation.html'>Translation</a>),
+            </td>
+<td>intent(inout)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>this</strong></td>
+            <td>
+
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+
+    </div>
+  </div>
+
+              <div class="panel panel-default">
     <div class="panel-heading codesum"><span class="anchor" id="proc-print_assistant_response~3"></span><h3>private impure elemental subroutine <a href='../proc/print_assistant_response~3.html'>print_assistant_response</a>(this)  
 </h3></div>
     <div class="panel-body">
@@ -1144,7 +1197,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_assisstant_response"></span><h3>private pure elemental subroutine <a href='../proc/set_assisstant_response.html'>set_assisstant_response</a>(this, assisstant_response)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_assistant_response~2"></span><h3>private pure elemental subroutine <a href='../proc/set_assistant_response~2.html'>set_assistant_response</a>(this, assistant_response)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -1189,7 +1242,7 @@ large graphs.</div>
               
             </td>
             <td>::</td>
-            <td><strong>assisstant_response</strong></td>
+            <td><strong>assistant_response</strong></td>
             <td>
 
             </td>
@@ -1518,7 +1571,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_assisstant_response"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_assisstant_response.html'>deallocate_assisstant_response</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_assistant_response~2"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_assistant_response~2.html'>deallocate_assistant_response</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2420,7 +2473,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T19:22:03.190776             </p>
+ on 2023-09-20T20:22:27.787945             </p>
           </div>
         </div>
         <br>

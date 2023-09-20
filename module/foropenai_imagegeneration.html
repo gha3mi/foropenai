@@ -100,7 +100,7 @@
           <li id="statements"><i class="fa fa-list-ol"></i>
             <a data-toggle="tooltip"
                data-placement="bottom" data-html="true"
-               title="16.6% of total for modules and submodules.">265 statements</a>
+               title="16.7% of total for modules and submodules.">272 statements</a>
           </li>
 
             <li id="source-file">
@@ -178,12 +178,12 @@
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_response_format~3">set_response_format</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_n~2">set_n</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_user_name~2">set_user_name</a>
-            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response">set_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response~3">set_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_imagegeneration_data">set_ImageGeneration_data</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_imagegeneration_data">load_ImageGeneration_data</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_url~4">deallocate_url</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_user_name~2">deallocate_user_name</a>
-            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response">deallocate_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response~3">deallocate_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_imagegeneration">deallocate_ImageGeneration</a>
         </div>
       </div>
@@ -570,12 +570,12 @@ large graphs.</div>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_response_format~3">set_response_format</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_n~2">set_n</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_user_name~2">set_user_name</a>
-            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response">set_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_assistant_response~3">set_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-set_imagegeneration_data">set_ImageGeneration_data</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-load_imagegeneration_data">load_ImageGeneration_data</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_url~4">deallocate_url</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_user_name~2">deallocate_user_name</a>
-            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response">deallocate_assistant_response</a>
+            <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_assistant_response~3">deallocate_assistant_response</a>
             <a class="list-group-item" href="../module/foropenai_imagegeneration.html#proc-deallocate_imagegeneration">deallocate_ImageGeneration</a>
         </div>
       </div>
@@ -811,7 +811,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-assistant_response"></span>
+              <span class="anchor" id="variable-assistant_response~5"></span>
               character(len=1024),
             </td>
               <td>public,</td>
@@ -913,7 +913,7 @@ large graphs.</div>
                 <td>
                     procedure
                     ,                  private
-                  :: <strong><a href='../type/imagegeneration.html#boundprocedure-deallocate_assistant_response'>deallocate_assistant_response</a></strong>
+                  :: <strong><a href='../type/imagegeneration.html#boundprocedure-deallocate_assistant_response~3'>deallocate_assistant_response</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -996,8 +996,8 @@ large graphs.</div>
               <tr>
                 <td>
                     procedure
-                    ,                  private
-                  :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_prompt~3'>print_prompt</a></strong>
+                    ,                  public
+,                   :: <strong><a href='../type/imagegeneration.html#boundprocedure-print_prompt~3'>print_prompt</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -1085,7 +1085,7 @@ large graphs.</div>
                 <td>
                     procedure
                     ,                  private
-                  :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_assistant_response'>set_assistant_response</a></strong>
+                  :: <strong><a href='../type/imagegeneration.html#boundprocedure-set_assistant_response~3'>set_assistant_response</a></strong>
 <small>Subroutine</small>                </td>
                 <td></td>
               </tr>
@@ -1111,7 +1111,7 @@ large graphs.</div>
         <section>
           <h2>Subroutines</h2>
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-create_image"></span><h3>private  subroutine <a href='../proc/create_image.html'>create_image</a>(this, prompt, n, size, response_format, user_name)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-create_image"></span><h3>private impure elemental subroutine <a href='../proc/create_image.html'>create_image</a>(this, prompt, n, size, response_format, user_name)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2093,7 +2093,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-set_assistant_response"></span><h3>private pure elemental subroutine <a href='../proc/set_assistant_response.html'>set_assistant_response</a>(this, assistant_response, i)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-set_assistant_response~3"></span><h3>private pure elemental subroutine <a href='../proc/set_assistant_response~3.html'>set_assistant_response</a>(this, assistant_response, i)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2458,7 +2458,7 @@ large graphs.</div>
   </div>
 
               <div class="panel panel-default">
-    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_assistant_response"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_assistant_response.html'>deallocate_assistant_response</a>(this)  
+    <div class="panel-heading codesum"><span class="anchor" id="proc-deallocate_assistant_response~3"></span><h3>private pure elemental subroutine <a href='../proc/deallocate_assistant_response~3.html'>deallocate_assistant_response</a>(this)  
 </h3></div>
     <div class="panel-body">
               <dl class="dl-horizontal">
@@ -2563,7 +2563,7 @@ large graphs.</div>
             <p class="text-right">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T19:22:03.190776             </p>
+ on 2023-09-20T20:22:27.787945             </p>
           </div>
         </div>
         <br>
