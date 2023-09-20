@@ -51,7 +51,7 @@ module foropenai_ChatCompletion
       type(ChatCompletion_messages), allocatable :: messages(:)
       integer                                    :: max_tokens
       type(usage)                                :: usage
-      real                                       :: temperature=1.0  
+      real                                       :: temperature=1.0
       real                                       :: presence_penalty=0.0
       real                                       :: frequency_penalty=0.0
       real                                       :: top_p=1.0
@@ -193,7 +193,7 @@ contains
    end subroutine set_asisstant_response
    !===============================================================================
 
-   
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure function get_assistant_response(this) result(response)
@@ -208,7 +208,7 @@ contains
    end function
    !===============================================================================
 
-   
+
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    pure function get_user_message(this) result(message)
@@ -261,7 +261,7 @@ contains
       if (allocated(this%finish_reason)) deallocate(this%finish_reason)
    end subroutine deallocate_finish_reason
    !===============================================================================
-   
+
 
    !===============================================================================
    !> author: Seyed Ali Ghasemi
@@ -275,7 +275,7 @@ contains
    !===============================================================================
    !> author: Seyed Ali Ghasemi
    elemental impure subroutine conversation(this, file_name_base, file_name_ChatCompletion, &
-   input_file, output_file, inputfile_command, exit_command)
+      input_file, output_file, inputfile_command, exit_command)
       class(ChatCompletion), intent(inout) :: this
       character(len=*), intent(in)         :: file_name_base
       character(len=*), intent(in)         :: file_name_ChatCompletion
@@ -881,7 +881,7 @@ contains
             call json%deserialize(response%content)
 
             call json%get("choices(1).finish_reason", this%finish_reason)
-            
+
             call json%get("usage.prompt_tokens", this%usage%prompt_tokens)
             call json%get("usage.completion_tokens", this%usage%completion_tokens)
             call json%get("usage.total_tokens", this%usage%total_tokens)
