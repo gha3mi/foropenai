@@ -733,7 +733,7 @@ contains
    elemental pure subroutine set_role(this, role)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: role
-      this%role = role
+      this%role = trim(role)
    end subroutine set_role
    !===============================================================================
 
@@ -743,7 +743,7 @@ contains
    elemental pure subroutine set_content(this, content)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: content
-      this%content = content
+      this%content = trim(content)
    end subroutine set_content
    !===============================================================================
 
@@ -753,7 +753,7 @@ contains
    elemental pure subroutine set_name(this, name)
       class(ChatCompletion_messages), intent(inout) :: this
       character(len=*),               intent(in)    :: name
-      this%name = name
+      this%name = trim(name)
    end subroutine set_name
    !===============================================================================
 
@@ -851,8 +851,8 @@ contains
 
          req_header = [&
             pair_type('Content-Type', 'application/json'),&
-            pair_type('Authorization', 'Bearer '//trim(this%api_key)//''),&
-            pair_type('OpenAI-Organization', ' '//trim(this%organization)//'')&
+            pair_type('Authorization', 'Bearer '//trim(this%api_key)),&
+            pair_type('OpenAI-Organization', ' '//trim(this%organization))&
             ]
 
          call json%initialize()
@@ -863,7 +863,7 @@ contains
             call json%add('messages('//trim(i_str)//').content', this%messages(i)%content)
             ! call json%add('messages('//trim(i_str)//').name', this%messages(i)%name)
          end do
-         call json%add('user', trim(this%user_name))
+         call json%add('user', this%user_name)
          call json%add('temperature', this%temperature)
          call json%add('max_tokens', this%max_tokens)
          call json%add('stream', this%stream)
@@ -874,24 +874,24 @@ contains
          call json%print_to_string(jsonstr)
          call json%destroy()
 
-         response = request(url = trim(this%url), method = HTTP_POST, data = jsonstr, header = req_header)
+         response = request(url=this%url, method=HTTP_POST, data=jsonstr, header=req_header)
 
          if (response%ok) then
             call json%initialize()
             call json%deserialize(response%content)
 
-            call json%get("choices(1).finish_reason", this%finish_reason)
-
-            call json%get("usage.prompt_tokens", this%usage%prompt_tokens)
-            call json%get("usage.completion_tokens", this%usage%completion_tokens)
-            call json%get("usage.total_tokens", this%usage%total_tokens)
-
             call json%get("choices(1).message.content", assistant_response, found=found)
-            if (.not. found) then
+            if (found) then
+               call json%get("choices(1).finish_reason", this%finish_reason)
+
+               call json%get("usage.prompt_tokens", this%usage%prompt_tokens)
+               call json%get("usage.completion_tokens", this%usage%completion_tokens)
+               call json%get("usage.total_tokens", this%usage%total_tokens)
+            else
                call json%get("error.message", jsonstr)
                assistant_response = jsonstr
             end if
-            call this%set_asisstant_response(response=trim(assistant_response))
+            call this%set_asisstant_response(response=assistant_response)
             call json%destroy()
          else
             print '(A)', 'Sorry, an error occurred while processing your request.'
