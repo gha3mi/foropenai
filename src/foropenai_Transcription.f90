@@ -20,33 +20,33 @@ module foropenai_Transcription
       real                                       :: temperature=1.0
    contains
       procedure :: create => create_transcription
-      procedure :: deallocate_url
-      procedure :: deallocate_model
-      procedure :: deallocate_language
-      procedure :: deallocate_prompt
-      procedure :: deallocate_file
-      procedure :: deallocate_text
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_model
+      procedure, private :: deallocate_language
+      procedure, private :: deallocate_prompt
+      procedure, private :: deallocate_file
+      procedure, private :: deallocate_text
       procedure :: finalize => deallocate_Transcription
-      procedure :: load => load_Transcription_data
-      procedure :: load_url
-      procedure :: load_model
-      procedure :: load_temperature
-      procedure :: load_language
-      procedure :: load_response_format
-      procedure :: print_model
-      procedure :: print_temperature
-      procedure :: print_language
+      procedure, private :: load => load_Transcription_data
+      procedure, private :: load_url
+      procedure, private :: load_model
+      procedure, private :: load_temperature
+      procedure, private :: load_language
+      procedure, private :: load_response_format
+      procedure, private :: print_model
+      procedure, private :: print_temperature
+      procedure, private :: print_language
       procedure :: print_response_format
-      procedure :: print_prompt
-      procedure :: print_text
-      procedure :: set_text
-      procedure :: set_prompt
-      procedure :: set_url
-      procedure :: set_model
-      procedure :: set_temperature
-      procedure :: set_language
-      procedure :: set_response_format
-      procedure :: set_file
+      procedure, private :: print_prompt
+      procedure :: print_assistant_response
+      procedure, private :: set_text
+      procedure, private :: set_prompt
+      procedure, private :: set_url
+      procedure, private :: set_model
+      procedure, private :: set_temperature
+      procedure, private :: set_language
+      procedure, private :: set_response_format
+      procedure, private :: set_file
       procedure :: set => set_Transcription_data
    end type Transcription
    !===============================================================================

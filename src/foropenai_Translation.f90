@@ -19,29 +19,29 @@ module foropenai_Translation
       real                                       :: temperature=1.0
    contains
       procedure :: create => create_translation
-      procedure :: deallocate_url
-      procedure :: deallocate_model
-      procedure :: deallocate_prompt
-      procedure :: deallocate_file
-      procedure :: deallocate_assisstant_response
+      procedure, private :: deallocate_url
+      procedure, private :: deallocate_model
+      procedure, private :: deallocate_prompt
+      procedure, private :: deallocate_file
+      procedure, private :: deallocate_assisstant_response
       procedure :: finalize => deallocate_Translation
-      procedure :: load => load_Translation_data
-      procedure :: load_url
-      procedure :: load_model
-      procedure :: load_temperature
-      procedure :: load_response_format
-      procedure :: print_model
-      procedure :: print_temperature
-      procedure :: print_response_format
-      procedure :: print_prompt
+      procedure, private :: load => load_Translation_data
+      procedure, private :: load_url
+      procedure, private :: load_model
+      procedure, private :: load_temperature
+      procedure, private :: load_response_format
+      procedure, private :: print_model
+      procedure, private :: print_temperature
+      procedure, private :: print_response_format
+      procedure, private :: print_prompt
       procedure :: print_assisstant_response
-      procedure :: set_assisstant_response
-      procedure :: set_prompt
-      procedure :: set_url
-      procedure :: set_model
-      procedure :: set_temperature
-      procedure :: set_response_format
-      procedure :: set_file
+      procedure, private :: set_assisstant_response
+      procedure, private :: set_prompt
+      procedure, private :: set_url
+      procedure, private :: set_model
+      procedure, private :: set_temperature
+      procedure, private :: set_response_format
+      procedure, private :: set_file
       procedure :: set => set_Translation_data
    end type Translation
    !===============================================================================
