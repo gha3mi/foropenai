@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,81 +12,56 @@
 
     <title>set_ChatCompletion_data &ndash; ForOpenAI</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.5.0</small></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
@@ -92,34 +69,38 @@
       <small>Subroutine</small>
       
     </h1>
-      <div class="row" id="info-bar">
-    <div class="col-lg-12">
-      <div class="well well-sm">
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
-            <li id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
 
-          <li id="statements"><i class="fa fa-list-ol"></i>
-            <a data-toggle="tooltip"
-               data-placement="bottom" data-html="true"
-               title=" 2.1% of total for procedures.">28 statements</a>
-          </li>
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title=" 2.1% of total for procedures.">28 statements</a>
+            </li>
 
-            <li id="source-file">
+            <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
               <a href="../src/foropenai_ChatCompletion.f90"> Source File</a>
             </li>
         </ul>
-        <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></li>
-              <li><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></li>
-          <li class="active">set_ChatCompletion_data</li>
-        </ol>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></li>
+            <li class="breadcrumb-item active" aria-current="page">set_ChatCompletion_data</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
   <script>
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-bs-toggle="tooltip"]').tooltip()
     })
   </script>
 
@@ -148,8 +129,9 @@
   
   
   
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
         <a class="list-group-item" href="../proc/set_chatcompletion_data.html#src">set_ChatCompletion_data</a>
       </div>
@@ -173,16 +155,16 @@
         <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~110"></span>
+              <span class="anchor" id="variable-this~74"></span>
               class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
             </td>
 <td>intent(inout)</td>
@@ -212,7 +194,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-url~6"></span>
+              <span class="anchor" id="variable-url~8"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -227,7 +209,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-model~6"></span>
+              <span class="anchor" id="variable-model~8"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -242,7 +224,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-user_name~3"></span>
+              <span class="anchor" id="variable-user_name~2"></span>
               character(len=*),
             </td>
 <td>intent(in),</td>
@@ -257,7 +239,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-temperature~6"></span>
+              <span class="anchor" id="variable-temperature~8"></span>
               real,
             </td>
 <td>intent(in),</td>
@@ -272,7 +254,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-presence_penalty~3"></span>
+              <span class="anchor" id="variable-presence_penalty~2"></span>
               real,
             </td>
 <td>intent(in),</td>
@@ -287,7 +269,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-frequency_penalty~3"></span>
+              <span class="anchor" id="variable-frequency_penalty~2"></span>
               real,
             </td>
 <td>intent(in),</td>
@@ -302,7 +284,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-top_p~3"></span>
+              <span class="anchor" id="variable-top_p~2"></span>
               real,
             </td>
 <td>intent(in),</td>
@@ -317,7 +299,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-n~5"></span>
+              <span class="anchor" id="variable-n~2"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -332,7 +314,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-stream~3"></span>
+              <span class="anchor" id="variable-stream~2"></span>
               logical,
             </td>
 <td>intent(in),</td>
@@ -347,7 +329,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-max_tokens~3"></span>
+              <span class="anchor" id="variable-max_tokens~2"></span>
               integer,
             </td>
 <td>intent(in),</td>
@@ -364,201 +346,627 @@
   </table>
 
     <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Calls</h3>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~set_chatcompletion_data~~CallsGraph Pages: 1 -->
-<svg id="procset_chatcompletion_dataCallsGraph" width="641pt" height="388pt"
- viewBox="0.00 0.00 641.00 387.58" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~set_chatcompletion_data~~CallsGraph" class="graph" transform="scale(1.27 1.27) rotate(0) translate(4 490)">
+<svg id="procset_chatcompletion_dataCallsGraph" width="641pt" height="303pt"
+ viewBox="0.00 0.00 641.00 302.79" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~set_chatcompletion_data~~CallsGraph" class="graph" transform="scale(2.12 2.12) rotate(0) translate(4 637)">
 <title>proc~~set_chatcompletion_data~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-490 813,-490 813,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-637 1353,-637 1353,4 -4,4"/>
 <!-- proc~set_chatcompletion_data -->
 <g id="proc~~set_chatcompletion_data~~CallsGraph_node1" class="node">
 <title>proc~set_chatcompletion_data</title>
 <polygon fill="none" stroke="black" points="395,-255 0,-255 0,-231 395,-231 395,-255"/>
 <text text-anchor="middle" x="197.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion::ChatCompletion%set_ChatCompletion_data</text>
 </g>
-<!-- load -->
+<!-- proc~load_chatcompletion_data -->
 <g id="proc~~set_chatcompletion_data~~CallsGraph_node2" class="node">
-<title>load</title>
-<polygon fill="#777777" stroke="#777777" points="647,-486 593,-486 593,-462 647,-462 647,-486"/>
-<text text-anchor="middle" x="620" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">load</text>
+<title>proc~load_chatcompletion_data</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node2"><a xlink:href="../proc/load_chatcompletion_data.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_ChatCompletion_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="834,-444 431,-444 431,-420 834,-420 834,-444"/>
+<text text-anchor="middle" x="632.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_ChatCompletion_data</text>
+</a>
 </g>
-<!-- proc~set_chatcompletion_data&#45;&gt;load -->
+</g>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~load_chatcompletion_data -->
 <g id="proc~~set_chatcompletion_data~~CallsGraph_edge1" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;load</title>
-<path fill="none" stroke="#255000" d="M207.23,-255.02C234.98,-292.18 325.6,-405.56 431,-453 480.11,-475.1 543.43,-477.51 582.62,-476.38"/>
-<polygon fill="#255000" stroke="#255000" points="582.9,-479.87 592.76,-475.99 582.63,-472.88 582.9,-479.87"/>
+<title>proc~set_chatcompletion_data&#45;&gt;proc~load_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M210.21,-255.06C242.12,-287.07 334.71,-374.2 431,-411 436.95,-413.28 443.08,-415.33 449.31,-417.19"/>
+<polygon fill="#255000" stroke="#255000" points="448.62,-420.63 459.19,-419.96 450.5,-413.89 448.62,-420.63"/>
+</g>
+<!-- proc~set_file_name -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node3" class="node">
+<title>proc~set_file_name</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node3"><a xlink:href="../proc/set_file_name.html" xlink:title="foropenai_base::openai%set_file_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="1173.5,-633 951.5,-633 951.5,-609 1173.5,-609 1173.5,-633"/>
+<text text-anchor="middle" x="1062.5" y="-618.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%set_file_name</text>
+</a>
+</g>
+</g>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_file_name -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge2" class="edge">
+<title>proc~set_chatcompletion_data&#45;&gt;proc~set_file_name</title>
+<path fill="none" stroke="#255000" d="M208.55,-255.07C238.66,-290.48 332.15,-395.23 431,-453 608.65,-556.81 669.03,-555.87 870,-600 892.87,-605.02 917.55,-608.87 941.34,-611.8"/>
+<polygon fill="#255000" stroke="#255000" points="941.13,-615.3 951.47,-613.01 941.96,-608.35 941.13,-615.3"/>
 </g>
 <!-- proc~set_frequency_penalty -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node3" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node4" class="node">
 <title>proc~set_frequency_penalty</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node3"><a xlink:href=".././proc/set_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_frequency_penalty">
-<polygon fill="#d9534f" stroke="#d9534f" points="809,-444 431,-444 431,-420 809,-420 809,-444"/>
-<text text-anchor="middle" x="620" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_frequency_penalty</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node4"><a xlink:href="../proc/set_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_frequency_penalty">
+<polygon fill="#d9534f" stroke="#d9534f" points="821.5,-402 443.5,-402 443.5,-378 821.5,-378 821.5,-402"/>
+<text text-anchor="middle" x="632.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_frequency_penalty</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_frequency_penalty -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge2" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge3" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_frequency_penalty</title>
-<path fill="none" stroke="#255000" d="M210.22,-255.03C242.17,-286.94 334.83,-373.87 431,-411 436.93,-413.29 443.04,-415.35 449.27,-417.21"/>
-<polygon fill="#255000" stroke="#255000" points="448.57,-420.65 459.14,-419.97 450.45,-413.91 448.57,-420.65"/>
+<path fill="none" stroke="#255000" d="M215.24,-255.13C252.11,-281.13 343.95,-342.03 431,-369 439.26,-371.56 447.79,-373.82 456.47,-375.82"/>
+<polygon fill="#255000" stroke="#255000" points="455.8,-379.25 466.31,-377.96 457.29,-372.41 455.8,-379.25"/>
 </g>
 <!-- proc~set_max_tokens -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node4" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node5" class="node">
 <title>proc~set_max_tokens</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node4"><a xlink:href=".././proc/set_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_max_tokens">
-<polygon fill="#d9534f" stroke="#d9534f" points="791.5,-402 448.5,-402 448.5,-378 791.5,-378 791.5,-402"/>
-<text text-anchor="middle" x="620" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_max_tokens</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node5"><a xlink:href="../proc/set_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_max_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="804,-360 461,-360 461,-336 804,-336 804,-360"/>
+<text text-anchor="middle" x="632.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_max_tokens</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_max_tokens -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge3" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge4" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_max_tokens</title>
-<path fill="none" stroke="#255000" d="M215.26,-255.09C252.15,-280.99 344.04,-341.73 431,-369 439.2,-371.57 447.68,-373.84 456.31,-375.83"/>
-<polygon fill="#255000" stroke="#255000" points="455.59,-379.25 466.1,-377.97 457.08,-372.42 455.59,-379.25"/>
+<path fill="none" stroke="#255000" d="M225.06,-255.01C267.59,-273.67 354.03,-309.34 431,-327 443.37,-329.84 456.26,-332.29 469.27,-334.42"/>
+<polygon fill="#255000" stroke="#255000" points="468.81,-337.89 479.23,-335.98 469.89,-330.97 468.81,-337.89"/>
 </g>
-<!-- proc~set_model~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node5" class="node">
-<title>proc~set_model~2</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node5"><a xlink:href=".././proc/set_model~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_model">
-<polygon fill="#d9534f" stroke="#d9534f" points="776.5,-360 463.5,-360 463.5,-336 776.5,-336 776.5,-360"/>
-<text text-anchor="middle" x="620" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_model</text>
+<!-- proc~set_model~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node6" class="node">
+<title>proc~set_model~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node6"><a xlink:href="../proc/set_model~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="789,-318 476,-318 476,-294 789,-294 789,-318"/>
+<text text-anchor="middle" x="632.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_model</text>
 </a>
 </g>
 </g>
-<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_model~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge4" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;proc~set_model~2</title>
-<path fill="none" stroke="#255000" d="M225.43,-255.09C268.1,-273.72 354.3,-309.12 431,-327 443.05,-329.81 455.63,-332.25 468.31,-334.36"/>
-<polygon fill="#255000" stroke="#255000" points="468.08,-337.87 478.5,-335.99 469.18,-330.95 468.08,-337.87"/>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_model~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge5" class="edge">
+<title>proc~set_chatcompletion_data&#45;&gt;proc~set_model~3</title>
+<path fill="none" stroke="#255000" d="M258.03,-255.01C304.89,-264.16 371.92,-276.58 431,-285 450.95,-287.84 472.07,-290.47 492.82,-292.83"/>
+<polygon fill="#255000" stroke="#255000" points="492.65,-296.33 502.97,-293.97 493.43,-289.38 492.65,-296.33"/>
 </g>
 <!-- proc~set_n -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node6" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node7" class="node">
 <title>proc~set_n</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node6"><a xlink:href=".././proc/set_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_n">
-<polygon fill="#d9534f" stroke="#d9534f" points="763,-318 477,-318 477,-294 763,-294 763,-318"/>
-<text text-anchor="middle" x="620" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_n</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node7"><a xlink:href="../proc/set_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_n">
+<polygon fill="#d9534f" stroke="#d9534f" points="775.5,-276 489.5,-276 489.5,-252 775.5,-252 775.5,-276"/>
+<text text-anchor="middle" x="632.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_n</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_n -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge5" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge6" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_n</title>
-<path fill="none" stroke="#255000" d="M259.02,-255.09C305.83,-264.16 372.35,-276.44 431,-285 450.18,-287.8 470.51,-290.43 490.44,-292.81"/>
-<polygon fill="#255000" stroke="#255000" points="490.16,-296.3 500.5,-294 490.98,-289.35 490.16,-296.3"/>
+<path fill="none" stroke="#255000" d="M395.05,-252.53C423.2,-253.9 451.8,-255.28 478.94,-256.6"/>
+<polygon fill="#255000" stroke="#255000" points="479.1,-260.11 489.26,-257.1 479.44,-253.12 479.1,-260.11"/>
 </g>
 <!-- proc~set_presence_penalty -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node7" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node8" class="node">
 <title>proc~set_presence_penalty</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node7"><a xlink:href=".././proc/set_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_presence_penalty">
-<polygon fill="#d9534f" stroke="#d9534f" points="806.5,-276 433.5,-276 433.5,-252 806.5,-252 806.5,-276"/>
-<text text-anchor="middle" x="620" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_presence_penalty</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node8"><a xlink:href="../proc/set_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_presence_penalty">
+<polygon fill="#d9534f" stroke="#d9534f" points="819,-234 446,-234 446,-210 819,-210 819,-234"/>
+<text text-anchor="middle" x="632.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_presence_penalty</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_presence_penalty -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge6" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge7" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_presence_penalty</title>
-<path fill="none" stroke="#255000" d="M395.21,-252.82C404.55,-253.29 413.92,-253.76 423.26,-254.22"/>
-<polygon fill="#255000" stroke="#255000" points="423.21,-257.73 433.37,-254.73 423.56,-250.74 423.21,-257.73"/>
+<path fill="none" stroke="#255000" d="M395.05,-233.47C408.5,-232.82 422.05,-232.16 435.5,-231.51"/>
+<polygon fill="#255000" stroke="#255000" points="435.94,-234.99 445.76,-231.01 435.6,-228 435.94,-234.99"/>
 </g>
 <!-- proc~set_stream -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node8" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node9" class="node">
 <title>proc~set_stream</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node8"><a xlink:href=".././proc/set_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_stream">
-<polygon fill="#d9534f" stroke="#d9534f" points="778,-234 462,-234 462,-210 778,-210 778,-234"/>
-<text text-anchor="middle" x="620" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_stream</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node9"><a xlink:href="../proc/set_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_stream">
+<polygon fill="#d9534f" stroke="#d9534f" points="790.5,-192 474.5,-192 474.5,-168 790.5,-168 790.5,-192"/>
+<text text-anchor="middle" x="632.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_stream</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_stream -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge7" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge8" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_stream</title>
-<path fill="none" stroke="#255000" d="M395.21,-233.18C414.05,-232.24 433.05,-231.29 451.58,-230.36"/>
-<polygon fill="#255000" stroke="#255000" points="452,-233.84 461.82,-229.85 451.66,-226.85 452,-233.84"/>
+<path fill="none" stroke="#255000" d="M258.03,-230.99C304.89,-221.84 371.92,-209.42 431,-201 450.95,-198.16 472.07,-195.53 492.82,-193.17"/>
+<polygon fill="#255000" stroke="#255000" points="493.43,-196.62 502.97,-192.03 492.65,-189.67 493.43,-196.62"/>
 </g>
-<!-- proc~set_temperature~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node9" class="node">
-<title>proc~set_temperature~2</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node9"><a xlink:href=".././proc/set_temperature~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_temperature">
-<polygon fill="#d9534f" stroke="#d9534f" points="793,-192 447,-192 447,-168 793,-168 793,-192"/>
-<text text-anchor="middle" x="620" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_temperature</text>
+<!-- proc~set_temperature~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node10" class="node">
+<title>proc~set_temperature~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node10"><a xlink:href="../proc/set_temperature~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="805.5,-150 459.5,-150 459.5,-126 805.5,-126 805.5,-150"/>
+<text text-anchor="middle" x="632.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_temperature</text>
 </a>
 </g>
 </g>
-<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_temperature~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge8" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;proc~set_temperature~2</title>
-<path fill="none" stroke="#255000" d="M259.02,-230.91C305.83,-221.84 372.35,-209.56 431,-201 450.18,-198.2 470.51,-195.57 490.44,-193.19"/>
-<polygon fill="#255000" stroke="#255000" points="490.98,-196.65 500.5,-192 490.16,-189.7 490.98,-196.65"/>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_temperature~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge9" class="edge">
+<title>proc~set_chatcompletion_data&#45;&gt;proc~set_temperature~3</title>
+<path fill="none" stroke="#255000" d="M225.06,-230.99C267.59,-212.33 354.03,-176.66 431,-159 443.37,-156.16 456.26,-153.71 469.27,-151.58"/>
+<polygon fill="#255000" stroke="#255000" points="469.89,-155.03 479.23,-150.02 468.81,-148.11 469.89,-155.03"/>
 </g>
 <!-- proc~set_top_p -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node10" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node11" class="node">
 <title>proc~set_top_p</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node10"><a xlink:href=".././proc/set_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_top_p">
-<polygon fill="#d9534f" stroke="#d9534f" points="774.5,-150 465.5,-150 465.5,-126 774.5,-126 774.5,-150"/>
-<text text-anchor="middle" x="620" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_top_p</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node11"><a xlink:href="../proc/set_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_top_p">
+<polygon fill="#d9534f" stroke="#d9534f" points="787,-108 478,-108 478,-84 787,-84 787,-108"/>
+<text text-anchor="middle" x="632.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_top_p</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_top_p -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge9" class="edge">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge10" class="edge">
 <title>proc~set_chatcompletion_data&#45;&gt;proc~set_top_p</title>
-<path fill="none" stroke="#255000" d="M225.43,-230.91C268.1,-212.28 354.3,-176.88 431,-159 443.05,-156.19 455.63,-153.75 468.31,-151.64"/>
-<polygon fill="#255000" stroke="#255000" points="469.18,-155.05 478.5,-150.01 468.08,-148.13 469.18,-155.05"/>
+<path fill="none" stroke="#255000" d="M215.24,-230.87C252.11,-204.87 343.95,-143.97 431,-117 442.8,-113.34 455.17,-110.29 467.71,-107.76"/>
+<polygon fill="#255000" stroke="#255000" points="468.63,-111.14 477.8,-105.83 467.32,-104.27 468.63,-111.14"/>
 </g>
-<!-- proc~set_url~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node11" class="node">
-<title>proc~set_url~2</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node11"><a xlink:href=".././proc/set_url~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_url">
-<polygon fill="#d9534f" stroke="#d9534f" points="767,-108 473,-108 473,-84 767,-84 767,-108"/>
-<text text-anchor="middle" x="620" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_url</text>
+<!-- proc~set_url~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node12" class="node">
+<title>proc~set_url~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node12"><a xlink:href="../proc/set_url~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="779.5,-66 485.5,-66 485.5,-42 779.5,-42 779.5,-66"/>
+<text text-anchor="middle" x="632.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_url</text>
 </a>
 </g>
 </g>
-<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_url~2 -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge10" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;proc~set_url~2</title>
-<path fill="none" stroke="#255000" d="M215.26,-230.91C252.15,-205.01 344.04,-144.27 431,-117 441.26,-113.78 451.96,-111.05 462.84,-108.72"/>
-<polygon fill="#255000" stroke="#255000" points="463.76,-112.1 472.86,-106.69 462.37,-105.24 463.76,-112.1"/>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~set_url~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge11" class="edge">
+<title>proc~set_chatcompletion_data&#45;&gt;proc~set_url~3</title>
+<path fill="none" stroke="#255000" d="M210.21,-230.94C242.12,-198.93 334.71,-111.8 431,-75 445.08,-69.62 460.1,-65.45 475.34,-62.25"/>
+<polygon fill="#255000" stroke="#255000" points="476.24,-65.64 485.38,-60.28 474.89,-58.77 476.24,-65.64"/>
 </g>
 <!-- proc~set_user_name -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node12" class="node">
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node13" class="node">
 <title>proc~set_user_name</title>
-<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node12"><a xlink:href=".././proc/set_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_user_name">
-<polygon fill="#d9534f" stroke="#d9534f" points="789.5,-66 450.5,-66 450.5,-42 789.5,-42 789.5,-66"/>
-<text text-anchor="middle" x="620" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_user_name</text>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node13"><a xlink:href="../proc/set_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="802,-24 463,-24 463,0 802,0 802,-24"/>
+<text text-anchor="middle" x="632.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_user_name</text>
 </a>
 </g>
 </g>
 <!-- proc~set_chatcompletion_data&#45;&gt;proc~set_user_name -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_edge11" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;proc~set_user_name</title>
-<path fill="none" stroke="#255000" d="M210.22,-230.97C242.17,-199.06 334.83,-112.13 431,-75 436.93,-72.71 443.04,-70.65 449.27,-68.79"/>
-<polygon fill="#255000" stroke="#255000" points="450.45,-72.09 459.14,-66.03 448.57,-65.35 450.45,-72.09"/>
-</g>
-<!-- set_file_name -->
-<g id="proc~~set_chatcompletion_data~~CallsGraph_node13" class="node">
-<title>set_file_name</title>
-<polygon fill="#777777" stroke="#777777" points="663,-24 577,-24 577,0 663,0 663,-24"/>
-<text text-anchor="middle" x="620" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_file_name</text>
-</g>
-<!-- proc~set_chatcompletion_data&#45;&gt;set_file_name -->
 <g id="proc~~set_chatcompletion_data~~CallsGraph_edge12" class="edge">
-<title>proc~set_chatcompletion_data&#45;&gt;set_file_name</title>
-<path fill="none" stroke="#255000" d="M207.23,-230.98C234.98,-193.82 325.6,-80.44 431,-33 473.89,-13.7 527.62,-9.42 566.65,-9.4"/>
-<polygon fill="#255000" stroke="#255000" points="566.71,-12.9 576.74,-9.48 566.77,-5.9 566.71,-12.9"/>
+<title>proc~set_chatcompletion_data&#45;&gt;proc~set_user_name</title>
+<path fill="none" stroke="#255000" d="M207.21,-230.95C234.93,-193.69 325.44,-80.08 431,-33 438.14,-29.82 445.55,-27.03 453.15,-24.59"/>
+<polygon fill="#255000" stroke="#255000" points="454.27,-27.91 462.85,-21.69 452.27,-21.2 454.27,-27.91"/>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~set_file_name -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge23" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~set_file_name</title>
+<path fill="none" stroke="#255000" d="M673.63,-444.07C717.53,-458.97 787.79,-487.99 834,-533 858.22,-556.59 841.98,-581.09 870,-600 890.93,-614.12 916.16,-621.74 941.35,-625.46"/>
+<polygon fill="#255000" stroke="#255000" points="941,-628.94 951.36,-626.74 941.89,-622 941,-628.94"/>
+</g>
+<!-- proc~load_frequency_penalty -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node14" class="node">
+<title>proc~load_frequency_penalty</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node14"><a xlink:href="../proc/load_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty">
+<polygon fill="#d9534f" stroke="#d9534f" points="1255,-507 870,-507 870,-483 1255,-483 1255,-507"/>
+<text text-anchor="middle" x="1062.5" y="-492.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_frequency_penalty -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge13" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_frequency_penalty</title>
+<path fill="none" stroke="#255000" d="M695.07,-444.09C742.69,-453.16 810.35,-465.44 870,-474 889.56,-476.81 910.29,-479.44 930.61,-481.82"/>
+<polygon fill="#255000" stroke="#255000" points="930.21,-485.3 940.55,-482.97 931.02,-478.34 930.21,-485.3"/>
+</g>
+<!-- proc~load_max_tokens -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node15" class="node">
+<title>proc~load_max_tokens</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node15"><a xlink:href="../proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
+<polygon fill="#d9534f" stroke="#d9534f" points="1238,-465 887,-465 887,-441 1238,-441 1238,-465"/>
+<text text-anchor="middle" x="1062.5" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_max_tokens</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_max_tokens -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge14" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_max_tokens</title>
+<path fill="none" stroke="#255000" d="M834.03,-441.84C848.2,-442.53 862.44,-443.23 876.52,-443.92"/>
+<polygon fill="#255000" stroke="#255000" points="876.58,-447.43 886.74,-444.43 876.92,-440.44 876.58,-447.43"/>
+</g>
+<!-- proc~load_model~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node16" class="node">
+<title>proc~load_model~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node16"><a xlink:href="../proc/load_model~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="1223,-423 902,-423 902,-399 1223,-399 1223,-423"/>
+<text text-anchor="middle" x="1062.5" y="-408.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_model</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_model~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge15" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_model~3</title>
+<path fill="none" stroke="#255000" d="M834.03,-422.16C853.28,-421.22 872.68,-420.26 891.61,-419.34"/>
+<polygon fill="#255000" stroke="#255000" points="891.94,-422.82 901.76,-418.84 891.6,-415.83 891.94,-422.82"/>
+</g>
+<!-- proc~load_n -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node17" class="node">
+<title>proc~load_n</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node17"><a xlink:href="../proc/load_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_n">
+<polygon fill="#d9534f" stroke="#d9534f" points="1209.5,-381 915.5,-381 915.5,-357 1209.5,-357 1209.5,-381"/>
+<text text-anchor="middle" x="1062.5" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_n</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_n -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge16" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_n</title>
+<path fill="none" stroke="#255000" d="M800.67,-419.96C812.07,-417.47 823.27,-414.51 834,-411 851.6,-405.24 852.41,-395.8 870,-390 881.29,-386.28 893.14,-383.18 905.17,-380.61"/>
+<polygon fill="#255000" stroke="#255000" points="906.2,-383.98 915.31,-378.58 904.82,-377.11 906.2,-383.98"/>
+</g>
+<!-- proc~load_presence_penalty -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node18" class="node">
+<title>proc~load_presence_penalty</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node18"><a xlink:href="../proc/load_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_presence_penalty">
+<polygon fill="#d9534f" stroke="#d9534f" points="1253,-339 872,-339 872,-315 1253,-315 1253,-339"/>
+<text text-anchor="middle" x="1062.5" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_presence_penalty</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_presence_penalty -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge17" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_presence_penalty</title>
+<path fill="none" stroke="#255000" d="M817.96,-419.99C823.5,-417.33 828.87,-414.35 834,-411 861.01,-393.38 843.03,-365.69 870,-348 872.2,-346.56 874.45,-345.18 876.74,-343.87"/>
+<polygon fill="#255000" stroke="#255000" points="878.53,-346.89 885.76,-339.14 875.28,-340.69 878.53,-346.89"/>
+</g>
+<!-- proc~load_stream -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node19" class="node">
+<title>proc~load_stream</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node19"><a xlink:href="../proc/load_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_stream">
+<polygon fill="#d9534f" stroke="#d9534f" points="1224.5,-297 900.5,-297 900.5,-273 1224.5,-273 1224.5,-297"/>
+<text text-anchor="middle" x="1062.5" y="-282.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_stream</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_stream -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge18" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_stream</title>
+<path fill="none" stroke="#255000" d="M821.1,-419.9C825.58,-417.23 829.89,-414.27 834,-411 872.59,-380.27 831.48,-336.82 870,-306 876.43,-300.86 883.39,-296.51 890.72,-292.85"/>
+<polygon fill="#255000" stroke="#255000" points="892.52,-295.88 900.19,-288.58 889.64,-289.5 892.52,-295.88"/>
+</g>
+<!-- proc~load_temperature~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node20" class="node">
+<title>proc~load_temperature~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node20"><a xlink:href="../proc/load_temperature~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="1239.5,-255 885.5,-255 885.5,-231 1239.5,-231 1239.5,-255"/>
+<text text-anchor="middle" x="1062.5" y="-240.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_temperature</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge19" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~3</title>
+<path fill="none" stroke="#255000" d="M822.37,-419.82C826.42,-417.15 830.31,-414.22 834,-411 884.68,-366.77 819.43,-308.35 870,-264 872.24,-262.04 874.56,-260.18 876.94,-258.44"/>
+<polygon fill="#255000" stroke="#255000" points="878.89,-261.34 885.29,-252.9 875.02,-255.51 878.89,-261.34"/>
+</g>
+<!-- proc~load_top_p -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node21" class="node">
+<title>proc~load_top_p</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node21"><a xlink:href="../proc/load_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_top_p">
+<polygon fill="#d9534f" stroke="#d9534f" points="1220.5,-213 904.5,-213 904.5,-189 1220.5,-189 1220.5,-213"/>
+<text text-anchor="middle" x="1062.5" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_top_p</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_top_p -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge20" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_top_p</title>
+<path fill="none" stroke="#255000" d="M705.12,-444C747.75,-446.88 799.99,-442.27 834,-411 896.95,-353.12 807.19,-280.03 870,-222 877.55,-215.02 886.06,-209.41 895.17,-204.95"/>
+<polygon fill="#255000" stroke="#255000" points="896.73,-208.09 904.47,-200.87 893.91,-201.68 896.73,-208.09"/>
+</g>
+<!-- proc~load_url~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node22" class="node">
+<title>proc~load_url~3</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node22"><a xlink:href="../proc/load_url~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="1213,-591 912,-591 912,-567 1213,-567 1213,-591"/>
+<text text-anchor="middle" x="1062.5" y="-576.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_url</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_url~3 -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge21" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_url~3</title>
+<path fill="none" stroke="#255000" d="M660.41,-444.08C699.49,-461.96 773.88,-497.22 834,-533 850.74,-542.96 851.76,-551.17 870,-558 880.19,-561.81 890.89,-565 901.79,-567.65"/>
+<polygon fill="#255000" stroke="#255000" points="901.33,-571.14 911.86,-569.94 902.88,-564.31 901.33,-571.14"/>
+</g>
+<!-- proc~load_user_name -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node23" class="node">
+<title>proc~load_user_name</title>
+<g id="a_proc~~set_chatcompletion_data~~CallsGraph_node23"><a xlink:href="../proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="1235.5,-549 889.5,-549 889.5,-525 1235.5,-525 1235.5,-549"/>
+<text text-anchor="middle" x="1062.5" y="-534.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_user_name</text>
+</a>
+</g>
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_user_name -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge22" class="edge">
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_user_name</title>
+<path fill="none" stroke="#255000" d="M660.91,-444.1C704.34,-462.73 792.07,-498.14 870,-516 882.34,-518.83 895.22,-521.28 908.2,-523.4"/>
+<polygon fill="#255000" stroke="#255000" points="907.73,-526.87 918.15,-524.96 908.81,-519.95 907.73,-526.87"/>
+</g>
+<!-- destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node24" class="node">
+<title>destroy</title>
+<polygon fill="#777777" stroke="#777777" points="1347,-381 1293,-381 1293,-357 1347,-357 1347,-381"/>
+<text text-anchor="middle" x="1320" y="-366.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">destroy</text>
+</g>
+<!-- proc~load_frequency_penalty&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge24" class="edge">
+<title>proc~load_frequency_penalty&#45;&gt;destroy</title>
+<path fill="none" stroke="#255000" d="M1241.07,-482.88C1245.91,-480.23 1250.57,-477.28 1255,-474 1287.64,-449.82 1265.9,-421.94 1291,-390 1291.48,-389.39 1291.98,-388.79 1292.5,-388.2"/>
+<polygon fill="#255000" stroke="#255000" points="1295.15,-390.5 1300.01,-381.09 1290.34,-385.42 1295.15,-390.5"/>
+</g>
+<!-- get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node25" class="node">
+<title>get</title>
+<polygon fill="#777777" stroke="#777777" points="1347,-339 1293,-339 1293,-315 1347,-315 1347,-339"/>
+<text text-anchor="middle" x="1320" y="-324.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">get</text>
+</g>
+<!-- proc~load_frequency_penalty&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge25" class="edge">
+<title>proc~load_frequency_penalty&#45;&gt;get</title>
+<path fill="none" stroke="#255000" d="M1242.91,-482.81C1247.12,-480.16 1251.17,-477.24 1255,-474 1299.51,-436.44 1257.98,-395.98 1291,-348 1291.36,-347.48 1291.73,-346.98 1292.11,-346.47"/>
+<polygon fill="#255000" stroke="#255000" points="1294.87,-348.66 1299.38,-339.07 1289.88,-343.76 1294.87,-348.66"/>
+</g>
+<!-- initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node26" class="node">
+<title>initialize</title>
+<polygon fill="#777777" stroke="#777777" points="1348.5,-465 1291.5,-465 1291.5,-441 1348.5,-441 1348.5,-465"/>
+<text text-anchor="middle" x="1320" y="-450.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">initialize</text>
+</g>
+<!-- proc~load_frequency_penalty&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge26" class="edge">
+<title>proc~load_frequency_penalty&#45;&gt;initialize</title>
+<path fill="none" stroke="#255000" d="M1203.93,-483C1221.22,-480.52 1238.57,-477.56 1255,-474 1263.8,-472.09 1273.1,-469.44 1281.8,-466.65"/>
+<polygon fill="#255000" stroke="#255000" points="1282.93,-469.96 1291.31,-463.48 1280.72,-463.32 1282.93,-469.96"/>
+</g>
+<!-- load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_node27" class="node">
+<title>load_file</title>
+<polygon fill="#777777" stroke="#777777" points="1349,-423 1291,-423 1291,-399 1349,-399 1349,-423"/>
+<text text-anchor="middle" x="1320" y="-408.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">load_file</text>
+</g>
+<!-- proc~load_frequency_penalty&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge27" class="edge">
+<title>proc~load_frequency_penalty&#45;&gt;load_file</title>
+<path fill="none" stroke="#255000" d="M1235.17,-482.87C1242,-480.3 1248.64,-477.36 1255,-474 1276.74,-462.52 1273.06,-448.81 1291,-432 1291.92,-431.14 1292.88,-430.27 1293.86,-429.42"/>
+<polygon fill="#255000" stroke="#255000" points="1296.09,-432.11 1301.64,-423.09 1291.68,-426.68 1296.09,-432.11"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge28" class="edge">
+<title>proc~load_max_tokens&#45;&gt;destroy</title>
+<path fill="none" stroke="transparent" d="M1235.17,-440.87C1242,-438.3 1248.64,-435.36 1255,-432 1276.74,-420.52 1273.06,-406.81 1291,-390 1291.92,-389.14 1292.88,-388.27 1293.86,-387.42"/>
+<polygon fill="transparent" stroke="transparent" points="1296.09,-390.11 1301.64,-381.09 1291.68,-384.68 1296.09,-390.11"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge29" class="edge">
+<title>proc~load_max_tokens&#45;&gt;get</title>
+<path fill="none" stroke="transparent" d="M1238.42,-442.29C1244.21,-439.29 1249.76,-435.88 1255,-432 1287.64,-407.82 1265.9,-379.94 1291,-348 1291.48,-347.39 1291.98,-346.79 1292.5,-346.2"/>
+<polygon fill="transparent" stroke="transparent" points="1295.15,-348.5 1300.01,-339.09 1290.34,-343.42 1295.15,-348.5"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge30" class="edge">
+<title>proc~load_max_tokens&#45;&gt;initialize</title>
+<path fill="none" stroke="transparent" d="M1238.16,-453C1253.9,-453 1268.54,-453 1280.91,-453"/>
+<polygon fill="transparent" stroke="transparent" points="1281.17,-456.5 1291.17,-453 1281.17,-449.5 1281.17,-456.5"/>
+</g>
+<!-- proc~load_max_tokens&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge31" class="edge">
+<title>proc~load_max_tokens&#45;&gt;load_file</title>
+<path fill="none" stroke="transparent" d="M1203.93,-441C1221.22,-438.52 1238.57,-435.56 1255,-432 1263.63,-430.13 1272.73,-427.54 1281.28,-424.82"/>
+<polygon fill="transparent" stroke="transparent" points="1282.61,-428.06 1290.99,-421.59 1280.4,-421.42 1282.61,-428.06"/>
+</g>
+<!-- proc~load_model~3&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge32" class="edge">
+<title>proc~load_model~3&#45;&gt;destroy</title>
+<path fill="none" stroke="transparent" d="M1203.93,-399C1221.22,-396.52 1238.57,-393.56 1255,-390 1264.32,-387.98 1274.19,-385.12 1283.32,-382.16"/>
+<polygon fill="transparent" stroke="transparent" points="1284.52,-385.45 1292.87,-378.94 1282.28,-378.82 1284.52,-385.45"/>
+</g>
+<!-- proc~load_model~3&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge33" class="edge">
+<title>proc~load_model~3&#45;&gt;get</title>
+<path fill="none" stroke="transparent" d="M1223.08,-402.99C1234.18,-399.58 1244.94,-395.31 1255,-390 1276.74,-378.52 1273.06,-364.81 1291,-348 1291.92,-347.14 1292.88,-346.27 1293.86,-345.42"/>
+<polygon fill="transparent" stroke="transparent" points="1296.09,-348.11 1301.64,-339.09 1291.68,-342.68 1296.09,-348.11"/>
+</g>
+<!-- proc~load_model~3&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge34" class="edge">
+<title>proc~load_model~3&#45;&gt;initialize</title>
+<path fill="none" stroke="transparent" d="M1203.93,-423C1221.22,-425.48 1238.57,-428.44 1255,-432 1263.8,-433.91 1273.1,-436.56 1281.8,-439.35"/>
+<polygon fill="transparent" stroke="transparent" points="1280.72,-442.68 1291.31,-442.52 1282.93,-436.04 1280.72,-442.68"/>
+</g>
+<!-- proc~load_model~3&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge35" class="edge">
+<title>proc~load_model~3&#45;&gt;load_file</title>
+<path fill="none" stroke="transparent" d="M1223.13,-411C1244.48,-411 1264.56,-411 1280.77,-411"/>
+<polygon fill="transparent" stroke="transparent" points="1280.84,-414.5 1290.84,-411 1280.84,-407.5 1280.84,-414.5"/>
+</g>
+<!-- proc~load_n&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge36" class="edge">
+<title>proc~load_n&#45;&gt;destroy</title>
+<path fill="none" stroke="#512550" d="M1209.53,-369C1236.82,-369 1262.97,-369 1282.87,-369"/>
+<polygon fill="#512550" stroke="#512550" points="1282.96,-372.5 1292.96,-369 1282.96,-365.5 1282.96,-372.5"/>
+</g>
+<!-- proc~load_n&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge37" class="edge">
+<title>proc~load_n&#45;&gt;get</title>
+<path fill="none" stroke="#512550" d="M1203.93,-357C1221.22,-354.52 1238.57,-351.56 1255,-348 1264.32,-345.98 1274.19,-343.12 1283.32,-340.16"/>
+<polygon fill="#512550" stroke="#512550" points="1284.52,-343.45 1292.87,-336.94 1282.28,-336.82 1284.52,-343.45"/>
+</g>
+<!-- proc~load_n&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge38" class="edge">
+<title>proc~load_n&#45;&gt;initialize</title>
+<path fill="none" stroke="#512550" d="M1209.71,-373.34C1225.52,-377.2 1240.95,-382.58 1255,-390 1276.74,-401.48 1273.06,-415.19 1291,-432 1291.92,-432.86 1292.88,-433.73 1293.86,-434.58"/>
+<polygon fill="#512550" stroke="#512550" points="1291.68,-437.32 1301.64,-440.91 1296.09,-431.89 1291.68,-437.32"/>
+</g>
+<!-- proc~load_n&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge39" class="edge">
+<title>proc~load_n&#45;&gt;load_file</title>
+<path fill="none" stroke="#512550" d="M1203.93,-381C1221.22,-383.48 1238.57,-386.44 1255,-390 1263.63,-391.87 1272.73,-394.46 1281.28,-397.18"/>
+<polygon fill="#512550" stroke="#512550" points="1280.4,-400.58 1290.99,-400.41 1282.61,-393.94 1280.4,-400.58"/>
+</g>
+<!-- proc~load_presence_penalty&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge40" class="edge">
+<title>proc~load_presence_penalty&#45;&gt;destroy</title>
+<path fill="none" stroke="#025510" stroke-opacity="0.007843" d="M1203.93,-339C1221.22,-341.48 1238.57,-344.44 1255,-348 1264.32,-350.02 1274.19,-352.88 1283.32,-355.84"/>
+<polygon fill="#025510" fill-opacity="0.007843" stroke="#025510" stroke-opacity="0.007843" points="1282.28,-359.18 1292.87,-359.06 1284.52,-352.55 1282.28,-359.18"/>
+</g>
+<!-- proc~load_presence_penalty&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge41" class="edge">
+<title>proc~load_presence_penalty&#45;&gt;get</title>
+<path fill="none" stroke="#025510" stroke-opacity="0.007843" d="M1253.2,-327C1263.97,-327 1273.96,-327 1282.73,-327"/>
+<polygon fill="#025510" fill-opacity="0.007843" stroke="#025510" stroke-opacity="0.007843" points="1282.81,-330.5 1292.81,-327 1282.81,-323.5 1282.81,-330.5"/>
+</g>
+<!-- proc~load_presence_penalty&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge42" class="edge">
+<title>proc~load_presence_penalty&#45;&gt;initialize</title>
+<path fill="none" stroke="#025510" stroke-opacity="0.007843" d="M1241.07,-339.12C1245.91,-341.77 1250.57,-344.72 1255,-348 1287.64,-372.18 1265.9,-400.06 1291,-432 1291.48,-432.61 1291.98,-433.21 1292.5,-433.8"/>
+<polygon fill="#025510" fill-opacity="0.007843" stroke="#025510" stroke-opacity="0.007843" points="1290.34,-436.58 1300.01,-440.91 1295.15,-431.5 1290.34,-436.58"/>
+</g>
+<!-- proc~load_presence_penalty&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge43" class="edge">
+<title>proc~load_presence_penalty&#45;&gt;load_file</title>
+<path fill="none" stroke="#025510" stroke-opacity="0.007843" d="M1235.17,-339.13C1242,-341.7 1248.64,-344.64 1255,-348 1276.74,-359.48 1273.06,-373.19 1291,-390 1291.92,-390.86 1292.88,-391.73 1293.86,-392.58"/>
+<polygon fill="#025510" fill-opacity="0.007843" stroke="#025510" stroke-opacity="0.007843" points="1291.68,-395.32 1301.64,-398.91 1296.09,-389.89 1291.68,-395.32"/>
+</g>
+<!-- proc~load_stream&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge44" class="edge">
+<title>proc~load_stream&#45;&gt;destroy</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M1224.54,-293.47C1235.13,-296.8 1245.39,-300.93 1255,-306 1276.74,-317.48 1273.06,-331.19 1291,-348 1291.92,-348.86 1292.88,-349.73 1293.86,-350.58"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="1291.68,-353.32 1301.64,-356.91 1296.09,-347.89 1291.68,-353.32"/>
+</g>
+<!-- proc~load_stream&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge45" class="edge">
+<title>proc~load_stream&#45;&gt;get</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M1203.93,-297C1221.22,-299.48 1238.57,-302.44 1255,-306 1264.32,-308.02 1274.19,-310.88 1283.32,-313.84"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="1282.28,-317.18 1292.87,-317.06 1284.52,-310.55 1282.28,-317.18"/>
+</g>
+<!-- proc~load_stream&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge46" class="edge">
+<title>proc~load_stream&#45;&gt;initialize</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M1224.78,-287.86C1235.69,-292.41 1245.93,-298.34 1255,-306 1299.51,-343.56 1257.98,-384.02 1291,-432 1291.36,-432.52 1291.73,-433.02 1292.11,-433.53"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="1289.88,-436.24 1299.38,-440.93 1294.87,-431.34 1289.88,-436.24"/>
+</g>
+<!-- proc~load_stream&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge47" class="edge">
+<title>proc~load_stream&#45;&gt;load_file</title>
+<path fill="none" stroke="#025525" stroke-opacity="0.019608" d="M1224.68,-289.53C1235.48,-293.73 1245.73,-299.13 1255,-306 1287.64,-330.18 1265.9,-358.06 1291,-390 1291.48,-390.61 1291.98,-391.21 1292.5,-391.8"/>
+<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="1290.34,-394.58 1300.01,-398.91 1295.15,-389.5 1290.34,-394.58"/>
+</g>
+<!-- proc~load_temperature~3&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge48" class="edge">
+<title>proc~load_temperature~3&#45;&gt;destroy</title>
+<path fill="none" stroke="#010225" stroke-opacity="0.019608" d="M1239.75,-254.41C1245.06,-257.23 1250.16,-260.42 1255,-264 1287.64,-288.18 1265.9,-316.06 1291,-348 1291.48,-348.61 1291.98,-349.21 1292.5,-349.8"/>
+<polygon fill="#010225" fill-opacity="0.019608" stroke="#010225" stroke-opacity="0.019608" points="1290.34,-352.58 1300.01,-356.91 1295.15,-347.5 1290.34,-352.58"/>
+</g>
+<!-- proc~load_temperature~3&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge49" class="edge">
+<title>proc~load_temperature~3&#45;&gt;get</title>
+<path fill="none" stroke="#010225" stroke-opacity="0.019608" d="M1232.89,-255.16C1240.49,-257.7 1247.9,-260.63 1255,-264 1275.25,-273.62 1292.94,-292.3 1304.56,-306.84"/>
+<polygon fill="#010225" fill-opacity="0.019608" stroke="#010225" stroke-opacity="0.019608" points="1301.81,-309.01 1310.67,-314.82 1307.37,-304.75 1301.81,-309.01"/>
+</g>
+<!-- proc~load_temperature~3&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge50" class="edge">
+<title>proc~load_temperature~3&#45;&gt;initialize</title>
+<path fill="none" stroke="#010225" stroke-opacity="0.019608" d="M1239.87,-252.72C1245.21,-256 1250.28,-259.74 1255,-264 1311.67,-315.18 1249.84,-367.68 1291,-432 1291.33,-432.51 1291.67,-433.02 1292.03,-433.51"/>
+<polygon fill="#010225" fill-opacity="0.019608" stroke="#010225" stroke-opacity="0.019608" points="1289.51,-435.93 1298.91,-440.81 1294.6,-431.13 1289.51,-435.93"/>
+</g>
+<!-- proc~load_temperature~3&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge51" class="edge">
+<title>proc~load_temperature~3&#45;&gt;load_file</title>
+<path fill="none" stroke="#010225" stroke-opacity="0.019608" d="M1239.5,-253.13C1244.95,-256.3 1250.14,-259.9 1255,-264 1299.51,-301.56 1257.98,-342.02 1291,-390 1291.36,-390.52 1291.73,-391.02 1292.11,-391.53"/>
+<polygon fill="#010225" fill-opacity="0.019608" stroke="#010225" stroke-opacity="0.019608" points="1289.88,-394.24 1299.38,-398.93 1294.87,-389.34 1289.88,-394.24"/>
+</g>
+<!-- proc~load_top_p&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge52" class="edge">
+<title>proc~load_top_p&#45;&gt;destroy</title>
+<path fill="none" stroke="#500255" d="M1220.6,-202.2C1233.07,-206.93 1244.78,-213.37 1255,-222 1299.51,-259.56 1257.98,-300.02 1291,-348 1291.36,-348.52 1291.73,-349.02 1292.11,-349.53"/>
+<polygon fill="#500255" stroke="#500255" points="1289.88,-352.24 1299.38,-356.93 1294.87,-347.34 1289.88,-352.24"/>
+</g>
+<!-- proc~load_top_p&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge53" class="edge">
+<title>proc~load_top_p&#45;&gt;get</title>
+<path fill="none" stroke="#500255" d="M1220.75,-206.07C1232.82,-210.06 1244.42,-215.27 1255,-222 1285.27,-241.24 1303.37,-280.45 1312.24,-305.13"/>
+<polygon fill="#500255" stroke="#500255" points="1308.96,-306.37 1315.49,-314.72 1315.6,-304.12 1308.96,-306.37"/>
+</g>
+<!-- proc~load_top_p&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge54" class="edge">
+<title>proc~load_top_p&#45;&gt;initialize</title>
+<path fill="none" stroke="#500255" d="M1220.71,-200.67C1233.32,-205.67 1245.01,-212.6 1255,-222 1323.96,-286.9 1241.62,-351.2 1291,-432 1291.32,-432.52 1291.65,-433.03 1292,-433.53"/>
+<polygon fill="#500255" stroke="#500255" points="1289.44,-435.91 1298.8,-440.88 1294.58,-431.16 1289.44,-435.91"/>
+</g>
+<!-- proc~load_top_p&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge55" class="edge">
+<title>proc~load_top_p&#45;&gt;load_file</title>
+<path fill="none" stroke="#500255" d="M1220.77,-201.29C1233.28,-206.19 1244.95,-212.92 1255,-222 1311.67,-273.18 1249.84,-325.68 1291,-390 1291.33,-390.51 1291.67,-391.02 1292.03,-391.51"/>
+<polygon fill="#500255" stroke="#500255" points="1289.51,-393.93 1298.91,-398.81 1294.6,-389.13 1289.51,-393.93"/>
+</g>
+<!-- proc~load_url~3&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge56" class="edge">
+<title>proc~load_url~3&#45;&gt;destroy</title>
+<path fill="none" stroke="#204025" stroke-opacity="0.019608" d="M1213.26,-581.4C1228.61,-576.38 1242.96,-568.87 1255,-558 1311.67,-506.82 1249.84,-454.32 1291,-390 1291.33,-389.49 1291.67,-388.98 1292.03,-388.49"/>
+<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="1294.6,-390.87 1298.91,-381.19 1289.51,-386.07 1294.6,-390.87"/>
+</g>
+<!-- proc~load_url~3&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge57" class="edge">
+<title>proc~load_url~3&#45;&gt;get</title>
+<path fill="none" stroke="#204025" stroke-opacity="0.019608" d="M1213.23,-582.05C1228.68,-576.93 1243.07,-569.23 1255,-558 1323.96,-493.1 1241.62,-428.8 1291,-348 1291.32,-347.48 1291.65,-346.97 1292,-346.47"/>
+<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="1294.58,-348.84 1298.8,-339.12 1289.44,-344.09 1294.58,-348.84"/>
+</g>
+<!-- proc~load_url~3&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge58" class="edge">
+<title>proc~load_url~3&#45;&gt;initialize</title>
+<path fill="none" stroke="#204025" stroke-opacity="0.019608" d="M1213.44,-576.18C1228.15,-571.96 1242.3,-566.08 1255,-558 1285.27,-538.76 1303.37,-499.55 1312.24,-474.87"/>
+<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="1315.6,-475.88 1315.49,-465.28 1308.96,-473.63 1315.6,-475.88"/>
+</g>
+<!-- proc~load_url~3&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge59" class="edge">
+<title>proc~load_url~3&#45;&gt;load_file</title>
+<path fill="none" stroke="#204025" stroke-opacity="0.019608" d="M1213.03,-580.44C1228.33,-575.56 1242.73,-568.35 1255,-558 1299.51,-520.44 1257.98,-479.98 1291,-432 1291.36,-431.48 1291.73,-430.98 1292.11,-430.47"/>
+<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="1294.87,-432.66 1299.38,-423.07 1289.88,-427.76 1294.87,-432.66"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;destroy -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge60" class="edge">
+<title>proc~load_user_name&#45;&gt;destroy</title>
+<path fill="none" stroke="#255015" stroke-opacity="0.007843" d="M1235.59,-529.04C1242.47,-525.38 1248.99,-521.07 1255,-516 1299.51,-478.44 1257.98,-437.98 1291,-390 1291.36,-389.48 1291.73,-388.98 1292.11,-388.47"/>
+<polygon fill="#255015" fill-opacity="0.007843" stroke="#255015" stroke-opacity="0.007843" points="1294.87,-390.66 1299.38,-381.07 1289.88,-385.76 1294.87,-390.66"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;get -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge61" class="edge">
+<title>proc~load_user_name&#45;&gt;get</title>
+<path fill="none" stroke="#255015" stroke-opacity="0.007843" d="M1235.59,-529.77C1242.52,-525.94 1249.04,-521.38 1255,-516 1311.67,-464.82 1249.84,-412.32 1291,-348 1291.33,-347.49 1291.67,-346.98 1292.03,-346.49"/>
+<polygon fill="#255015" fill-opacity="0.007843" stroke="#255015" stroke-opacity="0.007843" points="1294.6,-348.87 1298.91,-339.19 1289.51,-344.07 1294.6,-348.87"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;initialize -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge62" class="edge">
+<title>proc~load_user_name&#45;&gt;initialize</title>
+<path fill="none" stroke="#255015" stroke-opacity="0.007843" d="M1232.89,-524.84C1240.49,-522.3 1247.9,-519.37 1255,-516 1275.25,-506.38 1292.94,-487.7 1304.56,-473.16"/>
+<polygon fill="#255015" fill-opacity="0.007843" stroke="#255015" stroke-opacity="0.007843" points="1307.37,-475.25 1310.67,-465.18 1301.81,-470.99 1307.37,-475.25"/>
+</g>
+<!-- proc~load_user_name&#45;&gt;load_file -->
+<g id="proc~~set_chatcompletion_data~~CallsGraph_edge63" class="edge">
+<title>proc~load_user_name&#45;&gt;load_file</title>
+<path fill="none" stroke="#255015" stroke-opacity="0.007843" d="M1235.73,-527.64C1242.49,-524.33 1248.95,-520.48 1255,-516 1287.64,-491.82 1265.9,-463.94 1291,-432 1291.48,-431.39 1291.98,-430.79 1292.5,-430.2"/>
+<polygon fill="#255015" fill-opacity="0.007843" stroke="#255015" stroke-opacity="0.007843" points="1295.15,-432.5 1300.01,-423.09 1290.34,-427.42 1295.15,-432.5"/>
 </g>
 </g>
 </svg>
@@ -566,17 +974,17 @@
                   var panprocset_chatcompletion_dataCallsGraph = svgPanZoom('#procset_chatcompletion_dataCallsGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -584,11 +992,11 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="597pt" height="32pt"
- viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
@@ -607,23 +1015,168 @@
 <polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
 <text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
-<!-- Unknown Procedure Type -->
+<!-- Type Bound Procedure -->
 <g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
-<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
-<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~set_chatcompletion_data~~CalledByGraph Pages: 1 -->
+<svg id="procset_chatcompletion_dataCalledByGraph" width="641pt" height="62pt"
+ viewBox="0.00 0.00 641.00 61.84" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~set_chatcompletion_data~~CalledByGraph" class="graph" transform="scale(1.2 1.2) rotate(0) translate(4 70)">
+<title>proc~~set_chatcompletion_data~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 763,-70 763,4 -4,4"/>
+<!-- proc~set_chatcompletion_data -->
+<g id="proc~~set_chatcompletion_data~~CalledByGraph_node1" class="node">
+<title>proc~set_chatcompletion_data</title>
+<polygon fill="none" stroke="black" points="759,-45 364,-45 364,-21 759,-21 759,-45"/>
+<text text-anchor="middle" x="561.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion::ChatCompletion%set_ChatCompletion_data</text>
+</g>
+<!-- proc~conversation -->
+<g id="proc~~set_chatcompletion_data~~CalledByGraph_node2" class="node">
+<title>proc~conversation</title>
+<g id="a_proc~~set_chatcompletion_data~~CalledByGraph_node2"><a xlink:href="../proc/conversation.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%conversation">
+<polygon fill="#d9534f" stroke="#d9534f" points="328,-66 0,-66 0,-42 328,-42 328,-66"/>
+<text text-anchor="middle" x="164" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%conversation</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~set_chatcompletion_data -->
+<g id="proc~~set_chatcompletion_data~~CalledByGraph_edge1" class="edge">
+<title>proc~conversation&#45;&gt;proc~set_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M328.15,-45.34C336.64,-44.89 345.21,-44.43 353.81,-43.97"/>
+<polygon fill="#255000" stroke="#255000" points="354.11,-47.46 363.91,-43.44 353.74,-40.47 354.11,-47.46"/>
+</g>
+<!-- program~test_chatcompletion -->
+<g id="proc~~set_chatcompletion_data~~CalledByGraph_node3" class="node">
+<title>program~test_chatcompletion</title>
+<g id="a_proc~~set_chatcompletion_data~~CalledByGraph_node3"><a xlink:href="../program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="226,-24 102,-24 102,0 226,0 226,-24"/>
+<text text-anchor="middle" x="164" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ChatCompletion</text>
+</a>
+</g>
+</g>
+<!-- program~test_chatcompletion&#45;&gt;proc~set_chatcompletion_data -->
+<g id="proc~~set_chatcompletion_data~~CalledByGraph_edge2" class="edge">
+<title>program~test_chatcompletion&#45;&gt;proc~set_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M226.36,-15.26C261.23,-17.11 307.13,-19.55 353.7,-22.02"/>
+<polygon fill="#255000" stroke="#255000" points="353.79,-25.53 363.96,-22.56 354.16,-18.54 353.79,-25.53"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocset_chatcompletion_dataCalledByGraph = svgPanZoom('#procset_chatcompletion_dataCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -643,79 +1196,48 @@ large graphs.</div>
     </div>
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-        <h3>Contents</h3>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-      <div class="list-group">
-        <a class="list-group-item" href="../proc/set_chatcompletion_data.html#src">set_ChatCompletion_data</a>
-      </div>
-    </div>
-
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
 
     
     
 
     
     
+
 
 
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">set_ChatCompletion_data</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
-<span class="w">      </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">user_name</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="n">presence_penalty</span><span class="p">,</span><span class="w"> </span><span class="n">frequency_penalty</span><span class="p">,</span><span class="w"> </span><span class="n">top_p</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="n">max_tokens</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">file_name</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">url</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">user_name</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">temperature</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">presence_penalty</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">frequency_penalty</span><span class="w"></span>
-<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">top_p</span><span class="w"></span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
-<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">stream</span><span class="w"></span>
-<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">max_tokens</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_url</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">model</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">user_name</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_user_name</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="n">user_name</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_temperature</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">presence_penalty</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_presence_penalty</span><span class="p">(</span><span class="n">presence_penalty</span><span class="o">=</span><span class="n">presence_penalty</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">frequency_penalty</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_frequency_penalty</span><span class="p">(</span><span class="n">frequency_penalty</span><span class="o">=</span><span class="n">frequency_penalty</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">top_p</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_top_p</span><span class="p">(</span><span class="n">top_p</span><span class="o">=</span><span class="n">top_p</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_n</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_stream</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">max_tokens</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_max_tokens</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="n">max_tokens</span><span class="p">)</span><span class="w"></span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">set_ChatCompletion_data</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">file_name</span><span class="p">,</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">      </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">user_name</span><span class="p">,</span><span class="w"> </span><span class="n">temperature</span><span class="p">,</span><span class="w"> </span><span class="n">presence_penalty</span><span class="p">,</span><span class="w"> </span><span class="n">frequency_penalty</span><span class="p">,</span><span class="w"> </span><span class="n">top_p</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">stream</span><span class="p">,</span><span class="w"> </span><span class="n">max_tokens</span><span class="p">)</span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">file_name</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">url</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">model</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w"> </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">user_name</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">temperature</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">presence_penalty</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">frequency_penalty</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">,</span><span class="w">             </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">top_p</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">n</span>
+<span class="w">      </span><span class="kt">logical</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">stream</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">          </span><span class="k">optional</span><span class="p">,</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">max_tokens</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">url</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_url</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">model</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_model</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">user_name</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_user_name</span><span class="p">(</span><span class="n">user_name</span><span class="o">=</span><span class="n">user_name</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_temperature</span><span class="p">(</span><span class="n">temperature</span><span class="o">=</span><span class="n">temperature</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">presence_penalty</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_presence_penalty</span><span class="p">(</span><span class="n">presence_penalty</span><span class="o">=</span><span class="n">presence_penalty</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">frequency_penalty</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_frequency_penalty</span><span class="p">(</span><span class="n">frequency_penalty</span><span class="o">=</span><span class="n">frequency_penalty</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">top_p</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_top_p</span><span class="p">(</span><span class="n">top_p</span><span class="o">=</span><span class="n">top_p</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_n</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">stream</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_stream</span><span class="p">(</span><span class="n">stream</span><span class="o">=</span><span class="n">stream</span><span class="p">)</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">max_tokens</span><span class="p">))</span><span class="w"> </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_max_tokens</span><span class="p">(</span><span class="n">max_tokens</span><span class="o">=</span><span class="n">max_tokens</span><span class="p">)</span>
 
 <span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span><span class="w"> </span><span class="k">then</span>
-<span class="k">         call </span><span class="n">this</span><span class="p">%</span><span class="n">set_file_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="w"></span>
-<span class="w">         </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="w"></span>
+<span class="k">         call </span><span class="n">this</span><span class="p">%</span><span class="n">set_file_name</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+<span class="w">         </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
 <span class="w">      </span><span class="k">end if</span>
-<span class="k">   end subroutine </span><span class="n">set_ChatCompletion_data</span><span class="w"></span>
+<span class="k">   end subroutine </span><span class="n">set_ChatCompletion_data</span>
 </pre></div>
 
     </section>
@@ -728,32 +1250,27 @@ large graphs.</div>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T20:22:27.787945             </p>
+ on 2024-01-10T22:07:06.996801             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">

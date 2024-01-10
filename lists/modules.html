@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,81 +13,56 @@
     <title>All Modules &ndash; ForOpenAI
 </title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.5.0</small></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
       <div class="row">
@@ -94,12 +71,36 @@
 			 <table class="table">
 			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
 			 <tbody>
-			   <tr class="active"><td><a href='../module/foropenai.html'>foropenai</a></td><td><a href='../sourcefile/foropenai.f90.html'>foropenai.f90</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/foropenai_base.html'>foropenai_base</a></td><td><a href='../sourcefile/foropenai_base.f90.html'>foropenai_base.f90</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td><td><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/foropenai_imagegeneration.html'>foropenai_ImageGeneration</a></td><td><a href='../sourcefile/foropenai_imagegeneration.f90.html'>foropenai_ImageGeneration.f90</a></td><td></td></tr>
-<!---->			   <tr class="active"><td><a href='../module/foropenai_transcription.html'>foropenai_Transcription</a></td><td><a href='../sourcefile/foropenai_transcription.f90.html'>foropenai_Transcription.f90</a></td><td></td></tr>
-<!--active-->			   <tr class=""><td><a href='../module/foropenai_translation.html'>foropenai_Translation</a></td><td><a href='../sourcefile/foropenai_translation.f90.html'>foropenai_Translation.f90</a></td><td></td></tr>
+			   <tr class="active">
+                 <td><a href='../module/foropenai.html'>foropenai</a></td>
+                 <td><a href='../sourcefile/foropenai.f90.html'>foropenai.f90</a></td>
+                 <td></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/foropenai_base.html'>foropenai_base</a></td>
+                 <td><a href='../sourcefile/foropenai_base.f90.html'>foropenai_base.f90</a></td>
+                 <td></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></td>
+                 <td><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></td>
+                 <td></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/foropenai_imagegeneration.html'>foropenai_ImageGeneration</a></td>
+                 <td><a href='../sourcefile/foropenai_imagegeneration.f90.html'>foropenai_ImageGeneration.f90</a></td>
+                 <td></td>
+               </tr>
+<!---->			   <tr class="active">
+                 <td><a href='../module/foropenai_transcription.html'>foropenai_Transcription</a></td>
+                 <td><a href='../sourcefile/foropenai_transcription.f90.html'>foropenai_Transcription.f90</a></td>
+                 <td></td>
+               </tr>
+<!--active-->			   <tr class="">
+                 <td><a href='../module/foropenai_translation.html'>foropenai_Translation</a></td>
+                 <td><a href='../sourcefile/foropenai_translation.f90.html'>foropenai_Translation.f90</a></td>
+                 <td></td>
+               </tr>
 <!---->			 </tbody></table>
              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -115,7 +116,7 @@
 <!-- module~foropenai -->
 <g id="module~~graph~~ModuleGraph_node1" class="node">
 <title>module~foropenai</title>
-<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href=".././module/foropenai.html" xlink:title="foropenai">
+<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href="../module/foropenai.html" xlink:title="foropenai">
 <polygon fill="#337ab7" stroke="#337ab7" points="401,-108 337,-108 337,-84 401,-84 401,-108"/>
 <text text-anchor="middle" x="369" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai</text>
 </a>
@@ -124,7 +125,7 @@
 <!-- module~foropenai_base -->
 <g id="module~~graph~~ModuleGraph_node2" class="node">
 <title>module~foropenai_base</title>
-<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././module/foropenai_base.html" xlink:title="foropenai_base">
+<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href="../module/foropenai_base.html" xlink:title="foropenai_base">
 <polygon fill="#337ab7" stroke="#337ab7" points="94,-108 0,-108 0,-84 94,-84 94,-108"/>
 <text text-anchor="middle" x="47" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base</text>
 </a>
@@ -139,7 +140,7 @@
 <!-- module~foropenai_chatcompletion -->
 <g id="module~~graph~~ModuleGraph_node3" class="node">
 <title>module~foropenai_chatcompletion</title>
-<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././module/foropenai_chatcompletion.html" xlink:title="foropenai_ChatCompletion">
+<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href="../module/foropenai_chatcompletion.html" xlink:title="foropenai_ChatCompletion">
 <polygon fill="#337ab7" stroke="#337ab7" points="289,-150 134,-150 134,-126 289,-126 289,-150"/>
 <text text-anchor="middle" x="211.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion</text>
 </a>
@@ -154,7 +155,7 @@
 <!-- module~foropenai_imagegeneration -->
 <g id="module~~graph~~ModuleGraph_node4" class="node">
 <title>module~foropenai_imagegeneration</title>
-<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././module/foropenai_imagegeneration.html" xlink:title="foropenai_ImageGeneration">
+<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href="../module/foropenai_imagegeneration.html" xlink:title="foropenai_ImageGeneration">
 <polygon fill="#337ab7" stroke="#337ab7" points="293,-108 130,-108 130,-84 293,-84 293,-108"/>
 <text text-anchor="middle" x="211.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration</text>
 </a>
@@ -169,7 +170,7 @@
 <!-- module~foropenai_transcription -->
 <g id="module~~graph~~ModuleGraph_node5" class="node">
 <title>module~foropenai_transcription</title>
-<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href=".././module/foropenai_transcription.html" xlink:title="foropenai_Transcription">
+<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href="../module/foropenai_transcription.html" xlink:title="foropenai_Transcription">
 <polygon fill="#337ab7" stroke="#337ab7" points="280,-66 143,-66 143,-42 280,-42 280,-66"/>
 <text text-anchor="middle" x="211.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription</text>
 </a>
@@ -184,7 +185,7 @@
 <!-- module~foropenai_translation -->
 <g id="module~~graph~~ModuleGraph_node6" class="node">
 <title>module~foropenai_translation</title>
-<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href=".././module/foropenai_translation.html" xlink:title="foropenai_Translation">
+<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href="../module/foropenai_translation.html" xlink:title="foropenai_Translation">
 <polygon fill="#337ab7" stroke="#337ab7" points="275,-24 148,-24 148,0 275,0 275,-24"/>
 <text text-anchor="middle" x="211.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation</text>
 </a>
@@ -223,7 +224,7 @@
 <!-- proc~create_chat_completion -->
 <g id="module~~graph~~ModuleGraph_node7" class="node">
 <title>proc~create_chat_completion</title>
-<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href=".././proc/create_chat_completion.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%create_chat_completion">
+<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href="../proc/create_chat_completion.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%create_chat_completion">
 <polygon fill="#d9534f" stroke="#d9534f" points="839.5,-1452 453.5,-1452 453.5,-1428 839.5,-1428 839.5,-1452"/>
 <text text-anchor="middle" x="646.5" y="-1437.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%create_chat_completion</text>
 </a>
@@ -256,7 +257,7 @@
 <!-- proc~create_image -->
 <g id="module~~graph~~ModuleGraph_node8" class="node">
 <title>proc~create_image</title>
-<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href=".././proc/create_image.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%create_image">
+<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href="../proc/create_image.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%create_image">
 <polygon fill="#d9534f" stroke="#d9534f" points="819.5,-1410 473.5,-1410 473.5,-1386 819.5,-1386 819.5,-1410"/>
 <text text-anchor="middle" x="646.5" y="-1395.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%create_image</text>
 </a>
@@ -277,7 +278,7 @@
 <!-- proc~create_transcription -->
 <g id="module~~graph~~ModuleGraph_node9" class="node">
 <title>proc~create_transcription</title>
-<g id="a_module~~graph~~ModuleGraph_node9"><a xlink:href=".././proc/create_transcription.html" xlink:title="foropenai_Transcription::Transcription%create_transcription">
+<g id="a_module~~graph~~ModuleGraph_node9"><a xlink:href="../proc/create_transcription.html" xlink:title="foropenai_Transcription::Transcription%create_transcription">
 <polygon fill="#d9534f" stroke="#d9534f" points="811,-1368 482,-1368 482,-1344 811,-1344 811,-1368"/>
 <text text-anchor="middle" x="646.5" y="-1353.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%create_transcription</text>
 </a>
@@ -298,7 +299,7 @@
 <!-- proc~create_translation -->
 <g id="module~~graph~~ModuleGraph_node10" class="node">
 <title>proc~create_translation</title>
-<g id="a_module~~graph~~ModuleGraph_node10"><a xlink:href=".././proc/create_translation.html" xlink:title="foropenai_Translation::Translation%create_translation">
+<g id="a_module~~graph~~ModuleGraph_node10"><a xlink:href="../proc/create_translation.html" xlink:title="foropenai_Translation::Translation%create_translation">
 <polygon fill="#d9534f" stroke="#d9534f" points="795.5,-1326 497.5,-1326 497.5,-1302 795.5,-1302 795.5,-1326"/>
 <text text-anchor="middle" x="646.5" y="-1311.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%create_translation</text>
 </a>
@@ -319,7 +320,7 @@
 <!-- proc~load_api_key -->
 <g id="module~~graph~~ModuleGraph_node11" class="node">
 <title>proc~load_api_key</title>
-<g id="a_module~~graph~~ModuleGraph_node11"><a xlink:href=".././proc/load_api_key.html" xlink:title="foropenai_base::openai%load_api_key">
+<g id="a_module~~graph~~ModuleGraph_node11"><a xlink:href="../proc/load_api_key.html" xlink:title="foropenai_base::openai%load_api_key">
 <polygon fill="#d9534f" stroke="#d9534f" points="755,-780 538,-780 538,-756 755,-756 755,-780"/>
 <text text-anchor="middle" x="646.5" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%load_api_key</text>
 </a>
@@ -334,7 +335,7 @@
 <!-- proc~load_frequency_penalty -->
 <g id="module~~graph~~ModuleGraph_node12" class="node">
 <title>proc~load_frequency_penalty</title>
-<g id="a_module~~graph~~ModuleGraph_node12"><a xlink:href=".././proc/load_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty">
+<g id="a_module~~graph~~ModuleGraph_node12"><a xlink:href="../proc/load_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty">
 <polygon fill="#d9534f" stroke="#d9534f" points="839,-738 454,-738 454,-714 839,-714 839,-738"/>
 <text text-anchor="middle" x="646.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty</text>
 </a>
@@ -349,7 +350,7 @@
 <!-- proc~load_language -->
 <g id="module~~graph~~ModuleGraph_node13" class="node">
 <title>proc~load_language</title>
-<g id="a_module~~graph~~ModuleGraph_node13"><a xlink:href=".././proc/load_language.html" xlink:title="foropenai_Transcription::Transcription%load_language">
+<g id="a_module~~graph~~ModuleGraph_node13"><a xlink:href="../proc/load_language.html" xlink:title="foropenai_Transcription::Transcription%load_language">
 <polygon fill="#d9534f" stroke="#d9534f" points="797,-696 496,-696 496,-672 797,-672 797,-696"/>
 <text text-anchor="middle" x="646.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_language</text>
 </a>
@@ -364,7 +365,7 @@
 <!-- proc~load_max_tokens -->
 <g id="module~~graph~~ModuleGraph_node14" class="node">
 <title>proc~load_max_tokens</title>
-<g id="a_module~~graph~~ModuleGraph_node14"><a xlink:href=".././proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
+<g id="a_module~~graph~~ModuleGraph_node14"><a xlink:href="../proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
 <polygon fill="#d9534f" stroke="#d9534f" points="822,-654 471,-654 471,-630 822,-630 822,-654"/>
 <text text-anchor="middle" x="646.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_max_tokens</text>
 </a>
@@ -379,52 +380,52 @@
 <!-- proc~load_model -->
 <g id="module~~graph~~ModuleGraph_node15" class="node">
 <title>proc~load_model</title>
-<g id="a_module~~graph~~ModuleGraph_node15"><a xlink:href=".././proc/load_model.html" xlink:title="foropenai_Transcription::Transcription%load_model">
-<polygon fill="#d9534f" stroke="#d9534f" points="789,-612 504,-612 504,-588 789,-588 789,-612"/>
-<text text-anchor="middle" x="646.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_model</text>
+<g id="a_module~~graph~~ModuleGraph_node15"><a xlink:href="../proc/load_model.html" xlink:title="foropenai_Translation::Translation%load_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="778.5,-612 514.5,-612 514.5,-588 778.5,-588 778.5,-612"/>
+<text text-anchor="middle" x="646.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_model</text>
 </a>
 </g>
 </g>
 <!-- proc~load_model&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge22" class="edge">
 <title>proc~load_model&#45;&gt;json_module</title>
-<path fill="none" stroke="#812550" stroke-dasharray="5,2" d="M503.98,-594.8C482.62,-599.45 462.06,-607.59 445,-621 385.78,-667.54 373.25,-764.64 370.65,-808.56"/>
+<path fill="none" stroke="#812550" stroke-dasharray="5,2" d="M514.37,-592.82C489.34,-596.96 464.81,-605.43 445,-621 385.78,-667.54 373.25,-764.64 370.65,-808.56"/>
 <polygon fill="#812550" stroke="#812550" points="367.15,-808.6 370.17,-818.76 374.14,-808.93 367.15,-808.6"/>
 </g>
 <!-- proc~load_model~2 -->
 <g id="module~~graph~~ModuleGraph_node16" class="node">
 <title>proc~load_model~2</title>
-<g id="a_module~~graph~~ModuleGraph_node16"><a xlink:href=".././proc/load_model~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
-<polygon fill="#d9534f" stroke="#d9534f" points="807,-570 486,-570 486,-546 807,-546 807,-570"/>
-<text text-anchor="middle" x="646.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_model</text>
+<g id="a_module~~graph~~ModuleGraph_node16"><a xlink:href="../proc/load_model~2.html" xlink:title="foropenai_Transcription::Transcription%load_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="789,-570 504,-570 504,-546 789,-546 789,-570"/>
+<text text-anchor="middle" x="646.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_model</text>
 </a>
 </g>
 </g>
 <!-- proc~load_model~2&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge23" class="edge">
 <title>proc~load_model~2&#45;&gt;json_module</title>
-<path fill="none" stroke="#512550" stroke-dasharray="5,2" d="M485.61,-556.94C470.86,-561.93 456.98,-569.05 445,-579 374.64,-637.42 368.47,-758.74 369.12,-808.73"/>
+<path fill="none" stroke="#512550" stroke-dasharray="5,2" d="M503.86,-551.91C482.39,-556.62 461.83,-565.03 445,-579 374.64,-637.42 368.47,-758.74 369.12,-808.73"/>
 <polygon fill="#512550" stroke="#512550" points="365.62,-808.88 369.35,-818.79 372.62,-808.71 365.62,-808.88"/>
 </g>
 <!-- proc~load_model~3 -->
 <g id="module~~graph~~ModuleGraph_node17" class="node">
 <title>proc~load_model~3</title>
-<g id="a_module~~graph~~ModuleGraph_node17"><a xlink:href=".././proc/load_model~3.html" xlink:title="foropenai_Translation::Translation%load_model">
-<polygon fill="#d9534f" stroke="#d9534f" points="778.5,-528 514.5,-528 514.5,-504 778.5,-504 778.5,-528"/>
-<text text-anchor="middle" x="646.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_model</text>
+<g id="a_module~~graph~~ModuleGraph_node17"><a xlink:href="../proc/load_model~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
+<polygon fill="#d9534f" stroke="#d9534f" points="807,-528 486,-528 486,-504 807,-504 807,-528"/>
+<text text-anchor="middle" x="646.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_model</text>
 </a>
 </g>
 </g>
 <!-- proc~load_model~3&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge24" class="edge">
 <title>proc~load_model~3&#45;&gt;json_module</title>
-<path fill="none" stroke="#202550" stroke-dasharray="5,2" d="M514.25,-507.24C488.94,-511.41 464.33,-520.29 445,-537 403.35,-572.99 379.72,-746.16 372.45,-808.54"/>
+<path fill="none" stroke="#202550" stroke-dasharray="5,2" d="M485.69,-514.29C470.84,-519.38 456.92,-526.7 445,-537 403.35,-572.99 379.72,-746.16 372.45,-808.54"/>
 <polygon fill="#202550" stroke="#202550" points="368.93,-808.51 371.28,-818.84 375.88,-809.3 368.93,-808.51"/>
 </g>
 <!-- proc~load_n -->
 <g id="module~~graph~~ModuleGraph_node18" class="node">
 <title>proc~load_n</title>
-<g id="a_module~~graph~~ModuleGraph_node18"><a xlink:href=".././proc/load_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_n">
+<g id="a_module~~graph~~ModuleGraph_node18"><a xlink:href="../proc/load_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_n">
 <polygon fill="#d9534f" stroke="#d9534f" points="793.5,-486 499.5,-486 499.5,-462 793.5,-462 793.5,-486"/>
 <text text-anchor="middle" x="646.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_n</text>
 </a>
@@ -439,7 +440,7 @@
 <!-- proc~load_n~2 -->
 <g id="module~~graph~~ModuleGraph_node19" class="node">
 <title>proc~load_n~2</title>
-<g id="a_module~~graph~~ModuleGraph_node19"><a xlink:href=".././proc/load_n~2.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_n">
+<g id="a_module~~graph~~ModuleGraph_node19"><a xlink:href="../proc/load_n~2.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_n">
 <polygon fill="#d9534f" stroke="#d9534f" points="801,-444 492,-444 492,-420 801,-420 801,-444"/>
 <text text-anchor="middle" x="646.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%load_n</text>
 </a>
@@ -454,7 +455,7 @@
 <!-- proc~load_organization -->
 <g id="module~~graph~~ModuleGraph_node20" class="node">
 <title>proc~load_organization</title>
-<g id="a_module~~graph~~ModuleGraph_node20"><a xlink:href=".././proc/load_organization.html" xlink:title="foropenai_base::openai%load_organization">
+<g id="a_module~~graph~~ModuleGraph_node20"><a xlink:href="../proc/load_organization.html" xlink:title="foropenai_base::openai%load_organization">
 <polygon fill="#d9534f" stroke="#d9534f" points="768.5,-402 524.5,-402 524.5,-378 768.5,-378 768.5,-402"/>
 <text text-anchor="middle" x="646.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%load_organization</text>
 </a>
@@ -469,7 +470,7 @@
 <!-- proc~load_presence_penalty -->
 <g id="module~~graph~~ModuleGraph_node21" class="node">
 <title>proc~load_presence_penalty</title>
-<g id="a_module~~graph~~ModuleGraph_node21"><a xlink:href=".././proc/load_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_presence_penalty">
+<g id="a_module~~graph~~ModuleGraph_node21"><a xlink:href="../proc/load_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_presence_penalty">
 <polygon fill="#d9534f" stroke="#d9534f" points="837,-360 456,-360 456,-336 837,-336 837,-360"/>
 <text text-anchor="middle" x="646.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_presence_penalty</text>
 </a>
@@ -484,9 +485,9 @@
 <!-- proc~load_response_format -->
 <g id="module~~graph~~ModuleGraph_node22" class="node">
 <title>proc~load_response_format</title>
-<g id="a_module~~graph~~ModuleGraph_node22"><a xlink:href=".././proc/load_response_format.html" xlink:title="foropenai_Transcription::Transcription%load_response_format">
-<polygon fill="#d9534f" stroke="#d9534f" points="816.5,-318 476.5,-318 476.5,-294 816.5,-294 816.5,-318"/>
-<text text-anchor="middle" x="646.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_response_format</text>
+<g id="a_module~~graph~~ModuleGraph_node22"><a xlink:href="../proc/load_response_format.html" xlink:title="foropenai_Translation::Translation%load_response_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="806,-318 487,-318 487,-294 806,-294 806,-318"/>
+<text text-anchor="middle" x="646.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_response_format</text>
 </a>
 </g>
 </g>
@@ -499,9 +500,9 @@
 <!-- proc~load_response_format~2 -->
 <g id="module~~graph~~ModuleGraph_node23" class="node">
 <title>proc~load_response_format~2</title>
-<g id="a_module~~graph~~ModuleGraph_node23"><a xlink:href=".././proc/load_response_format~2.html" xlink:title="foropenai_Translation::Translation%load_response_format">
-<polygon fill="#d9534f" stroke="#d9534f" points="806,-276 487,-276 487,-252 806,-252 806,-276"/>
-<text text-anchor="middle" x="646.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_response_format</text>
+<g id="a_module~~graph~~ModuleGraph_node23"><a xlink:href="../proc/load_response_format~2.html" xlink:title="foropenai_Transcription::Transcription%load_response_format">
+<polygon fill="#d9534f" stroke="#d9534f" points="816.5,-276 476.5,-276 476.5,-252 816.5,-252 816.5,-276"/>
+<text text-anchor="middle" x="646.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_response_format</text>
 </a>
 </g>
 </g>
@@ -514,7 +515,7 @@
 <!-- proc~load_response_format~3 -->
 <g id="module~~graph~~ModuleGraph_node24" class="node">
 <title>proc~load_response_format~3</title>
-<g id="a_module~~graph~~ModuleGraph_node24"><a xlink:href=".././proc/load_response_format~3.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_response_format">
+<g id="a_module~~graph~~ModuleGraph_node24"><a xlink:href="../proc/load_response_format~3.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_response_format">
 <polygon fill="#d9534f" stroke="#d9534f" points="842,-234 451,-234 451,-210 842,-210 842,-234"/>
 <text text-anchor="middle" x="646.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%load_response_format</text>
 </a>
@@ -529,7 +530,7 @@
 <!-- proc~load_size -->
 <g id="module~~graph~~ModuleGraph_node25" class="node">
 <title>proc~load_size</title>
-<g id="a_module~~graph~~ModuleGraph_node25"><a xlink:href=".././proc/load_size.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_size">
+<g id="a_module~~graph~~ModuleGraph_node25"><a xlink:href="../proc/load_size.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_size">
 <polygon fill="#d9534f" stroke="#d9534f" points="807.5,-1284 485.5,-1284 485.5,-1260 807.5,-1260 807.5,-1284"/>
 <text text-anchor="middle" x="646.5" y="-1269.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%load_size</text>
 </a>
@@ -544,7 +545,7 @@
 <!-- proc~load_stream -->
 <g id="module~~graph~~ModuleGraph_node26" class="node">
 <title>proc~load_stream</title>
-<g id="a_module~~graph~~ModuleGraph_node26"><a xlink:href=".././proc/load_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_stream">
+<g id="a_module~~graph~~ModuleGraph_node26"><a xlink:href="../proc/load_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_stream">
 <polygon fill="#d9534f" stroke="#d9534f" points="808.5,-1242 484.5,-1242 484.5,-1218 808.5,-1218 808.5,-1242"/>
 <text text-anchor="middle" x="646.5" y="-1227.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_stream</text>
 </a>
@@ -559,52 +560,52 @@
 <!-- proc~load_temperature -->
 <g id="module~~graph~~ModuleGraph_node27" class="node">
 <title>proc~load_temperature</title>
-<g id="a_module~~graph~~ModuleGraph_node27"><a xlink:href=".././proc/load_temperature.html" xlink:title="foropenai_Transcription::Transcription%load_temperature">
-<polygon fill="#d9534f" stroke="#d9534f" points="805.5,-1200 487.5,-1200 487.5,-1176 805.5,-1176 805.5,-1200"/>
-<text text-anchor="middle" x="646.5" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_temperature</text>
+<g id="a_module~~graph~~ModuleGraph_node27"><a xlink:href="../proc/load_temperature.html" xlink:title="foropenai_Translation::Translation%load_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="795,-1200 498,-1200 498,-1176 795,-1176 795,-1200"/>
+<text text-anchor="middle" x="646.5" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_temperature</text>
 </a>
 </g>
 </g>
 <!-- proc~load_temperature&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge34" class="edge">
 <title>proc~load_temperature&#45;&gt;json_module</title>
-<path fill="none" stroke="#022425" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M487.35,-1190.74C471.81,-1185.57 457.28,-1177.94 445,-1167 397.65,-1124.82 377.27,-921.73 371.68,-853.45"/>
+<path fill="none" stroke="#022425" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M497.9,-1193.85C478.42,-1188.82 460.03,-1180.39 445,-1167 397.65,-1124.82 377.27,-921.73 371.68,-853.45"/>
 <polygon fill="#022425" fill-opacity="0.019608" stroke="#022425" stroke-opacity="0.019608" points="375.16,-853.04 370.88,-843.35 368.18,-853.59 375.16,-853.04"/>
 </g>
 <!-- proc~load_temperature~2 -->
 <g id="module~~graph~~ModuleGraph_node28" class="node">
 <title>proc~load_temperature~2</title>
-<g id="a_module~~graph~~ModuleGraph_node28"><a xlink:href=".././proc/load_temperature~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
-<polygon fill="#d9534f" stroke="#d9534f" points="823.5,-1158 469.5,-1158 469.5,-1134 823.5,-1134 823.5,-1158"/>
-<text text-anchor="middle" x="646.5" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_temperature</text>
+<g id="a_module~~graph~~ModuleGraph_node28"><a xlink:href="../proc/load_temperature~2.html" xlink:title="foropenai_Transcription::Transcription%load_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="805.5,-1158 487.5,-1158 487.5,-1134 805.5,-1134 805.5,-1158"/>
+<text text-anchor="middle" x="646.5" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_temperature</text>
 </a>
 </g>
 </g>
 <!-- proc~load_temperature~2&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge35" class="edge">
 <title>proc~load_temperature~2&#45;&gt;json_module</title>
-<path fill="none" stroke="#019325" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M469.32,-1140.95C460.61,-1136.67 452.41,-1131.41 445,-1125 403.35,-1089.01 379.72,-915.84 372.45,-853.46"/>
+<path fill="none" stroke="#019325" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M487.18,-1148.21C471.77,-1143.11 457.31,-1135.64 445,-1125 403.35,-1089.01 379.72,-915.84 372.45,-853.46"/>
 <polygon fill="#019325" fill-opacity="0.019608" stroke="#019325" stroke-opacity="0.019608" points="375.88,-852.7 371.28,-843.16 368.93,-853.49 375.88,-852.7"/>
 </g>
 <!-- proc~load_temperature~3 -->
 <g id="module~~graph~~ModuleGraph_node29" class="node">
 <title>proc~load_temperature~3</title>
-<g id="a_module~~graph~~ModuleGraph_node29"><a xlink:href=".././proc/load_temperature~3.html" xlink:title="foropenai_Translation::Translation%load_temperature">
-<polygon fill="#d9534f" stroke="#d9534f" points="795,-1116 498,-1116 498,-1092 795,-1092 795,-1116"/>
-<text text-anchor="middle" x="646.5" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_temperature</text>
+<g id="a_module~~graph~~ModuleGraph_node29"><a xlink:href="../proc/load_temperature~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
+<polygon fill="#d9534f" stroke="#d9534f" points="823.5,-1116 469.5,-1116 469.5,-1092 823.5,-1092 823.5,-1116"/>
+<text text-anchor="middle" x="646.5" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_temperature</text>
 </a>
 </g>
 </g>
 <!-- proc~load_temperature~3&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge36" class="edge">
 <title>proc~load_temperature~3&#45;&gt;json_module</title>
-<path fill="none" stroke="#016325" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M497.96,-1108.7C478.64,-1103.78 460.28,-1095.69 445,-1083 374.64,-1024.58 368.47,-903.26 369.12,-853.27"/>
+<path fill="none" stroke="#016325" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M469.14,-1098.37C460.53,-1094.22 452.41,-1089.15 445,-1083 374.64,-1024.58 368.47,-903.26 369.12,-853.27"/>
 <polygon fill="#016325" fill-opacity="0.019608" stroke="#016325" stroke-opacity="0.019608" points="372.62,-853.29 369.35,-843.21 365.62,-853.12 372.62,-853.29"/>
 </g>
 <!-- proc~load_top_p -->
 <g id="module~~graph~~ModuleGraph_node30" class="node">
 <title>proc~load_top_p</title>
-<g id="a_module~~graph~~ModuleGraph_node30"><a xlink:href=".././proc/load_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_top_p">
+<g id="a_module~~graph~~ModuleGraph_node30"><a xlink:href="../proc/load_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_top_p">
 <polygon fill="#d9534f" stroke="#d9534f" points="804.5,-1074 488.5,-1074 488.5,-1050 804.5,-1050 804.5,-1074"/>
 <text text-anchor="middle" x="646.5" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_top_p</text>
 </a>
@@ -619,52 +620,52 @@
 <!-- proc~load_url -->
 <g id="module~~graph~~ModuleGraph_node31" class="node">
 <title>proc~load_url</title>
-<g id="a_module~~graph~~ModuleGraph_node31"><a xlink:href=".././proc/load_url.html" xlink:title="foropenai_Transcription::Transcription%load_url">
-<polygon fill="#d9534f" stroke="#d9534f" points="779,-1032 514,-1032 514,-1008 779,-1008 779,-1032"/>
-<text text-anchor="middle" x="646.5" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_url</text>
+<g id="a_module~~graph~~ModuleGraph_node31"><a xlink:href="../proc/load_url.html" xlink:title="foropenai_Translation::Translation%load_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="768.5,-1032 524.5,-1032 524.5,-1008 768.5,-1008 768.5,-1032"/>
+<text text-anchor="middle" x="646.5" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_url</text>
 </a>
 </g>
 </g>
 <!-- proc~load_url&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge38" class="edge">
 <title>proc~load_url&#45;&gt;json_module</title>
-<path fill="none" stroke="#010225" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M513.96,-1025.77C489.32,-1021.65 465.04,-1013.54 445,-999 396.73,-963.98 378.98,-890.7 372.9,-853.58"/>
+<path fill="none" stroke="#010225" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M524.42,-1027.28C496.27,-1023.81 467.88,-1015.6 445,-999 396.73,-963.98 378.98,-890.7 372.9,-853.58"/>
 <polygon fill="#010225" fill-opacity="0.019608" stroke="#010225" stroke-opacity="0.019608" points="376.31,-852.68 371.37,-843.3 369.38,-853.71 376.31,-852.68"/>
 </g>
 <!-- proc~load_url~2 -->
 <g id="module~~graph~~ModuleGraph_node32" class="node">
 <title>proc~load_url~2</title>
-<g id="a_module~~graph~~ModuleGraph_node32"><a xlink:href=".././proc/load_url~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
-<polygon fill="#d9534f" stroke="#d9534f" points="797,-990 496,-990 496,-966 797,-966 797,-990"/>
-<text text-anchor="middle" x="646.5" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_url</text>
+<g id="a_module~~graph~~ModuleGraph_node32"><a xlink:href="../proc/load_url~2.html" xlink:title="foropenai_Transcription::Transcription%load_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="779,-990 514,-990 514,-966 779,-966 779,-990"/>
+<text text-anchor="middle" x="646.5" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%load_url</text>
 </a>
 </g>
 </g>
 <!-- proc~load_url~2&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge39" class="edge">
 <title>proc~load_url~2&#45;&gt;json_module</title>
-<path fill="none" stroke="#071255" stroke-dasharray="5,2" d="M495.92,-978C477.87,-973.56 460.4,-966.85 445,-957 407.18,-932.81 385.88,-882.16 376.28,-852.98"/>
+<path fill="none" stroke="#071255" stroke-dasharray="5,2" d="M513.93,-981.67C489.63,-977.65 465.49,-970.11 445,-957 407.18,-932.81 385.88,-882.16 376.28,-852.98"/>
 <polygon fill="#071255" stroke="#071255" points="379.58,-851.8 373.27,-843.29 372.9,-853.88 379.58,-851.8"/>
 </g>
 <!-- proc~load_url~3 -->
 <g id="module~~graph~~ModuleGraph_node33" class="node">
 <title>proc~load_url~3</title>
-<g id="a_module~~graph~~ModuleGraph_node33"><a xlink:href=".././proc/load_url~3.html" xlink:title="foropenai_Translation::Translation%load_url">
-<polygon fill="#d9534f" stroke="#d9534f" points="768.5,-948 524.5,-948 524.5,-924 768.5,-924 768.5,-948"/>
-<text text-anchor="middle" x="646.5" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%load_url</text>
+<g id="a_module~~graph~~ModuleGraph_node33"><a xlink:href="../proc/load_url~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
+<polygon fill="#d9534f" stroke="#d9534f" points="797,-948 496,-948 496,-924 797,-924 797,-948"/>
+<text text-anchor="middle" x="646.5" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_url</text>
 </a>
 </g>
 </g>
 <!-- proc~load_url~3&#45;&gt;json_module -->
 <g id="module~~graph~~ModuleGraph_edge40" class="edge">
 <title>proc~load_url~3&#45;&gt;json_module</title>
-<path fill="none" stroke="#040255" stroke-dasharray="5,2" d="M524.48,-937.67C497.23,-934.21 469.22,-927.4 445,-915 417.36,-900.85 395.14,-871.92 382.26,-852"/>
+<path fill="none" stroke="#040255" stroke-dasharray="5,2" d="M495.74,-932.7C478.06,-928.75 460.73,-923.05 445,-915 417.36,-900.85 395.14,-871.92 382.26,-852"/>
 <polygon fill="#040255" stroke="#040255" points="385.11,-849.95 376.86,-843.31 379.17,-853.65 385.11,-849.95"/>
 </g>
 <!-- proc~load_url~4 -->
 <g id="module~~graph~~ModuleGraph_node34" class="node">
 <title>proc~load_url~4</title>
-<g id="a_module~~graph~~ModuleGraph_node34"><a xlink:href=".././proc/load_url~4.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_url">
+<g id="a_module~~graph~~ModuleGraph_node34"><a xlink:href="../proc/load_url~4.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_url">
 <polygon fill="#d9534f" stroke="#d9534f" points="804.5,-906 488.5,-906 488.5,-882 804.5,-882 804.5,-906"/>
 <text text-anchor="middle" x="646.5" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%load_url</text>
 </a>
@@ -679,7 +680,7 @@
 <!-- proc~load_user_name -->
 <g id="module~~graph~~ModuleGraph_node35" class="node">
 <title>proc~load_user_name</title>
-<g id="a_module~~graph~~ModuleGraph_node35"><a xlink:href=".././proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
+<g id="a_module~~graph~~ModuleGraph_node35"><a xlink:href="../proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="819.5,-864 473.5,-864 473.5,-840 819.5,-840 819.5,-864"/>
 <text text-anchor="middle" x="646.5" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_user_name</text>
 </a>
@@ -694,7 +695,7 @@
 <!-- proc~load_user_name~2 -->
 <g id="module~~graph~~ModuleGraph_node36" class="node">
 <title>proc~load_user_name~2</title>
-<g id="a_module~~graph~~ModuleGraph_node36"><a xlink:href=".././proc/load_user_name~2.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_user_name">
+<g id="a_module~~graph~~ModuleGraph_node36"><a xlink:href="../proc/load_user_name~2.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%load_user_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="827,-822 466,-822 466,-798 827,-798 827,-822"/>
 <text text-anchor="middle" x="646.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%load_user_name</text>
 </a>
@@ -709,9 +710,9 @@
 <!-- proc~print_assistant_response -->
 <g id="module~~graph~~ModuleGraph_node37" class="node">
 <title>proc~print_assistant_response</title>
-<g id="a_module~~graph~~ModuleGraph_node37"><a xlink:href=".././proc/print_assistant_response.html" xlink:title="foropenai_Transcription::Transcription%print_assistant_response">
-<polygon fill="#d9534f" stroke="#d9534f" points="822.5,-1830 470.5,-1830 470.5,-1806 822.5,-1806 822.5,-1830"/>
-<text text-anchor="middle" x="646.5" y="-1815.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%print_assistant_response</text>
+<g id="a_module~~graph~~ModuleGraph_node37"><a xlink:href="../proc/print_assistant_response.html" xlink:title="foropenai_Translation::Translation%print_assistant_response">
+<polygon fill="#d9534f" stroke="#d9534f" points="812,-1830 481,-1830 481,-1806 812,-1806 812,-1830"/>
+<text text-anchor="middle" x="646.5" y="-1815.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%print_assistant_response</text>
 </a>
 </g>
 </g>
@@ -724,43 +725,43 @@
 <!-- proc~print_assistant_response&#45;&gt;face -->
 <g id="module~~graph~~ModuleGraph_edge44" class="edge">
 <title>proc~print_assistant_response&#45;&gt;face</title>
-<path fill="none" stroke="#810255" stroke-dasharray="5,2" d="M470.41,-1810.7C461.48,-1806.97 452.93,-1802.45 445,-1797 401.92,-1767.42 382.16,-1705.38 374.35,-1672.14"/>
+<path fill="none" stroke="#810255" stroke-dasharray="5,2" d="M480.79,-1814.63C468.09,-1810.28 455.96,-1804.53 445,-1797 401.92,-1767.42 382.16,-1705.38 374.35,-1672.14"/>
 <polygon fill="#810255" stroke="#810255" points="377.7,-1671.08 372.15,-1662.06 370.87,-1672.58 377.7,-1671.08"/>
 </g>
 <!-- proc~print_assistant_response~2 -->
 <g id="module~~graph~~ModuleGraph_node38" class="node">
 <title>proc~print_assistant_response~2</title>
-<g id="a_module~~graph~~ModuleGraph_node38"><a xlink:href=".././proc/print_assistant_response~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_assistant_response">
-<polygon fill="#d9534f" stroke="#d9534f" points="840.5,-1788 452.5,-1788 452.5,-1764 840.5,-1764 840.5,-1788"/>
-<text text-anchor="middle" x="646.5" y="-1773.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_assistant_response</text>
+<g id="a_module~~graph~~ModuleGraph_node38"><a xlink:href="../proc/print_assistant_response~2.html" xlink:title="foropenai_Transcription::Transcription%print_assistant_response">
+<polygon fill="#d9534f" stroke="#d9534f" points="822.5,-1788 470.5,-1788 470.5,-1764 822.5,-1764 822.5,-1788"/>
+<text text-anchor="middle" x="646.5" y="-1773.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%print_assistant_response</text>
 </a>
 </g>
 </g>
 <!-- proc~print_assistant_response~2&#45;&gt;face -->
 <g id="module~~graph~~ModuleGraph_edge45" class="edge">
 <title>proc~print_assistant_response~2&#45;&gt;face</title>
-<path fill="none" stroke="#112025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M462.92,-1763.94C456.74,-1761.31 450.75,-1758.35 445,-1755 412.33,-1735.97 390.15,-1696.41 378.81,-1671.65"/>
+<path fill="none" stroke="#112025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M470.32,-1766.88C461.52,-1763.6 453.01,-1759.67 445,-1755 412.33,-1735.97 390.15,-1696.41 378.81,-1671.65"/>
 <polygon fill="#112025" fill-opacity="0.019608" stroke="#112025" stroke-opacity="0.019608" points="381.96,-1670.11 374.75,-1662.35 375.55,-1672.91 381.96,-1670.11"/>
 </g>
 <!-- proc~print_assistant_response~3 -->
 <g id="module~~graph~~ModuleGraph_node39" class="node">
 <title>proc~print_assistant_response~3</title>
-<g id="a_module~~graph~~ModuleGraph_node39"><a xlink:href=".././proc/print_assistant_response~3.html" xlink:title="foropenai_Translation::Translation%print_assistant_response">
-<polygon fill="#d9534f" stroke="#d9534f" points="812,-1746 481,-1746 481,-1722 812,-1722 812,-1746"/>
-<text text-anchor="middle" x="646.5" y="-1731.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%print_assistant_response</text>
+<g id="a_module~~graph~~ModuleGraph_node39"><a xlink:href="../proc/print_assistant_response~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_assistant_response">
+<polygon fill="#d9534f" stroke="#d9534f" points="840.5,-1746 452.5,-1746 452.5,-1722 840.5,-1722 840.5,-1746"/>
+<text text-anchor="middle" x="646.5" y="-1731.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_assistant_response</text>
 </a>
 </g>
 </g>
 <!-- proc~print_assistant_response~3&#45;&gt;face -->
 <g id="module~~graph~~ModuleGraph_edge46" class="edge">
 <title>proc~print_assistant_response~3&#45;&gt;face</title>
-<path fill="none" stroke="#142025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M480.95,-1724.91C468.56,-1721.77 456.44,-1717.86 445,-1713 422.28,-1703.36 401.22,-1684.4 387.24,-1669.79"/>
+<path fill="none" stroke="#142025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M470.29,-1721.99C461.61,-1719.43 453.13,-1716.45 445,-1713 422.28,-1703.36 401.22,-1684.4 387.24,-1669.79"/>
 <polygon fill="#142025" fill-opacity="0.019608" stroke="#142025" stroke-opacity="0.019608" points="389.59,-1667.18 380.23,-1662.21 384.45,-1671.93 389.59,-1667.18"/>
 </g>
 <!-- proc~print_assistant_response~4 -->
 <g id="module~~graph~~ModuleGraph_node40" class="node">
 <title>proc~print_assistant_response~4</title>
-<g id="a_module~~graph~~ModuleGraph_node40"><a xlink:href=".././proc/print_assistant_response~4.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%print_assistant_response">
+<g id="a_module~~graph~~ModuleGraph_node40"><a xlink:href="../proc/print_assistant_response~4.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%print_assistant_response">
 <polygon fill="#d9534f" stroke="#d9534f" points="848,-1704 445,-1704 445,-1680 848,-1680 848,-1704"/>
 <text text-anchor="middle" x="646.5" y="-1689.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%print_assistant_response</text>
 </a>
@@ -775,37 +776,37 @@
 <!-- proc~print_file -->
 <g id="module~~graph~~ModuleGraph_node41" class="node">
 <title>proc~print_file</title>
-<g id="a_module~~graph~~ModuleGraph_node41"><a xlink:href=".././proc/print_file.html" xlink:title="foropenai_Transcription::Transcription%print_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="781,-1662 512,-1662 512,-1638 781,-1638 781,-1662"/>
-<text text-anchor="middle" x="646.5" y="-1647.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%print_file</text>
+<g id="a_module~~graph~~ModuleGraph_node41"><a xlink:href="../proc/print_file.html" xlink:title="foropenai_Translation::Translation%print_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="770.5,-1662 522.5,-1662 522.5,-1638 770.5,-1638 770.5,-1662"/>
+<text text-anchor="middle" x="646.5" y="-1647.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%print_file</text>
 </a>
 </g>
 </g>
 <!-- proc~print_file&#45;&gt;face -->
 <g id="module~~graph~~ModuleGraph_edge48" class="edge">
 <title>proc~print_file&#45;&gt;face</title>
-<path fill="none" stroke="#204025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M511.79,-1650C472.93,-1650 433.66,-1650 406.32,-1650"/>
-<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="406.1,-1646.5 396.1,-1650 406.1,-1653.5 406.1,-1646.5"/>
+<path fill="none" stroke="#204025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M522.25,-1650C480.15,-1650 436.21,-1650 406.42,-1650"/>
+<polygon fill="#204025" fill-opacity="0.019608" stroke="#204025" stroke-opacity="0.019608" points="406.12,-1646.5 396.12,-1650 406.12,-1653.5 406.12,-1646.5"/>
 </g>
 <!-- proc~print_file~2 -->
 <g id="module~~graph~~ModuleGraph_node42" class="node">
 <title>proc~print_file~2</title>
-<g id="a_module~~graph~~ModuleGraph_node42"><a xlink:href=".././proc/print_file~2.html" xlink:title="foropenai_Translation::Translation%print_file">
-<polygon fill="#d9534f" stroke="#d9534f" points="770.5,-1620 522.5,-1620 522.5,-1596 770.5,-1596 770.5,-1620"/>
-<text text-anchor="middle" x="646.5" y="-1605.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Translation::Translation%print_file</text>
+<g id="a_module~~graph~~ModuleGraph_node42"><a xlink:href="../proc/print_file~2.html" xlink:title="foropenai_Transcription::Transcription%print_file">
+<polygon fill="#d9534f" stroke="#d9534f" points="781,-1620 512,-1620 512,-1596 781,-1596 781,-1620"/>
+<text text-anchor="middle" x="646.5" y="-1605.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_Transcription::Transcription%print_file</text>
 </a>
 </g>
 </g>
 <!-- proc~print_file~2&#45;&gt;face -->
 <g id="module~~graph~~ModuleGraph_edge49" class="edge">
 <title>proc~print_file~2&#45;&gt;face</title>
-<path fill="none" stroke="#234025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M522.29,-1617.6C496.63,-1620.52 469.84,-1624.26 445,-1629 432.13,-1631.46 418.26,-1635.06 405.99,-1638.59"/>
+<path fill="none" stroke="#234025" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M511.84,-1618.82C489.43,-1621.55 466.49,-1624.9 445,-1629 432.13,-1631.46 418.26,-1635.06 405.99,-1638.59"/>
 <polygon fill="#234025" fill-opacity="0.019608" stroke="#234025" stroke-opacity="0.019608" points="404.72,-1635.32 396.12,-1641.52 406.7,-1642.03 404.72,-1635.32"/>
 </g>
 <!-- proc~print_prompt~3 -->
 <g id="module~~graph~~ModuleGraph_node43" class="node">
 <title>proc~print_prompt~3</title>
-<g id="a_module~~graph~~ModuleGraph_node43"><a xlink:href=".././proc/print_prompt~3.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%print_prompt">
+<g id="a_module~~graph~~ModuleGraph_node43"><a xlink:href="../proc/print_prompt~3.html" xlink:title="foropenai_ImageGeneration::ImageGeneration%print_prompt">
 <polygon fill="#d9534f" stroke="#d9534f" points="817.5,-1578 475.5,-1578 475.5,-1554 817.5,-1554 817.5,-1578"/>
 <text text-anchor="middle" x="646.5" y="-1563.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ImageGeneration::ImageGeneration%print_prompt</text>
 </a>
@@ -820,7 +821,7 @@
 <!-- proc~print_user_message -->
 <g id="module~~graph~~ModuleGraph_node44" class="node">
 <title>proc~print_user_message</title>
-<g id="a_module~~graph~~ModuleGraph_node44"><a xlink:href=".././proc/print_user_message.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_user_message">
+<g id="a_module~~graph~~ModuleGraph_node44"><a xlink:href="../proc/print_user_message.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%print_user_message">
 <polygon fill="#d9534f" stroke="#d9534f" points="829,-1536 464,-1536 464,-1512 829,-1512 829,-1536"/>
 <text text-anchor="middle" x="646.5" y="-1521.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%print_user_message</text>
 </a>
@@ -835,7 +836,7 @@
 <!-- proc~read_user_message -->
 <g id="module~~graph~~ModuleGraph_node45" class="node">
 <title>proc~read_user_message</title>
-<g id="a_module~~graph~~ModuleGraph_node45"><a xlink:href=".././proc/read_user_message.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%read_user_message">
+<g id="a_module~~graph~~ModuleGraph_node45"><a xlink:href="../proc/read_user_message.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%read_user_message">
 <polygon fill="#d9534f" stroke="#d9534f" points="828.5,-1494 464.5,-1494 464.5,-1470 828.5,-1470 828.5,-1494"/>
 <text text-anchor="middle" x="646.5" y="-1479.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%read_user_message</text>
 </a>
@@ -850,7 +851,7 @@
 <!-- program~test_base -->
 <g id="module~~graph~~ModuleGraph_node46" class="node">
 <title>program~test_base</title>
-<g id="a_module~~graph~~ModuleGraph_node46"><a xlink:href=".././program/test_base.html" xlink:title="test_base">
+<g id="a_module~~graph~~ModuleGraph_node46"><a xlink:href="../program/test_base.html" xlink:title="test_base">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="678,-192 615,-192 615,-168 678,-168 678,-192"/>
 <text text-anchor="middle" x="646.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_base</text>
 </a>
@@ -865,7 +866,7 @@
 <!-- program~test_chatcompletion -->
 <g id="module~~graph~~ModuleGraph_node47" class="node">
 <title>program~test_chatcompletion</title>
-<g id="a_module~~graph~~ModuleGraph_node47"><a xlink:href=".././program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
+<g id="a_module~~graph~~ModuleGraph_node47"><a xlink:href="../program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="708.5,-150 584.5,-150 584.5,-126 708.5,-126 708.5,-150"/>
 <text text-anchor="middle" x="646.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ChatCompletion</text>
 </a>
@@ -880,7 +881,7 @@
 <!-- program~test_imagegeneration -->
 <g id="module~~graph~~ModuleGraph_node48" class="node">
 <title>program~test_imagegeneration</title>
-<g id="a_module~~graph~~ModuleGraph_node48"><a xlink:href=".././program/test_imagegeneration.html" xlink:title="test_ImageGeneration">
+<g id="a_module~~graph~~ModuleGraph_node48"><a xlink:href="../program/test_imagegeneration.html" xlink:title="test_ImageGeneration">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="712,-108 581,-108 581,-84 712,-84 712,-108"/>
 <text text-anchor="middle" x="646.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ImageGeneration</text>
 </a>
@@ -895,7 +896,7 @@
 <!-- program~test_transcription -->
 <g id="module~~graph~~ModuleGraph_node49" class="node">
 <title>program~test_transcription</title>
-<g id="a_module~~graph~~ModuleGraph_node49"><a xlink:href=".././program/test_transcription.html" xlink:title="test_Transcription">
+<g id="a_module~~graph~~ModuleGraph_node49"><a xlink:href="../program/test_transcription.html" xlink:title="test_Transcription">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="699.5,-66 593.5,-66 593.5,-42 699.5,-42 699.5,-66"/>
 <text text-anchor="middle" x="646.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_Transcription</text>
 </a>
@@ -910,7 +911,7 @@
 <!-- program~test_translation -->
 <g id="module~~graph~~ModuleGraph_node50" class="node">
 <title>program~test_translation</title>
-<g id="a_module~~graph~~ModuleGraph_node50"><a xlink:href=".././program/test_translation.html" xlink:title="test_Translation">
+<g id="a_module~~graph~~ModuleGraph_node50"><a xlink:href="../program/test_translation.html" xlink:title="test_Translation">
 <polygon fill="#f0ad4e" stroke="#f0ad4e" points="694,-24 599,-24 599,0 694,0 694,-24"/>
 <text text-anchor="middle" x="646.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_Translation</text>
 </a>
@@ -928,17 +929,17 @@
                   var panmodulegraphModuleGraph = svgPanZoom('#modulegraphModuleGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#ModuleGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="ModuleGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -1006,32 +1007,27 @@ large graphs.</div>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T20:22:27.787945             </p>
+ on 2024-01-10T22:07:06.996801             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">

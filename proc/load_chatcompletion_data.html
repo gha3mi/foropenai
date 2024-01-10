@@ -1,3 +1,5 @@
+<!-- -*- mode: jinja2 -*- -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,81 +12,56 @@
 
     <title>load_ChatCompletion_data &ndash; ForOpenAI</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
       <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-         <script src="../js/jquery-2.1.3.min.js"></script>
-         <script src="../js/svg-pan-zoom.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
   </head>
 
   <body>
 
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
           <a class="navbar-brand" href="../index.html">ForOpenAI <small>0.5.0</small></a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
-              <a href="#" class="dropdown-toggle"
-                 data-toggle="dropdown" role="button"
-                 aria-haspopup="true"
-                 aria-expanded="false">
-                 Contents <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                    <li><a href="../lists/files.html">Source Files</a></li>
-                  <li><a href="../lists/modules.html">Modules</a></li>
-                  <li><a href="../lists/procedures.html">Procedures</a></li>
-                  <li><a href="../lists/types.html">Derived Types</a></li>
-                  <li><a href="../lists/programs.html">Programs</a></li>
-              </ul>
-            </li>
-                <li class="visible-xs hidden-sm visible-lg">
-                  <a href="../lists/files.html">Source Files</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
                 </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/modules.html">Modules</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/procedures.html">Procedures</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/types.html">Derived Types</a>
-              </li>
-              <li class="visible-xs hidden-sm visible-lg">
-                <a href="../lists/programs.html">Programs</a>
-              </li>
-          </ul>
-            <form action="../search.html" class="navbar-form navbar-right" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/types.html">Derived Types</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
               </div>
-              <!--
-                  <button type="submit" class="btn btn-default">Submit</button>
-                  -->
-            </form>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
 
     <div class="container">
   <div class="row">
@@ -92,34 +69,38 @@
       <small>Subroutine</small>
       
     </h1>
-      <div class="row" id="info-bar">
-    <div class="col-lg-12">
-      <div class="well well-sm">
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
-            <li id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
 
-          <li id="statements"><i class="fa fa-list-ol"></i>
-            <a data-toggle="tooltip"
-               data-placement="bottom" data-html="true"
-               title=" 1.1% of total for procedures.">15 statements</a>
-          </li>
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip"
+                 data-bs-placement="bottom" data-html="true"
+                 title=" 1.1% of total for procedures.">15 statements</a>
+            </li>
 
-            <li id="source-file">
+            <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
               <a href="../src/foropenai_ChatCompletion.f90"> Source File</a>
             </li>
         </ul>
-        <ol class="breadcrumb in-well text-right">
-              <li><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></li>
-              <li><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></li>
-          <li class="active">load_ChatCompletion_data</li>
-        </ol>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/foropenai_chatcompletion.f90.html'>foropenai_ChatCompletion.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/foropenai_chatcompletion.html'>foropenai_ChatCompletion</a></li>
+            <li class="breadcrumb-item active" aria-current="page">load_ChatCompletion_data</li>
+          </ol>
+        </nav>
       </div>
     </div>
   </div>
   <script>
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-bs-toggle="tooltip"]').tooltip()
     })
   </script>
 
@@ -148,8 +129,9 @@
   
   
   
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
       <div class="list-group">
         <a class="list-group-item" href="../proc/load_chatcompletion_data.html#src">load_ChatCompletion_data</a>
       </div>
@@ -173,16 +155,16 @@
         <table class="table table-striped varlist">
     <thead>
       <tr>
-        <th>Type</th>
-<th>Intent</th><th>Optional</th>        <th>Attributes</th>
-        <th></th>
-        <th>Name</th>
-        <th></th>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
     </thead>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-this~72"></span>
+              <span class="anchor" id="variable-this~91"></span>
               class(<a href='../type/chatcompletion.html'>ChatCompletion</a>),
             </td>
 <td>intent(inout)</td>
@@ -197,7 +179,7 @@
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-file_name~9"></span>
+              <span class="anchor" id="variable-file_name~14"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -214,11 +196,11 @@
   </table>
 
     <br>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-  <h3 class="panel-title">Calls</h3>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
       </div>
-      <div class="panel-body">
+      <div class="card-body">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -239,7 +221,7 @@
 <!-- proc~load_frequency_penalty -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node2" class="node">
 <title>proc~load_frequency_penalty</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node2"><a xlink:href=".././proc/load_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node2"><a xlink:href="../proc/load_frequency_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty">
 <polygon fill="#d9534f" stroke="#d9534f" points="824,-66 439,-66 439,-42 824,-42 824,-66"/>
 <text text-anchor="middle" x="631.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_frequency_penalty</text>
 </a>
@@ -254,7 +236,7 @@
 <!-- proc~load_max_tokens -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node3" class="node">
 <title>proc~load_max_tokens</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node3"><a xlink:href=".././proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node3"><a xlink:href="../proc/load_max_tokens.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_max_tokens">
 <polygon fill="#d9534f" stroke="#d9534f" points="807,-444 456,-444 456,-420 807,-420 807,-444"/>
 <text text-anchor="middle" x="631.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_max_tokens</text>
 </a>
@@ -266,25 +248,25 @@
 <path fill="none" stroke="#255000" d="M212.78,-234.03C243.19,-268.68 336.99,-368.86 439,-411 444.22,-413.15 449.58,-415.12 455.04,-416.9"/>
 <polygon fill="#255000" stroke="#255000" points="454.39,-420.36 464.98,-419.93 456.43,-413.67 454.39,-420.36"/>
 </g>
-<!-- proc~load_model~2 -->
+<!-- proc~load_model~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node4" class="node">
-<title>proc~load_model~2</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node4"><a xlink:href=".././proc/load_model~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
+<title>proc~load_model~3</title>
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node4"><a xlink:href="../proc/load_model~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_model">
 <polygon fill="#d9534f" stroke="#d9534f" points="792,-402 471,-402 471,-378 792,-378 792,-402"/>
 <text text-anchor="middle" x="631.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_model</text>
 </a>
 </g>
 </g>
-<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_model~2 -->
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_model~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge3" class="edge">
-<title>proc~load_chatcompletion_data&#45;&gt;proc~load_model~2</title>
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_model~3</title>
 <path fill="none" stroke="#255000" d="M216.79,-234.17C251.88,-263.3 346.24,-336.95 439,-369 446.14,-371.47 453.52,-373.66 461.03,-375.62"/>
 <polygon fill="#255000" stroke="#255000" points="460.42,-379.07 470.97,-378.05 462.09,-372.27 460.42,-379.07"/>
 </g>
 <!-- proc~load_n -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node5" class="node">
 <title>proc~load_n</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node5"><a xlink:href=".././proc/load_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_n">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node5"><a xlink:href="../proc/load_n.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_n">
 <polygon fill="#d9534f" stroke="#d9534f" points="778.5,-360 484.5,-360 484.5,-336 778.5,-336 778.5,-360"/>
 <text text-anchor="middle" x="631.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_n</text>
 </a>
@@ -299,7 +281,7 @@
 <!-- proc~load_presence_penalty -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node6" class="node">
 <title>proc~load_presence_penalty</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node6"><a xlink:href=".././proc/load_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_presence_penalty">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node6"><a xlink:href="../proc/load_presence_penalty.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_presence_penalty">
 <polygon fill="#d9534f" stroke="#d9534f" points="822,-318 441,-318 441,-294 822,-294 822,-318"/>
 <text text-anchor="middle" x="631.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_presence_penalty</text>
 </a>
@@ -314,7 +296,7 @@
 <!-- proc~load_stream -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node7" class="node">
 <title>proc~load_stream</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node7"><a xlink:href=".././proc/load_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_stream">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node7"><a xlink:href="../proc/load_stream.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_stream">
 <polygon fill="#d9534f" stroke="#d9534f" points="793.5,-276 469.5,-276 469.5,-252 793.5,-252 793.5,-276"/>
 <text text-anchor="middle" x="631.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_stream</text>
 </a>
@@ -326,25 +308,25 @@
 <path fill="none" stroke="#255000" d="M324.86,-234.01C378.93,-239.31 442.63,-245.56 497.84,-250.98"/>
 <polygon fill="#255000" stroke="#255000" points="497.75,-254.49 508.05,-251.98 498.44,-247.52 497.75,-254.49"/>
 </g>
-<!-- proc~load_temperature~2 -->
+<!-- proc~load_temperature~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node8" class="node">
-<title>proc~load_temperature~2</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node8"><a xlink:href=".././proc/load_temperature~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
+<title>proc~load_temperature~3</title>
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node8"><a xlink:href="../proc/load_temperature~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_temperature">
 <polygon fill="#d9534f" stroke="#d9534f" points="808.5,-234 454.5,-234 454.5,-210 808.5,-210 808.5,-234"/>
 <text text-anchor="middle" x="631.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_temperature</text>
 </a>
 </g>
 </g>
-<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~2 -->
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge7" class="edge">
-<title>proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~2</title>
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_temperature~3</title>
 <path fill="none" stroke="#255000" d="M403.03,-222C416.71,-222 430.47,-222 444.08,-222"/>
 <polygon fill="#255000" stroke="#255000" points="444.45,-225.5 454.45,-222 444.45,-218.5 444.45,-225.5"/>
 </g>
 <!-- proc~load_top_p -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node9" class="node">
 <title>proc~load_top_p</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node9"><a xlink:href=".././proc/load_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_top_p">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node9"><a xlink:href="../proc/load_top_p.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_top_p">
 <polygon fill="#d9534f" stroke="#d9534f" points="789.5,-192 473.5,-192 473.5,-168 789.5,-168 789.5,-192"/>
 <text text-anchor="middle" x="631.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_top_p</text>
 </a>
@@ -356,25 +338,25 @@
 <path fill="none" stroke="#255000" d="M324.86,-209.99C378.93,-204.69 442.63,-198.44 497.84,-193.02"/>
 <polygon fill="#255000" stroke="#255000" points="498.44,-196.48 508.05,-192.02 497.75,-189.51 498.44,-196.48"/>
 </g>
-<!-- proc~load_url~2 -->
+<!-- proc~load_url~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node10" class="node">
-<title>proc~load_url~2</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node10"><a xlink:href=".././proc/load_url~2.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
+<title>proc~load_url~3</title>
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node10"><a xlink:href="../proc/load_url~3.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_url">
 <polygon fill="#d9534f" stroke="#d9534f" points="782,-150 481,-150 481,-126 782,-126 782,-150"/>
 <text text-anchor="middle" x="631.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_url</text>
 </a>
 </g>
 </g>
-<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_url~2 -->
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~load_url~3 -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge9" class="edge">
-<title>proc~load_chatcompletion_data&#45;&gt;proc~load_url~2</title>
+<title>proc~load_chatcompletion_data&#45;&gt;proc~load_url~3</title>
 <path fill="none" stroke="#255000" d="M240.6,-209.94C287,-195.7 368,-172.27 439,-159 454.45,-156.11 470.68,-153.58 486.89,-151.36"/>
 <polygon fill="#255000" stroke="#255000" points="487.51,-154.81 496.97,-150.02 486.59,-147.87 487.51,-154.81"/>
 </g>
 <!-- proc~load_user_name -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node11" class="node">
 <title>proc~load_user_name</title>
-<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node11"><a xlink:href=".././proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node11"><a xlink:href="../proc/load_user_name.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%load_user_name">
 <polygon fill="#d9534f" stroke="#d9534f" points="804.5,-108 458.5,-108 458.5,-84 804.5,-84 804.5,-108"/>
 <text text-anchor="middle" x="631.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%load_user_name</text>
 </a>
@@ -386,17 +368,20 @@
 <path fill="none" stroke="#255000" d="M223.52,-209.98C263.85,-187.55 355.51,-139.53 439,-117 448.97,-114.31 459.32,-111.96 469.82,-109.92"/>
 <polygon fill="#255000" stroke="#255000" points="470.73,-113.31 479.92,-108.04 469.45,-106.42 470.73,-113.31"/>
 </g>
-<!-- set_file_name -->
+<!-- proc~set_file_name -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node12" class="node">
-<title>set_file_name</title>
-<polygon fill="#777777" stroke="#777777" points="674.5,-24 588.5,-24 588.5,0 674.5,0 674.5,-24"/>
-<text text-anchor="middle" x="631.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">set_file_name</text>
+<title>proc~set_file_name</title>
+<g id="a_proc~~load_chatcompletion_data~~CallsGraph_node12"><a xlink:href="../proc/set_file_name.html" xlink:title="foropenai_base::openai%set_file_name">
+<polygon fill="#d9534f" stroke="#d9534f" points="742.5,-24 520.5,-24 520.5,0 742.5,0 742.5,-24"/>
+<text text-anchor="middle" x="631.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_base::openai%set_file_name</text>
+</a>
 </g>
-<!-- proc~load_chatcompletion_data&#45;&gt;set_file_name -->
+</g>
+<!-- proc~load_chatcompletion_data&#45;&gt;proc~set_file_name -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge11" class="edge">
-<title>proc~load_chatcompletion_data&#45;&gt;set_file_name</title>
-<path fill="none" stroke="#255000" d="M212.78,-209.97C243.19,-175.32 336.99,-75.14 439,-33 483.41,-14.66 538.28,-10.29 577.89,-9.99"/>
-<polygon fill="#255000" stroke="#255000" points="578.12,-13.49 588.13,-9.99 578.13,-6.49 578.12,-13.49"/>
+<title>proc~load_chatcompletion_data&#45;&gt;proc~set_file_name</title>
+<path fill="none" stroke="#255000" d="M212.78,-209.97C243.19,-175.32 336.99,-75.14 439,-33 461.28,-23.8 486.19,-18.11 510.49,-14.69"/>
+<polygon fill="#255000" stroke="#255000" points="511.02,-18.15 520.49,-13.4 510.12,-11.21 511.02,-18.15"/>
 </g>
 <!-- destroy -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_node13" class="node">
@@ -470,27 +455,27 @@
 <path fill="none" stroke="transparent" d="M807.21,-422.61C813.13,-419.27 818.76,-415.42 824,-411 868.51,-373.44 826.98,-332.98 860,-285 860.36,-284.48 860.73,-283.98 861.11,-283.47"/>
 <polygon fill="transparent" stroke="transparent" points="863.87,-285.66 868.38,-276.07 858.88,-280.76 863.87,-285.66"/>
 </g>
-<!-- proc~load_model~2&#45;&gt;destroy -->
+<!-- proc~load_model~3&#45;&gt;destroy -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge20" class="edge">
-<title>proc~load_model~2&#45;&gt;destroy</title>
+<title>proc~load_model~3&#45;&gt;destroy</title>
 <path fill="none" stroke="transparent" d="M792.39,-387.71C803.82,-383.09 814.54,-376.98 824,-369 868.51,-331.44 826.98,-290.98 860,-243 860.36,-242.48 860.73,-241.98 861.11,-241.47"/>
 <polygon fill="transparent" stroke="transparent" points="863.87,-243.66 868.38,-234.07 858.88,-238.76 863.87,-243.66"/>
 </g>
-<!-- proc~load_model~2&#45;&gt;get -->
+<!-- proc~load_model~3&#45;&gt;get -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge21" class="edge">
-<title>proc~load_model~2&#45;&gt;get</title>
+<title>proc~load_model~3&#45;&gt;get</title>
 <path fill="none" stroke="transparent" d="M792.07,-388.78C803.72,-383.97 814.57,-377.52 824,-369 880.67,-317.82 818.84,-265.32 860,-201 860.33,-200.49 860.67,-199.98 861.03,-199.49"/>
 <polygon fill="transparent" stroke="transparent" points="863.6,-201.87 867.91,-192.19 858.51,-197.07 863.6,-201.87"/>
 </g>
-<!-- proc~load_model~2&#45;&gt;initialize -->
+<!-- proc~load_model~3&#45;&gt;initialize -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge22" class="edge">
-<title>proc~load_model~2&#45;&gt;initialize</title>
+<title>proc~load_model~3&#45;&gt;initialize</title>
 <path fill="none" stroke="transparent" d="M792.08,-380.88C803.13,-377.71 813.88,-373.81 824,-369 844.25,-359.38 861.94,-340.7 873.56,-326.16"/>
 <polygon fill="transparent" stroke="transparent" points="876.37,-328.25 879.67,-318.18 870.81,-323.99 876.37,-328.25"/>
 </g>
-<!-- proc~load_model~2&#45;&gt;load_file -->
+<!-- proc~load_model~3&#45;&gt;load_file -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge23" class="edge">
-<title>proc~load_model~2&#45;&gt;load_file</title>
+<title>proc~load_model~3&#45;&gt;load_file</title>
 <path fill="none" stroke="transparent" d="M792.27,-386.01C803.58,-381.73 814.32,-376.17 824,-369 856.64,-344.82 834.9,-316.94 860,-285 860.48,-284.39 860.98,-283.79 861.5,-283.2"/>
 <polygon fill="transparent" stroke="transparent" points="864.15,-285.5 869.01,-276.09 859.34,-280.42 864.15,-285.5"/>
 </g>
@@ -566,27 +551,27 @@
 <path fill="none" stroke="#025518" stroke-opacity="0.019608" d="M793.59,-264C814.31,-264 833.78,-264 849.59,-264"/>
 <polygon fill="#025518" fill-opacity="0.019608" stroke="#025518" stroke-opacity="0.019608" points="849.93,-267.5 859.93,-264 849.93,-260.5 849.93,-267.5"/>
 </g>
-<!-- proc~load_temperature~2&#45;&gt;destroy -->
+<!-- proc~load_temperature~3&#45;&gt;destroy -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge36" class="edge">
-<title>proc~load_temperature~2&#45;&gt;destroy</title>
+<title>proc~load_temperature~3&#45;&gt;destroy</title>
 <path fill="none" stroke="#018525" stroke-opacity="0.019608" d="M808.56,-222C824.47,-222 839.21,-222 851.56,-222"/>
 <polygon fill="#018525" fill-opacity="0.019608" stroke="#018525" stroke-opacity="0.019608" points="851.77,-225.5 861.77,-222 851.77,-218.5 851.77,-225.5"/>
 </g>
-<!-- proc~load_temperature~2&#45;&gt;get -->
+<!-- proc~load_temperature~3&#45;&gt;get -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge37" class="edge">
-<title>proc~load_temperature~2&#45;&gt;get</title>
+<title>proc~load_temperature~3&#45;&gt;get</title>
 <path fill="none" stroke="#018525" stroke-opacity="0.019608" d="M772.93,-210C790.22,-207.52 807.57,-204.56 824,-201 833.32,-198.98 843.19,-196.12 852.32,-193.16"/>
 <polygon fill="#018525" fill-opacity="0.019608" stroke="#018525" stroke-opacity="0.019608" points="853.52,-196.45 861.87,-189.94 851.28,-189.82 853.52,-196.45"/>
 </g>
-<!-- proc~load_temperature~2&#45;&gt;initialize -->
+<!-- proc~load_temperature~3&#45;&gt;initialize -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge38" class="edge">
-<title>proc~load_temperature~2&#45;&gt;initialize</title>
+<title>proc~load_temperature~3&#45;&gt;initialize</title>
 <path fill="none" stroke="#018525" stroke-opacity="0.019608" d="M804.17,-234.13C811,-236.7 817.64,-239.64 824,-243 845.74,-254.48 842.06,-268.19 860,-285 860.92,-285.86 861.88,-286.73 862.86,-287.58"/>
 <polygon fill="#018525" fill-opacity="0.019608" stroke="#018525" stroke-opacity="0.019608" points="860.68,-290.32 870.64,-293.91 865.09,-284.89 860.68,-290.32"/>
 </g>
-<!-- proc~load_temperature~2&#45;&gt;load_file -->
+<!-- proc~load_temperature~3&#45;&gt;load_file -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge39" class="edge">
-<title>proc~load_temperature~2&#45;&gt;load_file</title>
+<title>proc~load_temperature~3&#45;&gt;load_file</title>
 <path fill="none" stroke="#018525" stroke-opacity="0.019608" d="M772.93,-234C790.22,-236.48 807.57,-239.44 824,-243 832.63,-244.87 841.73,-247.46 850.28,-250.18"/>
 <polygon fill="#018525" fill-opacity="0.019608" stroke="#018525" stroke-opacity="0.019608" points="849.4,-253.58 859.99,-253.41 851.61,-246.94 849.4,-253.58"/>
 </g>
@@ -614,27 +599,27 @@
 <path fill="none" stroke="#046255" d="M789.62,-187.27C801.59,-190.8 813.2,-195.3 824,-201 845.74,-212.48 842.06,-226.19 860,-243 860.92,-243.86 861.88,-244.73 862.86,-245.58"/>
 <polygon fill="#046255" stroke="#046255" points="860.68,-248.32 870.64,-251.91 865.09,-242.89 860.68,-248.32"/>
 </g>
-<!-- proc~load_url~2&#45;&gt;destroy -->
+<!-- proc~load_url~3&#45;&gt;destroy -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge44" class="edge">
-<title>proc~load_url~2&#45;&gt;destroy</title>
+<title>proc~load_url~3&#45;&gt;destroy</title>
 <path fill="none" stroke="#920255" d="M782.2,-143.22C796.79,-147 810.99,-152.13 824,-159 845.74,-170.48 842.06,-184.19 860,-201 860.92,-201.86 861.88,-202.73 862.86,-203.58"/>
 <polygon fill="#920255" stroke="#920255" points="860.68,-206.32 870.64,-209.91 865.09,-200.89 860.68,-206.32"/>
 </g>
-<!-- proc~load_url~2&#45;&gt;get -->
+<!-- proc~load_url~3&#45;&gt;get -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge45" class="edge">
-<title>proc~load_url~2&#45;&gt;get</title>
+<title>proc~load_url~3&#45;&gt;get</title>
 <path fill="none" stroke="#920255" d="M772.93,-150C790.22,-152.48 807.57,-155.44 824,-159 833.32,-161.02 843.19,-163.88 852.32,-166.84"/>
 <polygon fill="#920255" stroke="#920255" points="851.28,-170.18 861.87,-170.06 853.52,-163.55 851.28,-170.18"/>
 </g>
-<!-- proc~load_url~2&#45;&gt;initialize -->
+<!-- proc~load_url~3&#45;&gt;initialize -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge46" class="edge">
-<title>proc~load_url~2&#45;&gt;initialize</title>
+<title>proc~load_url~3&#45;&gt;initialize</title>
 <path fill="none" stroke="#920255" d="M782.03,-136.56C797.33,-141.44 811.73,-148.65 824,-159 868.51,-196.56 826.98,-237.02 860,-285 860.36,-285.52 860.73,-286.02 861.11,-286.53"/>
 <polygon fill="#920255" stroke="#920255" points="858.88,-289.24 868.38,-293.93 863.87,-284.34 858.88,-289.24"/>
 </g>
-<!-- proc~load_url~2&#45;&gt;load_file -->
+<!-- proc~load_url~3&#45;&gt;load_file -->
 <g id="proc~~load_chatcompletion_data~~CallsGraph_edge47" class="edge">
-<title>proc~load_url~2&#45;&gt;load_file</title>
+<title>proc~load_url~3&#45;&gt;load_file</title>
 <path fill="none" stroke="#920255" d="M782.23,-138.57C797.23,-143.16 811.5,-149.74 824,-159 856.64,-183.18 834.9,-211.06 860,-243 860.48,-243.61 860.98,-244.21 861.5,-244.8"/>
 <polygon fill="#920255" stroke="#920255" points="859.34,-247.58 869.01,-251.91 864.15,-242.5 859.34,-247.58"/>
 </g>
@@ -668,17 +653,17 @@
                   var panprocload_chatcompletion_dataCallsGraph = svgPanZoom('#procload_chatcompletion_dataCallsGraph',
                     {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
                   );
-                </script>        <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-          <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
                   <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">
+                <div class="modal-body">
 <p>Nodes of different colours represent the following: </p>
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -686,11 +671,11 @@
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="597pt" height="32pt"
- viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
 <!-- Subroutine -->
 <g id="node1" class="node">
 <title>Subroutine</title>
@@ -709,23 +694,183 @@
 <polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
 <text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
-<!-- Unknown Procedure Type -->
+<!-- Type Bound Procedure -->
 <g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
 <title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
-<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node">
+<g id="node6" class="node">
 <title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
-<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node">
+<g id="node7" class="node">
 <title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
-<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~load_chatcompletion_data~~CalledByGraph Pages: 1 -->
+<svg id="procload_chatcompletion_dataCalledByGraph" width="641pt" height="39pt"
+ viewBox="0.00 0.00 641.00 39.33" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~load_chatcompletion_data~~CalledByGraph" class="graph" transform="scale(1.88 1.88) rotate(0) translate(4 70)">
+<title>proc~~load_chatcompletion_data~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 1202,-70 1202,4 -4,4"/>
+<!-- proc~load_chatcompletion_data -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_node1" class="node">
+<title>proc~load_chatcompletion_data</title>
+<polygon fill="none" stroke="black" points="1198,-45 795,-45 795,-21 1198,-21 1198,-45"/>
+<text text-anchor="middle" x="996.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">foropenai_ChatCompletion::ChatCompletion%load_ChatCompletion_data</text>
+</g>
+<!-- proc~set_chatcompletion_data -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_node2" class="node">
+<title>proc~set_chatcompletion_data</title>
+<g id="a_proc~~load_chatcompletion_data~~CalledByGraph_node2"><a xlink:href="../proc/set_chatcompletion_data.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%set_ChatCompletion_data">
+<polygon fill="#d9534f" stroke="#d9534f" points="759,-45 364,-45 364,-21 759,-21 759,-45"/>
+<text text-anchor="middle" x="561.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%set_ChatCompletion_data</text>
+</a>
+</g>
+</g>
+<!-- proc~set_chatcompletion_data&#45;&gt;proc~load_chatcompletion_data -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_edge1" class="edge">
+<title>proc~set_chatcompletion_data&#45;&gt;proc~load_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M759.05,-33C767.56,-33 776.12,-33 784.67,-33"/>
+<polygon fill="#255000" stroke="#255000" points="784.69,-36.5 794.69,-33 784.69,-29.5 784.69,-36.5"/>
+</g>
+<!-- proc~conversation -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_node3" class="node">
+<title>proc~conversation</title>
+<g id="a_proc~~load_chatcompletion_data~~CalledByGraph_node3"><a xlink:href="../proc/conversation.html" xlink:title="foropenai_ChatCompletion::ChatCompletion%conversation">
+<polygon fill="#d9534f" stroke="#d9534f" points="328,-66 0,-66 0,-42 328,-42 328,-66"/>
+<text text-anchor="middle" x="164" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">foropenai_ChatCompletion::ChatCompletion%conversation</text>
+</a>
+</g>
+</g>
+<!-- proc~conversation&#45;&gt;proc~set_chatcompletion_data -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_edge2" class="edge">
+<title>proc~conversation&#45;&gt;proc~set_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M328.15,-45.34C336.64,-44.89 345.21,-44.43 353.81,-43.97"/>
+<polygon fill="#255000" stroke="#255000" points="354.11,-47.46 363.91,-43.44 353.74,-40.47 354.11,-47.46"/>
+</g>
+<!-- program~test_chatcompletion -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_node4" class="node">
+<title>program~test_chatcompletion</title>
+<g id="a_proc~~load_chatcompletion_data~~CalledByGraph_node4"><a xlink:href="../program/test_chatcompletion.html" xlink:title="test_ChatCompletion">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="226,-24 102,-24 102,0 226,0 226,-24"/>
+<text text-anchor="middle" x="164" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">test_ChatCompletion</text>
+</a>
+</g>
+</g>
+<!-- program~test_chatcompletion&#45;&gt;proc~set_chatcompletion_data -->
+<g id="proc~~load_chatcompletion_data~~CalledByGraph_edge3" class="edge">
+<title>program~test_chatcompletion&#45;&gt;proc~set_chatcompletion_data</title>
+<path fill="none" stroke="#255000" d="M226.36,-15.26C261.23,-17.11 307.13,-19.55 353.7,-22.02"/>
+<polygon fill="#255000" stroke="#255000" points="353.79,-25.53 363.96,-22.56 354.16,-18.54 353.79,-25.53"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprocload_chatcompletion_dataCalledByGraph = svgPanZoom('#procload_chatcompletion_dataCalledByGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CalledByGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CalledByGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1.16 1.16) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -745,64 +890,33 @@ large graphs.</div>
     </div>
     <br>
 
-    <section class="visible-xs visible-sm hidden-md">
-        <h3>Contents</h3>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-    <div class="panel panel-primary">
-      <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
-      <div class="list-group">
-        <a class="list-group-item" href="../proc/load_chatcompletion_data.html#src">load_ChatCompletion_data</a>
-      </div>
-    </div>
-
-
-    </section>
-    <br class="visible-xs visible-sm hidden-md">
-
 
     
     
 
     
     
+
 
 
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">load_ChatCompletion_data</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">file_name</span><span class="p">)</span><span class="w"></span>
-<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span><span class="w"></span>
-<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">file_name</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_file_name</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_url</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_model</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_user_name</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_temperature</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_presence_penalty</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_frequency_penalty</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_top_p</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_n</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_stream</span><span class="p">()</span><span class="w"></span>
-<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_max_tokens</span><span class="p">()</span><span class="w"></span>
-<span class="w">   </span><span class="k">end subroutine </span><span class="n">load_ChatCompletion_data</span><span class="w"></span>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">elemental impure subroutine </span><span class="n">load_ChatCompletion_data</span><span class="p">(</span><span class="n">this</span><span class="p">,</span><span class="w"> </span><span class="n">file_name</span><span class="p">)</span>
+<span class="w">      </span><span class="k">class</span><span class="p">(</span><span class="n">ChatCompletion</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">this</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">    </span><span class="kd">::</span><span class="w"> </span><span class="n">file_name</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">set_file_name</span><span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="n">file_name</span><span class="p">))</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_url</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_model</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_user_name</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_temperature</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_presence_penalty</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_frequency_penalty</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_top_p</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_n</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_stream</span><span class="p">()</span>
+<span class="w">      </span><span class="k">call </span><span class="n">this</span><span class="p">%</span><span class="n">load_max_tokens</span><span class="p">()</span>
+<span class="w">   </span><span class="k">end subroutine </span><span class="n">load_ChatCompletion_data</span>
 </pre></div>
 
     </section>
@@ -815,32 +929,27 @@ large graphs.</div>
     </div> <!-- /container -->
     <footer>
       <div class="container">
-        <div class="row">
-          <div class="col-xs-6 col-md-6"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+        <div class="row justify-content-between">
+          <div class="col"><p>ForOpenAI was developed by Seyed Ali Ghasemi<br>&copy; 2023 
 </p>
           </div>
-          <div class="col-xs-6 col-md-6">
-            <p class="text-right">
+          <div class="col">
+            <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2023-09-20T20:22:27.787945             </p>
+ on 2024-01-10T22:07:06.996801             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
 
-    <!-- Bootstrap core JavaScript
-         ================================================== -->
-         <!-- Placed at the end of the document so the pages load faster -->
-    <!--
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="../js/ie10-viewport-bug-workaround.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
 
-        <!-- MathJax JavaScript
+    <!-- MathJax JavaScript
              ================================================== -->
              <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/x-mathjax-config">
