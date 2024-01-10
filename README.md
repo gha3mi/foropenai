@@ -6,7 +6,7 @@
 
 <img alt="ForOpenAI" src="https://github.com/gha3mi/foropenai/raw/main/media/logo.png" width="750">
 
-**ForOpenAI**: A community-maintained Fortran wrapper for the OpenAI API.
+**ForOpenAI**: An **unofficial** Fortran library for OpenAI.
 
 ## How to use
 
