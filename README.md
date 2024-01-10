@@ -1,8 +1,8 @@
 [![GitHub](https://img.shields.io/badge/GitHub-ForOpenAI-blue.svg?style=social&logo=github)](https://github.com/gha3mi/foropenai)
-[![Version](https://img.shields.io/github/v/tag/gha3mi/foropenai?color=blue&logo=github&style=flat)](https://github.com/gha3mi/foropenai/releases)
+[![Version](https://img.shields.io/github/release/gha3mi/foropenai.svg)](https://github.com/gha3mi/foropenai/releases/latest)
 [![Documentation](https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg)](https://gha3mi.github.io/foropenai/)
-[![License](https://img.shields.io/github/license/gha3mi/foropenai?color=green)](https://github.com/gha3mi/foropenai/blob/main/LICENSE)
-[![Build](https://github.com/gha3mi/foropenai/actions/workflows/ci.yml/badge.svg)](https://github.com/gha3mi/foropenai/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/gha3mi/foropenai?color=yellow)](https://github.com/gha3mi/foropenai/blob/main/LICENSE)
+[![CI_test](https://github.com/gha3mi/foropenai/actions/workflows/CI_test.yml/badge.svg)](https://github.com/gha3mi/foropenai/actions/workflows/CI_test.yml)
 
 <img alt="ForOpenAI" src="https://github.com/gha3mi/foropenai/raw/main/media/logo.png" width="750">
 
